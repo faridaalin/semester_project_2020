@@ -1,5 +1,9 @@
 <img src="./.readme/noroff-light.png" width="160" align="right">
 
+# Project Planning. 
+
+KanBan board in [Notion](https://www.notion.so/986067d3a271491ab10e004878712ca4?v=566090c9f3bc4c97abc8a99a6d3b3953)
+
 # Semester project 2
 
 To create an e-commerce website that has an Admin and Front-End respectively. The Front-End should be responsive and the website is to be populated by an API supplied by Noroff. 
