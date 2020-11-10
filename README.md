@@ -2,7 +2,9 @@
 
 # Project Planning. 
 
-KanBan board in [Notion](https://www.notion.so/986067d3a271491ab10e004878712ca4?v=566090c9f3bc4c97abc8a99a6d3b3953)
+KanBan board in Notion: [Link](https://www.notion.so/986067d3a271491ab10e004878712ca4?v=566090c9f3bc4c97abc8a99a6d3b3953)
+
+XD Wireframe: [Link](https://xd.adobe.com/view/50096d59-9324-473c-8bed-51a90638000e-055a/)
 
 # Semester project 2
 
