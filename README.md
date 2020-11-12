@@ -4,7 +4,8 @@
 
 KanBan board in Notion: [Link](https://www.notion.so/986067d3a271491ab10e004878712ca4?v=566090c9f3bc4c97abc8a99a6d3b3953)
 
-XD Wireframe: [Link](https://xd.adobe.com/view/50096d59-9324-473c-8bed-51a90638000e-055a/)
+XD Wireframe: [Link](https://xd.adobe.com/view/50096d59-9324-473c-8bed-51a90638000e-055a/)  <br /> 
+XD Prototype: [Link](https://xd.adobe.com/view/97593ad3-40d2-4133-ab02-b9991d87d139-c20a/)
 
 # Semester project 2
 
