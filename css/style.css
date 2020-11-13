@@ -10816,6 +10816,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: 'Montserrat', sans-serif;
+  padding-top: 56px;
 }
 
 li {
@@ -10850,5 +10851,23 @@ li {
   right: 10px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.breadcrumb {
+  background: transparent;
+}
+
+.product-detail {
+  height: 60vh;
+}
+
+.detail-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.detail-bg--thumb {
+  width: 100px;
 }
 /*# sourceMappingURL=style.css.map */

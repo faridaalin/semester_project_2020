@@ -9937,4 +9937,22 @@ li {
   transform: translateY(-50%);
 }
 
+.breadcrumb {
+  background: transparent;
+}
+
+.product-detail {
+  height: 60vh;
+}
+
+.detail-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.detail-bg--thumb {
+  width: 100px;
+}
+
 /*# sourceMappingURL=styles.css.map */
