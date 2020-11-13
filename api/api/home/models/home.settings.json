@@ -24,6 +24,9 @@
     },
     "hero_banner_alt_text": {
       "type": "string"
+    },
+    "hero_url": {
+      "type": "string"
     }
   }
 }
