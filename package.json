@@ -4,7 +4,10 @@
   "description": "<img src=\"./.readme/noroff-light.png\" width=\"160\" align=\"right\">",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "sass scss/style.scss css/styles.css --watch",
+    "liveserver" : "live-server",
+    "develop": "concurrently \"npm run watch:sass\" \"npm run liveserver\" "
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   "dependencies": {
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.1.0",
+    "live-server": "^1.2.1",
     "node-sass": "^5.0.0"
   }
 }

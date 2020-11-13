@@ -1,0 +1,46 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+html,
+body {
+  height: 100%;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+
+.search {
+  width: 180px;
+  position: relative;
+
+  input {
+    visibility: visible;
+    width: 100%;
+    background: #f5f5f5;
+    color: inherit;
+    padding: 8px 48px;
+    cursor: text;
+    border-radius: 100px;
+    border: none;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}
