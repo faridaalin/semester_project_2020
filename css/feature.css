@@ -27,17 +27,22 @@
   height: 100%;
   background: transparent;
   z-index: 2000;
-  -webkit-transition: all 4s ease-in-out;
-  transition: all 4s ease-in-out;
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
 }
 
 .feature-card__link:hover .feature-card__overlay {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.feature-card__link:hover .card-img, .feature-card__link:hover .card-img-top {
+.feature-card__link:hover .card-img,
+.feature-card__link:hover .card-img-top {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
+  -webkit-transition: -webkit-transform 4s ease-in-out;
+  transition: -webkit-transform 4s ease-in-out;
+  transition: transform 4s ease-in-out;
+  transition: transform 4s ease-in-out, -webkit-transform 4s ease-in-out;
 }
 
 .feature-info {
