@@ -10816,7 +10816,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 56px;
   background-color: #DDE7EA;
   color: #143E56;
   line-height: 1.5;
@@ -10832,8 +10831,68 @@ li {
           flex: 1;
 }
 
-.bg-light {
+.navbar {
+  color: #F5F5F5;
+}
+
+.navbar-brand img {
+  width: 100px;
+}
+
+.navbar-toggler {
+  border: none !important;
+  color: #F0BD31 !important;
+  font-size: 1.5rem !important;
+}
+
+.nav-left {
+  width: 250px;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(240, 189, 49, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #F5F5F5;
+  position: relative;
+}
+
+.navbar-light .navbar-nav .nav-link::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  left: 0;
   background-color: transparent;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after {
+  background-color: #F0BD31;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #F0BD31;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after, .navbar-light .navbar-nav .nav-link:focus::after, .navbar-light .navbar-nav .show > .nav-link::after, .navbar-light .navbar-nav .active > .nav-link::after, .navbar-light .navbar-nav .nav-link.show::after, .navbar-light .navbar-nav .nav-link.active::after {
+  background-color: #F0BD31;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.inner-navbar {
+  width: calc(100% - 100px);
+}
+
+.navbar-right {
+  width: 250px;
 }
 
 .search {
@@ -10844,7 +10903,7 @@ li {
 .search input {
   visibility: visible;
   width: 100%;
-  background: #f5f5f5;
+  background: #f5f5f53d;
   color: inherit;
   padding: 8px 48px;
   cursor: text;
@@ -10852,12 +10911,54 @@ li {
   border: none;
 }
 
+.search input::-webkit-input-placeholder {
+  color: #F5F5F5;
+}
+
+.search input:-ms-input-placeholder {
+  color: #F5F5F5;
+}
+
+.search input::-ms-input-placeholder {
+  color: #F5F5F5;
+}
+
+.search input::placeholder {
+  color: #F5F5F5;
+}
+
+.search input input::-webkit-input-placeholder {
+  color: #F5F5F5;
+}
+
+.search input:-ms-input-placeholder {
+  color: #F5F5F5;
+}
+
+.search input::-webkit-input-placeholder {
+  color: #F5F5F5;
+}
+
+.search input::-ms-input-placeholder {
+  color: #F5F5F5;
+}
+
+.search input::placeholder {
+  color: #F5F5F5;
+}
+
 .search svg {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 20px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  color: #F5F5F5;
+  margin-right: 1rem;
+}
+
+.search svg:last-child {
+  margin-right: 0;
 }
 
 .breadcrumb {
@@ -10874,7 +10975,7 @@ li {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 95vh;
+  min-height: 100vh;
 }
 
 .herobanner__banner {

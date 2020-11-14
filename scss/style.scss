@@ -10,7 +10,13 @@ $border-width:                2px !default;
 @import './/breadcrumps.scss';
 @import './herobanner.scss';
 @import './card.scss';
-@import './buttons.scss'
+@import './buttons.scss';
+@import './title.scss';
 
+.title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: getWeight($weight);
+}
 
 
