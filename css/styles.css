@@ -9951,4 +9951,9 @@ li {
   width: 100px;
 }
 
+.bag-img {
+  height: 100px;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=styles.css.map */

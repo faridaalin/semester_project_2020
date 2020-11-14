@@ -10866,4 +10866,10 @@ li {
 .detail-bg--thumb {
   width: 100px;
 }
+
+.bag-img {
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 /*# sourceMappingURL=style.css.map */
