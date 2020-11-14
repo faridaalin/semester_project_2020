@@ -1,0 +1,28 @@
+.bg-light {
+  background-color: transparent;
+}
+
+.search {
+  width: 180px;
+  position: relative;
+}
+
+.search input {
+  visibility: visible;
+  width: 100%;
+  background: #f5f5f5;
+  color: inherit;
+  padding: 8px 48px;
+  cursor: text;
+  border-radius: 100px;
+  border: none;
+}
+
+.search svg {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+/*# sourceMappingURL=navbar.css.map */

@@ -1,73 +1,16 @@
+$theme-colors: (
+  "primary": #F0BD31,
+  "secondary": #143E56,
+);
+$border-width:                2px !default;
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-
-html,
-body {
-  height: 100%;
-
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-  padding-top: 56px;
-
-}
-
-li {
-  list-style: none;
-}
-
-.wrapper {
-  flex: 1;
-}
+@import './variables.scss';
+@import './base.scss';
+@import './navbar.scss';
+@import './/breadcrumps.scss';
+@import './herobanner.scss';
+@import './card.scss';
+@import './buttons.scss'
 
 
-.search {
-  width: 180px;
-  position: relative;
 
-  input {
-    visibility: visible;
-    width: 100%;
-    background: #f5f5f5;
-    color: inherit;
-    padding: 8px 48px;
-    cursor: text;
-    border-radius: 100px;
-    border: none;
-  }
-
-  svg {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
-}
-
-
-.breadcrumb {
-background: transparent;
-}
-
-.product-detail {
-
- }
-
-.detail-bg {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-}
-
-.detail-bg--thumb  {
-  width: 100px;
-}
-
-
-.bag-img {
-  height: 100px;
-  object-fit: cover;
-}

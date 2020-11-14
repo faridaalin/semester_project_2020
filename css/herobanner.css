@@ -1,0 +1,37 @@
+.jumbotron {
+  border-radius: 0 !important;
+}
+
+.herobanner {
+  background-image: url(../HeroBanner.png);
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 95vh;
+}
+
+.herobanner__banner {
+  max-width: 60ch;
+}
+
+.herobanner__content {
+  color: getColour(white-200);
+}
+
+.herobanner__content .content-tag {
+  text-transform: uppercase;
+  font-weight: getWeight(light);
+  font-size: 1rem;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.48);
+  padding-bottom: 1rem;
+}
+
+.herobanner__content .content-header {
+  font-weight: getWeight(medium);
+  font-size: 1.8rem;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.48);
+  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+/*# sourceMappingURL=herobanner.css.map */

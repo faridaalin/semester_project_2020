@@ -1,0 +1,16 @@
+.detail-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.detail-bg--thumb {
+  width: 100px;
+}
+
+.bag-img {
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=card.css.map */

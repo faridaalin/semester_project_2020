@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACZ,UAAU,EAAE,WAAW;CACtB",
+    "sources": [
+        "../scss/breadcrumps.scss"
+    ],
+    "names": [],
+    "file": "breadcrumps.css"
+}

@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 56px;
+  background-color: getColour(green-200);
+  color: getColour(secondary);
+  line-height: 1.5;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  flex: 1;
+}
