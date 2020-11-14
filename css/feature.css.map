@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,wBAAwB,CAAC;EACvB,QAAQ,EAAE,QAAQ;EAClB,QAAQ,EAAE,MAAM;CACjB",
+    "sources": [
+        "../scss/feature.scss"
+    ],
+    "names": [],
+    "file": "feature.css"
+}

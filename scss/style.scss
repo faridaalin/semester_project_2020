@@ -3,20 +3,45 @@ $theme-colors: (
   "secondary": #143E56,
 );
 $border-width:                2px !default;
+
+
+.feature-card__container {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.feature-card__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+.feature-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(146, 39, 39, 0.6);
+  z-index: 2000;
+}
+
+
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import './variables.scss';
 @import './base.scss';
 @import './navbar.scss';
-@import './/breadcrumps.scss';
+@import './breadcrumps.scss';
 @import './herobanner.scss';
 @import './card.scss';
 @import './buttons.scss';
 @import './title.scss';
+@import './feature.scss';
 
-.title {
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  font-weight: getWeight($weight);
-}
 
 

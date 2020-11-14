@@ -8,7 +8,8 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  background-color: getColour(green-200);
+  // background-color: getColour(green-200);
+  background: red;
   color: getColour(secondary);
   line-height: 1.5;
 }

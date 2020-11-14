@@ -11012,7 +11012,7 @@ li {
   width: 100px;
 }
 
-.bag-img {
+---- Feature---- .bag-img {
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -11024,5 +11024,21 @@ li {
   font-weight: 700;
   white-space: nowrap;
   font-size: 1.02rem;
+}
+
+.content-btn--small {
+  padding: 0.5rem 3.5rem;
+  font-size: 1.2rem;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.feature-card__container {
+  position: relative;
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */
