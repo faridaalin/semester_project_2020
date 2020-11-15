@@ -4,12 +4,10 @@
   background-repeat: no-repeat;
 }
 
-.detail-bg--thumb {
-  width: 100px;
-}
-
 .bag-img {
-  height: 100px;
+  height: 100%;
+  max-height: 200px;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
