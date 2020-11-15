@@ -76,39 +76,43 @@
         </ol>
       </nav>
 
-      <div class="row product-detail overflow-hidden">
-        <div class="detail-container col-12 col-md-6 d-flex flex-column flex-lg-row">
-          <div class="order-2 d-flex justify-content-between flex-lg-column">
-            <div class="detail-bg detail-bg--thumb embed-responsive embed-responsive-16by9 embed-responsive-item"  style="background-image: url(../img-1.jpg);"></div>
-            <div class="detail-bg detail-bg--thumb embed-responsive embed-responsive-16by9 embed-responsive-item"  style="background-image: url(../img-1.jpg);"></div>
-            <div class="detail-bg detail-bg--thumb embed-responsive embed-responsive-16by9 embed-responsive-item"  style="background-image: url(../img-1.jpg);"></div>
-            <div class="detail-bg detail-bg--thumb embed-responsive embed-responsive-16by9 embed-responsive-item"  style="background-image: url(../img-1.jpg);"></div>
+      <div class="small-container">
+        <div class="row">
+          <div class="col-6">
+            <img class="pdp-img" src="../img-1.jpg" alt="" srcset="" >
           </div>
-          <div class="order-1 detail-bg embed-responsive embed-responsive-16by9 embed-responsive-item"  style="background-image: url(../img-1.jpg);"></div>
-        </div>
-        <div class="col-12 col-md-6">
-          <h3>Lorem Ipsum</h3>
-          <p>NOK 1499</p>
-          <p>Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.</p>
-          <div>
-            Qty
-            <button type="button" class="btn">-</button><span>1</span><button type="button" class="btn">+</button>
-          </div>
-          <div>
-            <select name="size" id="size">
-              <option value="">Select size</option>
-              <option value="40">40</option>
-              <option value="41">41</option>
-              <option value="42">42</option>
-              <option value="43">43</option>
-              <option value="44">44</option>
-              <option value="45">45</option>
-            </select>
-            <button type="button" class="btn btn-primary">Add to cart</button>
-          </div>
-        </div>
+          <div class="col-6">
+            <div class="">
+              <h3>Lorem Ipsum</h3>
+              <h5>NOK 1499</h5>
+              <p>Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.</p>
+              <div class="checkout d-flex flex-row">
+                <div>
+                  Qty
+                  <button type="button" class="btn">-</button><span>1</span><button type="button" class="btn">+</button>
+                </div>
+                <div class="input-group flex-fill">
+                  <select class="custom-select h-100 " id="inputGroupSelect02">
+                    <option selected>Choose size</option>
+                    <option value="40">40</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                  </select>
+                  <i class="fa fa-angle-down"></i>
+                  <!-- <div class="input-group-append">
+                    <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                  </div> -->
+                </div>
+              </div>
 
+              <div class="checkout d-flex">
+                <button type="button" class="btn btn-secondary flex-fill">Secondary</button>
+              </div>
+          </div>
+        </div>
       </div>
+
+    </div>
     </div>
 
 
