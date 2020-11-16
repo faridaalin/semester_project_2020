@@ -1,4 +1,4 @@
-.navbar {
+.home .navbar {
   color: getColour(white-200);
 }
 
@@ -16,17 +16,38 @@
   color: getColour(primary) !important;
 }
 
-.nav-left {
-  width: 250px;
-}
-
-.custom-toggler .navbar-toggler-icon {
+.home .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(240, 189, 49, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.navbar-light .navbar-nav .nav-link {
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(20, 62, 86, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.home .navbar-light .navbar-nav .nav-link {
   color: getColour(white-200);
   position: relative;
+}
+
+.home .navbar-light .navbar-nav .nav-link::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  background-color: transparent;
+}
+
+.home .navbar-light .navbar-nav .nav-link:hover::after {
+  background-color: getColour(primary);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: getColour(secondary);
+  position: relative;
+  text-transform: uppercase;
+  font-weight: getWeight(medium);
 }
 
 .navbar-light .navbar-nav .nav-link::after {
@@ -43,11 +64,46 @@
   background-color: getColour(primary);
 }
 
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+.navbar-bg {
+  background: getColour(green-200);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: getColour(secondary);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after,
+.navbar-light .navbar-nav .nav-link:focus::after,
+.navbar-light .navbar-nav .show > .nav-link::after,
+.navbar-light .navbar-nav .active > .nav-link::after,
+.navbar-light .navbar-nav .nav-link.show::after,
+.navbar-light .navbar-nav .nav-link.active::after {
+  background-color: getColour(secondary);
+}
+
+.home .navbar-light .navbar-nav .nav-link:hover,
+.home .navbar-light .navbar-nav .nav-link:focus,
+.home .navbar-light .navbar-nav .show > .nav-link,
+.home .navbar-light .navbar-nav .active > .nav-link,
+.home .navbar-light .navbar-nav .nav-link.show,
+.home .navbar-light .navbar-nav .nav-link.active {
   color: getColour(primary);
 }
 
-.navbar-light .navbar-nav .nav-link:hover::after, .navbar-light .navbar-nav .nav-link:focus::after, .navbar-light .navbar-nav .show > .nav-link::after, .navbar-light .navbar-nav .active > .nav-link::after, .navbar-light .navbar-nav .nav-link.show::after, .navbar-light .navbar-nav .nav-link.active::after {
+.home .navbar-light .navbar-nav .nav-link:hover::after,
+.home .navbar-light .navbar-nav .nav-link:focus::after,
+.home .navbar-light .navbar-nav .show > .nav-link::after,
+.home .navbar-light .navbar-nav .active > .nav-link::after,
+.home .navbar-light .navbar-nav .nav-link.show::after,
+.home .navbar-light .navbar-nav .nav-link.active::after {
   background-color: getColour(primary);
 }
 
@@ -67,14 +123,26 @@
 }
 
 .search {
-  width: 180px;
   position: relative;
+  width: 100%;
+}
+
+@media all and (min-width: 480px) {
+  .search {
+    width: 75%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .search {
+    width: 100%;
+  }
 }
 
 .search input {
   visibility: visible;
   width: 100%;
-  background: #f5f5f53d;
+  background: getColour(green-010);
   color: inherit;
   padding: 8px 48px;
   cursor: text;
@@ -83,39 +151,39 @@
 }
 
 .search input::-webkit-input-placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input:-ms-input-placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input::-ms-input-placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input::placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input input::-webkit-input-placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input:-ms-input-placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input::-webkit-input-placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input::-ms-input-placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search input::placeholder {
-  color: getColour(white-200);
+  color: getColour(secondary);
 }
 
 .search svg {
@@ -124,11 +192,59 @@
   right: 20px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: getColour(white-200);
+  color: getColour(secondary);
   margin-right: 1rem;
 }
 
 .search svg:last-child {
   margin-right: 0;
+}
+
+.home .search input {
+  background: #f5f5f53d;
+}
+
+.home .search input::-webkit-input-placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input:-ms-input-placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input::-ms-input-placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input::placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input input::-webkit-input-placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input:-ms-input-placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input::-webkit-input-placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input::-ms-input-placeholder {
+  color: getColour(white-200);
+}
+
+.home .search input::placeholder {
+  color: getColour(white-200);
+}
+
+.home .search svg {
+  color: getColour(white-200);
+}
+
+.navbar-custom {
+  background: getColour(green-200);
 }
 /*# sourceMappingURL=navbar.css.map */
