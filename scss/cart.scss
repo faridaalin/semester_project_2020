@@ -2,7 +2,8 @@
 .checkout-container{
   background: getColour(green-300);
   @media all and (min-width: 768px) {
-    right: 10%;
+    position: fixed;
+    right: 2%;
   }
 
 

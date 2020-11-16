@@ -4,7 +4,8 @@
 
 @media all and (min-width: 768px) {
   .checkout-container {
-    right: 10%;
+    position: fixed;
+    right: 2%;
   }
 }
 
