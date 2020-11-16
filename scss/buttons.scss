@@ -4,9 +4,12 @@
   font-weight: getWeight(bold);
   white-space: nowrap;
   font-size: 1.02rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: getWeight(medium);
 }
+
 .content-btn--small {
   padding: 0.5rem 3.5rem;
   font-size: 1.2rem;
 }
-

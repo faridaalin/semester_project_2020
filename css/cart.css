@@ -1,4 +1,77 @@
 .checkout-container {
   background: getColour(green-300);
 }
+
+@media all and (min-width: 768px) {
+  .checkout-container {
+    right: 10%;
+  }
+}
+
+.checkout-container h3 {
+  font-size: 1.2rem;
+  font-weight: getWeight(bold);
+}
+
+.checkout-container .total {
+  font-weight: getWeight(medium);
+  font-size: 1rem;
+}
+
+.checkout-container .delivery {
+  font-size: 1rem;
+}
+
+.checkout-container .btn {
+  padding: 0.8rem 2.5rem;
+}
+
+@media all and (min-width: 768px) {
+  .cart-detail {
+    padding-right: 5rem;
+  }
+}
+
+.bag-container {
+  border-bottom: 2px solid rgba(20, 62, 86, 0.4);
+}
+
+.header-cart {
+  font-weight: getWeight(bold);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.light-text {
+  color: getColour(green-050);
+  font-size: 0.8rem;
+}
+
+.medium-text {
+  font-weight: getWeight(medium);
+}
+
+.large-text {
+  font-weight: getWeight(bold);
+}
+
+.bag-img {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 140px;
+  max-height: 140px;
+  min-width: 100px;
+  max-width: 100px;
+  background-size: cover;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
 /*# sourceMappingURL=cart.css.map */
