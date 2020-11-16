@@ -10845,6 +10845,12 @@ li {
   color: #F5F5F5;
 }
 
+.navbar-brand {
+  left: 2rem;
+  top: 2rem;
+  z-index: 5000;
+}
+
 .navbar-brand img {
   width: 100px;
 }
@@ -10857,6 +10863,12 @@ li {
 
 .home .navbar-toggler {
   color: #F0BD31 !important;
+}
+
+.home .custom-toggler {
+  right: 2rem;
+  top: 2rem;
+  z-index: 5000;
 }
 
 .home .custom-toggler .navbar-toggler-icon {
@@ -11089,6 +11101,23 @@ li {
 
 .navbar-custom {
   background: #DDE7EA;
+}
+
+.custom-nav-home {
+  background: #1C1F22;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5rem 2rem 2rem;
+}
+
+@media all and (min-width: 992px) {
+  .custom-nav-home {
+    position: initial;
+    background: transparent;
+    padding: 0 0 0;
+  }
 }
 
 .breadcrumb {
