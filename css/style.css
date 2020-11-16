@@ -11132,4 +11132,8 @@ li {
   font-size: 1.5rem;
   pointer-events: none;
 }
+
+.checkout-container {
+  background: #C2DED8;
+}
 /*# sourceMappingURL=style.css.map */
