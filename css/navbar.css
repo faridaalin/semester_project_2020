@@ -8,8 +8,12 @@
 
 .navbar-toggler {
   border: none !important;
-  color: getColour(primary) !important;
+  color: getColour(secondary) !important;
   font-size: 1.5rem !important;
+}
+
+.home .navbar-toggler {
+  color: getColour(primary) !important;
 }
 
 .nav-left {

@@ -10851,8 +10851,12 @@ li {
 
 .navbar-toggler {
   border: none !important;
-  color: #F0BD31 !important;
+  color: #143E56 !important;
   font-size: 1.5rem !important;
+}
+
+.home .navbar-toggler {
+  color: #F0BD31 !important;
 }
 
 .nav-left {
@@ -11172,7 +11176,7 @@ li {
 }
 
 .light-text {
-  color: rgba(20, 62, 86, 0.8);
+  color: rgba(7, 7, 7, 0.8);
   font-size: 0.8rem;
 }
 
