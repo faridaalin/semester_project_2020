@@ -98,6 +98,11 @@ li {
   }
   a {
     color: getColour(secondary);
+
+    &:hover {
+      filter: brightness(50%);
+    }
+    
   }
 
   p, a {
@@ -130,6 +135,14 @@ li {
 
   .footer-copyright {
     font-weight: getWeight(medium);
+    flex: 1;
+  }
+
+  .newsletter {
+    .btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.5rem;
+    }
   }
 
  
