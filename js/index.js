@@ -14,7 +14,10 @@ const hamburger = document.querySelector('.custom-toggler');
 
 const addBackground = () => {
     const navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('custom-bg')
+    if (window.scrollY > 15 === false) {
+        navbar.classList.toggle('custom-bg')
+    }  
+
 }
 
 hamburger.addEventListener('click', addBackground);
