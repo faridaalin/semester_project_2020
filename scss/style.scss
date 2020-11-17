@@ -101,9 +101,20 @@ li {
 
 
 /*  NAVBAR START */
+
+.navbar {
+  background-color: transparent;
+  transition:  background-color 0.2s;
+}
+
+.custom-bg {
+  background-color: getColour(green-050);
+  transition:  background-color 0.2s;
+}
 .home {
   .navbar {
     color: getColour(white-200);
+  
   }
 }
 
