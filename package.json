@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "sass scss/style.scss css/styles.css --watch",
-    "liveserver" : "live-server",
+    "liveserver": "live-server",
     "develop": "concurrently \"npm run watch:sass\" \"npm run liveserver\" "
   },
   "repository": {
@@ -24,5 +24,8 @@
     "bootstrap-icons": "^1.1.0",
     "live-server": "^1.2.1",
     "node-sass": "^5.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
   }
 }

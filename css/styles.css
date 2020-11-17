@@ -9900,6 +9900,9 @@ h3 {
     border-color: #dee2e6;
   }
 }
+/*  VARIABLES START */
+/*  VARIABLES END */
+/*  BASE START */
 html,
 body {
   height: 100%;
@@ -9927,6 +9930,8 @@ li {
   flex: 1;
 }
 
+/*  BASE END */
+/*  NAVBAR START */
 .home .navbar {
   color: #F5F5F5;
 }
@@ -10155,10 +10160,14 @@ li {
   }
 }
 
+/*  NAVBAR END */
+/*  BREADCRUMBS START */
 .breadcrumb {
   background: transparent;
 }
 
+/*  BREADCRUMBS END */
+/*  HEROBANNER START */
 .jumbotron {
   border-radius: 0 !important;
 }
@@ -10192,6 +10201,9 @@ li {
   padding-bottom: 2rem;
   padding-top: 0.5rem;
 }
+
+/*  HEROBANNER END */
+/*  BUTTONS START */
 .btn {
   border-radius: 0;
   padding: 1rem 2.5rem;
@@ -10209,29 +10221,54 @@ li {
 }
 
 @media all and (min-width: 576px) {
-  .row .btn-container--home .content-btn {
+  .row .btn-container .content-btn {
     padding: 0.5rem 2.5rem;
     font-size: 0.8rem;
   }
 }
 @media all and (min-width: 768px) {
-  .row .btn-container--home .content-btn {
+  .row .btn-container .content-btn {
     padding: 0.4rem 2rem;
     font-size: 0.7rem;
   }
 }
 @media all and (min-width: 960px) {
-  .row .btn-container--home .content-btn {
+  .row .btn-container .content-btn {
+    padding: 0.5rem 2.5rem;
+  }
+}
+.row .btn-container--shop .content-btn {
+  padding: calc(0.3rem + 0.5vw) calc(1.5rem + 1vw);
+  font-size: calc(0.5rem + 0.5vw);
+}
+@media all and (min-width: 576px) {
+  .row .btn-container--shop .content-btn {
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .row .btn-container--shop .content-btn {
+    padding: 0.4rem 2rem;
+    font-size: 0.7rem;
+  }
+}
+@media all and (min-width: 960px) {
+  .row .btn-container--shop .content-btn {
     padding: 0.5rem 2.5rem;
   }
 }
 
+/*  BUTTONS END */
+/*  TITLE START */
 .title {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
+/*  TITLE END */
+/*  CARDS START */
 .product-top {
   position: relative;
   overflow: hidden;
@@ -10290,6 +10327,8 @@ li {
   text-decoration: underline;
 }
 
+/*  CARDS END */
+/*  PDP START */
 .pdp-img {
   height: 400px;
   object-fit: cover;
@@ -10318,6 +10357,8 @@ li {
   pointer-events: none;
 }
 
+/*  PDP END */
+/*  CART START */
 .checkout-container {
   background: #C2DED8;
 }
@@ -10388,5 +10429,7 @@ li {
   display: grid;
   align-self: center;
 }
+
+/*  CART END */
 
 /*# sourceMappingURL=styles.css.map */
