@@ -55,27 +55,28 @@
 
                 </div>
               </li>
-              <li class="nav-item mr-2">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor"
+              <div class="grid">
+                <li class="nav-item nav-icons">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg>
+                </li>
+                <li class="nav-item nav-icons">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-fill" fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                <path fill-rule="evenodd"
+                  d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
               </svg>
-              </li>
-              <li class="nav-item">
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-fill" fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
-            </svg>
-              </li>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
 
     </nav>
 
-    <div class="container pt-5">
+    <div class="container container pt-5 px-4">
       <h1 class="header pt-5 mt-5 pb-2">Shop</h1>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb pl-0">
@@ -86,7 +87,7 @@
 
 
         <div class="row">
-          <div class="col-6 col-md-3 mb-5">
+          <div class="col-6 col-md-3 mb-5 pb-5">
             <div class="product-top">
               <a href=""> <img src="../img-1.jpg" class="card-img-top img-fluid" alt="...">
                 <div class="overlay btn-container btn-container--shop d-flex justify-content-center align-items-center">
@@ -104,7 +105,26 @@
             </div>
           </div>
 
-          <div class="col-6 col-md-3">
+          <div class="col-6 col-md-3 mb-5 pb-5">
+            <div class="product-top">
+              <a href=""> <img src="../img-1.jpg" class="card-img-top img-fluid" alt="...">
+                <div class="overlay btn-container btn-container--shop d-flex justify-content-center align-items-center">
+                  <button type="button" class="content-btn  btn btn-outline-primary">View</button>
+                </div>
+              </a>
+            </div>
+
+            <div class="product-bottom pt-3">
+              <a href="http://"><h3 class="card-title mb-0">Lorem ipsum</h3></a>
+              <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
+                <h5 class=" card-text  mb-0">NOK 1499</h5>
+                <i class="fav fa fa-heart-o"></i>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-6 col-md-3 mb-5 pb-5">
             <div class="product-top">
               <a href=""> <img src="../img-1.jpg" class="card-img-top img-fluid" alt="...">
                 <div class="overlay btn-container btn-container--shop d-flex justify-content-center align-items-center">
@@ -123,26 +143,7 @@
           </div>
 
 
-          <div class="col-6 col-md-3">
-            <div class="product-top">
-              <a href=""> <img src="../img-1.jpg" class="card-img-top img-fluid" alt="...">
-                <div class="overlay btn-container btn-container--shop d-flex justify-content-center align-items-center">
-                  <button type="button" class="content-btn  btn btn-outline-primary">View</button>
-                </div>
-              </a>
-            </div>
-
-            <div class="product-bottom  pt-3">
-              <a href="http://"><h3 class="card-title mb-0">Lorem ipsum</h3></a>
-              <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
-                <h5 class=" card-text  mb-0">NOK 1499</h5>
-                <i class="fav fa fa-heart-o"></i>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-6 col-md-3">
+          <div class="col-6 col-md-3 mb-5 pb-5">
             <div class="product-top">
               <a href=""> <img src="../img-1.jpg" class="card-img-top img-fluid" alt="...">
                 <div class="overlay btn-container btn-container--shop d-flex justify-content-center align-items-center">
@@ -168,8 +169,95 @@
 
   </div>
 
-  <footer class=".footer d-flex justify-content-center py-4 mt-4">Footer
-  </footer>
+  <footer class="footer d-flex justify-content-center py-4 mt-4 page-footer font-small blue py-5">
+    <!-- Footer Links -->
+    <div class="container text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mt-md-0 mt-3">
+  
+          <!-- Content -->
+          <h5 class="text-uppercase">ARKET SHOP</h5>
+          <p><i class="fa fa-twitter"><i class="fa fa-linkedin-square"></i></i></i><i class="fa fa-facebook"></i><i class="fa fa-youtube-play"></i></p>
+          <p>Adresse somewhere</p>
+          <p>34 Street, 1000</p>
+          <p>CA, USA</p>
+        </div>
+
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Support</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">FAQ</a>
+            </li>
+            <li>
+              <a href="#!">Terms & Condition</a>
+            </li>
+            <li>
+              <a href="#!">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Explore</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Home</a>
+            </li>
+            <li>
+              <a href="#!">Shop</a>
+            </li>
+            <li>
+              <a href="#!">Men</a>
+            </li>
+            <li>
+              <a href="#!">Women</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+        
+  
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Subscribe to our newsletter</h5>
+  
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+            <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's email" aria-describedby="basic-addon2">
+  
+              <button class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+          </div>
+  
+        </div>
+
+      </div>
+      <!-- Grid row -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright ARKET SHOP
+      </div>
+    </div>
+    <!-- Footer Links -->
+  
+    </footer>
 
 </body>
 
