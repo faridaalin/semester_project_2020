@@ -1,3 +1,14 @@
+.product-top {
+  position: relative;
+  overflow: hidden;
+
+  .card-img,
+    .card-img-top {
+      transform: scale(1);
+      transition: transform 0.3s;
+    }
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -6,6 +17,7 @@
   right: 0;
   background: rgba(0, 0, 0, 0.6);
   opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .product-top {
@@ -20,8 +32,6 @@
     .card-img,
     .card-img-top {
       transform: scale(1.5);
-      transition: transform 2s ease-in-out;
-
     }
   }
 }

@@ -11170,22 +11170,53 @@ li {
   font-size: 1.02rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
-.content-btn--small {
-  padding: 0.5rem 3.5rem;
-  font-size: 1.2rem;
+.content-btn {
+  padding: 1rem 4rem;
+  font-size: 1rem;
 }
 
-.content-btn--small {
-  padding: 0.5rem 2.5rem;
+@media all and (min-width: 576px) {
+  .row .btn-container--home .content-btn {
+    padding: 0.5rem 2.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .row .btn-container--home .content-btn {
+    padding: 0.4rem 2rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .row .btn-container--home .content-btn {
+    padding: 0.5rem 2.5rem;
+  }
 }
 
 .title {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.product-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-top .card-img,
+.product-top .card-img-top {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .overlay {
@@ -11196,6 +11227,8 @@ li {
   right: 0;
   background: rgba(0, 0, 0, 0.6);
   opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .product-top {
@@ -11211,10 +11244,6 @@ li {
 .product-top:hover .card-img-top {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  -webkit-transition: -webkit-transform 2s ease-in-out;
-  transition: -webkit-transform 2s ease-in-out;
-  transition: transform 2s ease-in-out;
-  transition: transform 2s ease-in-out, -webkit-transform 2s ease-in-out;
 }
 
 .product-bottom h3 {

@@ -1,3 +1,18 @@
+.product-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-top .card-img,
+.product-top .card-img-top {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -6,6 +21,8 @@
   right: 0;
   background: rgba(0, 0, 0, 0.6);
   opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .product-top {
@@ -21,10 +38,6 @@
 .product-top:hover .card-img-top {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  -webkit-transition: -webkit-transform 2s ease-in-out;
-  transition: -webkit-transform 2s ease-in-out;
-  transition: transform 2s ease-in-out;
-  transition: transform 2s ease-in-out, -webkit-transform 2s ease-in-out;
 }
 
 .product-bottom h3 {

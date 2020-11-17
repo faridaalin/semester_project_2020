@@ -6,14 +6,36 @@
   font-size: 1.02rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: getWeight(medium);
+  font-weight: getWeight(bold);
 }
 
-.content-btn--small {
-  padding: 0.5rem 3.5rem;
-  font-size: 1.2rem;
+
+.content-btn {
+  padding: 1rem 4rem;
+  font-size: 1rem;
 }
 
-.content-btn--small {
-  padding: 0.5rem 2.5rem;
+
+.row {
+  .btn-container--home {
+    @media all and (min-width: 576px) {
+      .content-btn {
+        padding: 0.5rem 2.5rem;
+        font-size: 0.8rem;
+      }
+    }
+    @media all and (min-width: 768px) {
+      .content-btn {
+        padding: 0.4rem 2rem;
+        font-size: 0.7rem;
+      }
+    }
+    @media all and (min-width: 960px) {
+      .content-btn {
+        padding: 0.5rem 2.5rem;
+      }
+    }
+
+  }
+  
 }
