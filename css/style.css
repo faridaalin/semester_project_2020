@@ -10853,8 +10853,52 @@ li {
   background-color: #a3b8c1;
 }
 
+.footer h5 {
+  font-size: 1rem;
+}
+
 .footer a {
   color: #143e56;
+}
+
+.footer p, .footer a {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.footer .grid-footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (40px)[4];
+      grid-template-columns: repeat(4, 40px);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-column-gap: 1rem;
+}
+
+@media all and (min-width: 768px) {
+  .footer .grid-footer {
+    grid-column-gap: 0;
+  }
+}
+
+.footer i {
+  font-size: 3rem;
+}
+
+.footer i:hover {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+@media all and (min-width: 768px) {
+  .footer i {
+    font-size: 1.5rem;
+  }
+}
+
+.footer .footer-copyright {
+  font-weight: 500;
 }
 
 /*  BASE END */
