@@ -11117,6 +11117,7 @@ li {
     position: initial;
     background: transparent;
     padding: 0 0 0;
+    padding-top: 2rem;
   }
 }
 
@@ -11177,6 +11178,10 @@ li {
   font-size: 1.2rem;
 }
 
+.content-btn--small {
+  padding: 0.5rem 2.5rem;
+}
+
 .title {
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -11213,13 +11218,13 @@ li {
 }
 
 .product-bottom h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  padding-bottom: 1rem;
+  padding-bottom: 0.8rem;
 }
 
 .product-bottom h5 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
