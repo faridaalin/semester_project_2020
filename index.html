@@ -19,7 +19,7 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="container-fluid custom-nav-home px-5 px-lg-0">
+        <div class="container-fluid custom-nav-home px-2 px-lg-0">
           <div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between pt-5 pt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav nav-center justify-content-center ml-auto">
               <li class="nav-item active">
@@ -35,7 +35,11 @@
                 <a class="nav-link" href="#">Women</a>
               </li>
               <li class="nav-item mb-2">
-                <a class="nav-link" href="#">Login</a>
+                <!-- Button trigger modal -->
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
+                  Login
+                </button> -->
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Login</a>
               </li>
             </ul>
           </div>
@@ -72,6 +76,42 @@
           </div>
         </div>
     </nav>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="login" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="exampleModalLabel"><i class="fa fa-user"></i>Login </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form action="">
+          <div class="form-group row">
+            <label for="username" class="col-form-label">Username</label>
+            <div class="col">
+              <input type="username" class="form-control" id="username" placeholder="Username">
+              <div class="invalid-feedback">Wrong username</div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="password" class="col-form-label">Password</label>
+            <div class="col">
+              <input type="password" class="form-control is-valid" id="inputPassword3" placeholder="Password">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-secondary btn-block shadow-lg">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

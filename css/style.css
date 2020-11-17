@@ -10879,6 +10879,11 @@ li {
   font-size: 1.5rem !important;
 }
 
+.navbar-toggler-icon {
+  width: 2em;
+  height: 2em;
+}
+
 .home .navbar-toggler {
   color: #f0bd31 !important;
 }
@@ -11144,22 +11149,8 @@ li {
   background: #dde7ea;
 }
 
-.custom-nav-home {
-  background: #1c1f22;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 5rem 2rem 2rem;
-}
-
-@media all and (min-width: 992px) {
-  .custom-nav-home {
-    position: initial;
-    background: transparent;
-    padding: 0 0 0;
-    padding-top: 2rem;
-  }
+.modal-footer {
+  border-top: none;
 }
 
 /*  NAVBAR END */

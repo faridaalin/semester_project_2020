@@ -6,7 +6,7 @@ $border-width: 2px !default;
 
 .card {
   background-color: transparent;
-}
+};
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -121,6 +121,11 @@ li {
   border: none !important;
   color: getColour(secondary) !important;
   font-size: 1.5rem !important;
+}
+
+.navbar-toggler-icon {
+  width: 2em;
+  height: 2em;
 }
 
 .home .navbar-toggler {
@@ -351,19 +356,8 @@ li {
   background: getColour(green-200);
 }
 
-.custom-nav-home {
-  background: getColour(black-200);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 5rem 2rem 2rem;
-  @media all and (min-width: 992px) {
-    position: initial;
-    background: transparent;
-    padding: 0 0 0;
-    padding-top: 2rem;
-  }
+.modal-footer  {
+  border-top: none;
 }
 
 /*  NAVBAR END */
