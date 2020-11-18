@@ -1,4 +1,4 @@
-export const showNavbarOnScroll = () => {
+export const showNavbarBgOnScroll = () => {
     const getWindowScrollY = () => {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 15) {
