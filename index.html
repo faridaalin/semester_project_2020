@@ -36,9 +36,6 @@
               </li>
               <li class="nav-item mb-2">
                 <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
-                  Login
-                </button> -->
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Login</a>
               </li>
             </ul>
@@ -94,20 +91,23 @@
           <div class="form-group row">
             <label for="username" class="col-form-label">Username</label>
             <div class="col">
-              <input type="username" class="form-control" id="username" placeholder="Username">
-              <div class="invalid-feedback">Wrong username</div>
+              <input type="username" class="form-control py-4" id="username" placeholder="Enter username">
+              <small>Min to letters</small>
+              <div class="feedback-username invalid-feedback">Wrong username</div>
             </div>
           </div>
           <div class="form-group row">
             <label for="password" class="col-form-label">Password</label>
             <div class="col">
-              <input type="password" class="form-control is-valid" id="inputPassword3" placeholder="Password">
+              <input type="password" class="form-control py-4" id="password" placeholder="Enter password">
+              <small>Min 8 char</small>
+              <div class="feedback-password invalid-feedback">Wrong Password</div>
             </div>
           </div>
         </form>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button type="submit" class="btn btn-secondary btn-block shadow-lg">Login</button>
+        <button type="submit" class="loginBtn btn btn-secondary btn-block shadow-lg">Login</button>
       </div>
     </div>
   </div>

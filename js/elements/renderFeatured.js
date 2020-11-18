@@ -2,7 +2,6 @@ const renderFeatured = (products) => {
   const container = document.querySelector('.featured-container')
   products.forEach(product => {
     if (product.featured) {
-      console.log(product);
       const feauredProduct = ` <div class="col-sm-6 col-md-3 mb-5 pb-5">
         <div class="product-top">
           <a href="pages/edit.html?id=${product.id}">  <img src="${product.image_url}" class="card-img-top img-fluid" alt="${product.title}">
