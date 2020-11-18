@@ -3,7 +3,9 @@ import { showNavbarBgOnScroll } from './ui/showNavbarBgOnScroll.js';
 import renderHeroBanner from './elements/renderHerobanner.js';
 import renderFeatured from './elements/renderFeatured.js';
 import {renderNavbar} from './elements/renderNavbar.js';
+import {login } from './ui/login.js';
 
+login();
 renderNavbar();
 showNavbarBgOnScroll();
 

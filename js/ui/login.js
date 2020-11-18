@@ -1,14 +1,16 @@
 import { BASE_URL } from "../utils/settings.js";
-import { user, userToken, saveToLocal } from "../utils/settings.js";
+import { user, userToken} from "../utils/settings.js";
+import {  saveToLocal } from "../utils/storage.js";
 import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
+import {renderNavbar} from '../elements/renderNavbar.js'
 
-export const login = () => {
+export const login = (e) => {
   const loginBtn = document.querySelector(".loginBtn");
 
   const handleLogin = (e) => {
     e.preventDefault();
-
+  
     const username = document.querySelector("#username");
     const password = document.querySelector("#password");
     const usernameValue = username.value.trim();
@@ -65,6 +67,7 @@ export const login = () => {
           modal.classList.remove("show");
           modal.classList.add("hide");
           
+          renderNavbar()
         } catch (error) {
           console.log(error);
         }
@@ -74,5 +77,5 @@ export const login = () => {
     }
   };
 
-  loginBtn.addEventListener("submit", handleLogin);
+  loginBtn.addEventListener("click", handleLogin);
 };

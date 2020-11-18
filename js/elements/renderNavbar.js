@@ -1,14 +1,15 @@
-import { user, saveToLocal, getFromLocal } from '../utils/settings.js';
+import { user} from '../utils/settings.js';
+import { getFromLocal } from '../utils/storage.js';
+import {logout} from '../ui/logout.js'
+
+
+
 
 export const renderNavbar = () => {
     const innerNav = document.querySelector('.custom-nav');
-
-    console.log(innerNav);
+   
     const loggedInUser = getFromLocal(user);
     const { pathname } = location;
-
-    console.log(loggedInUser);
-    console.log(pathname);
 
     let authLink = `<li class="nav-item mb-2">
     <!-- Button trigger modal -->
@@ -21,13 +22,24 @@ export const renderNavbar = () => {
         <a class="nav-link" href="#">Add product</a>
       </li>
         <li class="nav-item mb-2">
-        <button class="nav-link btn py-0">Logout</button>
+        <button class="nav-link logout btn py-0">Logout</button>
+        
       </li>
       <li class="nav-item mb-2">
       <span>Hi ${loggedInUser.username}</span>
     </li>
       `
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+        logout()
+    });
     }
+
+
+
+
+
+
 
 let searchbar = "";
   if(pathname === "/pages/shop.html" || pathname === "/pages/shop.html") {
