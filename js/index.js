@@ -1,4 +1,4 @@
-import {BASE_URL} from './utils/settings.js'
+import {BASE_URL} from './utils/settings.js';
 import { showNavbarBgOnScroll } from './ui/showNavbarBgOnScroll.js';
 import renderHeroBanner from './elements/renderHerobanner.js';
 import renderFeatured from './elements/renderFeatured.js';
