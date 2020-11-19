@@ -7,6 +7,7 @@ export const logout = () => {
     console.log('click');
     localStorage.removeItem(user);
     localStorage.removeItem(userToken);
+    location.reload();
     renderNavbar();
   });
 };

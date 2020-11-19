@@ -3,8 +3,6 @@ import { getFromLocal } from '../utils/storage.js';
 import {logout} from '../ui/logout.js'
 
 
-
-
 export const renderNavbar = () => {
     const innerNav = document.querySelector('.custom-nav');
    
@@ -18,7 +16,7 @@ export const renderNavbar = () => {
 
     if (loggedInUser && loggedInUser.role.type === "authenticated") {
         authLink = `
-        <li class="nav-item mb-2 ${pathname === "add.html" || pathname === "/pages/add.html"? "active" : ""}">
+        <li class="nav-item mb-2 ${pathname === "add.html" ? "active" : ""}">
         <a class="nav-link" href="#">Add product</a>
       </li>
         <li class="nav-item mb-2">
@@ -42,7 +40,7 @@ export const renderNavbar = () => {
 
 
 let searchbar = "";
-  if(pathname === "/pages/shop.html" || pathname === "/pages/shop.html") {
+  if(pathname === "/shop.html") {
       searchbar = `<div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between py-4 py-lg-0" id="navbarSupportedContent">
       <ul class="navbar-nav nav-left mr-auto mx-lg-0 ml-lg-auto flex-row justify-content-between align-items-center">
         <li class="nav-item w-75 mr-2 ml-auto">
@@ -76,18 +74,14 @@ let searchbar = "";
     </div> ` 
   }
 
- 
-
     return innerNav.innerHTML = `
     <div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between pt-5 pt-lg-0" id="navbarSupportedContent">
-
-
     <ul class="navbar-nav nav-center justify-content-center ml-auto align-items-baseline">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item ${pathname === "/" ? "active" : ""}">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item mb-2">
-        <a class="nav-link" href="./pages/shop.html">Shop</a>
+      <li class="nav-item  ${pathname === "/shop.html" ? "active" : ""} mb-2">
+        <a class="nav-link" href="/shop.html">Shop</a>
       </li>
      ${authLink}
     </ul>

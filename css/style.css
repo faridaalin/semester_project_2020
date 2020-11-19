@@ -11367,6 +11367,19 @@ li {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
+.edit-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 200;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.edit-btn a {
+  color: #ffffff;
+}
+
 .overlay {
   position: absolute;
   top: 0;

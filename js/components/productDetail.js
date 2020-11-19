@@ -1,5 +1,5 @@
 export const productDetail = (product) => {
-    console.log(product)
+  
     return ` <div class="img-container col-12 col-md-6 d-flex flex-column flex-sm-row-reverse">
   <div class="col col-sm-2 d-flex justify-content-between flex-sm-column order-2 px-0">
  

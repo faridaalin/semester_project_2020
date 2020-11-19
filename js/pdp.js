@@ -13,18 +13,18 @@ const queryString = window.location.search;
 const urlParam = new URLSearchParams(queryString);
 const id = urlParam.get("id");
 
-const getSingleProduct = async () => {
+(async () => {
   const URL = `${BASE_URL}/products/${id}`;
 
   try {
-      const res = await fetch(URL);
-      const product = await res.json();
-      renderProductDetail(product)
+    const res = await fetch(URL);
+    const product = await res.json();
+    renderProductDetail(product)
 
   }
-  catch(error) {
+  catch (error) {
     console.log(error);
   }
-};
+}
+) ()
 
-getSingleProduct();

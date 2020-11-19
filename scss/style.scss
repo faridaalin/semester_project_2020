@@ -559,6 +559,19 @@ li {
   }
 }
 
+.edit-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 200;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+
+  a {
+    color: getColour(white-100);
+  }
+}
+
 .overlay {
   position: absolute;
   top: 0;
