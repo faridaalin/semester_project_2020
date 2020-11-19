@@ -66,6 +66,8 @@ export const login = (e) => {
           const modal = document.querySelector(".modal");
           modal.classList.remove("show");
           modal.classList.add("hide");
+
+          location.reload();
           
           renderNavbar()
         } catch (error) {
