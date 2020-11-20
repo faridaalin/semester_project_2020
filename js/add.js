@@ -46,7 +46,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
 
             if(product.created_at) {
                 const msg = `${obj.title} has been created`;
-                showMessage('success', msg)
+                showMessage('success', msg, '#msg')
             }
 
             form.reset();
@@ -66,15 +66,15 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
 
         if (title.value.length === 0 || brand.value.length === 0 || price.value.length === 0 || description.value.length === 0 || imgUrl.value.length === 0) {
             const msg = "Not allowed with empty fields";
-            showMessage('danger', msg)
+            showMessage('danger', msg, '#msg')
             return;
         } else if (imgUrl.value.length > 0 && !isImageUrlValid(imgUrl.value)) {
             const msg = "Image url is not valid";
-            showMessage('danger', msg)
+            showMessage('danger', msg, '#msg')
             return;
         } else if (price.value.length > 0 && isNaN(price.value)) {
             const msg = "Price must be digit";
-            showMessage('danger', msg)
+            showMessage('danger', msg, '#msg')
             return;
         } else {
             const productObject = {
