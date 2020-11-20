@@ -77,19 +77,30 @@
             <label for="name" class="d-flex justify-content-between">Title
             </label>
             <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
-          
+            <div class="invalid-feedback">
+              Title is required.
+            </div>
           </div>
           <div class="form-group">
             <label for="brand" class="d-flex justify-content-between">Brand</label>
             <input type="text" name="brand"  class="form-control" id="brand" aria-describedby="brandHelp">
+            <div class="invalid-feedback">
+              Brand is required.
+            </div>
           </div>
           <div class="form-group">
             <label for="price" class="d-flex justify-content-between">Price</label>
-            <input type="price" name="price" class="form-control" id="price" aria-describedby="priceHelp">
+            <input type="text" name="price" class="form-control" id="price" aria-describedby="priceHelp">
+            <div class="invalid-feedback price-feedback">
+              Price is required.
+            </div>
           </div>
           <div class="form-group">
             <label for="description" class="d-flex justify-content-between">Description</label>
             <textarea class="form-control" name ="description" id="description" rows="3"></textarea>
+            <div class="invalid-feedback">
+              Description is required.
+            </div>
           </div>
           <div class="form-group d-none">
             <input type="text" class="form-control" name="id" id="id" aria-describedby="idHelp">
@@ -97,6 +108,9 @@
           <div class="form-group">
             <label for="url" class="d-flex justify-content-between">Image url</label>
             <input type="url" name="url" id="url" class="form-control" aria-describedby="imageUrlHelp">
+            <div class="invalid-feedback img-feedback">
+              Image url is required.
+            </div>
           </div>
           <div class="form-check pb-4">
             <input class="form-check-input" name="featured" type="checkbox" value="checked" id="featured">

@@ -5,7 +5,6 @@ import { login } from "./ui/login.js";
 import { showMessage } from './helpers/showMessage.js';
 import { removeMessage } from './helpers/removeMessage.js';
 import { isImageUrlValid } from './helpers/isValidImageUrl.js';
-import { deleteButton } from './components/deleteProduct.js';
 
 login();
 renderNavbar()
