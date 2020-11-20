@@ -30,6 +30,7 @@ showNavbarBgOnScroll();
         const res = await fetch(URL);
         const products = await res.json();
         renderFeatured(products)
+        console.log(products);
     }
 
     catch(error) {

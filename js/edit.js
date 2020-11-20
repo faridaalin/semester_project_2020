@@ -4,6 +4,7 @@ import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
 import { showMessage } from './helpers/showMessage.js';
 import { isImageUrlValid } from './helpers/isValidImageUrl.js'
+import {deleteButton} from './components/deleteProduct.js'
 
 login();
 renderNavbar();
@@ -30,9 +31,11 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     const productID = document.querySelector('#id');
     const featured = document.querySelector('#featured');
 
+    const URL = `${BASE_URL}/products/${id}`;
+    const token =  getFromLocal(userToken);
 
     (async () => {
-        const URL = `${BASE_URL}/products/${id}`;
+       
 
         try {
             const res = await fetch(URL);
@@ -47,8 +50,6 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
             productID.value = product.id
             featured.checked = product.featured;
 
-
-
         }
         catch (error) {
             console.log(error);
@@ -57,10 +58,8 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     )();
 
 
-    const updateProduct = async (obj) => {
-        const URL = `${BASE_URL}/products/${obj.id}`;
+    const updateProduct = async (obj, URL, token) => {
       
-        const token =  getFromLocal(userToken);
        
         const options = {
             method: 'PUT',
@@ -130,6 +129,8 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     };
 
     form.addEventListener('submit', handleFormEdit);
+
+    deleteButton(URL, token)
 
 };
 
