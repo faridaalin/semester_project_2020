@@ -1,6 +1,9 @@
 import { user} from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
-import {logout} from '../ui/logout.js'
+import {logout} from '../ui/logout.js';
+import {showSearch} from '../ui/showSearch.js'
+
+
 
 
 export const renderNavbar = () => {
@@ -40,12 +43,13 @@ export const renderNavbar = () => {
 
 
 let searchbar = "";
+
   if(pathname === "/shop.html") {
       searchbar = `<div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between py-4 py-lg-0" id="navbarSupportedContent">
       <ul class="navbar-nav nav-left mr-auto mx-lg-0 ml-lg-auto flex-row justify-content-between align-items-center">
         <li class="nav-item w-75 mr-2 ml-auto">
           <div class="search ml-auto">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search"  id="search" placeholder="Search" aria-label="Search">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -71,7 +75,13 @@ let searchbar = "";
       </svg>
         </li>
       </ul>
-    </div> ` 
+    </div> ` ;
+    document.addEventListener("DOMContentLoaded", () => {
+ 
+      showSearch()
+  
+    });
+
   }
 
     return innerNav.innerHTML = `

@@ -4,6 +4,8 @@ import renderHeroBanner from './elements/renderHerobanner.js';
 import renderFeatured from './elements/renderFeatured.js';
 import {renderNavbar} from './elements/renderNavbar.js';
 import {login } from './ui/login.js';
+import {saveToLocal} from './utils/storage.js';
+import { allProducts} from './utils/settings.js'
 
 login();
 renderNavbar();
@@ -29,13 +31,17 @@ showNavbarBgOnScroll();
     try {
         const res = await fetch(URL);
         const products = await res.json();
-        renderFeatured(products)
+        renderFeatured(products);
+        saveToLocal(allProducts, products);
+
     }
 
     catch(error) {
         console.log(error)
     }
 })();
+
+
 
 
 

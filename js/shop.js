@@ -13,6 +13,7 @@ renderNavbar();
     try {
         const res = await fetch(URL); 
         const products = await res.json();
+
         renderAllProducts(products); 
 
     }
