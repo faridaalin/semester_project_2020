@@ -1,6 +1,5 @@
 export const productDetail = (product) => {
-  
-    return ` <div class="img-container col-12 col-md-6 d-flex flex-column flex-sm-row-reverse">
+  const details = ` <div class="img-container col-12 col-md-6 d-flex flex-column flex-sm-row-reverse">
   <div class="col col-sm-2 d-flex justify-content-between flex-sm-column order-2 px-0">
  
     <img class="pdp-thumbnail" src="${product.image_url}" alt="" srcset="" />
@@ -35,12 +34,42 @@ export const productDetail = (product) => {
       <i class="fa fa-angle-down"></i>
     </div>
   </div>
-
   <div class="checkout d-flex pt-2">
-    <button type="button" class="btn btn-secondary flex-fill">
-      Secondary
-    </button>
-  </div>
+  <button type="button" id="addToCart" class="btn btn-secondary flex-fill">
+    Add to cart
+  </button>
+</div>
+
 </div>
 </div> `;
+
+// document.addEventListener("DOMContentLoaded", () => {
+ 
+//   // const addToCartBtn = document.querySelector('#addToCart');
+//   // console.log(addToCartBtn); 
+//   console.log('laoded');
+
+// });
+
+if( document.readyState !== 'loading' ) {
+  console.log( 'document IS already ready, just execute code here' );
+  const addToCartBtn = document.querySelector('#addToCart');
+  console.log(addToCartBtn); 
+  myInitCode();
+} else {
+  document.addEventListener('DOMContentLoaded', function () {
+      console.log( 'document was NOT ready, place code here' );
+      myInitCode();
+  });
+}
+
+function myInitCode() {
+  console.log('Inside function');
+}
+
+return details;
+
 };
+
+
+
