@@ -17,7 +17,7 @@ export const renderNavbar = () => {
     if (loggedInUser && loggedInUser.role.type === "authenticated") {
         authLink = `
         <li class="nav-item mb-2 ${pathname === "add.html" ? "active" : ""}">
-        <a class="nav-link" href="#">Add product</a>
+        <a class="nav-link" href="add.html">Add product</a>
       </li>
         <li class="nav-item mb-2">
         <button class="nav-link logout btn py-0">Logout</button>

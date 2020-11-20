@@ -30,6 +30,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     const imgUrl = document.querySelector('#url');
     const productID = document.querySelector('#id');
     const featured = document.querySelector('#featured');
+   
 
     const URL = `${BASE_URL}/products/${id}`;
     const token =  getFromLocal(userToken);
