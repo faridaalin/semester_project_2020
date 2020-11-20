@@ -1,13 +1,16 @@
 import { user} from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 
-const loggedInUser = getFromLocal(user);
-const editBtn = loggedInUser && loggedInUser.role.type === "authenticated" ? ` <button type="button" class="btn btn-info btn-sm edit-btn"><a href="/edit.html">Edit</a></button>` : "";
-
 export const productCard = (product) => {
+  const loggedInUser = getFromLocal(user);
+  const edit =
+    loggedInUser && loggedInUser.role.type === "authenticated"
+      ? ` <button type="button" class="btn btn-info btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
+      : "";
+
     return ` <div class="col-sm-6 col-md-3 mb-5 pb-5">
     <div class="product-top">
-      ${editBtn}
+      ${edit}
       <a href="/pdp.html?id=${product.id}">  <img src="${product.image_url}" class="card-img-top img-fluid" alt="${product.title}">
         <div class="overlay btn-container d-flex justify-content-center align-items-center">
           <button type="button" class="content-btn btn btn-outline-primary">View</button>

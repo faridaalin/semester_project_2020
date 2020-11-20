@@ -67,7 +67,12 @@
     <div class="container pt-5">
       <h1 class="header pt-5 mt-5 pb-2">Edit | Delete Product</h1>
       <div class="row pt-5 mt-2">
+        
         <form class="col-md-6 edit-form" id="editForm" name="editForm">
+          <div class="message-container">
+  
+          </div>
+   
           <div class="form-group">
             <label for="name" class="d-flex justify-content-between">Title
             </label>
@@ -84,23 +89,23 @@
           </div>
           <div class="form-group">
             <label for="description" class="d-flex justify-content-between">Description</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <textarea class="form-control" name ="description" id="description" rows="3"></textarea>
           </div>
           <div class="form-group d-none">
-            <input type="text" class="form-control" id="id" aria-describedby="idHelp">
+            <input type="text" class="form-control" name="id" id="id" aria-describedby="idHelp">
           </div>
           <div class="form-group">
             <label for="url" class="d-flex justify-content-between">Image url</label>
             <input type="url" name="url" id="url" class="form-control" aria-describedby="imageUrlHelp">
           </div>
           <div class="form-check pb-4">
-            <input class="form-check-input" type="checkbox" value="" id="featured">
+            <input class="form-check-input" name="featured" type="checkbox" value="checked" id="featured">
             <label class="form-check-label" for="featured">
               Featured
             </label>
           </div>
           <button type="submit"  name="action" value="edit" class="btn btn-success btn-block product-edit">Edit</button>
-          <button type="submit" name="action" value="delete" class="btn btn-danger btn-block product-delete">Delete</button>
+          <button type="click" name="action" value="delete" class="btn btn-danger btn-block product-delete">Delete</button>
         </form>
       </div>
 
