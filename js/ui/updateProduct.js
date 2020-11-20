@@ -21,9 +21,10 @@ export const updateProduct = async (obj, URL, token) => {
         const msg = "Product has been updated.";
         showMessage("success", msg, "#msg");
       };
+      
       if(updatedProduct.error) {
-        const msg = "Product has been updated.";
-        showMessage("danger", updatedProduct.error, "#msg");
+        const msg = "Error.";
+        showMessage("danger", msg, "#msg");
       };
 
     } catch (error) {

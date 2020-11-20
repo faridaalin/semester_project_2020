@@ -1,4 +1,4 @@
-export const removeMessage = (selector) => {
-    const element = document.querySelector(selector);
+export const removeMessage = (tag) => {
+    const element = document.querySelector(tag);
     element.innerHTML = "";
 }
