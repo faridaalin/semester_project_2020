@@ -3,9 +3,9 @@ import { getFromLocal } from "./utils/storage.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
 import { showMessage } from "./helpers/showMessage.js";
-import { isImageUrlValid } from "./helpers/isValidImageUrl.js";
+import {validateFields} from './helpers/validateFields.js';
 import { deleteButton } from "./components/deleteProduct.js";
-import { removeMessage } from './helpers/removeMessage.js';
+import { removeMessage } from "./helpers/removeMessage.js";
 
 login();
 renderNavbar();
@@ -49,114 +49,54 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     }
   })();
 
-  // const updateProduct = async (obj, URL, token) => {
-  //   const options = {
-  //     method: "PUT",
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(obj),
-  //   };
+  const updateProduct = async (obj, URL, token) => {
+    console.log(token);
 
-  //   console.log(options);
+    const options = {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    };
 
-  //   try {
-  //     const res = await fetch(URL, options);
-  //     const updatedProduct = await res.json();
-  //     console.log(updatedProduct);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+    console.log('Options:',options);
+
+    try {
+      const res = await fetch(URL, options);
+      const updatedProduct = await res.json();
+      console.log('updated product:',updatedProduct);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const form = document.querySelector(".edit-form");
 
   const handleFormEdit = (e) => {
     e.preventDefault();
-    removeMessage('#msg');
-  
-    const validateFields = () => {
-      const inputs = document.querySelectorAll(".edit-form .form-control");
-   
-
-      const inputsArr = [...inputs];
-  
-      let isValid = true;
-  
-      for (let i = 0; i < inputsArr.length; i++) {
-       if(inputsArr[i].value.length === undefined || inputsArr[i].value.length === 0) {
-         inputsArr[i].classList.add('is-invalid');
-         isValid = false;
-       } 
-       else if(inputsArr[i].type === "url") {    
-    
-          if(inputsArr[i].value.length > 0 && !isImageUrlValid(inputsArr[i].value)) {
-            const imgFeedback = document.querySelector('.img-feedback').innerHTML = "Invalid url"
-            inputsArr[i].classList.add('is-invalid');
-          }
-
-       } else if(inputsArr[i].name === "price") {
-        console.log(inputsArr[i].value);
-        
-       } 
-       
-       else {
-        inputsArr[i].classList.remove('is-invalid');
-        inputsArr[i].classList.add('is-valid');
-    
-       }
-      
-      };
+    removeMessage("#msg");
 
   
-      if(!isValid) {
-        const msg = "Missing values";
-        showMessage('danger', msg, '#msg');
-        return;
-      }
-      return isValid;
+
+    const isValid = validateFields(".edit-form .form-control");
+    console.log(isValid);
+    if (isValid === false || isValid === undefined){
+      return;
     }
 
-    const isValid = validateFields();
-   if (isValid === false || isValid === undefined) return;
-  
+    const productObj = {
+      title: title.value,
+      brand: brand.value,
+      price: price.value,
+      description: description.value,
+      image_url: imgUrl.value,
+      id: productID.value,
+      featured: featured.checked,
+    };
 
-
-      // inputsArr.forEach((input) => {
-      //   if (input.value.trim().length === 0) {
-      //     return console.log("Empty fields are not allowed");
-      //   }
-  
-      //   if (input.type === "price" && isNaN(input.value.trim())) {
-      //     return console.log("not a number");
-      //   }
-  
-      //   if (
-      //     input.type === "url" &&
-      //     input.value.trim().length > 0 &&
-      //     !isImageUrlValid(input.value.trim())
-      //   ) {
-      //     return console.log("invalid img url");
-      //   }
-      // });
-
-  
-
-
-
-
-    // const productObj = {
-    //   title: title.value,
-    //   brand: brand.value,
-    //   price: price.value,
-    //   description: description.value,
-    //   image_url: imgUrl.value,
-    //   id: productID.value,
-    //   featured: featured.checked,
-    // };
-
-    // updateProduct(productObj);
+    updateProduct(productObj, URL, token);
   };
 
   form.addEventListener("submit", handleFormEdit);
