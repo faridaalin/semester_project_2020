@@ -37,6 +37,9 @@ export const login = (e) => {
         const usernameValue = username.value.trim();
         const passwordValue = password.value.trim();
 
+        console.log('username:',usernameValue);
+        console.log('password:',passwordValue);
+
         const data = {
           identifier: usernameValue,
           password: passwordValue,
@@ -53,11 +56,14 @@ export const login = (e) => {
           const res = await fetch(URL, options);
           const userData = await res.json();
 
-          if (userData.error) {
+          console.log(userData);
+
+          if (userData.statusCode === 400) {
             const msg = "Invalid username or password";
             showMessage("danger", msg, '.message-container');
             username.classList.add("is-invalid");
             password.classList.add("is-invalid");
+            return;
           }
 
           saveToLocal(user, userData.user);
@@ -68,7 +74,6 @@ export const login = (e) => {
           modal.classList.add("hide");
 
           location.reload();
-          
           renderNavbar()
         } catch (error) {
           console.log(error);

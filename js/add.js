@@ -5,6 +5,7 @@ import { login } from "./ui/login.js";
 import { showMessage } from './helpers/showMessage.js';
 import { removeMessage } from './helpers/removeMessage.js';
 import { isImageUrlValid } from './helpers/isValidImageUrl.js';
+import {validateFields} from './helpers/validateFields.js'
 
 login();
 renderNavbar()
@@ -63,19 +64,11 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
         e.preventDefault();
         removeMessage('#msg');
 
-        if (title.value.length === 0 || brand.value.length === 0 || price.value.length === 0 || description.value.length === 0 || imgUrl.value.length === 0) {
-            const msg = "Not allowed with empty fields";
-            showMessage('danger', msg, '#msg')
-            return;
-        } else if (imgUrl.value.length > 0 && !isImageUrlValid(imgUrl.value)) {
-            const msg = "Image url is not valid";
-            showMessage('danger', msg, '#msg')
-            return;
-        } else if (price.value.length > 0 && isNaN(price.value)) {
-            const msg = "Price must be digit";
-            showMessage('danger', msg, '#msg')
-            return;
-        } else {
+        const isValid = validateFields(".add-form .form-control");
+        if (isValid === false || isValid === undefined){
+          return;
+        }
+
             const productObject = {
                 title: title.value,
                 brand: brand.value,
@@ -84,12 +77,8 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
                 image_url: imgUrl.value,
                 featured: featured.checked,
             }
-
-            addNewProduct(URL, token, productObject)
-
-        }
-
-
+        
+        addNewProduct(URL, token, productObject)
 
         console.log('End of function');
     }

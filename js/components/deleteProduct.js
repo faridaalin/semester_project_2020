@@ -1,4 +1,4 @@
-export const deleteButton = (url, token) => {
+export const deleteProduct = (url, token) => {
 
     const container = document.querySelector('.buttons');
     container.innerHTML += `<button type="button" name="action" value="delete" class="btn btn-danger btn-block product-delete" data-toggle="modal" data-target="#deleteProduct">
@@ -18,10 +18,7 @@ export const deleteButton = (url, token) => {
             const res = await fetch(url, options);
             const deletedItem = await res.json();
             location.href = "/";
-
         }
-
-
         catch(error) {
             console.log(error);
         }

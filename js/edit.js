@@ -4,7 +4,8 @@ import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
 import { showMessage } from "./helpers/showMessage.js";
 import {validateFields} from './helpers/validateFields.js';
-import { deleteButton } from "./components/deleteProduct.js";
+import { deleteProduct } from "./components/deleteProduct.js";
+import { updateProduct } from "./ui/updateProduct.js";
 import { removeMessage } from "./helpers/removeMessage.js";
 
 login();
@@ -44,33 +45,14 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
       imgUrl.value = product.image_url;
       productID.value = product.id;
       featured.checked = product.featured;
+      
     } catch (error) {
       console.log(error);
+      const msg = "Something went wrong, please try again later.";
+      showMessage("warning", msg, "#msg");
     }
   })();
 
-  const updateProduct = async (obj, URL, token) => {
-    console.log(token);
-
-    const options = {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(obj),
-    };
-
-    console.log('Options:',options);
-
-    try {
-      const res = await fetch(URL, options);
-      const updatedProduct = await res.json();
-      console.log('updated product:',updatedProduct);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const form = document.querySelector(".edit-form");
 
@@ -78,10 +60,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     e.preventDefault();
     removeMessage("#msg");
 
-  
-
     const isValid = validateFields(".edit-form .form-control");
-    console.log(isValid);
     if (isValid === false || isValid === undefined){
       return;
     }
@@ -97,9 +76,12 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     };
 
     updateProduct(productObj, URL, token);
+   
   };
+  deleteProduct(URL, token);
+
+
 
   form.addEventListener("submit", handleFormEdit);
 
-  deleteButton(URL, token);
 }
