@@ -1,4 +1,4 @@
-import { user} from '../utils/settings.js';
+import { user, cart} from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 import {logout} from '../ui/logout.js';
 import {showSearch} from '../ui/showSearch.js'
@@ -8,7 +8,13 @@ import {showSearch} from '../ui/showSearch.js'
 
 export const renderNavbar = () => {
     const innerNav = document.querySelector('.custom-nav');
-   
+    const cartItems = getFromLocal(cart);
+    let showCartCounter = "";
+  
+    if(cartItems) {
+      showCartCounter = ` <span class="counter">${cartItems.length}</span>`
+    }
+
     const loggedInUser = getFromLocal(user);
     const { pathname } = location;
 
@@ -81,23 +87,16 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul class="navbar-nav nav-left mr-auto mx-lg-0 ml-lg-auto flex-row justify-content-between align-items-center">
       ${searchbar}
 
-        <li class="nav-item mr-2">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-        </svg>
+        <li class="nav-item mr-2 favs-icon">
+
+        <i class="fa fa-heart"></i>
         </li>
 
-        <li class="nav-item">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-fill" fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd"
-          d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
-      </svg>
+        <li class="nav-item cart-icon">
+        ${showCartCounter}
+        <i class="fa fa-shopping-cart"></i>
         </li>
       </ul>
     </div>
     `
-
-
 }

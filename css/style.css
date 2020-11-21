@@ -11222,6 +11222,23 @@ li {
   border-top: none;
 }
 
+.favs-icon, .cart-icon {
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.favs-icon .counter, .cart-icon .counter {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #f0bd31;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 /*  NAVBAR END */
 /*  BREADCRUMBS START */
 .breadcrumb {
