@@ -1,5 +1,5 @@
 import { BASE_URL } from "./utils/settings.js";
-import renderProductDetail from './elements/renderProductDetail.js'
+import {productDetail} from './components/productDetail.js'
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
 
@@ -20,14 +20,26 @@ const id = urlParam.get("id");
   try {
     const res = await fetch(URL);
     const product = await res.json();
-    renderProductDetail(product)
+    productDetail(product)
 
   }
   catch (error) {
     console.log(error);
   }
 }
-) ()
+) ();
+
+
+const addToCartBtn = document.querySelector('#addToCart');
+
+const handleAddtoCart = () => {
+  console.log('click');
+};
+addToCartBtn.addEventListener('click', handleAddtoCart);
+
+
+
+
 
 
 

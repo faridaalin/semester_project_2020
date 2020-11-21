@@ -59,10 +59,7 @@ if(pathname === "/shop.html") {
 </li>`
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    showSearch()
-
-  
+    showSearch()  
 });
 }
 
