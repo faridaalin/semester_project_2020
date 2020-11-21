@@ -23,12 +23,11 @@ function addToCartHandler(product) {
   let localCart = getFromLocal(cart);
 
   if(!localCart)  localCart = [];
-  console.log("From Local - LocalCart :", localCart);
 
   addToCartBtn.addEventListener('click', function (e) {
     const item = localCart.find((item) => item.product.id === product.id);
+   
 
- 
     if (item) {
       item.qty += 1;
     } else {
@@ -38,9 +37,8 @@ function addToCartHandler(product) {
         product: product,
       })
     }
-    saveToLocal(cart, localCart)
-    console.log(localCart) ;
 
+    saveToLocal(cart, localCart)
 
   });
 }
