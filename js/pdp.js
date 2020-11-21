@@ -1,4 +1,6 @@
 import { BASE_URL } from "./utils/settings.js";
+import {cart} from './utils/settings.js';
+import {saveToLocal, getFromLocal} from './utils/storage.js';
 import {productDetail} from './components/productDetail.js'
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
@@ -14,6 +16,28 @@ const queryString = window.location.search;
 const urlParam = new URLSearchParams(queryString);
 const id = urlParam.get("id");
 
+
+function addToCartHandler(product) {
+  const addToCartBtn = document.querySelector('#addToCart');
+  let localCart = getFromLocal(cart);
+
+  addToCartBtn.addEventListener('click', function(e) {
+
+    if(!localCart) {
+      localCart = [];
+      localCart.push(product);
+      saveToLocal(cart, localCart);
+
+    } else {
+      localCart.push(product);
+      saveToLocal(cart, localCart)
+    }
+
+  });
+}
+
+
+
 (async () => {
   const URL = `${BASE_URL}/products/${id}`;
 
@@ -21,21 +45,20 @@ const id = urlParam.get("id");
     const res = await fetch(URL);
     const product = await res.json();
     productDetail(product)
+    addToCartHandler(id, product)
 
   }
   catch (error) {
     console.log(error);
   }
+
+
+
 }
 ) ();
 
 
-const addToCartBtn = document.querySelector('#addToCart');
 
-const handleAddtoCart = () => {
-  console.log('click');
-};
-addToCartBtn.addEventListener('click', handleAddtoCart);
 
 
 
