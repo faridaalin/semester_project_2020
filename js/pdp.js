@@ -1,6 +1,6 @@
 import { BASE_URL } from "./utils/settings.js";
 import { cart } from './utils/settings.js';
-import { saveToLocal, getFromLocal } from './utils/storage.js';
+import { saveToLocal, saveCartItemsToLocal, getFromLocal } from './utils/storage.js';
 import { productDetail } from './components/productDetail.js'
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
@@ -38,7 +38,8 @@ function addToCartHandler(product) {
       })
     }
 
-    saveToLocal(cart, localCart)
+    saveCartItemsToLocal(cart, localCart);
+  
 
   });
 }

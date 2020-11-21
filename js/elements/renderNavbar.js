@@ -4,16 +4,40 @@ import {logout} from '../ui/logout.js';
 import {showSearch} from '../ui/showSearch.js'
 
 
+export const setCartCount = () => {
+  const currentCart = getFromLocal(cart);
+
+  let showCartCounter = "";
+
+
+  if(!currentCart) {
+    return showCartCounter;
+  }
+
+
+  if(currentCart !== localStorage.getItem(cart)) {
+    return showCartCounter = ` <span class="counter">${currentCart.length}</span>`
+  }
+
+  
+  showCartCounter = ` <span class="counter">${currentCart.length}</span>`
+  
+
+  return showCartCounter;
+}
+
+
 
 
 export const renderNavbar = () => {
     const innerNav = document.querySelector('.custom-nav');
-    const cartItems = getFromLocal(cart);
-    let showCartCounter = "";
+
+    // const cartItems = getFromLocal(cart);
+    // let showCartCounter = "";
   
-    if(cartItems) {
-      showCartCounter = ` <span class="counter">${cartItems.length}</span>`
-    }
+    // if(cartItems) {
+    //   showCartCounter = ` <span class="counter">${cartItems.length}</span>`
+    // }
 
     const loggedInUser = getFromLocal(user);
     const { pathname } = location;
@@ -93,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </li>
 
         <li class="nav-item cart-icon">
-        ${showCartCounter}
+        ${setCartCount()}
         <i class="fa fa-shopping-cart"></i>
         </li>
       </ul>

@@ -1,5 +1,11 @@
+import {setCartCount} from '../elements/renderNavbar.js';
+
 const saveToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value))
+};
+const saveCartItemsToLocal = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
+    setCartCount();
 };
 
 const getFromLocal = (key) => {
@@ -12,4 +18,6 @@ const getFromLocal = (key) => {
 };
 
 
-export {saveToLocal, getFromLocal};
+
+
+export {saveToLocal, getFromLocal, saveCartItemsToLocal};
