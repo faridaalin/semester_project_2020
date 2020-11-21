@@ -1,54 +1,25 @@
-import { user, cart} from '../utils/settings.js';
+import { user, cart } from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
-import {logout} from '../ui/logout.js';
-import {showSearch} from '../ui/showSearch.js'
+import { logout } from '../ui/logout.js';
+import { showSearch } from '../ui/showSearch.js'
+import {showCartTotal} from '../helpers/showCartTotal.js';
 
-
-export const setCartCount = () => {
-  const currentCart = getFromLocal(cart);
-
-  let showCartCounter = "";
-
-
-  if(!currentCart) {
-    return showCartCounter;
-  }
-
-
-  if(currentCart !== localStorage.getItem(cart)) {
-    return showCartCounter = ` <span class="counter">${currentCart.length}</span>`
-  }
-
-  
-  showCartCounter = ` <span class="counter">${currentCart.length}</span>`
-  
-
-  return showCartCounter;
-}
-
-
+const total = showCartTotal();
 
 
 export const renderNavbar = () => {
-    const innerNav = document.querySelector('.custom-nav');
+  const innerNav = document.querySelector('.custom-nav');
 
-    // const cartItems = getFromLocal(cart);
-    // let showCartCounter = "";
-  
-    // if(cartItems) {
-    //   showCartCounter = ` <span class="counter">${cartItems.length}</span>`
-    // }
+  const loggedInUser = getFromLocal(user);
+  const { pathname } = location;
 
-    const loggedInUser = getFromLocal(user);
-    const { pathname } = location;
-
-    let authLink = `<li class="nav-item mb-2">
+  let authLink = `<li class="nav-item mb-2">
     <!-- Button trigger modal -->
     <button class="nav-link btn py-0"  data-toggle="modal" data-target="#login">Login</>
   </li>`
 
-    if (loggedInUser && loggedInUser.role.type === "authenticated") {
-        authLink = `
+  if (loggedInUser && loggedInUser.role.type === "authenticated") {
+    authLink = `
         <li class="nav-item mb-2 ${pathname === "add.html" ? "active" : ""}">
         <a class="nav-link" href="add.html">Add product</a>
       </li>
@@ -61,10 +32,10 @@ export const renderNavbar = () => {
     </li>
       `
 
-      window.addEventListener('DOMContentLoaded', (event) => {
-        logout()
+    window.addEventListener('DOMContentLoaded', (event) => {
+      logout()
     });
-    }
+  }
 
 
 
@@ -72,9 +43,9 @@ export const renderNavbar = () => {
 
 
 
-let searchbar = "";
-if(pathname === "/shop.html") {
-  searchbar = `        <li class="nav-item w-75 mr-2 ml-auto">
+  let searchbar = "";
+  if (pathname === "/shop.html") {
+    searchbar = `        <li class="nav-item w-75 mr-2 ml-auto">
   <div class="search ml-auto">
     <input class="form-control mr-sm-2" type="search"  id="search" placeholder="Search" aria-label="Search">
     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
@@ -88,14 +59,14 @@ if(pathname === "/shop.html") {
   </div>
 </li>`
 
-document.addEventListener("DOMContentLoaded", () => {
-    showSearch()  
-});
-}
+    document.addEventListener("DOMContentLoaded", () => {
+      showSearch()
+    });
+  }
 
 
 
-    return innerNav.innerHTML = `
+  return innerNav.innerHTML = `
     <div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between pt-5 pt-lg-0" id="navbarSupportedContent">
     <ul class="navbar-nav nav-center justify-content-center ml-auto align-items-baseline">
       <li class="nav-item ${pathname === "/" ? "active" : ""}">
@@ -117,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </li>
 
         <li class="nav-item cart-icon">
-        ${setCartCount()}
+        <span class="counter">${total}</span>
         <i class="fa fa-shopping-cart"></i>
         </li>
       </ul>

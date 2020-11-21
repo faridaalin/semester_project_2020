@@ -26,10 +26,12 @@ function addToCartHandler(product) {
 
   addToCartBtn.addEventListener('click', function (e) {
     const item = localCart.find((item) => item.product.id === product.id);
+
    
 
     if (item) {
       item.qty += 1;
+   
     } else {
       localCart.push({
         size: 0,
@@ -37,7 +39,7 @@ function addToCartHandler(product) {
         product: product,
       })
     }
-
+    console.log('saving...');
     saveCartItemsToLocal(cart, localCart);
   
 
