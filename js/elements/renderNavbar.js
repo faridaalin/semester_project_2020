@@ -2,9 +2,7 @@ import { user, cart } from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 import { logout } from '../ui/logout.js';
 import { showSearch } from '../ui/showSearch.js'
-import {showCartTotal} from '../helpers/showCartTotal.js';
 
-const total = showCartTotal();
 
 
 export const renderNavbar = () => {
@@ -88,8 +86,8 @@ export const renderNavbar = () => {
         </li>
 
         <li class="nav-item cart-icon">
-        <span class="counter">${total}</span>
-        <i class="fa fa-shopping-cart"></i>
+        <a class="" href="/cart.html"> <i class="fa fa-shopping-cart"> <span class="counter">0</span></i></a>
+       
         </li>
       </ul>
     </div>

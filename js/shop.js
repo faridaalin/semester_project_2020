@@ -2,6 +2,9 @@ import { BASE_URL } from "./utils/settings.js";
 import renderAllProducts from './elements/renderAllProducts.js'
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
+import {loadCartNumbers} from './helpers/showCartTotal.js';
+
+loadCartNumbers();
 
 
 login();

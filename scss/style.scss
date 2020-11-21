@@ -406,9 +406,7 @@ li {
       }
     }
 
-    svg {
-      color: getColour(white-200);
-    }
+ 
   }
 }
 .navbar-custom {
@@ -422,6 +420,10 @@ li {
 .favs-icon, .cart-icon {
   font-size: 1.5rem;
   position: relative;
+  color: getColour(white-200);
+  a {
+    color: getColour(white-200);
+  }
   .counter {
     position: absolute;
     top: -4px;
@@ -435,6 +437,8 @@ li {
 
   }
 }
+
+
 
 /*  NAVBAR END */
 

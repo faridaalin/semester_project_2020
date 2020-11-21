@@ -11210,10 +11210,6 @@ li {
   color: #f5f5f5;
 }
 
-.home .search svg {
-  color: #f5f5f5;
-}
-
 .navbar-custom {
   background: #dde7ea;
 }
@@ -11225,6 +11221,11 @@ li {
 .favs-icon, .cart-icon {
   font-size: 1.5rem;
   position: relative;
+  color: #f5f5f5;
+}
+
+.favs-icon a, .cart-icon a {
+  color: #f5f5f5;
 }
 
 .favs-icon .counter, .cart-icon .counter {

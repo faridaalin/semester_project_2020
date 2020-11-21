@@ -7,7 +7,9 @@ import { validateFields} from './helpers/validateFields.js';
 import { deleteProduct } from "./ui/deleteProduct.js";
 import { updateProduct } from "./ui/updateProduct.js";
 import { removeMessage } from "./helpers/removeMessage.js";
+import {loadCartNumbers} from './helpers/showCartTotal.js';
 
+loadCartNumbers();
 login();
 renderNavbar();
 

@@ -4,6 +4,9 @@ import { saveToLocal, saveCartItemsToLocal, getFromLocal } from './utils/storage
 import { productDetail } from './components/productDetail.js'
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { login } from "./ui/login.js";
+import {loadCartNumbers} from './helpers/showCartTotal.js';
+
+loadCartNumbers();
 
 
 login();

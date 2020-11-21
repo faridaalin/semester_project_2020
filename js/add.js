@@ -6,6 +6,9 @@ import { removeMessage } from './helpers/removeMessage.js';
 import {addNewProduct} from './ui/addProduct.js'
 import {} from './ui/addProduct.js'
 import {validateFields, removeValidationStyle} from './helpers/validateFields.js'
+import {loadCartNumbers} from './utils/storage.js';
+
+loadCartNumbers();
 
 login();
 renderNavbar()
