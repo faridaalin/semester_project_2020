@@ -18,7 +18,7 @@ const saveFavourites = () => {
       const { classList } = e.target;
       classList.toggle("fa-heart-o");
       classList.toggle("fa-heart");
-
+      
       const inFavsListAlready = favsList.find(item => item.id === id);
 
       if (!inFavsListAlready) {
@@ -43,14 +43,15 @@ const saveFavourites = () => {
 };
 
 const renderAllProducts = (products, msg) => {
-
+ 
   const container = document.querySelector(".shop-container");
   container.innerHTML = "";
-  removeMessage("#pdpMsg")
+  removeMessage("#pdpMsg");
 
   if (msg) {
     return showMessage("info", msg, "#pdpMsg");
   }
+
   displayProductCard(products, container)
   saveFavourites();
 };

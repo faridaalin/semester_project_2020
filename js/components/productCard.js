@@ -1,7 +1,19 @@
-import { user} from '../utils/settings.js';
+import { user, favs} from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 
 export const productCard = (product) => {
+
+  const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
+    
+  const hasFavs = currentFavs.find(fav => {
+      return parseInt(fav.id) === parseInt(product.id)
+    });
+
+    console.log('hasFavs:', hasFavs);
+
+    const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
+
+
   const loggedInUser = getFromLocal(user);
   const edit =
     loggedInUser && loggedInUser.role.type === "authenticated"
@@ -25,7 +37,7 @@ export const productCard = (product) => {
       <a href="/pdp.html?id=${product.id}"><h3 class="card-title mb-0">${product.title}</h3></a>
       <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
         <h5 class=" card-text  mb-0">NOK ${product.price}</h5>
-        <i class="fav fa fa-heart-o" data-id="${product.id}"></i>
+        <i class="fav fa ${cssClass}" data-id="${product.id}"></i>
       </div>
     </div>
     </div> `
