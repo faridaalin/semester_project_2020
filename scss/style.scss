@@ -800,3 +800,15 @@ li {
 }
 
 /*  CART END */
+
+
+
+/*  FORM VALIDATION START*/
+.was-validated .custom-select:invalid, .custom-select.is-invalid, .was-validated .custom-select:valid, .custom-select.is-valid {
+  background: transparent;
+}
+
+/*  FORM VALIDATION END */
+
+
+
