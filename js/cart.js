@@ -14,7 +14,8 @@ if(!cartItems) {
     itemContainer.innerHTML = `<div class="alert alert-info" role="alert">
     Your cart is currently empty.
   </div>`;
-  checkoutContainer.innerHTML= "";
+  checkoutContainer.style.display = "none";
+  return;
 
 }
 
@@ -53,38 +54,6 @@ cartItems.map((item) => {
    </div>`;
 
 })
-
-
-// cartItems.forEach(item => {
-//     itemContainer.innerHTML += `
-     
-//      <div class="bag-container d-flex pb-4">
-//      <div class="bag-img embed-responsive embed-responsive-4by3" style="background-image: url(${item.product.image_url})">
-//      </div>
-//      <div class="col-9 col-md-10">
-//        <div class="grid--cart">
-//        <p class="light-text mb-1">${item.product.brand}</p>
-//        <div class="d-md-flex justify-content-between">
-//          <div class="pb-3 flex-grow-1 pb-md-0 align-text-bottom ">
-//            <p class="medium-text">${item.product.title}</p>
-//          </div>
-//          <div class="d-flex flex-wrap justify-content-between align-items-center flex-grow-1">
-//            <div>
-//              <p class="light-text flex-grow-1 align-text-bottom">Size ${item.size}</p>
-//            </div>
-//            <div>
-//              <p class="light-text flex-grow-1 align-text-bottom">Qty  ${item.qty}</p>
-//            </div>
-//            <div>
-//              <p class="large-text flex-grow-1 align-text-bottom">NOK ${item.product.price}</p>
-//                </div>
-//              </div>
-//            </div>
-//        </div>
-//      </div>
-
-//    </div>`;
-// });
 
 
 checkoutContainer.innerHTML = `<div class="checkout-container ml-auto pt-4 pb-5 px-4">
