@@ -88,16 +88,21 @@
            </div>
 
               <div class="checkout d-flex flex-column flex-lg-row">
-                <div class="Qty">
+                <div class="qty-container">
                   Qty
-                  <button type="button" class="btn">-</button><span>1</span><button type="button" class="btn">+</button>
+                  <button type="button pluss" class="btn" data-type="dec">-</button>
+                  <span class="value">1</span>
+                  <button type="button minus" class="btn" data-type="inc">+</button>
                 </div>
                 <div class="input-group flex-fill mb-4">
-                  <select class="custom-select h-100" id="inputGroupSelect02">
+                  <select class="custom-select size h-100" id="inputGroupSelect02">
                     <option selected>Choose size</option>
                     <option value="40">40</option>
                     <option value="42">42</option>
                     <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
                   </select>
                   <i class="fa fa-angle-down"></i>
                 </div>
