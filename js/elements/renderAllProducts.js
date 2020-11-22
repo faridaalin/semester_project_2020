@@ -1,4 +1,4 @@
-import { productCard } from "../components/productCard.js";
+import { displayProductCard } from "../helpers/displayProductCard.js";
 import {showMessage} from '../helpers/showMessage.js';
 import { removeMessage} from '../helpers/removeMessage.js';
 
@@ -14,7 +14,8 @@ const renderAllProducts = (products, msg) => {
   if(msg) {
     return showMessage("info", msg, "#pdpMsg");     
   }
-  products.map(product => container.innerHTML += productCard(product));
+  displayProductCard(products, container)
+  // products.map(product => container.innerHTML += productCard(product));
 };
 
 export default renderAllProducts;

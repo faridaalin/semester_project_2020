@@ -8,7 +8,7 @@ export const productCard = (product) => {
       ? ` <button type="button" class="btn btn-info btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
 
-      
+
 
     return ` <div class="col-sm-6 col-md-3 mb-5 pb-5">
     <div class="product-top">
@@ -25,7 +25,7 @@ export const productCard = (product) => {
       <a href="/pdp.html?id=${product.id}"><h3 class="card-title mb-0">${product.title}</h3></a>
       <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
         <h5 class=" card-text  mb-0">NOK ${product.price}</h5>
-        <i class="fav fa fa-heart-o"></i>
+        <i class="fav fa fa-heart-o" data-id="${product.id}"></i>
       </div>
     </div>
     </div> `
