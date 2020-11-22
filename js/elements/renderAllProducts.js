@@ -45,7 +45,6 @@ const saveFavourites = () => {
       }
 
 
-
     };
 
     favButtonsArr[i].addEventListener('click', saveToFavList);
