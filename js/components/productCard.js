@@ -8,6 +8,8 @@ export const productCard = (product) => {
       ? ` <button type="button" class="btn btn-info btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
 
+      
+
     return ` <div class="col-sm-6 col-md-3 mb-5 pb-5">
     <div class="product-top">
       ${edit}
