@@ -9,7 +9,6 @@ const renderFeatured = (products) => {
   } else {
     document.querySelector('.featured-title').textContent = "Trending";
     displayProductCard(products, container);
-
   }
  
 };

@@ -33,11 +33,18 @@ export const renderNavbar = () => {
       `
 
     window.addEventListener('DOMContentLoaded', (event) => {
-      login();
       logout();
-      loadCartNumbers();
     });
+
   }
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+
+      login();
+      loadCartNumbers();
+      });
+
+
 
 
 
@@ -91,7 +98,7 @@ export const renderNavbar = () => {
 
         <li class="nav-item cart-icon">
         <a class="" href="/cart.html"> <i class="fa fa-shopping-cart"> <span class="counter">0</span></i></a>
-       
+
         </li>
       </ul>
     </div>
