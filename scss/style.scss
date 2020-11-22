@@ -733,10 +733,6 @@ li {
 
 .checkout-container {
   background: getColour(green-300);
-  @media all and (min-width: 768px) {
-    position: fixed;
-    right: 2%;
-  }
 
   h3 {
     font-size: 1.2rem;
