@@ -40,13 +40,28 @@ export function addToCart(product) {
   const addQty = () => {
     const increment = document.querySelector('.pluss');
     const decrement = document.querySelector('.minus');
-    const value = document.querySelector('.value');
-  
+    const qty = document.querySelector('.value');
 
-    console.log(increment);
-    console.log(decrement);
-    console.log(value);
-    
+
+    let value = 1;
+    const handleIncrement = () => {
+      qty.textContent = value += 1;
+      
+    };
+    const handleDecrement = () => {
+      if(value <= 1) {
+        return qty.textContent = value = 1;
+      }
+      qty.textContent = value -= 1;
+
+    };
+
+
+    increment.addEventListener('click', handleIncrement);
+    decrement.addEventListener('click', handleDecrement);  
 
   }
+
+
+addQty();
 
