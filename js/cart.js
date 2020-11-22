@@ -1,52 +1,53 @@
-import {cart} from './utils/settings.js';
-import {getFromLocal, saveToLocal} from './utils/storage.js';
-import {getTotalPrice} from './helpers/getTotalPrice.js';
-import {deleteItemFromArray} from './helpers/deleteItemFromArray.js';
+import { cart } from './utils/settings.js';
+import { getFromLocal, saveToLocal } from './utils/storage.js';
+import { getTotalPrice } from './helpers/getTotalPrice.js';
+import { deleteItem } from './helpers/deleteItem.js';
 
 
 
 
-const deleteCartItem = (cartItems) => {
-  const deleteButtons = document.querySelectorAll('.delete-icon');
- 
-  const deleteButtonsArr = [...deleteButtons];
-  for (let i = 0; i < deleteButtonsArr.length; i++) {
-    const deleteItem = (e) => {
+const removeFromCartItem = (cartItems) => {
+  const deleteIcons = document.querySelectorAll('.delete-icon');
+
+  const  deleteIconsArr = [...deleteIcons];
+
+
+  for (let i = 0; i < deleteIconsArr.length; i++) {
+    const handleItemToDelete = (e) => {
+
       const id = parseInt(e.target.dataset.id);
 
-      const updatedCartITems = deleteItemFromArray(cartItems, id)
+      const updatedCartITems = deleteItem(cartItems, id)
       saveToLocal(cart, updatedCartITems);
-      console.log('updatedCartITems:', updatedCartITems);
       showCartItems();
     }
 
-   deleteButtonsArr[i].addEventListener('click', deleteItem);
+    deleteIconsArr[i].addEventListener('click', handleItemToDelete);
 
-    
+
   }
 
 
- 
+
 }
 
 const showCartItems = () => {
-const cartItems = getFromLocal(cart);
-console.log(cartItems);
-let itemContainer = document.querySelector('.cart-detail');
-let checkoutContainer = document.querySelector('.checkout-container');
+  const cartItems = getFromLocal(cart);
+  let itemContainer = document.querySelector('.cart-detail');
+  let checkoutContainer = document.querySelector('.checkout-container');
 
-if(!cartItems || cartItems.length === 0 ) {
+  if (!cartItems || cartItems.length === 0) {
     itemContainer.innerHTML = `<div class="alert alert-info" role="alert">
     Your cart is currently empty.
   </div>`;
-  checkoutContainer.style.display = "none";
-  return;
+    checkoutContainer.style.display = "none";
+    return;
 
-}
-itemContainer.innerHTML = "";
-checkoutContainer.innerHTML = "";
+  }
+  itemContainer.innerHTML = "";
+  checkoutContainer.innerHTML = "";
 
-cartItems.map((item) => {
+  cartItems.map((item) => {
     itemContainer.innerHTML += `
      
      <div class="bag-container d-flex pb-4 mb-4">
@@ -81,8 +82,8 @@ cartItems.map((item) => {
    </div>`;
 
 
-})
-checkoutContainer.innerHTML = `<div class="checkout-container ml-auto pt-4 pb-5 px-4">
+  })
+  checkoutContainer.innerHTML = `<div class="checkout-container ml-auto pt-4 pb-5 px-4">
 <h3 class="pt-2 pb-2">ORDER SUMMARY</h3>
 <div class="delivery pt-2 pb-4 d-flex justify-content-between align-items-center">
   <span>Delivery</span><span>FREE</span></div>
@@ -90,11 +91,9 @@ checkoutContainer.innerHTML = `<div class="checkout-container ml-auto pt-4 pb-5 
 <button type="button" class="btn btn-secondary btn-block">Checkout</button>
 </div>`;
 
-deleteCartItem(cartItems);
+removeFromCartItem(cartItems);
 
 };
-
-
 
 
 showCartItems();
