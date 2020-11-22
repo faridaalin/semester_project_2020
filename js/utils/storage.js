@@ -1,4 +1,3 @@
-import {showCartTotal} from '../helpers/showCartTotal.js'
 import {loadCartNumbers} from '../helpers/loadCartNumers.js'
 
 const saveToLocal = (key, value) => {
@@ -7,8 +6,6 @@ const saveToLocal = (key, value) => {
 const saveCartItemsToLocal = (key, value) => {
 
     localStorage.setItem(key, JSON.stringify(value));
-
-    showCartTotal(key)
     loadCartNumbers();
     
 };

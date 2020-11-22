@@ -15,7 +15,7 @@ export const loadCartNumbers = () => {
     }
 
     total = currentCartNumers.reduce(function (acc, obj) { return acc + obj.qty; }, 0); 
-    console.log(total);
+
     return  cartCounter.textContent =  total;
   
 
