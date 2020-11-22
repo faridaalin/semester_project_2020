@@ -10,6 +10,8 @@ export const login = (e) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+
   
     const username = document.querySelector("#username");
     const password = document.querySelector("#password");
@@ -37,8 +39,6 @@ export const login = (e) => {
         const usernameValue = username.value.trim();
         const passwordValue = password.value.trim();
 
-        console.log('username:',usernameValue);
-        console.log('password:',passwordValue);
 
         const data = {
           identifier: usernameValue,
@@ -56,7 +56,6 @@ export const login = (e) => {
           const res = await fetch(URL, options);
           const userData = await res.json();
 
-          console.log(userData);
 
           if (userData.statusCode === 400) {
             const msg = "Invalid username or password";

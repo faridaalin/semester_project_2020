@@ -1,16 +1,14 @@
 import { BASE_URL, user, userToken } from "./utils/settings.js";
 import { getFromLocal } from "./utils/storage.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
-import { login } from "./ui/login.js";
 import { showMessage } from "./helpers/showMessage.js";
 import { validateFields} from './helpers/validateFields.js';
 import { deleteProduct } from "./ui/deleteProduct.js";
 import { updateProduct } from "./ui/updateProduct.js";
 import { removeMessage } from "./helpers/removeMessage.js";
-import {loadCartNumbers} from './helpers/showCartTotal.js';
 
-loadCartNumbers();
-login();
+
+
 renderNavbar();
 
 const loggedUser = getFromLocal(user);

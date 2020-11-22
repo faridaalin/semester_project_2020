@@ -2,10 +2,12 @@ import { user, cart } from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 import { logout } from '../ui/logout.js';
 import { showSearch } from '../ui/showSearch.js'
-
+import {loadCartNumbers} from '../helpers/loadCartNumers.js';
+import {login} from '../ui/login.js';
 
 
 export const renderNavbar = () => {
+
   const innerNav = document.querySelector('.custom-nav');
 
   const loggedInUser = getFromLocal(user);
@@ -31,7 +33,9 @@ export const renderNavbar = () => {
       `
 
     window.addEventListener('DOMContentLoaded', (event) => {
-      logout()
+      login();
+      logout();
+      loadCartNumbers();
     });
   }
 
@@ -92,4 +96,5 @@ export const renderNavbar = () => {
       </ul>
     </div>
     `
+
 }

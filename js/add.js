@@ -1,16 +1,12 @@
 import { BASE_URL, user, userToken } from "./utils/settings.js";
 import { getFromLocal } from "./utils/storage.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
-import { login } from "./ui/login.js";
 import { removeMessage } from './helpers/removeMessage.js';
 import {addNewProduct} from './ui/addProduct.js'
 import {} from './ui/addProduct.js'
 import {validateFields, removeValidationStyle} from './helpers/validateFields.js'
-import {loadCartNumbers} from './utils/storage.js';
 
-loadCartNumbers();
 
-login();
 renderNavbar()
 
 const form = document.querySelector('#addForm');
