@@ -33,7 +33,6 @@ export const validateFields = (tag) => {
         }
     }
 
-    // console.log(isValid );
 
     if (isValid === false) {
         const msg = "Check for missing values or incorrect values";

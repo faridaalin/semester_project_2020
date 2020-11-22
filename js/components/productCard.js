@@ -9,8 +9,6 @@ export const productCard = (product) => {
       return parseInt(fav.id) === parseInt(product.id)
     });
 
-    console.log('hasFavs:', hasFavs);
-
     const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
 
 

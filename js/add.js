@@ -28,7 +28,6 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     const handleNewproduct = (e) => {
         e.preventDefault();
         removeMessage('#msg');
-        console.log('Detected click');
 
         const isValid = validateFields(".add-form .form-control");
         if (isValid === false || isValid === undefined){

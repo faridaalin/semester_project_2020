@@ -11,7 +11,6 @@ export const getTotalPrice = () => {
   let total = 0;
 
   if (!currentCart) {
-    console.log('Cart is empty');
     return total;
   }
 
