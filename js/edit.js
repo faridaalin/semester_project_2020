@@ -28,6 +28,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
   const description = document.querySelector("#description");
   const imgUrl = document.querySelector("#url");
   const altText = document.querySelector(".altText");
+  const category = document.querySelector(".category");
   const productID = document.querySelector("#id");
   const featured = document.querySelector("#featured");
 
@@ -47,6 +48,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
       description.value = product.description;
       imgUrl.value = product.image_url;
       altText.value = product.alt_text,
+      category.value = product.category,
       productID.value = product.id;
       featured.checked = product.featured;
       
@@ -76,6 +78,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
       description: description.value,
       image_url: imgUrl.value,
       alt_text: altText.value,
+      category: category.value,
       id: productID.value,
       featured: featured.checked,
     };
