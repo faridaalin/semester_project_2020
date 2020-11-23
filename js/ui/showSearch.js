@@ -30,10 +30,10 @@ export const showSearch = () => {
 
 
       if (filteredSearch.length > 0) {
-        renderAllProducts(filteredSearch)
+        renderAllProducts(filteredSearch, ".shop-container");
       } else {
         const msg = `Sorry, we currently don't have ${searchTerm}`;
-        renderAllProducts([], msg);
+        renderAllProducts([], msg, ".shop-container");
 
       };
 

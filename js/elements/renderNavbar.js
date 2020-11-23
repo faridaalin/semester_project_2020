@@ -45,13 +45,6 @@ export const renderNavbar = () => {
       });
 
 
-
-
-
-
-
-
-
   let searchbar = "";
   if (pathname === "/shop.html") {
     searchbar = `        <li class="nav-item w-75 mr-2 ml-auto">
@@ -92,13 +85,11 @@ export const renderNavbar = () => {
       ${searchbar}
 
         <li class="nav-item mr-2 favs-icon">
-
-        <i class="fa fa-heart"></i>
+        <a class="" href="/fav.html"><i class="fa fa-heart"><span class="counter">0</span></i></a>
         </li>
 
         <li class="nav-item cart-icon">
         <a class="" href="/cart.html"> <i class="fa fa-shopping-cart"> <span class="counter">0</span></i></a>
-
         </li>
       </ul>
     </div>

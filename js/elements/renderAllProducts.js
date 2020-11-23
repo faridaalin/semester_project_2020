@@ -54,17 +54,26 @@ const saveFavourites = () => {
 
 };
 
-const renderAllProducts = (products, msg) => {
 
-  const container = document.querySelector(".shop-container");
-  container.innerHTML = "";
-  removeMessage("#pdpMsg");
+const renderAllProducts = (products, msg, container) => {
+console.log(container);
+  const element = document.querySelector(container);
+  element.innerHTML = "";
 
-  if (msg) {
-    return showMessage("info", msg, "#pdpMsg");
+  if(products.length === 0) {
+   if(msg) {
+    return element.innerHTML =`<div class="alert alert-info" role="alert">
+    ${msg}
+  </div>`;
+   }
+    const customMsg = `<div class="alert alert-info" role="alert">
+    No items available, plese try again later.
+  </div>`;
+    return element.innerHTML = customMsg;
+    
   }
 
-  displayProductCard(products, container)
+  displayProductCard(products, element)
   saveFavourites();
 };
 
