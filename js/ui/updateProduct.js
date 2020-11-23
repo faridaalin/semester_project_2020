@@ -1,7 +1,7 @@
 import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
 
-export const updateProduct = async (obj, URL, token) => {
+export const updateProduct = async (obj, url, token) => {
    
     const options = {
       method: "PUT",
@@ -12,10 +12,15 @@ export const updateProduct = async (obj, URL, token) => {
       body: JSON.stringify(obj),
     };
 
+    console.log('options:', options);
+    console.log('URL:', url);
+    console.log('Token:', token);
+
 
     try {
-      const res = await fetch(URL, options);
+      const res = await fetch(url, options);
       const updatedProduct = await res.json();
+      console.log(updatedProduct);
 
       if(updatedProduct.updated_at) {
         const msg = "Product has been updated.";

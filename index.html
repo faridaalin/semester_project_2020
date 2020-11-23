@@ -77,7 +77,42 @@
       </div>
     </div>
 
+    <!-- Modal EDIT BG-->
+<div class="modal fade" id="herobannerBg" tabindex="-1" role="herobannerBg" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="exampleModalLabel">Edit background image</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form action="" id="editBg-form">
+          
+          <div class="message-container" id="msg"></div>
+
+          <div class="form-group">
+            <label for="url" class="d-flex justify-content-between">Image url</label>
+            <input type="url" name="url" id="url" class="form-control img-url" aria-describedby="imageUrlHelp">
+            <div class="feedback-password invalid-feedback">Invalid image url</div>
+          </div>
+          <div class="form-group">
+            <label for="altText" class="d-flex justify-content-between">Alt text</label>
+            <input type="text" name="altText" id="altText" class="form-control altText" aria-describedby="altTextHelp">
+            <div class="feedback-password invalid-feedback">Please, provide alt text.</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="click" class="btn btn-secondary btn-block shadow-lg" id="edit-bg">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Herobanner END -->
+
 
 
       <!-- Featured products START -->

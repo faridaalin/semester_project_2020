@@ -11277,8 +11277,14 @@ li {
 }
 
 .herobanner__content {
+  position: relative;
   color: #f5f5f5;
   max-width: 30ch;
+}
+
+.herobanner__content .edit-bg {
+  top: -100px;
+  left: 0;
 }
 
 .herobanner__content .content-tag {

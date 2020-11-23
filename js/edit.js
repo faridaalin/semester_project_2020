@@ -78,6 +78,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     updateProduct(productObj, URL, token);
    
   };
+
   deleteProduct(URL, token);
 
 

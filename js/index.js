@@ -5,10 +5,12 @@ import renderFeatured from './elements/renderFeatured.js';
 import {renderNavbar} from './elements/renderNavbar.js';
 import {login } from './ui/login.js';
 import {saveToLocal} from './utils/storage.js';
-import { allProducts} from './utils/settings.js'
+import { allProducts} from './utils/settings.js';
+import {editBackgroundImg} from './elements/renderHerobanner.js';
 
 
 renderNavbar();
+editBackgroundImg();
 showNavbarBgOnScroll();
 
 
@@ -17,7 +19,7 @@ showNavbarBgOnScroll();
     try {
         const res = await fetch(URL);
         const banner = await res.json();
-        renderHeroBanner(banner.hero_url)
+        renderHeroBanner(banner.hero_url);
     }
 
     catch(error) {

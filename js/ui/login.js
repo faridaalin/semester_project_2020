@@ -1,5 +1,4 @@
-import { BASE_URL } from "../utils/settings.js";
-import { user, userToken} from "../utils/settings.js";
+import { BASE_URL, user, userToken } from "../utils/settings.js";
 import {  saveToLocal } from "../utils/storage.js";
 import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
@@ -10,8 +9,6 @@ export const login = (e) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-
   
     const username = document.querySelector("#username");
     const password = document.querySelector("#password");

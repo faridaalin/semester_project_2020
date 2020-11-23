@@ -478,8 +478,15 @@ li {
 }
 
 .herobanner__content {
+  position: relative;
   color: getColour(white-200);
   max-width: 30ch;
+
+  .edit-bg {
+    top: -100px;
+    left: 0;
+  };
+
   .content-tag {
     text-transform: uppercase;
     font-weight: getWeight(light);
