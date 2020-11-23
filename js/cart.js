@@ -51,9 +51,7 @@ const showCartItems = () => {
     itemContainer.innerHTML += `
      
      <div class="bag-container d-flex pb-4 mb-4">
-   
-     <div class="bag-img embed-responsive embed-responsive-4by3" style="background-image: url(${item.product.image_url})">
-     </div>
+     <a href="/pdp.html?id=${item.product.id}"><div class="bag-img embed-responsive embed-responsive-4by3" style="background-image: url(${item.product.image_url})"></div></a>
      <div class="col-9 col-md-10">
        <div class="grid--cart">
        <p class="light-text mb-1">${item.product.brand}</p>

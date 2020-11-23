@@ -23,7 +23,7 @@ export const productCard = (product) => {
     return ` <div class="col-sm-6 col-md-3 mb-5 pb-5">
     <div class="product-top">
       ${edit}
-      <a href="/pdp.html?id=${product.id}">  <img src="${product.image_url}" class="card-img-top img-fluid" alt="${product.alt_text}">
+      <a href="/pdp.html?id=${product.id}"> <img src="${product.image_url}" class="card-img-top img-fluid" alt="${product.alt_text}">
         <div class="overlay btn-container d-flex justify-content-center align-items-center">
           <button type="button" class="content-btn btn btn-outline-primary">View</button>
         </div>
