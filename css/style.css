@@ -11270,10 +11270,30 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  position: relative;
+}
+
+.herobanner::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#090a0b), to(#090a0b));
+  background-image: linear-gradient(to right, #090a0b, #090a0b);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  z-index: 0;
 }
 
 .herobanner__banner {
   max-width: 60ch;
+}
+
+.herobanner > * {
+  z-index: 10;
+  position: relative;
 }
 
 .herobanner__content {
