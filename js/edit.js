@@ -6,6 +6,7 @@ import { validateFields} from './helpers/validateFields.js';
 import { deleteProduct } from "./ui/deleteProduct.js";
 import { updateProduct } from "./ui/updateProduct.js";
 import { removeMessage } from "./helpers/removeMessage.js";
+import {spinner} from './elements/spinner.js';
 
 
 
@@ -37,26 +38,30 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
   const URL = `${BASE_URL}/products/${id}`;
   const token = getFromLocal(userToken);
 
-  (async () => {
-    try {
-      const res = await fetch(URL);
-      const product = await res.json();
+  ( () => {
+    spinner(".edit-form");
 
-      title.value = product.title;
-      brand.value = product.title;
-      price.value = product.price;
-      description.value = product.description;
-      imgUrl.value = product.image_url;
-      altText.value = product.alt_text,
-      category.value = product.category,
-      productID.value = product.id;
-      featured.checked = product.featured;
-      
-    } catch (error) {
-      console.log(error);
-      const msg = "Something went wrong, please try again later.";
-      showMessage("warning", msg, "#msg");
-    }
+    setTimeout(async () => {
+      try {
+        const res = await fetch(URL);
+        const product = await res.json();
+  
+        title.value = product.title;
+        brand.value = product.title;
+        price.value = product.price;
+        description.value = product.description;
+        imgUrl.value = product.image_url;
+        altText.value = product.alt_text,
+        category.value = product.category,
+        productID.value = product.id;
+        featured.checked = product.featured;
+        
+      } catch (error) {
+        console.log(error);
+        const msg = "Something went wrong, please try again later.";
+        showMessage("warning", msg, "#msg");
+      }
+    }, 1000);
   })();
 
 

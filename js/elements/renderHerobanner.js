@@ -45,6 +45,8 @@ export const editBackgroundImg = (e) => {
 const renderHeroBanner = (url) => {
     const herobanner = document.querySelector('.herobanner');
     const herobannerContent = document.querySelector('.herobanner__content');
+    console.log(herobannerContent);
+
     herobanner.style.backgroundImage = `url(${url})`;
 
 

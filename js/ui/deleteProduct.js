@@ -1,3 +1,5 @@
+import { spinner } from '../elements/spinner.js';
+
 export const deleteProduct = (url, token) => {
 
     const container = document.querySelector('.buttons');
@@ -7,22 +9,27 @@ export const deleteProduct = (url, token) => {
 
     const deleteButton = document.querySelector('.btn-delete');
 
-    const handleDeleteProduct = async () => {
+ 
+
+    const handleDeleteProduct = () => {
         const options = {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`,
             }
         }
-        try {
-            const res = await fetch(url, options);
-            const deletedItem = await res.json();
-            location.href = "/";
-        }
-        catch(error) {
-            console.log(error);
-        }
-        
+        spinner('.editDelete-container');
+        setTimeout(async () => {
+            try {
+                const res = await fetch(url, options);
+                const deletedItem = await res.json();
+                location.href = "/";
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }, 1000);
+
     };
 
     deleteButton.addEventListener('click', handleDeleteProduct)

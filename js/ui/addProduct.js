@@ -1,8 +1,8 @@
 import {showMessage} from '../helpers/showMessage.js';
 import {removeMessage} from '../helpers/removeMessage.js';
+import {spinner} from '../elements/spinner.js';
 
-export const addNewProduct = async (url, token, obj) => {
-
+export const addNewProduct =  (url, token, obj) => {
     removeMessage('#msg')
 
     const options = {
@@ -13,21 +13,28 @@ export const addNewProduct = async (url, token, obj) => {
         },
         body: JSON.stringify(obj)
     }
+    spinner('.add-container');
 
-    try {
-        const res = await fetch(url, options);
-        const product = await res.json();
-      
-
-        if(product.created_at) {
-            const msg = `${obj.title} has been created`;
-            showMessage('success', msg, '#msg')
+    setTimeout(async () => {
+    
+        try {
+            const res = await fetch(url, options);
+            const product = await res.json();
+          
+    
+            if(product.created_at) {
+                const msg = `${obj.title} has been created`;
+                showMessage('success', msg, '#msg')
+            }
+           
         }
-       
-    }
-    catch (error) {
-        console.log(error);
-        const msg = `Something went wrong, please try again later`;
-        showMessage('warning', msg, '#msg')
-    }
+        catch (error) {
+            console.log(error);
+            const msg = `Something went wrong, please try again later`;
+            showMessage('warning', msg, '#msg')
+        }
+        
+    }, 1000);
+
+
 }

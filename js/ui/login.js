@@ -3,6 +3,7 @@ import {  saveToLocal } from "../utils/storage.js";
 import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
 import {renderNavbar} from '../elements/renderNavbar.js'
+import { spinner } from "../elements/spinner.js";
 
 export const login = (e) => {
   const loginBtn = document.querySelector(".loginBtn");
@@ -29,7 +30,8 @@ export const login = (e) => {
     }
 
     if (usernameValue.length > 2 && passwordValue.length > 7) {
-      const authUser = async (username, password) => {
+
+      const authUser =  (username, password) => {
         removeMessage(".message-container");
         const URL = `${BASE_URL}/auth/local`;
 
@@ -49,31 +51,37 @@ export const login = (e) => {
           body: JSON.stringify(data),
         };
 
-        try {
-          const res = await fetch(URL, options);
-          const userData = await res.json();
+        spinner('#login .modal-content');
 
-
-          if (userData.statusCode === 400) {
-            const msg = "Invalid username or password";
-            showMessage("danger", msg, '.message-container');
-            username.classList.add("is-invalid");
-            password.classList.add("is-invalid");
-            return;
+        setTimeout(async () => {
+          try {
+            const res = await fetch(URL, options);
+            const userData = await res.json();
+  
+  
+            if (userData.statusCode === 400) {
+              const msg = "Invalid username or password";
+              showMessage("danger", msg, '.message-container');
+              username.classList.add("is-invalid");
+              password.classList.add("is-invalid");
+              return;
+            }
+  
+            saveToLocal(user, userData.user);
+            saveToLocal(userToken, userData.jwt);
+  
+            const modal = document.querySelector(".modal");
+            modal.classList.remove("show");
+            modal.classList.add("hide");
+  
+            location.reload();
+            renderNavbar()
+          } catch (error) {
+            console.log(error);
           }
+      
+        }, 1000);
 
-          saveToLocal(user, userData.user);
-          saveToLocal(userToken, userData.jwt);
-
-          const modal = document.querySelector(".modal");
-          modal.classList.remove("show");
-          modal.classList.add("hide");
-
-          location.reload();
-          renderNavbar()
-        } catch (error) {
-          console.log(error);
-        }
       };
 
       authUser(username, password);

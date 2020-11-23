@@ -18,17 +18,17 @@ export const productCard = (product) => {
       ? ` <button type="button" class="btn btn-info btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
 
+      const image = product.image_url ?  product.image_url :`https://res.cloudinary.com/djey7uz4e/image/upload/v1606132924/noImage_plcdvu.jpg`;
 
 
     return ` <div class="col-sm-6 col-md-3 mb-5 pb-5">
     <div class="product-top">
       ${edit}
-      <a href="/pdp.html?id=${product.id}"> <img src="${product.image_url}" class="card-img-top img-fluid" alt="${product.alt_text}">
+      <a href="/pdp.html?id=${product.id}"> <img src="${image}" class="card-img-top img-fluid" alt="${product.alt_text}">
         <div class="overlay btn-container d-flex justify-content-center align-items-center">
           <button type="button" class="content-btn btn btn-outline-primary">View</button>
         </div>
       </a>
-    
     </div>
     
     <div class="product-bottom  pt-3">
