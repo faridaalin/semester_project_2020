@@ -12,15 +12,9 @@ export const updateProduct = async (obj, url, token) => {
       body: JSON.stringify(obj),
     };
 
-    console.log('options:', options);
-    console.log('URL:', url);
-    console.log('Token:', token);
-
-
     try {
       const res = await fetch(url, options);
       const updatedProduct = await res.json();
-      console.log(updatedProduct);
 
       if(updatedProduct.updated_at) {
         const msg = "Product has been updated.";

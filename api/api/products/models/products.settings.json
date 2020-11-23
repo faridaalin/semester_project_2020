@@ -45,6 +45,9 @@
     },
     "brand": {
       "type": "string"
+    },
+    "alt_text": {
+      "type": "string"
     }
   }
 }

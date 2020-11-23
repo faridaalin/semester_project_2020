@@ -23,6 +23,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
     const price = document.querySelector('#price');
     const description = document.querySelector('#description');
     const imgUrl = document.querySelector('#url');
+    const altText = document.querySelector(".altText");
     const featured = document.querySelector('#featured');
 
     const handleNewproduct = (e) => {
@@ -41,6 +42,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
                 price: price.value,
                 description: description.value,
                 image_url: imgUrl.value,
+                altText: altText.value,
                 featured: featured.checked,
             }
 

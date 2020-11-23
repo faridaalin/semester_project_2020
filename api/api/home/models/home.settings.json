@@ -22,7 +22,7 @@
       "plugin": "upload",
       "required": false
     },
-    "hero_banner_alt_text": {
+    "alt_text": {
       "type": "string"
     },
     "hero_url": {

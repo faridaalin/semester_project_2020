@@ -27,8 +27,11 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
   const price = document.querySelector("#price");
   const description = document.querySelector("#description");
   const imgUrl = document.querySelector("#url");
+  const altText = document.querySelector(".altText");
   const productID = document.querySelector("#id");
   const featured = document.querySelector("#featured");
+
+  console.dir('alt', altText);
 
   const URL = `${BASE_URL}/products/${id}`;
   const token = getFromLocal(userToken);
@@ -43,6 +46,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
       price.value = product.price;
       description.value = product.description;
       imgUrl.value = product.image_url;
+      altText.value = product.alt_text,
       productID.value = product.id;
       featured.checked = product.featured;
       
@@ -71,6 +75,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
       price: price.value,
       description: description.value,
       image_url: imgUrl.value,
+      alt_text: altText.value,
       id: productID.value,
       featured: featured.checked,
     };

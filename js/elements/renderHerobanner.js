@@ -1,7 +1,5 @@
 import { BASE_URL, user, userToken } from "../utils/settings.js";
 import { getFromLocal } from '../utils/storage.js';
-import { showMessage } from "../helpers/showMessage.js";
-import { removeMessage } from "../helpers/removeMessage.js";
 import { updateProduct } from "../ui/updateProduct.js";
 import { validateFields} from '../helpers/validateFields.js';
 
