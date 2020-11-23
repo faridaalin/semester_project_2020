@@ -1,9 +1,9 @@
 import { allProducts } from '../utils/settings.js';
-import { getFromLocal } from '../utils/storage.js';
+import { getFromLocal, getFromSessionStorage } from '../utils/storage.js';
 import renderAllProducts from '../elements/renderAllProducts.js';
 
 export const showSearch = () => {
-  const shoes = getFromLocal(allProducts);
+  const shoes = getFromSessionStorage(allProducts);
 
   const search = document.querySelector('#search');
 

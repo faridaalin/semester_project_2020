@@ -2,15 +2,12 @@ import { displayProductCard } from "../helpers/displayProductCard.js";
 import { showMessage } from '../helpers/showMessage.js';
 import { removeMessage } from '../helpers/removeMessage.js';
 import { favs, allProducts } from '../utils/settings.js';
-import { getFromLocal, saveToLocal } from '../utils/storage.js';
+import {getFromSessionStorage, getFromLocal, saveToLocal } from '../utils/storage.js';
 
 
 const saveFavourites = () => {
   const favButtonsNode = document.querySelectorAll('.fav');
   const favButtonsArr = [...favButtonsNode];
-
-
-
 
   for (let i = 0; i < favButtonsArr.length; i++) {
     const saveToFavList = (e) => {
@@ -20,7 +17,7 @@ const saveFavourites = () => {
       classList.toggle("fa-heart-o");
       classList.toggle("fa-heart");
 
-      const products = getFromLocal(allProducts);
+      const products = getFromSessionStorage(allProducts);
       let favsList = getFromLocal(favs);
       const newFav = products.find(item => id === item.id);
 
@@ -56,7 +53,6 @@ const saveFavourites = () => {
 
 
 const renderAllProducts = (products, msg, container) => {
-console.log(container);
   const element = document.querySelector(container);
   element.innerHTML = "";
 

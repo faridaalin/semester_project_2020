@@ -1,11 +1,9 @@
-import {BASE_URL} from './utils/settings.js';
+import {BASE_URL, allProducts} from './utils/settings.js';
 import { showNavbarBgOnScroll } from './ui/showNavbarBgOnScroll.js';
 import renderHeroBanner from './elements/renderHerobanner.js';
 import renderFeatured from './elements/renderFeatured.js';
 import {renderNavbar} from './elements/renderNavbar.js';
-import {login } from './ui/login.js';
-import {saveToLocal} from './utils/storage.js';
-import { allProducts} from './utils/settings.js';
+import {saveToSessionStorage, getFromSessionStorage} from './utils/storage.js';
 import {editBackgroundImg} from './elements/renderHerobanner.js';
 
 
@@ -27,6 +25,7 @@ showNavbarBgOnScroll();
     }
 })();
 
+
 ( async () => {
     const URL = `${BASE_URL}/products`;
 
@@ -34,7 +33,7 @@ showNavbarBgOnScroll();
         const res = await fetch(URL);
         const products = await res.json();
         renderFeatured(products);
-        saveToLocal(allProducts, products);
+        saveToSessionStorage(allProducts, products);
 
     }
 
