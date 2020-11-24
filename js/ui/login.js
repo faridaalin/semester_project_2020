@@ -51,7 +51,7 @@ export const login = (e) => {
           body: JSON.stringify(data),
         };
 
-        spinner('#login .modal-content');
+
 
         setTimeout(async () => {
           try {

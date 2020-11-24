@@ -1,9 +1,10 @@
-import { user, cart } from '../utils/settings.js';
+import { user } from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 import { logout } from '../ui/logout.js';
 import { showSearch } from '../ui/showSearch.js'
 import {loadCartNumbers} from '../helpers/loadCartNumers.js';
 import {login} from '../ui/login.js';
+import {register} from '../ui/register.js'
 
 
 export const renderNavbar = () => {
@@ -18,7 +19,7 @@ export const renderNavbar = () => {
     <button class="nav-link btn py-0"  data-toggle="modal" data-target="#login">Login</>
   </li>`
 
-  if (loggedInUser ) {
+  if (loggedInUser) {
     authLink = `
         <li class="nav-item mb-2 ${pathname === "add.html" ? "active" : ""}">
         <a class="nav-link" href="add.html">Add product</a>
@@ -39,7 +40,7 @@ export const renderNavbar = () => {
   }
 
       window.addEventListener('DOMContentLoaded', (event) => {
-
+      register();
       login();
       loadCartNumbers();
       });

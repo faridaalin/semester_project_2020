@@ -14,7 +14,7 @@ export const productCard = (product) => {
 
   const loggedInUser = getFromLocal(user);
   const edit =
-    loggedInUser && loggedInUser.role.type === "authenticated"
+  loggedInUser && loggedInUser.username === "admin"
       ? ` <button type="button" class="btn btn-info btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
 

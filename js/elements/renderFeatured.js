@@ -1,4 +1,4 @@
-import { displayProductCard } from "../helpers/displayProductCard.js";
+import renderAllProducts  from "../elements/renderAllProducts.js";
 
 
 const renderFeatured = (products) => {
@@ -6,10 +6,10 @@ const renderFeatured = (products) => {
   const featuredPropducts = products.filter(product => product.featured);
   
   if(featuredPropducts.length !== 0) {
-    displayProductCard(featuredPropducts, container);
+    renderAllProducts(featuredPropducts, "", container);
   } else {
     document.querySelector('.featured-title').textContent = "Trending";
-    displayProductCard(products, container);
+    renderAllProducts(products, "", container);
   }
  
 };

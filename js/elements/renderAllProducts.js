@@ -49,15 +49,13 @@ const saveFavourites = () => {
 
     favButtonsArr[i].addEventListener('click', saveToFavList);
   }
-
-
-
 };
 
 
 const renderAllProducts = (products, msg, container) => {
   const element = document.querySelector(container);
   element.innerHTML = "";
+  console.log(container);
 
   if(products.length === 0) {
    if(msg) {
@@ -74,10 +72,6 @@ const renderAllProducts = (products, msg, container) => {
 
   displayProductCard(products, element)
   saveFavourites();
-
-  // if(location.pathname === '/shop.html') {
-  //   renderFilterOptions(products);
-  // }
  
 };
 

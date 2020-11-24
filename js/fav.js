@@ -1,4 +1,3 @@
-import { productCard } from "./components/productCard.js";
 import { getFromLocal } from "./utils/storage.js";
 import { favs } from "./utils/settings.js";
 import renderAllProducts from './elements/renderAllProducts.js';
