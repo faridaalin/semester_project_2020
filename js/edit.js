@@ -33,13 +33,12 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
   const productID = document.querySelector("#id");
   const featured = document.querySelector("#featured");
 
-  console.dir('alt', altText);
+  console.dir(altText);
 
   const URL = `${BASE_URL}/products/${id}`;
   const token = getFromLocal(userToken);
 
   ( () => {
-    spinner(".edit-form");
 
     setTimeout(async () => {
       try {

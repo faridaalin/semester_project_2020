@@ -9,19 +9,12 @@ import { spinner } from "./elements/spinner.js";
 
 renderNavbar();
 
-const renderFilterOptions = (products) => {
-  const custom_select = document.querySelector(".custom-select");
-  products.forEach((product) => {
-    custom_select.innerHTML += `<option value="${product.category}">${product.category}</option>`;
-  });
-};
 
 (() => {
   const alreadyInStorage = getFromSessionStorage(allProducts);
 
   if (alreadyInStorage) {
     spinner(".shop-container");
-    renderFilterOptions(alreadyInStorage);
     setTimeout(() => {
       return renderAllProducts(
         alreadyInStorage,
@@ -30,7 +23,7 @@ const renderFilterOptions = (products) => {
       );
     }, 1000);
 
-
+    return;
   }
 
   spinner(".shop-container");
@@ -43,7 +36,6 @@ const renderFilterOptions = (products) => {
       const products = await res.json();
       saveToSessionStorage(allProducts, products);
       renderAllProducts(products, "Shop is currently empty", ".shop-container");
-      renderFilterOptions(products);
     } catch (error) {
       console.log(error);
     }

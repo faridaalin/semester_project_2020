@@ -13,7 +13,7 @@ export const updateProduct = (obj, url, token) => {
       body: JSON.stringify(obj),
     };
 
-    spinner(".edit-form");
+    
     setTimeout(async () => {
       try {
         const res = await fetch(url, options);

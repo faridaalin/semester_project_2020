@@ -3,6 +3,9 @@ import { showMessage } from '../helpers/showMessage.js';
 import { removeMessage } from '../helpers/removeMessage.js';
 import { favs, allProducts } from '../utils/settings.js';
 import {getFromSessionStorage, getFromLocal, saveToLocal } from '../utils/storage.js';
+import {renderFilterOptions} from './renderFilterOptions.js';
+
+
 
 
 const saveFavourites = () => {
@@ -71,6 +74,11 @@ const renderAllProducts = (products, msg, container) => {
 
   displayProductCard(products, element)
   saveFavourites();
+
+  if(location.pathname === '/shop.html') {
+    renderFilterOptions(products)
+  }
+ 
 };
 
 export default renderAllProducts;

@@ -7,6 +7,8 @@ export const deleteProduct = (url, token) => {
     Delete
   </button>`;
 
+  console.log(container);
+
     const deleteButton = document.querySelector('.btn-delete');
 
  
