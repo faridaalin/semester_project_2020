@@ -1,11 +1,12 @@
-import {loadCartNumbers} from '../helpers/loadCartNumers.js'
+import {loadCurrentItems} from '../helpers/loadCurrentItems.js'
+import {cart} from '../utils/settings.js'
 
 const saveToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value))
 };
 const saveCartItemsToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
-    loadCartNumbers();
+    loadCurrentItems(cart, '.cart-icon span');
     
 };
 

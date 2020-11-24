@@ -1,10 +1,7 @@
 import { displayProductCard } from "../helpers/displayProductCard.js";
-import { showMessage } from '../helpers/showMessage.js';
-import { removeMessage } from '../helpers/removeMessage.js';
 import { favs, allProducts } from '../utils/settings.js';
 import {getFromSessionStorage, getFromLocal, saveToLocal } from '../utils/storage.js';
-import {renderFilterOptions} from './renderFilterOptions.js';
-
+import {loadCurrentItems} from '../helpers/loadCurrentItems.js';
 
 
 
@@ -14,6 +11,7 @@ const saveFavourites = () => {
 
   for (let i = 0; i < favButtonsArr.length; i++) {
     const saveToFavList = (e) => {
+      console.log(e);
 
       const id = parseInt(e.target.dataset.id);
       const { classList } = e.target;
@@ -28,6 +26,7 @@ const saveFavourites = () => {
       if (!favsList) {
         favsList = [];
         favsList.push(newFav);
+        loadCurrentItems(favs, '.favs-icon span');
         saveToLocal(favs, favsList);
 
       } else {
@@ -36,10 +35,12 @@ const saveFavourites = () => {
 
         if (!inFavsListAlready) {
           favsList.push(newFav)
+          loadCurrentItems(favs, '.favs-icon span');
           return saveToLocal(favs, favsList);
         };
 
         const filteredFavs = favsList.filter(item => item.id !== newFav.id);
+        loadCurrentItems(favs, '.favs-icon span');
         return saveToLocal(favs, filteredFavs);
 
       }

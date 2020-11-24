@@ -1,8 +1,8 @@
-import { user } from '../utils/settings.js';
+import { user, cart, favs } from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 import { logout } from '../ui/logout.js';
 import { showSearch } from '../ui/showSearch.js'
-import {loadCartNumbers} from '../helpers/loadCartNumers.js';
+import {loadCurrentItems} from '../helpers/loadCurrentItems.js';
 import {login} from '../ui/login.js';
 import {register} from '../ui/register.js'
 
@@ -42,7 +42,8 @@ export const renderNavbar = () => {
       window.addEventListener('DOMContentLoaded', (event) => {
       register();
       login();
-      loadCartNumbers();
+      loadCurrentItems(cart, '.cart-icon span');
+      loadCurrentItems(favs, '.favs-icon span');
       });
 
 
