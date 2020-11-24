@@ -3,7 +3,7 @@ import { showMessage } from '../helpers/showMessage.js';
 import { removeMessage } from '../helpers/removeMessage.js';
 import { favs, allProducts } from '../utils/settings.js';
 import {getFromSessionStorage, getFromLocal, saveToLocal } from '../utils/storage.js';
-import {renderFilterOptions} from './renderFilterOptions.js';
+import {renderFilterCategories, renderFilterPrice} from './renderFilterOptions.js';
 
 
 
@@ -76,7 +76,8 @@ const renderAllProducts = (products, msg, container) => {
   saveFavourites();
 
   if(location.pathname === '/shop.html') {
-    renderFilterOptions(products)
+    renderFilterCategories(products)
+    renderFilterPrice(products)
   }
  
 };
