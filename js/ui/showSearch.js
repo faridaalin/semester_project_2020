@@ -1,5 +1,5 @@
 import { allProducts } from '../utils/settings.js';
-import { getFromLocal, getFromSessionStorage } from '../utils/storage.js';
+import { getFromSessionStorage } from '../utils/storage.js';
 import renderAllProducts from '../elements/renderAllProducts.js';
 
 export const showSearch = () => {
@@ -27,10 +27,8 @@ export const showSearch = () => {
       })
 
 
-
-
       if (filteredSearch.length > 0) {
-        renderAllProducts(filteredSearch, ".shop-container");
+        renderAllProducts(filteredSearch, "Shop is currently empty", ".shop-container");
       } else {
         const msg = `Sorry, we currently don't have ${searchTerm}`;
         renderAllProducts([], msg, ".shop-container");

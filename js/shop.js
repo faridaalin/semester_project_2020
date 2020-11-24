@@ -26,7 +26,6 @@ renderNavbar();
     return;
   }
 
-  spinner(".shop-container");
 
   setTimeout(async () => {
     const URL = `${BASE_URL}/products`;
@@ -41,3 +40,4 @@ renderNavbar();
     }
   }, 1000);
 })();
+

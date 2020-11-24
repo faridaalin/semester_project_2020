@@ -56,6 +56,7 @@ const saveFavourites = () => {
 
 
 const renderAllProducts = (products, msg, container) => {
+  console.log(container);
   const element = document.querySelector(container);
   element.innerHTML = "";
 
