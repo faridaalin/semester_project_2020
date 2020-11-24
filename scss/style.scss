@@ -439,8 +439,34 @@ li {
 }
 
 
+.modal.fade {
+  .card-header {
+    padding: 0;
+    margin: 0;
+    background-color: transparent; 
+    border: none;
+}
 
+
+  .login-register-form {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    input {
+      width: 90%;
+    margin-left: auto;
+    };
+    button {
+      width: 73%;
+    margin-left: auto;
+    }
+  }
+
+}
 /*  NAVBAR END */
+
+
+
+
 
 /*  BREADCRUMBS START */
 .breadcrumb {

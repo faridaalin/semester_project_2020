@@ -11240,6 +11240,28 @@ li {
   text-align: center;
 }
 
+.modal.fade .card-header {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.modal.fade .login-register-form {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.modal.fade .login-register-form input {
+  width: 90%;
+  margin-left: auto;
+}
+
+.modal.fade .login-register-form button {
+  width: 73%;
+  margin-left: auto;
+}
+
 /*  NAVBAR END */
 /*  BREADCRUMBS START */
 .breadcrumb {
