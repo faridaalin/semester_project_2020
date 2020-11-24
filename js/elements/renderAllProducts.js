@@ -3,7 +3,7 @@ import { showMessage } from '../helpers/showMessage.js';
 import { removeMessage } from '../helpers/removeMessage.js';
 import { favs, allProducts } from '../utils/settings.js';
 import {getFromSessionStorage, getFromLocal, saveToLocal } from '../utils/storage.js';
-import {renderFilterCategories, renderFilterPrice} from './renderFilterOptions.js';
+import {renderFilterOptions} from './renderFilterOptions.js';
 
 
 
@@ -56,7 +56,6 @@ const saveFavourites = () => {
 
 
 const renderAllProducts = (products, msg, container) => {
-  console.log(container);
   const element = document.querySelector(container);
   element.innerHTML = "";
 
@@ -76,10 +75,9 @@ const renderAllProducts = (products, msg, container) => {
   displayProductCard(products, element)
   saveFavourites();
 
-  if(location.pathname === '/shop.html') {
-    renderFilterCategories(products)
-    renderFilterPrice(products)
-  }
+  // if(location.pathname === '/shop.html') {
+  //   renderFilterOptions(products);
+  // }
  
 };
 

@@ -6,8 +6,10 @@ import {
   getFromSessionStorage,
 } from "./utils/storage.js";
 import { spinner } from "./elements/spinner.js";
+import {renderFilterOptions} from './elements/renderFilterOptions.js';
 
 renderNavbar();
+
 
 
 (() => {
@@ -16,6 +18,7 @@ renderNavbar();
   if (alreadyInStorage) {
     spinner(".shop-container");
     setTimeout(() => {
+      renderFilterOptions(alreadyInStorage);
       return renderAllProducts(
         alreadyInStorage,
         "Shop is currently empty",
@@ -35,6 +38,7 @@ renderNavbar();
       const products = await res.json();
       saveToSessionStorage(allProducts, products);
       renderAllProducts(products, "Shop is currently empty", ".shop-container");
+      renderFilterOptions(products);
     } catch (error) {
       console.log(error);
     }
