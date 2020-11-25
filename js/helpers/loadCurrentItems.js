@@ -13,28 +13,18 @@ export const loadCurrentItems = (tag, container) => {
         
     }
 
-    console.log(currentItems);
+     if(tag === "cart") {
+      let qtyArray = [];
 
-    if(tag === "cart") {
-      total = currentItems.reduce(function (acc, obj) { 
-         //  console.log('acc', acc) 
-         //  console.log('obj', obj) 
-       }, 0); 
+      for (let i = 0; i < currentItems.length; i++) {
+         qtyArray = currentItems[i].qtySize;
          
-      return  counterContainer.textContent =  total;
-   }
+      }
+    
+      total = qtyArray.reduce((acc, obj) => {return acc + obj.qty;}, 0);
 
-
-   //   if(tag === "cart") {
-   //      total = currentItems.reduce(function (acc, obj) { 
-   //          console.log('acc', acc) 
-   //          console.log('obj', obj.reduce((acc, item) => console.log(acc, item))) 
-   //       }, 0); 
-           
-   //      return  counterContainer.textContent =  total;
-   //   }
-
- 
+         return  counterContainer.textContent =  total;
+     }
 
      if(tag === "favs") {
         return  counterContainer.textContent = currentItems.length;

@@ -39,12 +39,7 @@ const addSize = () => {
     select.classList.add('is-valid')
   }
   selectedSize = parseInt(select.value)
-  console.log(selectedSize);
   return selectedSize;
-
-
-
-
 
   select.addEventListener('change', handleSize);
 
@@ -58,7 +53,6 @@ export function addToCart(product) {
   const addToCartBtn = document.querySelector('#addToCart');
 
   let localCart = getFromLocal(cart);
-  console.log('First load cart:', localCart);
 
   if (!localCart) localCart = [];
 
@@ -89,7 +83,6 @@ export function addToCart(product) {
         ],
         product,
       }];
-      console.log('NEW ITEM ADD TO ARRAY:', localCart);
       saveCartItemsToLocal(cart, localCart);
       return;
 
@@ -97,7 +90,6 @@ export function addToCart(product) {
     } else {
 
       const item = localCart.find((item) => {
-        console.log(' item.size:',  item.qtySize[0].size);
         return item.qtySize[0].size === selectedSize
       });
       
@@ -109,7 +101,6 @@ export function addToCart(product) {
               qty: selectedQty,
             }]
         saveCartItemsToLocal(cart, localCart);
-        console.log('Same item ID, but different SIZE:', localCart);
         return;
 
 
@@ -117,9 +108,7 @@ export function addToCart(product) {
         }else {
           item.qtySize[0].qty = item.qtySize[0].qty  + selectedQty;
           saveCartItemsToLocal(cart, localCart);
-          console.log('Same item size , but different QTY:', localCart);
           return;
-
 
         }
 
