@@ -1,8 +1,7 @@
 export  const fectData =  async (url, options) => {
-
-    if(!options) {
+ 
         try {
-            const response = await fetch(url);
+            const response = options ? await fetch(url, options) : await fetch(url);
             if(!response.ok) {       
                 throw ({status: response.status,
                     statusText: response.statusText})
@@ -15,7 +14,7 @@ export  const fectData =  async (url, options) => {
            
         }
 
-    }
+    
 
 };
 

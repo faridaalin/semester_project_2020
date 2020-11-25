@@ -1,4 +1,8 @@
 import { spinner } from '../elements/spinner.js';
+import {showMessage} from '../helpers/showMessage.js';
+import {removeMessage} from '../helpers/removeMessage.js';
+import {fectData} from '../helpers/fetcData.js'
+
 
 export const deleteProduct = (url, token) => {
 
@@ -18,17 +22,26 @@ export const deleteProduct = (url, token) => {
                 Authorization: `Bearer ${token}`,
             }
         }
-        spinner('.editDelete-container');
-       
-            try {
-                const res = await fetch(url, options);
-                const deletedItem = await res.json();
+ 
+        fectData(url, options).then(result => {
+            if(!result || typeof result === 'string') {
+              showMessage('danger', result, '#msg');
+              return;
+            
+               }
+               console.log(result);
+
+               
+               if(result.created_at) {
+                const msg = `${result.title} has been deleted`;
+                showMessage('success', msg, '#msg')
+            }
+         
                 location.href = "/";
-            }
-            catch (error) {
-                console.log(error);
-            }
-  
+        
+          });
+       
+
 
     };
 

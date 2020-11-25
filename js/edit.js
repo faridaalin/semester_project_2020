@@ -38,18 +38,15 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
   const URL = `${BASE_URL}/products/${id}`;
   const token = getFromLocal(userToken);
 
-  ( async () => {
+ 
+    fectData(URL).then(product => {
+      if(!product || typeof product === 'string') {
+        showMessage('danger', product, '.edit-form .message-container');
+        return;
 
-
-    (async () => {
-      const product = await fectData(URL);
-     if(!product || typeof product === 'string') {
-      showMessage('danger', result, "#msg");
-      return;
-  
-     }
+         }
      title.value = product.title;
-     brand.value = product.title;
+     brand.value = product.brand;
      price.value = product.price;
      description.value = product.description;
      imgUrl.value = product.image_url;
@@ -57,18 +54,13 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
      category.value = product.category,
      productID.value = product.id;
      featured.checked = product.featured;
-    })()
-
-
-
-  })();
-
+    });
 
   const form = document.querySelector(".edit-form");
 
   const handleFormEdit = (e) => {
     e.preventDefault();
-    removeMessage("#msg");
+    removeMessage('.edit-form .message-container');
 
     const isValid = validateFields(".edit-form .form-control");
     if (isValid === false || isValid === undefined){

@@ -14,21 +14,9 @@ renderNavbar();
 
 (() => {
   removeMessage('.shop-container .message-container');
-  const alreadyInStorage = getFromSessionStorage(allProducts);
-
-  if (alreadyInStorage) {
-   
-      renderFilterOptions(alreadyInStorage);
-      return renderAllProducts(
-        alreadyInStorage,
-        "Shop is currently empty",
-        ".shop-container"
-      );
-
-    return;
-  }
 
     const URL = `${BASE_URL}/products`;
+
     fectData(URL).then(result => {
       if(!result || typeof result === 'string') {
         showMessage('danger', result, '.shop-container .message-container');

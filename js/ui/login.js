@@ -3,6 +3,7 @@ import {  saveToLocal } from "../utils/storage.js";
 import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
 import {renderNavbar} from '../elements/renderNavbar.js'
+import {fectData} from '../helpers/fetcData.js';
 import { spinner } from "../elements/spinner.js";
 
 export const login = (e) => {
@@ -54,31 +55,65 @@ export const login = (e) => {
 
 
         setTimeout(async () => {
-          try {
-            const res = await fetch(URL, options);
-            const userData = await res.json();
-  
-  
-            if (userData.statusCode === 400) {
-              const msg = "Invalid username or password";
-              showMessage("danger", msg, '.message-container');
-              username.classList.add("is-invalid");
-              password.classList.add("is-invalid");
+
+          fectData(URL, options).then(userData => {
+            if(!userData || typeof userData === 'string') {
+              showMessage('danger', userData, '.message-container');
               return;
-            }
+            
+               }
+
+               console.log(userData);
+              saveToLocal(user, userData.user);
+              saveToLocal(userToken, userData.jwt);
+         
+              //  if (userData.statusCode === 400) {
+              //   const msg = "Invalid username or password";
+              //   showMessage("danger", msg, '.message-container');
+              //   username.classList.add("is-invalid");
+              //   password.classList.add("is-invalid");
+              //   return;
+              // }
+    
+ 
+    
+              // const modal = document.querySelector(".modal");
+              // modal.classList.remove("show");
+              // modal.classList.add("hide");
+    
+              // location.reload();
+              // renderNavbar()
+          });
+
+
+
+
+
+          // try {
+          //   const res = await fetch(URL, options);
+          //   const userData = await res.json();
   
-            saveToLocal(user, userData.user);
-            saveToLocal(userToken, userData.jwt);
   
-            const modal = document.querySelector(".modal");
-            modal.classList.remove("show");
-            modal.classList.add("hide");
+          //   if (userData.statusCode === 400) {
+          //     const msg = "Invalid username or password";
+          //     showMessage("danger", msg, '.message-container');
+          //     username.classList.add("is-invalid");
+          //     password.classList.add("is-invalid");
+          //     return;
+          //   }
   
-            location.reload();
-            renderNavbar()
-          } catch (error) {
-            console.log(error);
-          }
+          //   saveToLocal(user, userData.user);
+          //   saveToLocal(userToken, userData.jwt);
+  
+          //   const modal = document.querySelector(".modal");
+          //   modal.classList.remove("show");
+          //   modal.classList.add("hide");
+  
+          //   location.reload();
+          //   renderNavbar()
+          // } catch (error) {
+          //   console.log(error);
+          // }
       
         }, 1000);
 

@@ -3,6 +3,10 @@ import { productDetail } from './components/productDetail.js'
 import { renderNavbar } from "./elements/renderNavbar.js";
 import {addToCart} from './helpers/addtoCart.js'
 import {spinner} from './elements/spinner.js';
+import {fectData} from './helpers/fetcData.js';
+import {showMessage} from './helpers/showMessage.js';
+import {removeMessage} from './helpers/removeMessage.js';
+
 
 renderNavbar();
 
@@ -16,29 +20,19 @@ const id = urlParam.get("id");
 
 
 ( () => {
-  spinner('.pdp-detail-container');      
-
-
+  removeMessage('.pdp-detail-container .message-container')
     const URL = `${BASE_URL}/products/${id}`;
 
-    try {
-      const res = await fetch(URL);
-      const product = await res.json();
-      if(product) {
-        spinner('.pdp-detail-container div', "d-none");    
-        productDetail(product)
-        addToCart(product);
-      }
- 
-  
-    }
-    catch (error) {
-      console.log(error);
-    }
+    fectData(URL).then(result => {
+      if(!result || typeof result === 'string') {
+        showMessage('danger', result, '.pdp-detail-container .message-container');
+        return;
+      
+         }
+         productDetail(result)
+         addToCart(result);
+    });
     
-
-
-
 }
 )();
 

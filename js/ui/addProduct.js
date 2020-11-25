@@ -1,6 +1,8 @@
 import {showMessage} from '../helpers/showMessage.js';
 import {removeMessage} from '../helpers/removeMessage.js';
-import {spinner} from '../elements/spinner.js';
+import {fectData} from '../helpers/fetcData.js';
+
+
 
 export const addNewProduct =  (url, token, obj) => {
     removeMessage('#msg')
@@ -13,28 +15,18 @@ export const addNewProduct =  (url, token, obj) => {
         },
         body: JSON.stringify(obj)
     }
-    spinner('.add-container');
 
-   
-    
-        try {
-            const res = await fetch(url, options);
-            const product = await res.json();
-          
-    
-            if(product.created_at) {
-                const msg = `${obj.title} has been created`;
-                showMessage('success', msg, '#msg')
-            }
-           
-        }
-        catch (error) {
-            console.log(error);
-            const msg = `Something went wrong, please try again later`;
-            showMessage('warning', msg, '#msg')
-        }
         
-  
-
-
+    fectData(url, options).then(result => {
+        if(!result || typeof result === 'string') {
+          showMessage('danger', result, '#msg');
+          return;
+        
+           }
+           console.log(result);
+           if(result.created_at) {
+            const msg = `${obj.title} has been created`;
+            showMessage('success', msg, '#msg')
+        }
+      });
 }

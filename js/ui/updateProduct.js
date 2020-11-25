@@ -1,6 +1,7 @@
 import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
-import { spinner } from '../elements/spinner.js';
+import {fectData} from '../helpers/fetcData.js';
+
 
 export const updateProduct = async (obj, url, token) => {
    
@@ -13,25 +14,24 @@ export const updateProduct = async (obj, url, token) => {
       body: JSON.stringify(obj),
     };
 
-    
-  
-      try {
-        const res = await fetch(url, options);
-        const updatedProduct = await res.json();
-  
-        if(updatedProduct.updated_at) {
+    fectData(url, options).then(product => {
+      if(!product || typeof product === 'string') {
+        showMessage('danger', product, '.edit-form .message-container');
+        return;
+
+         }
+
+         console.log('updatedProduct',product);
+   
+         if(product.updated_at) {
           const msg = "Product has been updated.";
-          showMessage("success", msg, "#msg");
+          showMessage("success", msg, '.edit-form .message-container');
         };
         
-        if(updatedProduct.error) {
-          const msg = "Error.";
-          showMessage("danger", msg, "#msg");
+        if(product.error) {
+          const msg = product.error;
+          showMessage("danger", msg, '.edit-form .message-container');
         };
-  
-      } catch (error) {
-        console.log(error);
-      }
-
+    });
 
   };
