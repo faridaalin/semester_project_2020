@@ -1,19 +1,19 @@
 import {loadCurrentItems} from '../helpers/loadCurrentItems.js'
-import {cart} from '../utils/settings.js'
+import {cart, favs} from '../utils/settings.js'
 
 const saveToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value))
 };
 const saveCartItemsToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
-    console.log('saveing item to cart..');
-    loadCurrentItems(cart, '.cart-icon span');
+    loadCurrentItems(key, '.cart-icon span');
     
 };
 
 const saveToSessionStorage = (key, value) => {
     sessionStorage.setItem(key, JSON.stringify(value))
 };
+
 const getFromSessionStorage = (key) => {
     const value = sessionStorage.getItem(key);
     if(value === null) {
@@ -34,5 +34,12 @@ const getFromLocal = (key) => {
 
 
 
+const saveToFavsListStorage = (tag, list) => {
+    saveToLocal(tag, list);
+    loadCurrentItems(tag, '.favs-icon span');
+  };
+  
 
-export {saveToLocal, getFromLocal, saveCartItemsToLocal, saveToSessionStorage, getFromSessionStorage};
+
+
+export {saveToLocal, getFromLocal, saveCartItemsToLocal, saveToSessionStorage, getFromSessionStorage, saveToFavsListStorage};

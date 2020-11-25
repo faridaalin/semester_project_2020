@@ -4,6 +4,7 @@ export const loadCurrentItems = (tag, container) => {
 
     const currentItems = getFromLocal(tag);
 
+
     const counterContainer = document.querySelector(container);
  
     let total = 0;
@@ -18,18 +19,16 @@ export const loadCurrentItems = (tag, container) => {
 
       for (let i = 0; i < currentItems.length; i++) {
          qtyArray = currentItems[i].qtySize;
-         
       }
     
       total = qtyArray.reduce((acc, obj) => {return acc + obj.qty;}, 0);
 
          return  counterContainer.textContent =  total;
-     }
+     } 
 
-     if(tag === "favs") {
+     if(tag === "favs") {  
         return  counterContainer.textContent = currentItems.length;
      }
-
 
 }
 

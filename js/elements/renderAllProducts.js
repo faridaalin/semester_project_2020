@@ -1,8 +1,7 @@
 import { displayProductCard } from "../helpers/displayProductCard.js";
 import { favs, allProducts } from '../utils/settings.js';
-import {getFromSessionStorage, getFromLocal, saveToLocal } from '../utils/storage.js';
+import {getFromSessionStorage, getFromLocal, saveToLocal, saveToFavsListStorage } from '../utils/storage.js';
 import {loadCurrentItems} from '../helpers/loadCurrentItems.js';
-
 
 
 const saveFavourites = () => {
@@ -25,26 +24,29 @@ const saveFavourites = () => {
 
       if (!favsList) {
         favsList = [];
-        favsList.push(newFav);
-        loadCurrentItems(favs, '.favs-icon span');
-        saveToLocal(favs, favsList);
+        favsList.push(newFav);  
+
+        saveToFavsListStorage(favs, favsList);
+
 
       } else {
         const inFavsListAlready = favsList.find(item => item.id === id);
 
 
         if (!inFavsListAlready) {
-          favsList.push(newFav)
-          loadCurrentItems(favs, '.favs-icon span');
-          return saveToLocal(favs, favsList);
+          favsList.push(newFav);
+
+          saveToFavsListStorage(favs, favsList);
+          return; 
         };
 
         const filteredFavs = favsList.filter(item => item.id !== newFav.id);
-        loadCurrentItems(favs, '.favs-icon span');
-        return saveToLocal(favs, filteredFavs);
+
+        saveToFavsListStorage(favs, filteredFavs);
+        return;
 
       }
-
+      loadCurrentItems(favs, '.favs-icon span');
 
     };
 
