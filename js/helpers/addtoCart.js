@@ -29,17 +29,22 @@ const addQty = () => {
 const addSize = () => {
 
   const select = document.querySelector('.size');
+  let selectedSize;
+  const handleSize = (e) => {
+    if(isNaN(e.target.value)) {
+      select.classList.add('is-invalid')
+      return;
+    } else {
+      select.classList.remove('is-invalid')
+      select.classList.add('is-valid')
+    }
+    selectedSize = parseInt(e.target.value)
+    return selectedSize;
+    
 
-  if(isNaN(select.value)) {
-    select.classList.add('is-invalid')
-    return;
-  } else {
-    select.classList.remove('is-invalid')
-    select.classList.add('is-valid')
   }
 
-  return parseInt( select.value)
-  
+
   select.addEventListener('change', handleSize);
 
 }
@@ -60,6 +65,8 @@ export function addToCart(product) {
       const qty = document.querySelector('.value').textContent;
       const selectedQty = parseInt(qty);
       const selectedSize = addSize();
+      const select = document.querySelector('.size');
+      select.classList.add('is-invalid')
       if(!selectedSize) return;
 
 
@@ -106,8 +113,6 @@ export function addToCart(product) {
         });
       }
       
-  
-    
   
     });
   }
