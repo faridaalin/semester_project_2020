@@ -7,13 +7,11 @@ export const deleteProduct = (url, token) => {
     Delete
   </button>`;
 
-  console.log(container);
-
     const deleteButton = document.querySelector('.btn-delete');
 
  
 
-    const handleDeleteProduct = () => {
+    const handleDeleteProduct = async () => {
         const options = {
             method: "DELETE",
             headers: {
@@ -21,7 +19,7 @@ export const deleteProduct = (url, token) => {
             }
         }
         spinner('.editDelete-container');
-        setTimeout(async () => {
+       
             try {
                 const res = await fetch(url, options);
                 const deletedItem = await res.json();
@@ -30,7 +28,7 @@ export const deleteProduct = (url, token) => {
             catch (error) {
                 console.log(error);
             }
-        }, 1000);
+  
 
     };
 

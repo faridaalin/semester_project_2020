@@ -1,5 +1,6 @@
 import renderAllProducts from "../elements/renderAllProducts.js";
 
+
 const filterByCategory = (products) => {
 const checkboxesNode = document.querySelectorAll('.form-check-input');
 const checkboxesArr = [...checkboxesNode];        
@@ -17,7 +18,7 @@ checkboxesArr.forEach(checkbox => {
   
   
       const filteredCategory = products.filter((product) => product.category.toLowerCase() === e.target.value.toLowerCase());
-      console.log(filteredCategory);
+      console.log('Category filter:',filteredCategory);
   
       if (filteredCategory.length > 0) {
         renderAllProducts(filteredCategory, "Shop is currently empty", ".shop-container");
@@ -57,6 +58,8 @@ checkboxesArr.forEach(checkbox => {
 
 };
 
+
+
 const filterByPrice = (products) => {
   const range = document.querySelector('.custom-range');
   const priceValue = document.querySelector('.value');
@@ -74,12 +77,9 @@ const filterByPrice = (products) => {
     timeout = setTimeout( () => {
 
       const value = e.target.value;
-      // value.innerHTML = value;
-      console.log(value);
-
-
-      const filteredPrice = products.filter((product) => product.price <= value);
-
+     
+      const filteredPrice = products.filter((product) => parseInt(product.price) <= parseInt(value));
+      
       console.log('Filtered price:', filteredPrice);
       console.log(filteredPrice.length > 0);
 

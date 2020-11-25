@@ -11,7 +11,7 @@ const saveFavourites = () => {
 
   for (let i = 0; i < favButtonsArr.length; i++) {
     const saveToFavList = (e) => {
-      console.log(e);
+
 
       const id = parseInt(e.target.dataset.id);
       const { classList } = e.target;
@@ -56,7 +56,7 @@ const saveFavourites = () => {
 const renderAllProducts = (products, msg, container) => {
   const element = document.querySelector(container);
   element.innerHTML = "";
-  console.log(container);
+
 
   if(products.length === 0) {
    if(msg) {

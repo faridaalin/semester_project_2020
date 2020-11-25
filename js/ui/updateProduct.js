@@ -2,7 +2,7 @@ import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
 import { spinner } from '../elements/spinner.js';
 
-export const updateProduct = (obj, url, token) => {
+export const updateProduct = async (obj, url, token) => {
    
     const options = {
       method: "PUT",
@@ -14,7 +14,7 @@ export const updateProduct = (obj, url, token) => {
     };
 
     
-    setTimeout(async () => {
+  
       try {
         const res = await fetch(url, options);
         const updatedProduct = await res.json();
@@ -32,6 +32,6 @@ export const updateProduct = (obj, url, token) => {
       } catch (error) {
         console.log(error);
       }
-    }, 1000);
+
 
   };

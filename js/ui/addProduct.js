@@ -15,7 +15,7 @@ export const addNewProduct =  (url, token, obj) => {
     }
     spinner('.add-container');
 
-    setTimeout(async () => {
+   
     
         try {
             const res = await fetch(url, options);
@@ -34,7 +34,7 @@ export const addNewProduct =  (url, token, obj) => {
             showMessage('warning', msg, '#msg')
         }
         
-    }, 1000);
+  
 
 
 }

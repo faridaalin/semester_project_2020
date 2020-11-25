@@ -7,6 +7,8 @@ import { deleteProduct } from "./ui/deleteProduct.js";
 import { updateProduct } from "./ui/updateProduct.js";
 import { removeMessage } from "./helpers/removeMessage.js";
 import {spinner} from './elements/spinner.js';
+import {fectData} from './helpers/fetcData.js';
+
 
 
 
@@ -33,34 +35,32 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
   const productID = document.querySelector("#id");
   const featured = document.querySelector("#featured");
 
-  console.dir(altText);
-
   const URL = `${BASE_URL}/products/${id}`;
   const token = getFromLocal(userToken);
 
-  ( () => {
+  ( async () => {
 
-    setTimeout(async () => {
-      try {
-        const res = await fetch(URL);
-        const product = await res.json();
+
+    (async () => {
+      const product = await fectData(URL);
+     if(!product || typeof product === 'string') {
+      showMessage('danger', result, "#msg");
+      return;
   
-        title.value = product.title;
-        brand.value = product.title;
-        price.value = product.price;
-        description.value = product.description;
-        imgUrl.value = product.image_url;
-        altText.value = product.alt_text,
-        category.value = product.category,
-        productID.value = product.id;
-        featured.checked = product.featured;
-        
-      } catch (error) {
-        console.log(error);
-        const msg = "Something went wrong, please try again later.";
-        showMessage("warning", msg, "#msg");
-      }
-    }, 1000);
+     }
+     title.value = product.title;
+     brand.value = product.title;
+     price.value = product.price;
+     description.value = product.description;
+     imgUrl.value = product.image_url;
+     altText.value = product.alt_text,
+     category.value = product.category,
+     productID.value = product.id;
+     featured.checked = product.featured;
+    })()
+
+
+
   })();
 
 

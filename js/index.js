@@ -6,6 +6,10 @@ import {renderNavbar} from './elements/renderNavbar.js';
 import {saveToSessionStorage, getFromSessionStorage} from './utils/storage.js';
 import {editBackgroundImg} from './elements/renderHerobanner.js';
 import {spinner} from './elements/spinner.js';
+import {fectData} from './helpers/fetcData.js';
+import {showMessage} from './helpers/showMessage.js';
+import {removeMessage} from './helpers/removeMessage.js';
+
 
 
 renderNavbar();
@@ -14,52 +18,30 @@ showNavbarBgOnScroll();
 
 
 ( async () => {
-   
-        const URL = `${BASE_URL}/home`;
-        try {
-            const res = await fetch(URL);
-            const banner = await res.json();
-            renderHeroBanner(banner.hero_url);
-        }
-    
-        catch(error) {
-            console.log(error)
-        }
-        
-
-})();
-
-(  () => {
+    removeMessage('.herobanner .message-container');
+    removeMessage('.featured-container .message-container');
+    const homeUrl = `${BASE_URL}/home`;
     const productsUrl = `${BASE_URL}/products`;
-        spinner('.featured-container');
 
-        setTimeout(async () => {
+    fectData(homeUrl).then(result => {
+       if(!result || typeof result === 'string') {
+           const msg = "Failed to get background image, check for url misspelling."
+        showMessage('danger', msg, '.herobanner .message-container');
+        return;
+       }
+       renderHeroBanner(result.hero_url);
+      });
 
-        try {
-            const res = await fetch(productsUrl);
-            const products = await res.json();
-            spinner('.featured-container', "d-none");
-            renderFeatured(products);
-            saveToSessionStorage(allProducts, products);
-    
-        }
-
-        catch(error) {
-            console.log(error)
-        }
-            
-        }, 1000);
-       
-
-   
-
+    fectData(productsUrl).then(result => {
+        if(!result || typeof result === 'string') {
+            showMessage('danger', result, '.featured-container .message-container');
+            return;
+        
+           }
+           renderFeatured(result);
+           saveToSessionStorage(allProducts, result);
+      });
 })();
-
-
-
-
-
-
 
 
 

@@ -25,9 +25,6 @@ export const editBackgroundImg = (e) => {
             return;
         }
 
-        console.log(altText.value);
-        console.log(imgUrl.value);
-
         const productObj = {
             hero_banner_alt_text: altText.value,
             hero_url: imgUrl.value,
@@ -45,7 +42,6 @@ export const editBackgroundImg = (e) => {
 const renderHeroBanner = (url) => {
     const herobanner = document.querySelector('.herobanner');
     const herobannerContent = document.querySelector('.herobanner__content');
-    console.log(herobannerContent);
 
     herobanner.style.backgroundImage = `url(${url})`;
 

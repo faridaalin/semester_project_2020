@@ -18,7 +18,7 @@ const id = urlParam.get("id");
 ( () => {
   spinner('.pdp-detail-container');      
 
-  setTimeout( async() => {
+
     const URL = `${BASE_URL}/products/${id}`;
 
     try {
@@ -36,7 +36,7 @@ const id = urlParam.get("id");
       console.log(error);
     }
     
-  }, 1000);
+
 
 
 }
