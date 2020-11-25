@@ -4,8 +4,8 @@ import renderHeroBanner from "./elements/renderHerobanner.js";
 import renderFeatured from "./elements/renderFeatured.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
 import {
-    saveToSessionStorage,
-    getFromSessionStorage,
+  saveToSessionStorage,
+  getFromSessionStorage,
 } from "./utils/storage.js";
 import { editBackgroundImg } from "./elements/renderHerobanner.js";
 import { spinner } from "./elements/spinner.js";
@@ -18,53 +18,31 @@ editBackgroundImg();
 showNavbarBgOnScroll();
 
 (async () => {
+  removeMessage(".herobanner .message-container");
+  removeMessage(".featured-container .message-container");
+  
 
-    removeMessage(".herobanner .message-container");
-    removeMessage(".featured-container .message-container");
+  const homeUrl = `${BASE_URL}/home`;
+  const productsUrl = `${BASE_URL}/products`;
 
-    const productsInStorage = getFromSessionStorage(allProducts);
-    const herobannerInStorage = getFromSessionStorage(home);
+  const [homeResponse, productResponse] = await Promise.all([
+    fectData(homeUrl),
+    fectData(productsUrl),
+  ]);
+
+  if (!homeResponse || typeof homeResponse === "string") {
+    const msg = "Failed to get background image, check for url misspelling.";
+    showMessage("danger", msg, ".herobanner .message-container");
+    return;
+  }
+  renderHeroBanner(homeResponse.hero_url);
 
 
-    const homeUrl = `${BASE_URL}/home`;
-    const productsUrl = `${BASE_URL}/products`;
-
-    if (herobannerInStorage && productsInStorage) {
-        renderHeroBanner(herobannerInStorage.hero_url);
-        renderFeatured(productsInStorage);
-        return;
+    if (!productResponse || typeof productResponse === "string") {
+      showMessage("danger", result, ".featured-container .message-container");
+      saveToSessionStorage(allProducts)
+      return;
     }
-
-    if (!productsInStorage || !herobannerInStorage) {
-        if(productsInStorage) {
-            renderFeatured(productsInStorage);
-        } else {
-            renderHeroBanner(herobannerInStorage.hero_url);
-        }
-        
-        if (!productsInStorage) {
-            fectData(productsUrl).then(result => {
-                if (!result || typeof result === "string") {
-                    showMessage("danger", result, ".featured-container .message-container");
-                    return;
-                }
-                saveToSessionStorage(allProducts, result);
-                renderFeatured(result);
-            });
-
-        } else {
-
-            fectData(homeUrl).then(result => {
-                if (!result || typeof result === "string") {
-                    const msg = "Failed to get background image, check for url misspelling.";
-                    showMessage("danger", msg, ".herobanner .message-container");
-                    return;
-                }
-
-                saveToSessionStorage(home, result);
-                renderHeroBanner(result.hero_url);
-            });
-        }
-    };
-
+  renderFeatured(productResponse);
+  saveToSessionStorage(allProducts, productResponse);
 })();
