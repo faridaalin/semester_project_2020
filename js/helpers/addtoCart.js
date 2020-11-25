@@ -38,18 +38,16 @@ const addSize = () => {
     select.classList.add('is-valid')
   }
 
-  let selectedSize = parseInt( select.value);
-  return selectedSize;
+  return parseInt( select.value)
   
   select.addEventListener('change', handleSize);
 
 }
 
 
-
-
 export function addToCart(product) {
   addQty();
+  addSize();
 
     const addToCartBtn = document.querySelector('#addToCart');
   
@@ -58,30 +56,57 @@ export function addToCart(product) {
     if(!localCart)  localCart = [];
   
     addToCartBtn.addEventListener('click', function (e) {
+  
       const qty = document.querySelector('.value').textContent;
       const selectedQty = parseInt(qty);
       const selectedSize = addSize();
       if(!selectedSize) return;
 
 
-    const item = localCart.find((item) => item.product.id === product.id);
+    const alreadyInCart = localCart.find((item) => item.product.id === product.id);
+  
+      if (!alreadyInCart) {
+          localCart = [...localCart, {
+          qtySize:[
+            {
+              size: selectedSize,
+              qty: selectedQty,
+            }
+          ],
+          product,
+        }];
+         saveCartItemsToLocal(cart, localCart);
+         return;
 
      
+      }  else {
+        alreadyInCart.qtySize.forEach(item => {
+
+         if(item.size !== selectedSize) {
+           //push new object
+           localCart = [...localCart, 
+            item = [...alreadyInCart.qtySize,
+              {
+                size: selectedSize,
+                qty: selectedQty,
+              }
+            ]]
+         ;
+
+          saveCartItemsToLocal(cart, localCart);
+          return;
+        
+         } else {
+           // Update size on the object
+           item.qty = item.qty + selectedQty;
+           saveCartItemsToLocal(cart, localCart);
+           return
   
-      if (item) {
-         item.qty = selectedQty;
-         item.size = selectedSize;
-     
-      } else {
-        localCart = [...localCart, {
-          size: selectedSize,
-          qty: selectedQty,
-          product: product,
-        }]
-  
+         }
+        });
       }
-
-      saveCartItemsToLocal(cart, localCart);
+      
+  
     
   
     });

@@ -6,6 +6,7 @@ const saveToLocal = (key, value) => {
 };
 const saveCartItemsToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
+    console.log('save');
     loadCurrentItems(cart, '.cart-icon span');
     
 };

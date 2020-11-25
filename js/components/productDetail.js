@@ -17,9 +17,9 @@ export const productDetail = (product) => {
 
 <div class="col-12 col-md-6 pt-4 mt-4 pt-md-0 mt-md-0 ">
 <div class="content-container">
-   <div class="col-12 col-md-6 pt-4 mt-4 pt-md-0 mt-md-0">
+   <div class="pt-4 mt-4 pt-md-0 mt-md-0">
   <small class="pb-2">${product.brand}</small>
-   // <h3 class="pb-2">${product.title}</h3>
+   <h3 class="pb-2">${product.title}</h3>
   <h5 class="pb-2">NOK ${product.price}</h5>
   <p class="pb-4 mb-4">
   Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus

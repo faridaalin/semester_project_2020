@@ -1,5 +1,4 @@
 export  const fectData =  async (url, options) => {
- console.log(options);
         try {
             const response = options ? await fetch(url, options) : await fetch(url);
             if(!response.ok) {       

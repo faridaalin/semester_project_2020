@@ -29,6 +29,9 @@ const id = urlParam.get("id");
         return;
       
          }
+         document.title = result.title;
+         const breadcrumb = document.querySelector('.breadcrumb');
+         breadcrumb.innerHTML += `<li class="breadcrumb-item active" aria-current="page">${result.title}</li>`
          productDetail(result)
          addToCart(result);
     });

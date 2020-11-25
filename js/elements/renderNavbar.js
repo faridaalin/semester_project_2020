@@ -87,7 +87,7 @@ export const renderNavbar = () => {
       ${searchbar}
 
         <li class="nav-item mr-2 favs-icon">
-        <a class="" href="/fav.html"><i class="fa fa-heart"><span class="counter">0</span></i></a>
+        <a class="" href="/fav.html"><i class="fa fa-heart"></i><span class="counter">0</span></a>
         </li>
 
         <li class="nav-item cart-icon">
