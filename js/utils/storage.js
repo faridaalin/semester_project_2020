@@ -14,7 +14,6 @@ const saveToSessionStorage = (key, value) => {
     sessionStorage.setItem(key, JSON.stringify(value))
 };
 const getFromSessionStorage = (key) => {
-
     const value = sessionStorage.getItem(key);
     if(value === null) {
         return null;
