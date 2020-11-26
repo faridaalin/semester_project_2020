@@ -8,6 +8,13 @@ $border-width: 2px;
   background-color: transparent;
 };
 
+.form-control {
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(95, 123, 139, 0.35) !important;
+  }
+}
+
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -91,6 +98,8 @@ li {
   position: relative;
   padding-left: 1rem;
   color: #143e56cf;
+  margin-bottom: 2rem;
+
 
   &::after {
     content: "";
@@ -104,29 +113,35 @@ li {
 }
 
 .footer {
-
-  background-color: getColour(green-600);
+  background-color: rgba(120, 161, 185, 0.2);
 
   h5 {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 900;
+    padding-bottom: 1rem;
   }
+
   a {
     color: getColour(secondary);
 
+    
+
     &:hover {
+      text-decoration: none;
       filter: brightness(50%);
     }
     
   }
 
   p, a {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: getWeight(light);
   }
 
   .grid-footer {
     display: grid;
-    grid-template-columns: repeat(4, 40px);
+    grid-template-columns: repeat(4, 30px);
     grid-template-rows: 1fr;
     grid-column-gap: 1rem;
 
@@ -136,26 +151,34 @@ li {
   }
 
   i {
-    font-size: 3rem;
+    font-size: 2rem;
+    cursor: pointer;
 
     &:hover {
       filter: brightness(50%);
     }
 
     @media all and (min-width: 768px) {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 
   .footer-copyright {
     font-weight: getWeight(medium);
     flex: 1;
+    background-color: rgba(20, 62, 86, 0.2);
   }
 
   .newsletter {
     .btn {
       padding: 0.5rem 1rem;
-      font-size: 0.5rem;
+      font-size: 0.7rem;
+    }
+
+    input {
+      &::placeholder {
+        font-size: 0.7rem;
+      }
     }
   }
 
@@ -269,9 +292,9 @@ h1, h2, h3, h4, h5, a {
   }
 }
 
-.navbar-bg {
-  background: getColour(green-200);
-}
+// .navbar-bg {
+//   background: getColour(green-200);
+// }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus,
@@ -339,28 +362,9 @@ h1, h2, h3, h4, h5, a {
     border-radius: 100px;
     border: none;
 
-    &::placeholder {
+    &::placeholder, input::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder  {
       color: getColour(secondary);
-    }
-
-    input::-webkit-input-placeholder {
-      color: getColour(secondary);
-    }
-
-    &::-moz-placeholder {
-      color: getColour(secondary);
-    }
-
-    &:-ms-input-placeholder {
-      color: getColour(secondary);
-    }
-
-    &::-webkit-input-placeholder {
-      color: getColour(secondary);
-    }
-
-    &::placeholder {
-      color: getColour(secondary);
+      font-size: 0.5rem;
     }
   }
 
@@ -435,7 +439,14 @@ h1, h2, h3, h4, h5, a {
   }
 }
 .navbar-custom {
-  background: getColour(green-200);
+   background:  #edf6f9;
+
+   .fa {
+     color: getColour(secondary);
+     opacity: 0.7;
+    //  color: getColour(green-600);
+   }
+
 }
 
 .modal-footer {

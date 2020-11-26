@@ -2,6 +2,11 @@
   background-color: transparent;
 }
 
+.form-control:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(95, 123, 139, 0.35) !important;
+          box-shadow: 0 0 0 0.2rem rgba(95, 123, 139, 0.35) !important;
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10850,6 +10855,7 @@ li {
   position: relative;
   padding-left: 1rem;
   color: #143e56cf;
+  margin-bottom: 2rem;
 }
 
 .header::after {
@@ -10863,11 +10869,14 @@ li {
 }
 
 .footer {
-  background-color: #a3b8c1;
+  background-color: rgba(120, 161, 185, 0.2);
 }
 
 .footer h5 {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 900;
+  padding-bottom: 1rem;
 }
 
 .footer a {
@@ -10875,20 +10884,21 @@ li {
 }
 
 .footer a:hover {
+  text-decoration: none;
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
 }
 
 .footer p, .footer a {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 300;
 }
 
 .footer .grid-footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (40px)[4];
-      grid-template-columns: repeat(4, 40px);
+  -ms-grid-columns: (30px)[4];
+      grid-template-columns: repeat(4, 30px);
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   grid-column-gap: 1rem;
@@ -10901,7 +10911,8 @@ li {
 }
 
 .footer i {
-  font-size: 3rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .footer i:hover {
@@ -10911,7 +10922,7 @@ li {
 
 @media all and (min-width: 768px) {
   .footer i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -10920,11 +10931,28 @@ li {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  background-color: rgba(20, 62, 86, 0.2);
 }
 
 .footer .newsletter .btn {
   padding: 0.5rem 1rem;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.footer .newsletter input::-webkit-input-placeholder {
+  font-size: 0.7rem;
+}
+
+.footer .newsletter input:-ms-input-placeholder {
+  font-size: 0.7rem;
+}
+
+.footer .newsletter input::-ms-input-placeholder {
+  font-size: 0.7rem;
+}
+
+.footer .newsletter input::placeholder {
+  font-size: 0.7rem;
 }
 
 h1, h2, h3, h4, h5, a {
@@ -11028,10 +11056,6 @@ h1, h2, h3, h4, h5, a {
   background-color: #FAB162;
 }
 
-.navbar-bg {
-  background: #dde7ea;
-}
-
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .show > .nav-link,
@@ -11114,40 +11138,14 @@ h1, h2, h3, h4, h5, a {
   border: none;
 }
 
-.search input::-webkit-input-placeholder {
+.search input::-webkit-input-placeholder, .search input input::-webkit-input-placeholder, .search input ::-moz-placeholder, .search input :-ms-input-placeholder, .search input ::-webkit-input-placeholder {
   color: #143e56;
+  font-size: 0.5rem;
 }
 
-.search input:-ms-input-placeholder {
+.search input::placeholder, .search input input::-webkit-input-placeholder, .search input ::-moz-placeholder, .search input :-ms-input-placeholder, .search input ::-webkit-input-placeholder {
   color: #143e56;
-}
-
-.search input::-ms-input-placeholder {
-  color: #143e56;
-}
-
-.search input::placeholder {
-  color: #143e56;
-}
-
-.search input input::-webkit-input-placeholder {
-  color: #143e56;
-}
-
-.search input:-ms-input-placeholder {
-  color: #143e56;
-}
-
-.search input::-webkit-input-placeholder {
-  color: #143e56;
-}
-
-.search input::-ms-input-placeholder {
-  color: #143e56;
-}
-
-.search input::placeholder {
-  color: #143e56;
+  font-size: 0.5rem;
 }
 
 .search .search-icon {
@@ -11233,7 +11231,12 @@ h1, h2, h3, h4, h5, a {
 }
 
 .navbar-custom {
-  background: #dde7ea;
+  background: #edf6f9;
+}
+
+.navbar-custom .fa {
+  color: #143e56;
+  opacity: 0.7;
 }
 
 .modal-footer {
