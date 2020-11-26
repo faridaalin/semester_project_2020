@@ -31,6 +31,7 @@ export const editBackgroundImg = (e) => {
         };
 
         updateProduct(productObj, URL, token);
+         location.reload();
 
     };
 

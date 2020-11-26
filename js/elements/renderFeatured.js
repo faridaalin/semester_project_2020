@@ -19,16 +19,15 @@ const splitArray = (array, value) => {
 const displayFeaturedProducts = (featuredPropducts) => {
   const container = document.querySelector('.carousel-inner');
 
-console.log(container);
+
 
   const newArr = splitArray(featuredPropducts, 4);
 
   newArr.forEach((element, index) => {
-    console.log(element);
+  
   container.innerHTML += `<div class="carousel-item ${index === 0 && 'active'}">
   <div class="row">
     ${element.map(item => {
-      console.log(item.image_url);
       return `<div class="col-3">${featuredCard(item)}</div>`
     }).join('')}
 

@@ -1,5 +1,5 @@
 $theme-colors: (
-  "primary": #f0bd31,
+  "primary": #FAB162,
   "secondary": #143e56,
 );
 $border-width: 2px !default;
@@ -31,7 +31,7 @@ $font-weight: (
 }
 
 $colors: (
-  primary: #f0bd31,
+  primary: #FAB162,
   secondary: #143e56,
   green-010: rgba(20, 62, 86, 0.2),
   green-050: rgba(7, 7, 7, 0.8),
@@ -146,6 +146,10 @@ li {
   }
 
  
+}
+
+h1, h2, h3, h4, h5, a {
+  font-family: 'Changa', sans-serif;
 }
 /*  BASE END */
 
