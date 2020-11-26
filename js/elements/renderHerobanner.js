@@ -55,8 +55,6 @@ const renderHeroBanner = (url) => {
 
 
 
-
-
 }
 
 export default renderHeroBanner;
