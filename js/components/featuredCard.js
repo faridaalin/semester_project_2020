@@ -1,7 +1,7 @@
 import { user, favs} from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 
-export const productCard = (product) => {
+export const featuredCard = (product) => {
 
   const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
     
@@ -21,7 +21,7 @@ export const productCard = (product) => {
       const image = product.image_url ?  product.image_url :`https://res.cloudinary.com/djey7uz4e/image/upload/v1606132924/noImage_plcdvu.jpg`;
 
 
-    return ` <div class="col-sm-6 col-md-3 mb-5 pb-5">
+    return ` 
     <div class="product-top">
       ${edit}
       <a href="/pdp.html?id=${product.id}"> <img src="${image}" class="card-img-top img-fluid" alt="${product.alt_text}">
@@ -39,5 +39,5 @@ export const productCard = (product) => {
         <i class="fav fa ${cssClass}" data-id="${product.id}"></i>
       </div>
     </div>
-    </div> `
+     `
 };

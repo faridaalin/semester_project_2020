@@ -1,4 +1,5 @@
 import renderAllProducts  from "../elements/renderAllProducts.js";
+import {featuredCard} from '../components/featuredCard.js'
 
 const splitArray = (array, value) => {
   let finalArray = [];
@@ -28,9 +29,7 @@ console.log(container);
   <div class="row">
     ${element.map(item => {
       console.log(item.image_url);
-      return `<div class="col-3">
-      <img class="d-block w-100" src="${item.image_url}" alt="${item.alt_text}">
-    </div>`
+      return `<div class="col-3">${featuredCard(item)}</div>`
     }).join('')}
 
   </div>
