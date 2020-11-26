@@ -1,6 +1,6 @@
 import { cart } from "./utils/settings.js";
 import { getFromLocal, saveToLocal } from "./utils/storage.js";
-import { getTotalPrice } from "./helpers/getTotalPrice.js";
+import { getTotalPrice, getTotalPricePerItem } from "./helpers/getTotalPrice.js";
 import { deleteItem } from "./helpers/deleteItem.js";
 
 const removeFromCartItem = (cartItems) => {
@@ -25,6 +25,9 @@ const showCartItems = () => {
   let itemContainer = document.querySelector(".cart-detail");
   let checkoutContainer = document.querySelector(".checkout-container");
 
+  itemContainer.innerHTML = "";
+  checkoutContainer.innerHTML = "";
+
   if (!cartItems || cartItems.length === 0) {
     itemContainer.innerHTML = `<div class="alert alert-info" role="alert">
     Your cart is currently empty.
@@ -32,10 +35,9 @@ const showCartItems = () => {
     checkoutContainer.style.display = "none";
     return;
   }
-  itemContainer.innerHTML = "";
-  checkoutContainer.innerHTML = "";
 
   cartItems.map((item) => {
+
     itemContainer.innerHTML += `
      
      <div class="bag-container d-flex pb-4 mb-4">
@@ -52,25 +54,26 @@ const showCartItems = () => {
            <p class="medium-text">${item.product.title}</p>
          </div>
          <div class="d-flex flex-wrap justify-content-between align-items-center flex-grow-1">
-           <div>
-             <p class="light-text flex-grow-1 align-text-bottom">Size ${
-               item.size
-             }</p>
-           </div>
-           <div>
-             <p class="light-text flex-grow-1 align-text-bottom">Qty ${
-               item.qty
-             }</p>
-           </div>
+          <div class="qtySize-container d-flex flex-column">
+
+          ${item.qtySize.map(itemSizes => {
+            return ` 
+            <div  class="qtySize-container d-flex">
+            <p class="light-text flex-grow-1 align-text-bottom pr-2">Size ${itemSizes.size}</p>
+            <p class="light-text flex-grow-1 align-text-bottom">Qty ${itemSizes.qty}</p>
+            </div>`
+          }).join('')}
+        
+          </div>
            <div>
              <p class="large-text flex-grow-1 align-text-bottom">NOK ${
                item.product.price
              }</p>
             </div>
            <div>
-             <p class="large-text flex-grow-1 align-text-bottom">Total: ${
-               item.product.price * item.qty
-             } </p>
+             <p class="large-text flex-grow-1 align-text-bottom">Total: 
+             ${getTotalPricePerItem(item)}
+             </p>
             </div>
              </div>
            </div>
@@ -91,3 +94,5 @@ const showCartItems = () => {
 };
 
 showCartItems();
+
+

@@ -1,21 +1,37 @@
 import { cart } from '../utils/settings.js'
 import { getFromLocal } from '../utils/storage.js'
 
+export const getTotalPricePerItem = (product) => {  
+  const qty = product.qtySize.reduce((acc, totalQty) => {return acc + totalQty.qty}, 0);
 
+  return qty * product.product.price;
+};
 
 
 
 export const getTotalPrice = () => {
-  const currentCart = getFromLocal(cart);
 
+  const currentCart = getFromLocal(cart);
+  console.log(currentCart);
   let total = 0;
 
   if (!currentCart) {
     return total;
   }
 
-  total = currentCart.reduce(function (acc, obj) { return acc + (obj.product.price * obj.qty) }, 0);
+  total = currentCart.reduce(function (acc, obj) { 
+    obj.qtySize.forEach(qty => {
+      acc += (obj.product.price * qty.qty)
+     
+    });
+
+     return acc;
+  }, 0);
 
   return total;
 
+  
+
 }
+
+
