@@ -2,6 +2,8 @@ import renderAllProducts from "../elements/renderAllProducts.js";
 
 
 const filterByCategory = (products) => {
+const dropdown = document.querySelector('.dropdown');
+const custom_select = document.querySelector('.custom_select');
 const checkboxesNode = document.querySelectorAll('.form-check-input');
 const checkboxesArr = [...checkboxesNode];        
 checkboxesArr.forEach(checkbox => {
@@ -15,18 +17,40 @@ checkboxesArr.forEach(checkbox => {
     timeout = setTimeout( () => {
   
       const category = e.target.value.trim().toLowerCase();
-  
-  
-      const filteredCategory = products.filter((product) => product.category.toLowerCase() === e.target.value.toLowerCase());
-      console.log('Category filter:',filteredCategory);
-  
-      if (filteredCategory.length > 0) {
-        renderAllProducts(filteredCategory, "Shop is currently empty", ".shop-container");
+      const cateGoryChecked = e.target.checked;
+      console.dir(e.target)
+
+      if(category && cateGoryChecked) {
+        const filteredCategory = products.filter((product) => product.category.toLowerCase() === e.target.value.toLowerCase());
+        console.log('Category filter:',filteredCategory);
+    
+        if (filteredCategory.length > 0) {
+          renderAllProducts(filteredCategory, "Shop is currently empty", ".shop-container");
+          if(dropdown.classList.contains('show')  && custom_select.classList.contains('show') ) {
+            dropdown.classList.remove('show');
+            custom_select.classList.remove('show');
+          }
+        } else {
+          const msg = `Sorry, we currently don't have items the catgegory ${category}`;
+          renderAllProducts([], msg, ".shop-container");
+          if(dropdown.classList.contains('show')  && custom_select.classList.contains('show') ) {
+            dropdown.classList.remove('show');
+            custom_select.classList.remove('show');
+          }
+    
+        };
       } else {
-        const msg = `Sorry, we currently don't have items the catgegory ${category}`;
-        renderAllProducts([], msg, ".shop-container");
+        renderAllProducts(products, "Shop is currently empty", ".shop-container");
+        if(dropdown.classList.contains('show')  && custom_select.classList.contains('show') ) {
+          dropdown.classList.remove('show');
+          custom_select.classList.remove('show');
+        }
+   
+       
+      }
   
-      };
+  
+
   
     }, 1000);
   });
@@ -45,7 +69,7 @@ checkboxesArr.forEach(checkbox => {
   unique_categories.map(category => {
     const backToUpperCase = category[0].toUpperCase() + category.slice(1).toLowerCase()
 
-    return custom_select.innerHTML += `<div class="form-check">
+    return custom_select.innerHTML += `<div class="form-check dropdown-item">
       <input class="form-check-input" type="checkbox" value="${backToUpperCase}" id="defaultCheck1">
       <label class="form-check-label" for="defaultCheck1">
       ${backToUpperCase}
@@ -116,8 +140,7 @@ const filterByPrice = (products) => {
   const maxValue = Math.max(...allPrices);
 
         filterPrice.innerHTML += ` 
-        <div class="d-flex justify-content-between"><small>0 NOK</small> <small class="value">Price: </small><small>${maxValue} NOK</small></div>
- 
+        <div class="d-flex justify-content-between"><small>0 NOK</small> <small class="value"></small><small>${maxValue} NOK</small></div>
         <input type="range" class="custom-range" min="0" max="${maxValue}" value=""  id="customRange3">`;
 
         filterByPrice(products);

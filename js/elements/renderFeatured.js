@@ -1,5 +1,6 @@
 import renderAllProducts  from "../elements/renderAllProducts.js";
-import {featuredCard} from '../components/featuredCard.js'
+import {featuredCard} from '../components/featuredCard.js';
+import {saveFavourites} from './renderAllProducts.js';
 
 const splitArray = (array, value) => {
   let finalArray = [];
@@ -33,6 +34,7 @@ const displayFeaturedProducts = (featuredPropducts) => {
 
   </div>
 </div>`;
+saveFavourites();
 
  });
 };

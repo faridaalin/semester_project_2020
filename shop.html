@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400;500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400;500;700&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
   <title>SHOP</title>
 </head>
@@ -29,143 +31,153 @@
     <!-- Modal LOGIN START/REGISTER-->
 
     <div class="modal fade" id="login" tabindex="-1" role="login" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="message-container"></div>
-        <button type="button" class="close ml-auto pt-4 pr-4" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="accordion" id="accordionExample">
-          
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <span><i class="fa fa-user"></i>Login</>
-                </button>
-              </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-                <form action="" class="login-register-form">
-                
-                  <div class="form-group row">
-                    <label for="username" class="col-form-label">Username</label>
-                    <div class="col-10">
-                      <input type="text" class="form-control py-4" id="username" placeholder="Enter username">
-                      <small>Min 2 letters</small>
-                      <div class="feedback-username invalid-feedback">Wrong username</div>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="password" class="col-form-label">Password</label>
-                    <div class="col-10">
-                      <input type="password" class="form-control py-4" id="password" placeholder="Enter password">
-                      <small>Min 8 char</small>
-                      <div class="feedback-password invalid-feedback">Wrong Password</div>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button type="button" class="loginBtn btn btn-secondary btn-block shadow-lg">Login</button>
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="message-container"></div>
+          <button type="button" class="close ml-auto pt-4 pr-4" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="accordion" id="accordionExample">
 
-                  </div>
-                </form>
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <span><i class="fa fa-user"></i>Login</>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <form action="" class="login-register-form">
+
+                    <div class="form-group row">
+                      <label for="username" class="col-form-label">Username</label>
+                      <div class="col-10">
+                        <input type="text" class="form-control py-4" id="username" placeholder="Enter username">
+                        <small>Min 2 letters</small>
+                        <div class="feedback-username invalid-feedback">Wrong username</div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="password" class="col-form-label">Password</label>
+                      <div class="col-10">
+                        <input type="password" class="form-control py-4" id="password" placeholder="Enter password">
+                        <small>Min 8 char</small>
+                        <div class="feedback-password invalid-feedback">Wrong Password</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button type="button" class="loginBtn btn btn-secondary btn-block shadow-lg">Login</button>
+
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <span>Register</>
-                </button>
-              </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <div class="card-body">
-                <form action="">
-                  <div class="message-container"></div>
-                  <div class="form-group row">
-                    <label for="registerUsername" class="col-form-label">Username</label>
-                    <div class="col">
-                      <input type="text" class="form-control py-4" id="registerUsername" placeholder="Enter username">
-                      <small>Min 2 letters</small>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span>Register</>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <form action="">
+                    <div class="message-container"></div>
+                    <div class="form-group row">
+                      <label for="registerUsername" class="col-form-label">Username</label>
+                      <div class="col">
+                        <input type="text" class="form-control py-4" id="registerUsername" placeholder="Enter username">
+                        <small>Min 2 letters</small>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="email" class="col-form-label">Email</label>
-                    <div class="col">
-                      <input type="email" class="form-control py-4" id="registerEmail" placeholder="Enter email">
-                      <div class="feedback-email invalid-feedback">Invalid email</div>
+                    <div class="form-group row">
+                      <label for="email" class="col-form-label">Email</label>
+                      <div class="col">
+                        <input type="email" class="form-control py-4" id="registerEmail" placeholder="Enter email">
+                        <div class="feedback-email invalid-feedback">Invalid email</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="password" class="col-form-label">Password</label>
-                    <div class="col">
-                      <input type="password" class="form-control py-4" id="registerPassword" placeholder="Enter password">
-                      <small>Min 8 char</small>
+                    <div class="form-group row">
+                      <label for="password" class="col-form-label">Password</label>
+                      <div class="col">
+                        <input type="password" class="form-control py-4" id="registerPassword"
+                          placeholder="Enter password">
+                        <small>Min 8 char</small>
+                      </div>
                     </div>
-                  </div>
-                  <button type="button" class="registerBtn btn btn-secondary btn-block shadow-lg">Register</button>
-                </form>
+                    <button type="button" class="registerBtn btn btn-secondary btn-block shadow-lg">Register</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-        <!-- Modal LOGIN END-->
+    <!-- Modal LOGIN END-->
 
 
-        
 
-    <div class="container container pt-5 px-4">
-      <h1 class="header pt-5 mt-5 pb-2">Shop</h1>
 
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb pl-0">
-          <li class="breadcrumb-item"><a href="./home">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Shop</li>
-        </ol>
-      </nav>
-      <div class="row">
-        <div class="msg-container" id="pdpMsg">
-        </div>
-        <div class="col-12 category d-flex align-items-center pl-4">
-          <!-- FILTER OPTIONS-->
-          <h5 class="lead mr-5 text-uppercase">Filter</h5>
-          <div class=" filter-category mr-5 col-6">
-            <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample"
-              aria-expanded="false" aria-controls="collapseExample">
+    <div class="">
+      <div class="container pt-5 px-4">
+        <nav aria-label="breadcrumb pb-2">
+          <ol class="breadcrumb pl-0">
+            <li class="breadcrumb-item"><a href="./home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Shop</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="container-fluid filter-container py-2">
+        <div class="container d-flex justify-content-between align-content-center">
+                      <!-- FILTER OPTIONS-->
+      
+          <div class="dropdown category col-6 d-flex">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categories
             </button>
-            </p>
-            <div class="collapse " id="collapseExample">
-              <div class="card card-body custom_select">
-              </div>
+            <div class="dropdown-menu custom_select" aria-labelledby="dropdownMenuButton">
+              
             </div>
           </div>
 
-          <div class="filter-price col col-4">         
+
+          
+          <div class="filter-price col-5 mr-auto">
           </div>
         </div>
       </div>
 
 
-
-      <div class="row shop-container">
-        <!-- Product cards -->
-        <div class="message-container"></div>
-
-        <div class="checkout d-flex pt-2">
+      <div class="container pt-5 px-4">
+        <h1 class="header">Shop</h1>
+        <div class="row">
+          <div class="msg-container" id="pdpMsg">
+          </div>
         </div>
 
+
+
+        <div class="row shop-container">
+          <!-- Product cards -->
+          <div class="message-container"></div>
+
+          <div class="checkout d-flex pt-2">
+          </div>
+
+        </div>
+
+
       </div>
-
-
 
     </div>
 

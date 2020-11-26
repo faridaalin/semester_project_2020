@@ -4,7 +4,7 @@ import {getFromSessionStorage, getFromLocal, saveToLocal, saveToFavsListStorage 
 import {loadCurrentItems} from '../helpers/loadCurrentItems.js';
 
 
-const saveFavourites = () => {
+export const saveFavourites = () => {
   const favButtonsNode = document.querySelectorAll('.fav');
   const favButtonsArr = [...favButtonsNode];
 
@@ -58,7 +58,6 @@ const saveFavourites = () => {
 const renderAllProducts = (products, msg, container) => {
   const element = document.querySelector(container);
   element.innerHTML = "";
-
 
   if(products.length === 0) {
    if(msg) {
