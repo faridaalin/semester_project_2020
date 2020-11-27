@@ -3,10 +3,7 @@ import { showNavbarBgOnScroll } from "./ui/showNavbarBgOnScroll.js";
 import renderHeroBanner from "./elements/renderHerobanner.js";
 import renderFeatured from "./elements/renderFeatured.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
-import {
-  saveToSessionStorage,
-  getFromSessionStorage,
-} from "./utils/storage.js";
+import {saveToSessionStorage} from "./utils/storage.js";
 import { editBackgroundImg } from "./elements/renderHerobanner.js";
 import { spinner } from "./elements/spinner.js";
 import { fectData } from "./helpers/fetcData.js";

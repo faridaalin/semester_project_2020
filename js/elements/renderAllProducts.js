@@ -1,6 +1,6 @@
 import { displayProductCard } from "../helpers/displayProductCard.js";
 import { favs, allProducts } from '../utils/settings.js';
-import {getFromSessionStorage, getFromLocal, saveToLocal, saveToFavsListStorage } from '../utils/storage.js';
+import {getFromSessionStorage, getFromLocal, saveToFavsListStorage } from '../utils/storage.js';
 import {loadCurrentItems} from '../helpers/loadCurrentItems.js';
 
 

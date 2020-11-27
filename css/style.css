@@ -2,11 +2,6 @@
   background-color: transparent;
 }
 
-.form-control:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(95, 123, 139, 0.35) !important;
-          box-shadow: 0 0 0 0.2rem rgba(95, 123, 139, 0.35) !important;
-}
-
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10813,6 +10808,77 @@ a.text-dark:hover, a.text-dark:focus {
 
 /*  VARIABLES START */
 /*  VARIABLES END */
+/*FORM*/
+.custom-form-container .form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0;
+  outline: none;
+  height: auto;
+  padding: .6rem 0 .4rem 0;
+  margin: 0 0 .5rem 0;
+}
+
+.custom-form-container .form-control:focus {
+  border-bottom: 1px solid rgba(95, 123, 139, 0.35);
+  -webkit-transition: border-color 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out;
+  -webkit-box-shadow: 0 1px 0 0 rgba(95, 123, 139, 0.35);
+          box-shadow: 0 1px 0 0 rgba(95, 123, 139, 0.35);
+}
+
+.custom-form-container input::-webkit-input-placeholder {
+  font-size: 0.7rem;
+}
+
+.custom-form-container input:-ms-input-placeholder {
+  font-size: 0.7rem;
+}
+
+.custom-form-container input::-ms-input-placeholder {
+  font-size: 0.7rem;
+}
+
+.custom-form-container input::placeholder {
+  font-size: 0.7rem;
+}
+
+.custom-form-container .card {
+  border: none;
+}
+
+.custom-form-container .card-header {
+  border: none;
+  background-color: #e9f9f6;
+}
+
+.custom-form-container .card-header .fa {
+  font-size: 1.5rem;
+}
+
+.custom-form-container .card-header .btn-link {
+  color: #143e56;
+  padding-left: 0;
+}
+
+.custom-form-container small {
+  font-size: 0.5rem;
+}
+
+.custom-form-container .col-form-label {
+  font-size: 0.9rem;
+}
+
+.custom-form-container .was-validated .form-control:invalid, .custom-form-container .form-control.is-invalid {
+  border-bottom-color: #dc3545;
+}
+
+.custom-form-container .modal-content {
+  background-color: #dde7ea;
+}
+
+/*FORM*/
 /*  BASE START */
 html,
 body {

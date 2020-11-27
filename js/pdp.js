@@ -2,7 +2,6 @@ import { BASE_URL } from "./utils/settings.js";
 import { productDetail } from './components/productDetail.js'
 import { renderNavbar } from "./elements/renderNavbar.js";
 import {addToCart} from './helpers/addtoCart.js'
-import {spinner} from './elements/spinner.js';
 import {fectData} from './helpers/fetcData.js';
 import {showMessage} from './helpers/showMessage.js';
 import {removeMessage} from './helpers/removeMessage.js';

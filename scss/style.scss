@@ -8,12 +8,6 @@ $border-width: 2px;
   background-color: transparent;
 };
 
-.form-control {
-
-  &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(95, 123, 139, 0.35) !important;
-  }
-}
 
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
@@ -63,6 +57,74 @@ $colors: (
 }
 
 /*  VARIABLES END */
+
+
+
+/*FORM*/
+.custom-form-container {
+  .form-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: none;
+    height: auto;
+    padding: .6rem 0 .4rem 0;
+    margin: 0 0 .5rem 0;
+  
+    &:focus {
+      border-bottom: 1px solid  rgba(95, 123, 139, 0.35);
+      transition:    border-color 0.15s ease-in-out;
+      box-shadow: 0 1px 0 0  rgba(95, 123, 139, 0.35);
+    }
+  
+    ::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+      font-size: 0.3rem;
+    }
+  }
+  input::placeholder {
+    font-size: 0.7rem;
+  }
+
+  .card {
+    border: none;
+  }
+  
+  .card-header {
+    border: none;
+    background-color: getColour(green-100);
+
+    .fa {
+      font-size: 1.5rem;
+    }
+
+
+
+    .btn-link {
+      color: getColour(secondary);
+      padding-left: 0;
+    }
+  }
+
+  small {
+    font-size: 0.5rem;
+  }
+
+  .col-form-label {
+    font-size: 0.9rem;
+  }
+
+  .was-validated .form-control:invalid, .form-control.is-invalid {
+    border-bottom-color: #dc3545;
+  }
+
+  .modal-content {
+  background-color: getColour(green-200);
+ }
+
+}
+
+/*FORM*/
 
 /*  BASE START */
 html,
