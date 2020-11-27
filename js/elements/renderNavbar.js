@@ -21,7 +21,7 @@ export const renderNavbar = () => {
     <button class="nav-link btn py-2 px-2"  data-toggle="modal" data-target="#login">Login</>
   </li>`
 
-  if (loggedInUser) {
+  if (loggedInUser && loggedInUser.username === "admin") {
     authLink = `
         <li class="nav-item mb-2 ${pathname === "add.html" ? "active" : ""}">
         <a class="nav-link" href="add.html">Add product</a>
