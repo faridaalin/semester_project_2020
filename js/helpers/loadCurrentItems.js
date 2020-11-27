@@ -15,20 +15,25 @@ export const loadCurrentItems = (tag, container) => {
     }
 
      if(tag === "cart") {
-
+        let sum = 0;
+    
       currentItems.forEach(element => {
-         let sum = 0;
+      
          element.qtySize.forEach((item) => {
-            sum += (item.qty + item.qty);
-         })
 
-         total = sum;
+            sum += (item.qty);
+            
+         });
 
          
       });
-   
+      total = sum;
+
+  
          return  counterContainer.textContent =  total;
      } 
+
+
 
      if(tag === "favs") {  
         return  counterContainer.textContent = currentItems.length;
