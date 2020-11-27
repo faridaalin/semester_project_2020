@@ -13,6 +13,8 @@ import { fectData } from "./helpers/fetcData.js";
 import { showMessage } from "./helpers/showMessage.js";
 import { removeMessage } from "./helpers/removeMessage.js";
 
+
+showNavbarBgOnScroll();
 renderNavbar();
 editBackgroundImg();
 

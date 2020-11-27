@@ -3,6 +3,8 @@ import { getFromLocal, saveToLocal, saveCartItemsToLocal } from "./utils/storage
 import { getTotalPrice, getTotalPricePerItem } from "./helpers/getTotalPrice.js";
 import { deleteItem } from "./helpers/deleteItem.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
+import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js'
+showNavbarBgOnScroll();
 
 renderNavbar();
 

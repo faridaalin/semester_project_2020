@@ -8,6 +8,8 @@ import {renderFilterOptions} from './elements/renderFilterOptions.js';
 import {fectData} from './helpers/fetcData.js';
 import {showMessage} from './helpers/showMessage.js';
 import {removeMessage} from './helpers/removeMessage.js';
+import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js'
+showNavbarBgOnScroll();
 
 renderNavbar();
 

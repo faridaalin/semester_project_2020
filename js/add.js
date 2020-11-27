@@ -4,7 +4,9 @@ import { renderNavbar } from "./elements/renderNavbar.js";
 import { removeMessage } from './helpers/removeMessage.js';
 import {addNewProduct} from './ui/addProduct.js'
 import {} from './ui/addProduct.js'
-import {validateFields, removeValidationStyle} from './helpers/validateFields.js'
+import {validateFields, removeValidationStyle} from './helpers/validateFields.js';
+import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js'
+showNavbarBgOnScroll();
 
 
 renderNavbar()
