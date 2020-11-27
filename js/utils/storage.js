@@ -1,5 +1,6 @@
 import {loadCurrentItems} from '../helpers/loadCurrentItems.js'
-import {cart, favs} from '../utils/settings.js'
+import {cart, favs} from '../utils/settings.js';
+import {renderFavs} from '../fav.js';
 
 const saveToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value))
@@ -37,6 +38,7 @@ const getFromLocal = (key) => {
 const saveToFavsListStorage = (tag, list) => {
     saveToLocal(tag, list);
     loadCurrentItems(tag, '.favs-icon span');
+    renderFavs();
   };
   
 

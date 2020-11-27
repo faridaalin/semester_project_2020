@@ -7,7 +7,7 @@ import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js';
 showNavbarBgOnScroll();
 renderNavbar();
 
-const renderFavs = () => {
+export const renderFavs = () => {
     const savedFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
     const container = document.querySelector('.fav-container');
 
