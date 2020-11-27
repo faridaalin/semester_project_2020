@@ -49,7 +49,7 @@ const addSize = () => {
 
 
 export function addToCart(product) {
-
+  addQty();
 
   const addToCartBtn = document.querySelector('#addToCart');
 
@@ -58,7 +58,7 @@ export function addToCart(product) {
   if (!localCart) localCart = [];
 
   addToCartBtn.addEventListener('click', function (e) {
-    addQty();
+    
     addSize();
 
     const qty = document.querySelector('.value').textContent;

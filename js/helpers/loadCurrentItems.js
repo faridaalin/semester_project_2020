@@ -15,14 +15,18 @@ export const loadCurrentItems = (tag, container) => {
     }
 
      if(tag === "cart") {
-      let qtyArray = [];
 
-      for (let i = 0; i < currentItems.length; i++) {
-         qtyArray = currentItems[i].qtySize;
-      }
-    
-      total = qtyArray.reduce((acc, obj) => {return acc + obj.qty;}, 0);
+      currentItems.forEach(element => {
+         let sum = 0;
+         element.qtySize.forEach((item) => {
+            sum += (item.qty + item.qty);
+         })
 
+         total = sum;
+
+         
+      });
+   
          return  counterContainer.textContent =  total;
      } 
 

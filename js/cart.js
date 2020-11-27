@@ -1,5 +1,5 @@
 import { cart } from "./utils/settings.js";
-import { getFromLocal, saveToLocal } from "./utils/storage.js";
+import { getFromLocal, saveToLocal, saveCartItemsToLocal } from "./utils/storage.js";
 import { getTotalPrice, getTotalPricePerItem } from "./helpers/getTotalPrice.js";
 import { deleteItem } from "./helpers/deleteItem.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
@@ -16,7 +16,9 @@ const removeFromCartItem = (cartItems) => {
       const id = parseInt(e.target.dataset.id);
 
       const updatedCartITems = deleteItem(cartItems, id);
-      saveToLocal(cart, updatedCartITems);
+      console.log('updatedCartITems:', updatedCartITems);
+      saveCartItemsToLocal(cart, updatedCartITems);
+      // saveToLocal(cart, updatedCartITems);
       showCartItems();
     };
     deleteIconsArr[i].addEventListener("click", handleItemToDelete);
