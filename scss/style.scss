@@ -920,7 +920,9 @@ padding-bottom: 8rem;
 .pdp-thumbnail {
   width: 20%;
   @media all and (min-width: 576px) {
-    width: 80%;
+    width: calc(60% + 1vw);
+    height: 85px;
+    object-fit: cover;
   }
 }
 

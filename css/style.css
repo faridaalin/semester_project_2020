@@ -11700,7 +11700,10 @@ h1, h2, h3, h4, h5, a {
 
 @media all and (min-width: 576px) {
   .pdp-thumbnail {
-    width: 80%;
+    width: calc(60% + 1vw);
+    height: 85px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
