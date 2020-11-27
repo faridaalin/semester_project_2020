@@ -1,7 +1,6 @@
 import {loadCurrentItems} from '../helpers/loadCurrentItems.js'
 import {cart, favs} from '../utils/settings.js';
 
-
 export const saveToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value))
 };

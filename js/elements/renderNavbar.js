@@ -13,7 +13,6 @@ export const renderNavbar = () => {
   const innerNav = document.querySelector('.custom-nav');
 
   const loggedInUser = getFromLocal(user);
-  console.log(loggedInUser);
   const { pathname } = location;
 
   let authLink = `<li class="nav-item mb-2">

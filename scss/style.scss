@@ -723,6 +723,11 @@ h1, h2, h3, h4, h5, a {
   text-transform: uppercase;
   font-weight: getWeight(bold);
 }
+.featured-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .featured-title {
   position: relative;
@@ -733,17 +738,17 @@ h1, h2, h3, h4, h5, a {
     content: "";
     position: absolute;
     height: 2px;
-    width: 100px;
+    width: 80px;
     top: 50%;
     background-color: getColour(green-600);
    
   };
   &::after {
-    right: 33%;
+    right: 120%;
   }
   &::before {
  
-    left: 33%;
+    left: 120%;
   }
 }
 .filter-container {
