@@ -12,14 +12,14 @@ export const showSearch = () => {
 
 
 
-  search.addEventListener('keyup',  (e) => {
+  search.addEventListener('input',  (e) => {
 
     clearTimeout(timeout);
 
     timeout = setTimeout( () => {
 
       const searchTerm = e.target.value.trim().toLowerCase();
-
+      console.log(searchTerm);
 
       const filteredSearch = shoes.filter((shoe) => {
         return shoe.title.toLowerCase().includes(searchTerm) || shoe.description.toLowerCase().includes(searchTerm)

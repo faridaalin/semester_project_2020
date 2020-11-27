@@ -28,17 +28,19 @@ const addQty = () => {
 
 const addSize = () => {
 
-  const select = document.querySelector('.size');
+  const select = document.querySelector('.custom-select ');
   let selectedSize;
 
-  if (isNaN(select.value)) {
-    select.classList.add('is-invalid')
-    return;
-  } else {
-    select.classList.remove('is-invalid')
-    select.classList.add('is-valid')
-  }
-  selectedSize = parseInt(select.value)
+    if (isNaN(select.value)) {
+      select.classList.add('is-invalid')
+      return;
+    } else {
+      select.classList.remove('is-invalid')
+      select.classList.add('is-valid')
+    }
+    selectedSize = parseInt(select.value);
+
+
   return selectedSize;
 
   select.addEventListener('change', handleSize);
@@ -47,8 +49,7 @@ const addSize = () => {
 
 
 export function addToCart(product) {
-  addQty();
-  addSize();
+
 
   const addToCartBtn = document.querySelector('#addToCart');
 
@@ -57,15 +58,14 @@ export function addToCart(product) {
   if (!localCart) localCart = [];
 
   addToCartBtn.addEventListener('click', function (e) {
+    addQty();
+    addSize();
 
     const qty = document.querySelector('.value').textContent;
     const selectedQty = parseInt(qty);
     const selectedSize = addSize();
 
     if (!selectedSize) return;
-
-
-
 
     const alreadyInCart = localCart.find((item) => {
       return item.product.id === product.id

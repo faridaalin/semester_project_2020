@@ -4,10 +4,12 @@ import { logout } from '../ui/logout.js';
 import { showSearch } from '../ui/showSearch.js'
 import {loadCurrentItems} from '../helpers/loadCurrentItems.js';
 import {login} from '../ui/login.js';
-import {register} from '../ui/register.js'
+import {register} from '../ui/register.js';
+import {showNavbarBgOnScroll} from '../ui/showNavbarBgOnScroll.js'
 
 
 export const renderNavbar = () => {
+  showNavbarBgOnScroll();
 
   const innerNav = document.querySelector('.custom-nav');
 

@@ -10854,7 +10854,7 @@ li {
   font-size: 2rem;
   position: relative;
   padding-left: 1rem;
-  color: #143e56cf;
+  color: #143e56;
   margin-bottom: 2rem;
 }
 
@@ -11236,7 +11236,6 @@ h1, h2, h3, h4, h5, a {
 
 .navbar-custom .fa {
   color: #143e56;
-  opacity: 0.7;
 }
 
 .modal-footer {
@@ -11256,12 +11255,12 @@ h1, h2, h3, h4, h5, a {
 .favs-icon .counter, .cart-icon .counter {
   position: absolute;
   top: -4px;
-  right: -8px;
-  height: 20px;
-  width: 20px;
+  right: -16px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background-color: #FAB162;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   color: #143e56;
@@ -11566,18 +11565,6 @@ h1, h2, h3, h4, h5, a {
 
 /*FEATURED*/
 /*  CARDS START */
-.product-card {
-  -webkit-transition: -webkit-box-shadow 0.5s;
-  transition: -webkit-box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
-}
-
-.product-card:hover {
-  -webkit-box-shadow: 0 0 11px 0px #143e563d;
-          box-shadow: 0 0 11px 0px #143e563d;
-}
-
 .product-top {
   position: relative;
   overflow: hidden;
@@ -11681,6 +11668,10 @@ h1, h2, h3, h4, h5, a {
 
 /*  CARDS END */
 /*  PDP START */
+.container-pdp {
+  padding-bottom: 8rem;
+}
+
 .img-container {
   height: 100%;
 }
@@ -11742,6 +11733,57 @@ h1, h2, h3, h4, h5, a {
   color: #143e56;
 }
 
+.rating-container {
+  max-width: 30ch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.rating {
+  color: #fab162bf;
+}
+
+.rating .fa {
+  margin: 0 0.2rem;
+}
+
+.price-title {
+  font-weight: 700;
+}
+
+.carousel-indicators {
+  margin-bottom: -4.69rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.carousel-indicators li {
+  height: 120px;
+  width: 6.25rem;
+  max-width: 6.25rem;
+  margin-bottom: 1rem;
+  border: none;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+}
+
+.carousel-indicators li:last-child {
+  margin-bottom: 0;
+}
+
 /*  PDP END */
 /*  CART START */
 .checkout-container {
@@ -11801,11 +11843,11 @@ h1, h2, h3, h4, h5, a {
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
   min-height: 140px;
   max-height: 140px;
   min-width: 100px;
   max-width: 100px;
-  background-size: cover;
   cursor: pointer;
 }
 

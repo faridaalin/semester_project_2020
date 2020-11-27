@@ -15,7 +15,6 @@ import { removeMessage } from "./helpers/removeMessage.js";
 
 renderNavbar();
 editBackgroundImg();
-showNavbarBgOnScroll();
 
 (async () => {
   removeMessage(".herobanner .message-container");

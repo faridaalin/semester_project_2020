@@ -1,8 +1,10 @@
-
+import {createRatingArray} from '../helpers/createRatingArray.js'
 
 export const productDetail = (product) => {
    const container = document.querySelector('.pdp-detail-container');
 
+  const rating = createRatingArray(product)
+  
    container.innerHTML = `
   <div class="img-container col-12 col-md-6 d-flex flex-column flex-sm-row-reverse">
   <div class="col col-sm-2 d-flex justify-content-between flex-sm-column order-2 px-0">
@@ -17,22 +19,27 @@ export const productDetail = (product) => {
 
 <div class="col-12 col-md-6 pt-4 mt-4 pt-md-0 mt-md-0 ">
 <div class="content-container">
-   <div class="pt-4 mt-4 pt-md-0 mt-md-0">
-  <small class="pb-2">${product.brand}</small>
-   <h3 class="pb-2">${product.title}</h3>
-  <h5 class="pb-2">NOK ${product.price}</h5>
-  <p class="pb-4 mb-4">
+<h3 class="pb-1">${product.title}</h3>
+<div class="rating-container pb-4">
+<small class="pb-2">${product.brand}</small>
+<div class="rating">
+${rating.map(star => star).join('')}
+</div>
+</div>
+   <div class=" pt-4 mt-4 pt-md-0 mt-md-0">
+  <p class="pb-4">
   Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus
   ligula. Mauris consequat ornare feugiat.
   </p>
+  <h5 class="price-title pb-4">${product.price} NOK</h5>
    </div>
 
 
 </div>
 
-   <div class="checkout d-flex flex-column flex-lg-row">
+   <div class="checkout d-flex flex-column flex-lg-row pb-1">
      <div class="qty-container">
-       Qty
+       Quantity
        <button type="button" class="btn minus" data-type="dec">-</button>
        <span class="value">1</span>
        <button type="button" class="btn pluss" data-type="inc">+</button>

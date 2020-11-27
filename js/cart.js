@@ -2,6 +2,9 @@ import { cart } from "./utils/settings.js";
 import { getFromLocal, saveToLocal } from "./utils/storage.js";
 import { getTotalPrice, getTotalPricePerItem } from "./helpers/getTotalPrice.js";
 import { deleteItem } from "./helpers/deleteItem.js";
+import { renderNavbar } from "./elements/renderNavbar.js";
+
+renderNavbar();
 
 const removeFromCartItem = (cartItems) => {
   const deleteIcons = document.querySelectorAll(".delete-icon");
