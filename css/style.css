@@ -11847,6 +11847,7 @@ h1, h2, h3, h4, h5, a {
 .large-text {
   font-weight: 400;
   white-space: nowrap;
+  font-size: calc(0.8rem + 0.5vw);
 }
 
 .large-text :last-child {

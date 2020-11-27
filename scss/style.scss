@@ -1064,6 +1064,7 @@ padding-bottom: 8rem;
 .large-text {
   font-weight: getWeight(regular);
   white-space: nowrap;
+  font-size: calc(0.8rem + 0.5vw);
 
   :last-child {
     padding-right: 1rem;

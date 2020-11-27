@@ -63,14 +63,13 @@ const showCartItems = () => {
        <div class="d-flex flex-crow justify-content-between w-100">
        <p class="light-text cart-brand mb-1">${item.product.brand}</p>
        <i class="fa fa-times delete-icon" data-id="${item.product.id}"></i>
-
        </div>
       
-       <div class="d-md-flex justify-content-between">
+       <div class="d-lg-flex justify-content-between">
          <div class="pb-md-3 flex-grow-1 pb-md-0 align-text-bottom ">
            <p>${item.product.title}</p>
          </div>
-         <div class="d-flex flex-column justify-content-between align-items-center flex-grow-1">
+         <div class="d-flex flex-column justify-content-between align-items-center w-100 col-lg-8">
 
           <div class="qtySize-container d-flex flex-wrap flex-column w-100">
 
@@ -85,13 +84,13 @@ const showCartItems = () => {
         .join("")}
         
           </div>
-                  <div class="d-flex flex-wrap justify-content-between w-100">
+                  <div class="d-flex flex-wrap  justify-content-between w-100">
                   <div>
                       <p class="large-text flex-grow-1 align-text-bottom mb-0">${item.product.price
                         } NOK</p>
                   </div>
-                  <div>
-                  <p class="large-text large-text--total flex-grow-1 align-text-bottom mb-0">Total: 
+                  <div class="p-0 pl-lg-2">
+                  <p class="large-text large-text--total flex-grow-1 align-text-bottom mb-0">Tot: 
                   ${getTotalPricePerItem(item)} NOK
                   </p>
                   </div>
