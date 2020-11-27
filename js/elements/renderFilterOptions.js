@@ -98,7 +98,7 @@ const filterByPrice = (products) => {
 
     clearTimeout(timeout);
 
-    timeout = setTimeout( () => {
+   
 
       const value = e.target.value;
      
@@ -107,21 +107,20 @@ const filterByPrice = (products) => {
       console.log('Filtered price:', filteredPrice);
       console.log(filteredPrice.length > 0);
 
-
-      if (filteredPrice.length > 0) {
-        renderAllProducts(filteredPrice, "Shop is currently empty", ".shop-container");
-      } else {
-        const msg = `Sorry, we currently don't have shoes in with the price range 0 - ${value} NOK`;
-        renderAllProducts([], msg, ".shop-container");
-
-      };
-
-    }, 1000);
+      setTimeout(() => {
+        if (filteredPrice.length > 0) {
+          renderAllProducts(filteredPrice, "Shop is currently empty", ".shop-container");
+        } else {
+          const msg = `Sorry, we currently don't have shoes in with the price range 0 - ${value} NOK`;
+          renderAllProducts([], msg, ".shop-container");
+  
+        };
+  
+        
+      }, 1000);
 
   });
-
-
-  
+ 
 };
 
 
