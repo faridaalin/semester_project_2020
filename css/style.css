@@ -10886,13 +10886,11 @@ body {
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  min-height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
   font-family: "Montserrat", sans-serif;
   background-color: #edf6f9;
   color: #143e56;
@@ -10937,6 +10935,9 @@ li {
 
 .footer {
   background-color: rgba(120, 161, 185, 0.2);
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .footer h5 {
@@ -11612,6 +11613,52 @@ h1, h2, h3, h4, h5, a {
 
 /*  TITLE END */
 /*FEATURED*/
+/* ------ */
+.custom-carousel {
+  height: 400px;
+  width: calc(250px + 50vw);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+.custom-carousel .custom-carousel_slide-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  list-style: none;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.custom-carousel .custom-carousel_slide-container .custom-carousel__slide {
+  width: calc(100% - 50vw);
+  height: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.custom-carousel .custom-carousel_slide-container .custom-carousel__slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+
+@media (max-width: 500px) {
+  .Container {
+    width: 100%;
+  }
+}
+
+/* ------ */
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23143e56' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }

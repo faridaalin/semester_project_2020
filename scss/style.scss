@@ -133,13 +133,17 @@ body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
   font-family: "Montserrat", sans-serif;
   background-color: #edf6f9;
   color: getColour(secondary);
   line-height: 1.5;
   box-sizing: border-box;
+  
 }
 
 img {
@@ -177,6 +181,9 @@ li {
 
 .footer {
   background-color: rgba(120, 161, 185, 0.2);
+  grid-row-start: 2;
+  grid-row-end: 3;
+
 
   h5 {
     font-size: 0.8rem;
@@ -821,6 +828,59 @@ h1, h2, h3, h4, h5, a {
 
 
 /*FEATURED*/
+
+/* ------ */
+
+
+
+
+
+.custom-carousel{
+  height: 400px;
+  width: calc(250px + 50vw);
+  display: flex;
+  margin: 0 auto;
+  .custom-carousel_slide-container{
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      list-style: none;
+      padding: 0;
+   
+      height: 100%;
+      width: 100%;
+      .custom-carousel__slide{
+        width: calc(100% - 50vw);
+        height: 100%;
+          flex: 0 0 auto;
+          cursor: pointer;
+
+          img {
+            object-fit: cover;
+            height: 100%;
+        }
+          }
+      }
+
+  }
+
+
+@media (max-width: 500px){
+  .Container{
+      width: 100%;
+  }
+}
+
+
+
+/* ------ */
+
+
+
+
+
+
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23143e56' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
