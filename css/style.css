@@ -11635,12 +11635,17 @@ a {
 /* ------ */
 .custom-carousel {
   height: 400px;
-  width: calc(250px + 50vw);
+  width: calc(250px + 53vw);
+  max-width: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
   position: relative;
+}
+
+.custom-carousel .custom-carousel_slide-container::-webkit-scrollbar {
+  display: none;
 }
 
 .custom-carousel .custom-carousel_slide-container {
@@ -11651,6 +11656,10 @@ a {
       flex-wrap: nowrap;
   overflow-y: hidden;
   overflow-x: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
   list-style: none;
   padding: 0;
   height: 100%;
@@ -11658,12 +11667,17 @@ a {
 }
 
 .custom-carousel .custom-carousel__slide {
-  width: calc(100% - 45vw);
-  height: 100%;
+  width: calc(150px + 3vw);
+  height: 90%;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   cursor: pointer;
+  margin-right: 1rem;
+}
+
+.custom-carousel .custom-carousel__slide :last-child {
+  margin-right: 0;
 }
 
 .custom-carousel .custom-carousel__slide img {
@@ -11674,7 +11688,7 @@ a {
   -ms-flex-item-align: start;
       align-self: flex-start;
   position: absolute;
-  top: 50%;
+  top: 43%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background: transparent;
