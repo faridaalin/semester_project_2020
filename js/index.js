@@ -44,3 +44,20 @@ editBackgroundImg();
   renderFeatured(productResponse);
   saveToSessionStorage(allProducts, productResponse);
 })();
+
+let slidesContainer = document.querySelector('.custom-carousel_slide-container');
+const slides = [...slidesContainer.children];
+const leftButton = document.querySelector('.custom-carousel__button--left') ;
+const rightButton = document.querySelector('.custom-carousel__button--right');
+let slideSizeWidth = slides[0].getBoundingClientRect().width;
+
+
+const moveOneSlideLeft = (e) => {
+  slidesContainer.scrollLeft -= slideSizeWidth
+}
+const moveOneSlideRight = (e) => {
+  slidesContainer.scrollLeft += slideSizeWidth
+}
+
+leftButton.addEventListener('click', moveOneSlideLeft);
+rightButton.addEventListener('click', moveOneSlideRight);

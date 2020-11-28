@@ -1,14 +1,12 @@
 $theme-colors: (
-  "primary": #FAB162,
+  "primary": #fab162,
   "secondary": #143e56,
 );
 $border-width: 2px;
 
 .card {
   background-color: transparent;
-};
-
-
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -33,7 +31,7 @@ $font-weight: (
 }
 
 $colors: (
-  primary: #FAB162,
+  primary: #fab162,
   secondary: #143e56,
   green-010: rgba(20, 62, 86, 0.2),
   green-050: rgba(7, 7, 7, 0.8),
@@ -58,8 +56,6 @@ $colors: (
 
 /*  VARIABLES END */
 
-
-
 /*FORM*/
 .custom-form-container {
   .form-control {
@@ -69,16 +65,20 @@ $colors: (
     border-radius: 0;
     outline: none;
     height: auto;
-    padding: .6rem 0 .4rem 0;
-    margin: 0 0 .5rem 0;
-  
+    padding: 0.6rem 0 0.4rem 0;
+    margin: 0 0 0.5rem 0;
+
     &:focus {
-      border-bottom: 1px solid  rgba(95, 123, 139, 0.35);
-      transition:    border-color 0.15s ease-in-out;
-      box-shadow: 0 1px 0 0  rgba(95, 123, 139, 0.35);
+      border-bottom: 1px solid rgba(95, 123, 139, 0.35);
+      transition: border-color 0.15s ease-in-out;
+      box-shadow: 0 1px 0 0 rgba(95, 123, 139, 0.35);
     }
-  
-    ::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+
+    ::placeholder,
+    ::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    :-moz-placeholder {
       font-size: 0.3rem;
     }
   }
@@ -89,7 +89,7 @@ $colors: (
   .card {
     border: none;
   }
-  
+
   .card-header {
     border: none;
     background-color: getColour(green-100);
@@ -97,8 +97,6 @@ $colors: (
     .fa {
       font-size: 1.5rem;
     }
-
-
 
     .btn-link {
       color: getColour(secondary);
@@ -114,14 +112,14 @@ $colors: (
     font-size: 0.9rem;
   }
 
-  .was-validated .form-control:invalid, .form-control.is-invalid {
+  .was-validated .form-control:invalid,
+  .form-control.is-invalid {
     border-bottom-color: #dc3545;
   }
 
   .modal-content {
-  background-color: getColour(green-200);
- }
-
+    background-color: getColour(green-200);
+  }
 }
 
 /*FORM*/
@@ -143,7 +141,6 @@ body {
   color: getColour(secondary);
   line-height: 1.5;
   box-sizing: border-box;
-  
 }
 
 img {
@@ -167,7 +164,6 @@ li {
   margin-bottom: 2rem;
   font-weight: getWeight(bold);
 
-
   &::after {
     content: "";
     position: absolute;
@@ -184,7 +180,6 @@ li {
   grid-row-start: 2;
   grid-row-end: 3;
 
-
   h5 {
     font-size: 0.8rem;
     letter-spacing: 2px;
@@ -195,16 +190,14 @@ li {
   a {
     color: getColour(secondary);
 
-    
-
     &:hover {
       text-decoration: none;
       filter: brightness(50%);
     }
-    
   }
 
-  p, a {
+  p,
+  a {
     font-size: 0.8rem;
     font-weight: getWeight(light);
   }
@@ -251,12 +244,15 @@ li {
       }
     }
   }
-
- 
 }
 
-h1, h2, h3, h4, h5, a {
-  font-family: 'Manrope', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  font-family: "Manrope", sans-serif;
 }
 /*  BASE END */
 
@@ -432,7 +428,11 @@ h1, h2, h3, h4, h5, a {
     border-radius: 100px;
     border: none;
 
-    &::placeholder, input::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder  {
+    &::placeholder,
+    input::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    ::-webkit-input-placeholder {
       color: getColour(secondary);
       font-size: 0.5rem;
     }
@@ -504,24 +504,22 @@ h1, h2, h3, h4, h5, a {
         color: getColour(white-200);
       }
     }
-
- 
   }
 }
 .navbar-custom {
-   background:  #edf6f9;
+  background: #edf6f9;
 
-   .fa {
-     color: getColour(secondary);
-   }
-
+  .fa {
+    color: getColour(secondary);
+  }
 }
 
 .modal-footer {
   border-top: none;
 }
 
-.favs-icon, .cart-icon {
+.favs-icon,
+.cart-icon {
   font-size: 2rem;
   position: relative;
   color: getColour(white-200);
@@ -541,39 +539,31 @@ h1, h2, h3, h4, h5, a {
     text-align: center;
     font-family: "Montserrat", sans-serif;
     color: getColour(secondary);
-
   }
 }
-
 
 .modal.fade {
   .card-header {
     padding: 0;
     margin: 0;
-    background-color: transparent; 
+    background-color: transparent;
     border: none;
-}
-
+  }
 
   .login-register-form {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
     input {
       width: 90%;
-    margin-left: auto;
-    };
+      margin-left: auto;
+    }
     button {
       width: 73%;
-    margin-left: auto;
+      margin-left: auto;
     }
   }
-
 }
 /*  NAVBAR END */
-
-
-
-
 
 /*  BREADCRUMBS START */
 .breadcrumb {
@@ -622,9 +612,7 @@ h1, h2, h3, h4, h5, a {
     left: 0;
     opacity: 0.7;
     z-index: 0;
-
   }
-
 
   &__banner {
     max-width: 60ch;
@@ -644,7 +632,7 @@ h1, h2, h3, h4, h5, a {
   .edit-bg {
     top: -100px;
     left: 0;
-  };
+  }
 
   .content-tag {
     text-transform: uppercase;
@@ -741,20 +729,19 @@ h1, h2, h3, h4, h5, a {
   letter-spacing: 0.2px;
   font-size: 1.3rem;
 
-  &::after, &::before {
+  &::after,
+  &::before {
     content: "";
     position: absolute;
     height: 2px;
     width: 80px;
     top: 50%;
     background-color: getColour(green-600);
-   
-  };
+  }
   &::after {
     right: 120%;
   }
   &::before {
- 
     left: 120%;
   }
 }
@@ -767,9 +754,7 @@ h1, h2, h3, h4, h5, a {
       color: #143e56;
       border: none;
     }
-  };
-
-
+  }
 }
 
 .custom-range {
@@ -789,97 +774,107 @@ h1, h2, h3, h4, h5, a {
   }
 }
 
-.custom-range::-webkit-slider-thumb  {
-    height: 18px;
-    width: 18px;
-    background-color: getColour(primary) !important;
-    box-shadow: 0 0 0 0 rgba(245, 194, 138, 0.5);
-    transition: .3 ease-in-out;
-    z-index: 50;
-    position: relative;
-   
- 
+.custom-range::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  background-color: getColour(primary) !important;
+  box-shadow: 0 0 0 0 rgba(245, 194, 138, 0.5);
+  transition: 0.3 ease-in-out;
+  z-index: 50;
+  position: relative;
 }
-.custom-range::-webkit-slider-thumb  {
+.custom-range::-webkit-slider-thumb {
   &:hover {
     box-shadow: 0 0 0 4px rgba(245, 194, 138, 0.5);
   }
   &:active {
     box-shadow: 0 0 0 6px rgba(245, 194, 138, 0.6);
   }
- 
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
   background-color: rgba(20, 62, 86, 0.5);
 }
-.dropdown-item.active, .dropdown-item:hover {
+.dropdown-item.active,
+.dropdown-item:hover {
   background-color: rgba(20, 62, 86, 0.3);
 }
 
 .custom_select {
-  background-color:#f0f9fd;
+  background-color: #f0f9fd;
   padding: 1rem;
 }
 
-
 /*  TITLE END */
-
-
 
 /*FEATURED*/
 
 /* ------ */
 
-
-
-
-
-.custom-carousel{
+.custom-carousel {
   height: 400px;
   width: calc(250px + 50vw);
   display: flex;
   margin: 0 auto;
-  .custom-carousel_slide-container{
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-y: hidden;
-      overflow-x: scroll;
-      list-style: none;
-      padding: 0;
-   
-      height: 100%;
-      width: 100%;
-      .custom-carousel__slide{
-        width: calc(100% - 50vw);
-        height: 100%;
-          flex: 0 0 auto;
-          cursor: pointer;
+  position: relative;
 
-          img {
-            object-fit: cover;
-            height: 100%;
-        }
-          }
-      }
+  .custom-carousel_slide-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+ 
+  }
+
+  .custom-carousel__slide {
+    width: calc(100% - 45vw);
+    height: 100%;
+    flex: 0 0 auto;
+    cursor: pointer;
+    img {
+      height: 100%;
+    }
+  }
+
+  .custom-carousel__button  {
+    align-self:flex-start;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 1.5rem;
 
   }
 
+  .custom-carousel__button--left {
+    left: -45px;
+  }
+  .custom-carousel__button--right {
+    right: -45px;
+  }
 
-@media (max-width: 500px){
-  .Container{
-      width: 100%;
+  .fa {
+    color: getColour(secondary);
   }
 }
 
-
+@media (max-width: 500px) {
+  .Container {
+    width: 100%;
+  }
+}
 
 /* ------ */
-
-
-
-
-
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23143e56' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
@@ -887,37 +882,30 @@ h1, h2, h3, h4, h5, a {
 
 .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23143e56' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
 
-
-};
-
-.carousel-control-prev-icon, .carousel-control-next-icon{
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   width: 30px;
   height: 30px;
-};
+}
 
 .carousel-control-next {
   top: -37px;
   right: -55px;
   width: 10%;
-};
+}
 .carousel-control-prev {
   top: -37px;
   left: -55px;
   width: 10%;
-};
+}
 
 .featured-container {
   height: 80vh;
 }
 
-
-
-
-
 /*FEATURED*/
-
-
 
 /*  CARDS START */
 
@@ -1026,7 +1014,7 @@ h1, h2, h3, h4, h5, a {
 /*  PDP START */
 
 .container-pdp {
-padding-bottom: 8rem;
+  padding-bottom: 8rem;
 }
 
 .img-container {
@@ -1114,7 +1102,7 @@ padding-bottom: 8rem;
   width: 6.25rem;
   max-width: 6.25rem;
   margin-bottom: 1rem;
-  border: none; 
+  border: none;
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1131,7 +1119,7 @@ padding-bottom: 8rem;
 
 .checkout-container {
   background: getColour(green-300);
-  align-self:flex-start;
+  align-self: flex-start;
 
   h3 {
     font-size: 1.2rem;
@@ -1178,7 +1166,6 @@ padding-bottom: 8rem;
   color: #375e75db;
   font-weight: getWeight(medium);
   font-size: calc(0.7rem + 0.3vw);
-
 }
 
 .cart-brand {
@@ -1198,7 +1185,7 @@ padding-bottom: 8rem;
   }
 }
 
-.large-text--total  {
+.large-text--total {
   font-weight: getWeight(bold);
 }
 
@@ -1230,18 +1217,14 @@ padding-bottom: 8rem;
   padding: 0 0 0 1rem;
 }
 
-
-
 /*  CART END */
 
-
-
 /*  FORM VALIDATION START*/
-.was-validated .custom-select:invalid, .custom-select.is-invalid, .was-validated .custom-select:valid, .custom-select.is-valid {
+.was-validated .custom-select:invalid,
+.custom-select.is-invalid,
+.was-validated .custom-select:valid,
+.custom-select.is-valid {
   background: transparent;
 }
 
 /*  FORM VALIDATION END */
-
-
-
