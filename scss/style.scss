@@ -1132,6 +1132,14 @@ a {
 .checkout-container {
   background: getColour(green-300);
   align-self: flex-start;
+  width: 100%;
+
+
+  @media all and (min-width: 768px) {
+    width: 37%;
+    margin-left: auto;
+  }
+
 
   h3 {
     font-size: 1.2rem;
@@ -1156,11 +1164,7 @@ a {
   }
 }
 
-.cart-detail {
-  @media all and (min-width: 768px) {
-    // padding-right: 5rem;
-  }
-}
+
 
 .bag-container {
   border-bottom: 2px solid rgba(20, 62, 86, 0.4);

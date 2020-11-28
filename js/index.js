@@ -23,6 +23,9 @@ editBackgroundImg();
   const homeUrl = `${BASE_URL}/home`;
   const productsUrl = `${BASE_URL}/products`;
 
+  spinner('.featured-container');
+ 
+
   const [homeResponse, productResponse] = await Promise.all([
     fectData(homeUrl),
     fectData(productsUrl),
@@ -33,6 +36,7 @@ editBackgroundImg();
     showMessage("danger", msg, ".herobanner .message-container");
     return;
   }
+
   renderHeroBanner(homeResponse.hero_url);
 
 
@@ -41,6 +45,9 @@ editBackgroundImg();
       saveToSessionStorage(allProducts)
       return;
     }
+  
+
+  
   renderFeatured(productResponse);
   saveToSessionStorage(allProducts, productResponse);
 })();

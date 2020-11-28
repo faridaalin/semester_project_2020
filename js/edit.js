@@ -9,6 +9,8 @@ import { removeMessage } from "./helpers/removeMessage.js";
 import {fectData} from './helpers/fetcData.js';
 import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js';
 
+
+
 showNavbarBgOnScroll();
 
 
@@ -19,7 +21,7 @@ renderNavbar();
 const loggedUser = getFromLocal(user);
 if (!loggedUser) location.href = "/";
 
-if (loggedUser && loggedUser.role.type === "authenticated") {
+if (loggedUser && loggedUser.username === "admin") {
   // Get the querystring
   const queryString = window.location.search;
 
@@ -40,13 +42,15 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
   const URL = `${BASE_URL}/products/${id}`;
   const token = getFromLocal(userToken);
 
+
  
     fectData(URL).then(product => {
       if(!product || typeof product === 'string') {
         showMessage('danger', product, '.edit-form .message-container');
         return;
-
          }
+
+        
      title.value = product.title;
      brand.value = product.brand;
      price.value = product.price;
@@ -57,6 +61,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
      productID.value = product.id;
      featured.checked = product.featured;
     });
+
 
   const form = document.querySelector(".edit-form");
 
@@ -85,9 +90,7 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
    
   };
 
-  deleteProduct(URL, token);
-
-
+  //deleteProduct(URL, token);
 
   form.addEventListener("submit", handleFormEdit);
 

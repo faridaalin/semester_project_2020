@@ -11978,6 +11978,14 @@ a {
   background: #c2ded8;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  width: 100%;
+}
+
+@media all and (min-width: 768px) {
+  .checkout-container {
+    width: 37%;
+    margin-left: auto;
+  }
 }
 
 .checkout-container h3 {

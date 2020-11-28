@@ -1,9 +1,11 @@
 export const spinner = (container, css) => {
     const element = document.querySelector(container);
+    console.log('container:', container);
+    console.log('css class:', css);
 
     const cssClass = css ? css : "";
 
-    return element.innerHTML = `<div class=" ${cssClass}">
+    return element.innerHTML = `<div class="spinner-container ${cssClass}">
     <div class="d-flex justify-content-center">
     <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
       <span class="sr-only">Loading...</span>

@@ -5,7 +5,8 @@ import {addToCart} from './helpers/addtoCart.js'
 import {fectData} from './helpers/fetcData.js';
 import {showMessage} from './helpers/showMessage.js';
 import {removeMessage} from './helpers/removeMessage.js';
-import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js'
+import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js';
+import { spinner } from "./elements/spinner.js";
 
 showNavbarBgOnScroll();
 renderNavbar();
@@ -23,18 +24,23 @@ const id = urlParam.get("id");
   removeMessage('.pdp-detail-container .message-container')
     const URL = `${BASE_URL}/products/${id}`;
 
-    fectData(URL).then(result => {
-      if(!result || typeof result === 'string') {
-        showMessage('danger', result, '.pdp-detail-container .message-container');
-        return;
-      
-         }
-         document.title = result.title;
-         const breadcrumb = document.querySelector('.breadcrumb');
-         breadcrumb.innerHTML += `<li class="breadcrumb-item active" aria-current="page">${result.title}</li>`
-         productDetail(result)
-         addToCart(result);
-    });
+    spinner('.pdp-detail-container');
+
+setTimeout(() => {
+  fectData(URL).then(result => {
+    if(!result || typeof result === 'string') {
+      showMessage('danger', result, '.pdp-detail-container .message-container');
+      return;
+    
+       }
+       document.title = result.title;
+       const breadcrumb = document.querySelector('.breadcrumb');
+       breadcrumb.innerHTML += `<li class="breadcrumb-item active" aria-current="page">${result.title}</li>`
+       productDetail(result)
+       addToCart(result);
+  });
+  
+}, 1000);
     
 }
 )();
