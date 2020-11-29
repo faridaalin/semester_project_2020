@@ -2,8 +2,9 @@ export const showNavbarBgOnScroll = () => {
     const navbar = document.querySelector('.navbar');
    
         const getWindowScrollY = () => {
+  
 
-            if(location.pathname === "/" || location.pathname === "/home.html") {
+            if(location.pathname === "/" || location.pathname === "/home.html" || location.pathname === "/index.html") {
                 if (window.scrollY > 15) {
                     navbar.classList.add('custom-bg')
         

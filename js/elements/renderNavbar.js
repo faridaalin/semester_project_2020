@@ -15,21 +15,22 @@ export const renderNavbar = () => {
   const loggedInUser = getFromLocal(user);
   const { pathname } = location;
 
-  let authLink = `<li class="nav-item mb-2">
-    <!-- Button trigger modal -->
-    <button class="nav-link btn py-2 px-2"  data-toggle="modal" data-target="#login">Login</>
-  </li>`
+  let authLink = `
+  <li class="nav-item">
+  <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Login</a>
+</li>
+  `
 
   if (loggedInUser && loggedInUser.username === "admin") {
     authLink = `
-        <li class="nav-item mb-2 ${pathname === "add.html" ? "active" : ""}">
+        <li class="nav-item ${pathname === "add.html" ? "active" : ""}">
         <a class="nav-link" href="add.html">Add product</a>
       </li>
-        <li class="nav-item mb-2">
+        <li class="nav-item">
         <button class="nav-link logout btn py-2 px-2">Logout</button>
         
       </li>
-      <li class="nav-item mb-2">
+      <li class="nav-item">
       <span class="py-0 px-2">Hi ${loggedInUser.username}</span>
     </li>
       `
@@ -66,11 +67,11 @@ export const renderNavbar = () => {
 
   return innerNav.innerHTML = `
     <div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between pt-5 pt-lg-0" id="navbarSupportedContent">
-    <ul class="navbar-nav nav-center justify-content-center ml-auto align-items-baseline">
+    <ul class="navbar-nav nav-center justify-content-center mr-auto align-items-baseline">
       <li class="nav-item ${pathname === "/" ? "active" : ""}">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item  ${pathname === "/shop.html" ? "active" : ""} mb-2">
+      <li class="nav-item  ${pathname === "/shop.html" ? "active" : ""}">
         <a class="nav-link" href="/shop.html">Shop</a>
       </li>
      ${authLink}
