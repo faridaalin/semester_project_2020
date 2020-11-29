@@ -156,6 +156,16 @@ li {
   flex: 1;
 }
 
+.wrapper {
+  .container-fluid-navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #edf6f9;
+    position: fixed;
+    z-index: 3000;
+  }
+}
+
 .header {
   text-transform: uppercase;
   font-size: 2rem;
@@ -296,6 +306,9 @@ a {
 .navbar {
   background-color: transparent;
   transition: background-color 0.2s;
+  max-width: 1140px; 
+  margin: 0 auto;
+  height: 100px;
 
 
   .nav-item {
@@ -626,7 +639,7 @@ a {
 
 
 .navbar-custom {
-  background: #edf6f9;
+  background: transparent;
 
   .fa {
     color: getColour(secondary);
@@ -1385,7 +1398,24 @@ a {
   }
 }
 
-.navbar-expand-lg .navbar-nav .nav-link.icon{
-  color: getColour(white-200) !important;
+.navbar-light .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.icon {
+  &:hover {
+    opacity: 1;
+    &::after {
+      background-color: transparent;
+      opacity: 1;
+    }
 }
+}
+
+
+.navbar-dark .navbar-nav .nav-link.icon {
+  opacity: 1;
+  color: getColour(white-200)
+}
+.navbar-light .navbar-nav .nav-link.icon {
+  opacity: 1;
+  color: getColour(black-300);
+}
+
 

@@ -96,4 +96,3 @@ export const renderNavbar = () => {
 
 }
 
-{/* <a class=""  href="/cart.html"><i class="fa fa-shopping-cart"></i><span class="counter">0</span></a> */}
