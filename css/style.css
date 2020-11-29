@@ -11101,7 +11101,21 @@ a {
 @media (max-width: 992px) {
   .navbar .nav-item {
     margin-right: 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
   }
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus {
+  outline: none;
 }
 
 .logo {
@@ -11580,7 +11594,7 @@ a {
 }
 
 .filter-container {
-  background-color: rgba(120, 161, 185, 0.2);
+  background-color: rgba(237, 246, 249, 0.51);
 }
 
 .filter-container .category .btn {
@@ -12166,11 +12180,21 @@ a {
     position: absolute;
     right: -25px;
     top: 0;
-    background-color: rgba(7, 7, 7, 0.8);
+    background-color: #edf6f9;
     width: 50vw;
+  }
+  .home .navbar .container, .home .navbar .container-fluid, .home .navbar .container-sm, .home .navbar .container-md, .home .navbar .container-lg, .home .navbar .container-xl, .home .navbar .container-sm, .home .navbar .container-md, .home .navbar .container-lg, .home .navbar .container-xl {
+    background-color: rgba(7, 7, 7, 0.8);
   }
   .inner-navbar {
     padding-top: 8rem !important;
+    padding-bottom: 4rem;
+  }
+  .inner-navbar:last-child {
+    padding-top: 0 !important;
+  }
+  .search-box {
+    width: 100% !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,3 @@
-
-
 const addNavbarBG = () => {
     const navbarHome = document.querySelector('.home');
     const navbarContainer = document.querySelector('.container-fluid-navbar');
