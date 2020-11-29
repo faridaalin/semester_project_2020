@@ -29,14 +29,15 @@ export const loadCurrentItems = (tag, container) => {
       });
       total = sum;
 
-  
-         return  counterContainer.textContent =  total;
+
+         return  counterContainer.textContent =  total > 9 || total === 9 ? "9+" : total;
      } 
 
 
 
      if(tag === "favs") {  
-        return  counterContainer.textContent = currentItems.length;
+        const favsTotal = currentItems.length > 9 || currentItems.length === 9 ? "9+" : currentItems.length;
+        return  counterContainer.textContent = favsTotal
      }
 
 }

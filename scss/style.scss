@@ -346,6 +346,11 @@ a {
 
   .navbar {
     color: getColour(white-200);
+
+    svg {
+      height: 20px;
+    width: 20px;
+    }
   }
 
 
@@ -894,7 +899,7 @@ a {
     top: 6px;
     left: 0;
     border-radius: 5px;
-    background-color: rgba(245, 194, 138, 0.2);
+    background-color: rgba(103, 235, 180, 0.34);
     z-index: 1;
   }
 }
@@ -903,17 +908,18 @@ a {
   height: 18px;
   width: 18px;
   background-color: getColour(primary) !important;
-  box-shadow: 0 0 0 0 rgba(245, 194, 138, 0.5);
+  box-shadow: 0 0 0 0 rgba(103, 235, 180, 0.3);
+  filter: brightness(0.6);
   transition: 0.3 ease-in-out;
   z-index: 50;
   position: relative;
 }
 .custom-range::-webkit-slider-thumb {
   &:hover {
-    box-shadow: 0 0 0 4px rgba(245, 194, 138, 0.5);
+    box-shadow: 0 0 0 4px rgba(103, 235, 180, 0.5);
   }
   &:active {
-    box-shadow: 0 0 0 6px rgba(245, 194, 138, 0.6);
+    box-shadow: 0 0 0 6px rgba(103, 235, 180, 0.3);
   }
 }
 
@@ -1385,13 +1391,13 @@ a {
   // }
   .counter {
     position: absolute;
-    top: 3px;
-    right: -11px;
-    height: 25px;
-    width: 25px;
+    top: 20px;
+    right: -8px;
+    height: 15px;
+    width: 15px;
     border-radius:20%;
     background-color: getColour(tertiary);
-    font-size: 1rem;
+    font-size: 0.6rem;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     color: getColour(secondary);
@@ -1406,6 +1412,14 @@ a {
       opacity: 1;
     }
 }
+
+&:focus {
+  opacity: 1;
+  &::after {
+    background-color: transparent;
+    opacity: 1;
+  }
+}
 }
 
 
@@ -1418,4 +1432,8 @@ a {
   color: getColour(black-300);
 }
 
+.spinner-container {
+  height: 30vh !important;
+    width: 100%;
+}
 

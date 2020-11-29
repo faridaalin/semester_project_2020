@@ -1,4 +1,5 @@
 import renderAllProducts from "../elements/renderAllProducts.js";
+import { spinner } from "../elements/spinner.js";
 
 
 const filterByCategory = (products) => {
@@ -12,6 +13,7 @@ checkboxesArr.forEach(checkbox => {
 
   checkbox.addEventListener('click',  (e) => {
 
+    spinner('.shop-container');
     clearTimeout(timeout);
   
     timeout = setTimeout( () => {
@@ -95,17 +97,12 @@ const filterByPrice = (products) => {
 
     let timeout = null;
 
-
+    spinner('.shop-container');
     clearTimeout(timeout);
-
-   
 
       const value = e.target.value;
      
       const filteredPrice = products.filter((product) => parseInt(product.price) <= parseInt(value));
-      
-      console.log('Filtered price:', filteredPrice);
-      console.log(filteredPrice.length > 0);
 
       setTimeout(() => {
         if (filteredPrice.length > 0) {
@@ -117,7 +114,7 @@ const filterByPrice = (products) => {
         };
   
         
-      }, 1000);
+      }, 1000);     
 
   });
  
