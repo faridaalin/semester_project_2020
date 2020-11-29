@@ -11098,6 +11098,12 @@ a {
   text-transform: uppercase;
 }
 
+@media (max-width: 992px) {
+  .navbar .nav-item {
+    margin-right: 0rem;
+  }
+}
+
 .logo {
   color: #67EBB4;
   font-weight: 700;
@@ -11148,6 +11154,7 @@ a {
   color: #151315 !important;
   font-size: 1.5rem !important;
   color: #67EBB4 !important;
+  outline: none;
 }
 
 .navbar-toggler-icon {
@@ -12161,7 +12168,6 @@ a {
     top: 0;
     background-color: rgba(7, 7, 7, 0.8);
     width: 50vw;
-    height: 100vh;
   }
   .inner-navbar {
     padding-top: 8rem !important;

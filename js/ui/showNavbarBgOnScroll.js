@@ -1,6 +1,9 @@
+
+
 const addNavbarBG = () => {
     const navbarHome = document.querySelector('.home');
     const navbarContainer = document.querySelector('.container-fluid-navbar');
+
     if (location.pathname === "/" || location.pathname === "/home.html" || location.pathname === "/index.html") {
         if (window.scrollY > 15) {
             navbarHome.classList.add('custom-bg');

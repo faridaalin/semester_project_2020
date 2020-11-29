@@ -311,9 +311,17 @@ a {
   height: 100px;
 
 
+
   .nav-item {
     margin-right: 2rem;
     text-transform: uppercase;
+  };
+
+  @media (max-width: 992px) {
+    .nav-item {
+      margin-right: 0rem;
+    
+    };
   }
 }
 
@@ -369,6 +377,7 @@ a {
   color: getColour(secondary) !important;
   font-size: 1.5rem !important;
   color: getColour(primary) !important;
+  outline: none;
 }
 
 .navbar-toggler-icon {
@@ -1447,6 +1456,7 @@ a {
     background-color: rgba(7, 7, 7, 0.8);
     // background-color: grey;
     width: 50vw;
+    // height: 100vh;
   }
 
   .inner-navbar {
