@@ -17,21 +17,23 @@ export const productDetail = (product) => {
   </div>
 
 
-<div class="col-12 col-md-6 pt-4 mt-4 pt-md-0 mt-md-0 ">
+<div class="col-12 col-md-6 pt-5 mt-5 pt-md-0 mt-md-0 align-self-baseline">
 <div class="content-container">
-<h3 class="pb-1">${product.title}</h3>
-<div class="rating-container pb-4">
+
+<div class="rating-container">
 <small class="pb-2">${product.brand}</small>
+
 <div class="rating">
 ${rating.map(star => star).join('')}
 </div>
 </div>
-   <div class=" pt-4 mt-4 pt-md-0 mt-md-0">
-  <p class="pb-4">
+<h3 class="pb-md-2">${product.title}</h3>
+   <div class="pb-4 py-md-0 mt-md-0">
+  <p class="description pb-2 pt-1">
   Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus
   ligula. Mauris consequat ornare feugiat.
   </p>
-  <h5 class="price-title pb-4">${product.price} NOK</h5>
+  <h5 class="price-title">${product.price} NOK</h5>
    </div>
 
 
@@ -40,11 +42,11 @@ ${rating.map(star => star).join('')}
    <div class="checkout d-flex flex-column flex-lg-row pb-1">
      <div class="qty-container">
        Quantity
-       <button type="button" class="btn minus" data-type="dec">-</button>
+       <button type="button" class="btn minus" data-type="dec"><i class="fa fa-minus"></i></button>
        <span class="value">1</span>
-       <button type="button" class="btn pluss" data-type="inc">+</button>
+       <button type="button" class="btn pluss" data-type="inc"><i class="fa fa-plus"></i></button>
      </div>
-     <div class="input-group flex-fill mb-4">
+     <div class="input-group flex-fill">
        <select class="custom-select size h-100" id="inputGroupSelect02">
          <option selected>Choose size</option>
          <option value="40">40</option>
@@ -58,7 +60,7 @@ ${rating.map(star => star).join('')}
      </div>
    </div>
 
-   <div class="checkout d-flex pt-2">
+   <div class="d-flex pt-4 pt-md-1">
      <button type="button" id="addToCart" class="btn btn-secondary flex-fill">
        Add to cart
      </button>
