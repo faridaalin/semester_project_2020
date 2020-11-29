@@ -48,6 +48,6 @@ editBackgroundImg();
   
 
   
-  renderFeatured(productResponse);
+  //renderFeatured(productResponse);
   saveToSessionStorage(allProducts, productResponse);
 })();
