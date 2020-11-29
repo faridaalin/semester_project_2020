@@ -11149,8 +11149,8 @@ a {
 }
 
 .navbar svg {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
 }
 
 .navbar-brand {
@@ -11182,8 +11182,12 @@ a {
   z-index: 5000;
 }
 
-.custom-toggler .navbar-toggler-icon {
+.home .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(103, 235, 180, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9, 10, 11, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -11975,7 +11979,7 @@ a {
 }
 
 .rating-container {
-  max-width: 15ch;
+  max-width: 50ch;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12031,27 +12035,22 @@ a {
 /*  PDP END */
 /*  CART START */
 .checkout-container {
-  background: #c2ded8;
+  background: rgba(117, 235, 180, 0.31);
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 100%;
 }
 
-@media all and (min-width: 768px) {
-  .checkout-container {
-    width: 37%;
-    margin-left: auto;
-  }
-}
-
 .checkout-container h3 {
   font-size: 1.2rem;
   font-weight: 700;
+  color: #1c1f22;
 }
 
 .checkout-container .total {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1rem;
+  font-family: 'Barlow', sans-serif;
 }
 
 .checkout-container .total :last-child {
@@ -12060,6 +12059,7 @@ a {
 
 .checkout-container .delivery {
   font-size: 1rem;
+  color: #2e3338;
 }
 
 .bag-container {
@@ -12075,13 +12075,20 @@ a {
 }
 
 .light-text {
-  color: #375e75db;
-  font-weight: 500;
-  font-size: calc(0.7rem + 0.3vw);
+  color: #2e3338;
+  font-weight: 400;
+  font-size: calc(0.6rem + 0.3vw);
+  opacity: 0.8;
 }
 
 .cart-brand {
-  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.cart-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .medium-text {
@@ -12089,9 +12096,11 @@ a {
 }
 
 .large-text {
-  font-weight: 400;
+  font-weight: 600;
   white-space: nowrap;
   font-size: calc(0.5rem + 0.5vw);
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
 }
 
 .large-text :last-child {
@@ -12100,6 +12109,8 @@ a {
 
 .large-text--total {
   font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.1rem;
 }
 
 .bag-img {
@@ -12157,12 +12168,12 @@ a {
 .cart-icon .counter {
   position: absolute;
   top: 20px;
-  right: -8px;
-  height: 15px;
-  width: 15px;
+  right: -13px;
+  height: 20px;
+  width: 20px;
   border-radius: 20%;
   background-color: #67EBB4;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   color: #151315;

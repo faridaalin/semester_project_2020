@@ -364,8 +364,8 @@ a {
     color: getColour(white-200);
 
     svg {
-      height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     }
   }
 
@@ -400,12 +400,12 @@ a {
   }
 
 
- .custom-toggler .navbar-toggler-icon {
+ .home .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(103, 235, 180, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-
-
-
+ .custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9, 10, 11, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
 
  .navbar-dark .navbar-nav .nav-link {
   color: getColour(white-200);
@@ -760,28 +760,7 @@ a {
   padding: 0 60px;
 }
 
-.row {
-  .btn-container {
-   
-    @media all and (min-width: 576px) {
-      .content-btn {
-        // padding: 0.5rem 2.5rem;
-        // font-size: 0.8rem;
-      }
-    }
-    @media all and (min-width: 768px) {
-      .content-btn {
-        // padding: 0 2rem;
-        // font-size: 0.7rem;
-      }
-    }
-    @media all and (min-width: 960px) {
-      .content-btn {
-        // padding: 0.5rem 2.5rem;
-      }
-    }
-  }
-}
+
 
 /*  BUTTONS END */
 
@@ -1193,7 +1172,7 @@ a {
 }
 
 .rating-container {
-  max-width: 15ch;
+  max-width: 50ch;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -1238,25 +1217,27 @@ a {
 /*  CART START */
 
 .checkout-container {
-  background: getColour(green-300);
+  background: rgba(117, 235, 180, .31);
   align-self: flex-start;
   width: 100%;
 
 
   @media all and (min-width: 768px) {
-    width: 37%;
-    margin-left: auto;
+    // width: 37%;
+    // margin-left: auto;
   }
 
 
   h3 {
     font-size: 1.2rem;
     font-weight: getWeight(bold);
+    color: getColour(black-200);
   }
 
   .total {
-    font-weight: getWeight(medium);
+    font-weight: 700;
     font-size: 1rem;
+    font-family: 'Barlow', sans-serif;
 
     :last-child {
       font-weight: getWeight(bold);
@@ -1265,6 +1246,7 @@ a {
 
   .delivery {
     font-size: 1rem;
+    color: getColour(black-100);
   }
 
 
@@ -1285,23 +1267,31 @@ a {
 }
 
 .light-text {
-  color: #375e75db;
-  font-weight: getWeight(medium);
-  font-size: calc(0.7rem + 0.3vw);
+  color: getColour(black-100);
+  font-weight: getWeight(regular);
+  font-size: calc(0.6rem + 0.3vw);
+  opacity: 0.8;
 }
 
 .cart-brand {
-  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.cart-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: getWeight(bold);
+  font-size: 1.1rem;
 }
 
 .medium-text {
   font-weight: getWeight(medium);
 }
 .large-text {
-  font-weight: getWeight(regular);
+  font-weight: 600;
   white-space: nowrap;
   font-size: calc(0.5rem + 0.5vw);
-
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
   :last-child {
     padding-right: 1rem;
   }
@@ -1309,6 +1299,8 @@ a {
 
 .large-text--total {
   font-weight: getWeight(bold);
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.1rem;
 }
 
 .bag-img {
@@ -1366,12 +1358,12 @@ a {
   .counter {
     position: absolute;
     top: 20px;
-    right: -8px;
-    height: 15px;
-    width: 15px;
+    right: -13px;
+    height: 20px;
+    width: 20px;
     border-radius:20%;
     background-color: getColour(tertiary);
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     color: getColour(secondary);
@@ -1416,7 +1408,6 @@ a {
 
 
 @media (max-width: 992px) {
-
 
   .navbar .container, .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
     position: absolute;

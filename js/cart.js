@@ -38,9 +38,12 @@ const removeFromCartItem = (cartItems) => {
 const showCartItems = () => {
   const cartItems = getFromLocal(cart);
 
-  const cartContainer = document.querySelector('.cart-container');
+  // const cartContainer = document.querySelector('.cart-container');
+  const cartTtemsContainer = document.querySelector('.cart-items-container');
+  const cartTotalContainer = document.querySelector('.cart-total-container');
 
-   cartContainer.innerHTML = "";
+  cartTtemsContainer.innerHTML = "";
+  cartTotalContainer.innerHTML = "";
 
 
 
@@ -52,21 +55,11 @@ const showCartItems = () => {
     return;
   };
 
-  
-
- 
-
-spinner('.cart-container');
-
-
-setTimeout(() => {
-
-
  
   cartItems.map((item) => {
-    cartContainer.innerHTML += `
+    cartTtemsContainer.innerHTML += `
 
-    <div class="col-12 col-md-7 pl-0">
+    <div class="">
     <div class="cart-detail mb-5 pb-5 mb-md-0">
     <div class="bag-container d-flex pb-4 mb-4">
    
@@ -82,9 +75,9 @@ setTimeout(() => {
      
       <div class="d-lg-flex justify-content-between">
         <div class="pb-md-3 flex-grow-1 pb-md-0 align-text-bottom ">
-          <p>${item.product.title}</p>
+          <p class="cart-title">${item.product.title}</p>
         </div>
-        <div class="d-flex flex-column justify-content-between align-items-center w-100 col-lg-8">
+        <div class="d-flex flex-column justify-content-between align-items-center w-100 col-lg-8 pl-0">
 
          <div class="qtySize-container d-flex flex-wrap flex-column w-100">
 
@@ -105,7 +98,7 @@ setTimeout(() => {
                        } NOK</p>
                  </div>
                  <div class="p-0 pl-lg-2">
-                 <p class="large-text large-text--total flex-grow-1 align-text-bottom mb-0">Tot: 
+                 <p class="large-text large-text--total flex-grow-1 align-text-bottom mb-0">Total: 
                  ${getTotalPricePerItem(item)} NOK
                  </p>
                  </div>
@@ -127,9 +120,9 @@ setTimeout(() => {
      `;
   });
   
-  cartContainer.innerHTML += `
+  cartTotalContainer.innerHTML += `
   <div class="checkout-container">
-  <div class="ml-auto pt-4 pb-5 px-4">
+  <div class="pt-4 pb-5 px-4">
   <h3 class="pt-2 pb-2">ORDER SUMMARY</h3>
   <div class="delivery pt-2 pb-4 d-flex justify-content-between align-items-center">
     <span>Delivery</span><span>FREE</span></div>
@@ -139,11 +132,6 @@ setTimeout(() => {
   </div>`;
 
 
-}, 1000);
-
-setTimeout(() => {
-  spinner('.spinner-container', 'd-none');
-}, 1000);
 
 
 

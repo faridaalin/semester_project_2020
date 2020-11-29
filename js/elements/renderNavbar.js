@@ -85,7 +85,7 @@ showNavbarBgOnScroll();
     </ul>
   </div>   
   <div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between py-4 py-lg-0" id="navbarSupportedContent">
-      <ul class="navbar-nav nav-left mr-auto mx-lg-0 ml-lg-auto flex-column flex-md-row justify-content-between align-items-center">
+      <ul class="navbar-nav nav-left mr-auto mx-lg-0 ml-lg-auto flex-column flex-lg-row justify-content-between align-items-center">
       ${searchbar}
         <li class="nav-item favs-icon">
         <a class="nav-link icon" href="/fav.html"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
