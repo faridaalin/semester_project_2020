@@ -11096,6 +11096,11 @@ a {
   text-transform: uppercase;
 }
 
+.navbar .nav-item:first-child {
+  margin-right: 1.2rem;
+  margin-left: 1.2rem;
+}
+
 .navbar .nav-item:last-child {
   margin-right: 0;
 }
@@ -11116,6 +11121,10 @@ a {
   }
 }
 
+.navbar-brand {
+  margin-right: 0;
+}
+
 .navbar-toggler:hover, .navbar-toggler:focus {
   outline: none;
 }
@@ -11123,7 +11132,6 @@ a {
 .logo {
   color: #67EBB4;
   font-weight: 700;
-  margin-right: 2rem;
   font-family: 'Barlow', sans-serif;
   letter-spacing: 1px;
   text-transform: lowercase;
@@ -11588,6 +11596,12 @@ a {
   font-weight: 700;
 }
 
+@media all and (max-width: 576px) {
+  .custom-container {
+    max-width: calc(150px + 30vw);
+  }
+}
+
 .featured-title-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11698,7 +11712,7 @@ a {
 /* ------ */
 .custom-carousel {
   height: 400px;
-  width: 100%;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
