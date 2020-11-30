@@ -6,7 +6,8 @@ const filterByCategory = (products) => {
 const dropdown = document.querySelector('.dropdown');
 const custom_select = document.querySelector('.custom_select');
 const checkboxesNode = document.querySelectorAll('.form-check-input');
-const checkboxesArr = [...checkboxesNode];        
+const checkboxesArr = [...checkboxesNode];   
+
 checkboxesArr.forEach(checkbox => {
 
   let timeout = null;
@@ -20,11 +21,11 @@ checkboxesArr.forEach(checkbox => {
   
       const category = e.target.value.trim().toLowerCase();
       const cateGoryChecked = e.target.checked;
-      console.dir(e.target)
+     
 
       if(category && cateGoryChecked) {
         const filteredCategory = products.filter((product) => product.category.toLowerCase() === e.target.value.toLowerCase());
-        console.log('Category filter:',filteredCategory);
+      
     
         if (filteredCategory.length > 0) {
           renderAllProducts(filteredCategory, "Shop is currently empty", ".shop-container");
@@ -48,10 +49,7 @@ checkboxesArr.forEach(checkbox => {
           custom_select.classList.remove('show');
         }
    
-       
       }
-  
-  
 
   
     }, 1000);
@@ -69,7 +67,7 @@ checkboxesArr.forEach(checkbox => {
   const unique_categories = [...new Set(categoreisToLoweCase)]
 
   unique_categories.map(category => {
-    const backToUpperCase = category[0].toUpperCase() + category.slice(1).toLowerCase()
+    const backToUpperCase = category[0].toUpperCase() + category.slice(1).toLowerCase();
 
     return custom_select.innerHTML += `<div class="form-check dropdown-item">
       <input class="form-check-input" type="checkbox" value="${backToUpperCase}" id="defaultCheck1">

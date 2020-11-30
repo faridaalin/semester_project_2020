@@ -1,6 +1,5 @@
 export const spinner = (container, css) => {
     const element = document.querySelector(container);
-  console.log(container);
     const cssClass = css ? css : "";
 
     return element.innerHTML = `

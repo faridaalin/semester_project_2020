@@ -10,10 +10,29 @@ import { fectData } from "./helpers/fetcData.js";
 import { showMessage } from "./helpers/showMessage.js";
 import { removeMessage } from "./helpers/removeMessage.js";
 
-
 showNavbarBgOnScroll();
 renderNavbar();
 editBackgroundImg();
+
+
+const renderGridCategory = (products) => {
+  const masonryGrid = document.querySelector('.masonry');
+  const getMapFromArray = data =>
+  data.reduce((acc, item) => {
+    acc[item.category] =  { item };
+    return acc;
+  }, {});
+
+const modifiedArray =  getMapFromArray(products);
+
+for (const property in modifiedArray) {
+  const name = modifiedArray[property].item.category;
+  const nameToUpperCase = name[0].toUpperCase() + name.slice(1).toLowerCase();
+  const img = modifiedArray[property].item.image_url;
+  masonryGrid.innerHTML += `<div class="masonry__item" style="background-image: url(${img});"><span>${nameToUpperCase}</span></div>`
+}
+
+};
 
 (async () => {
   removeMessage(".herobanner .message-container");
@@ -46,8 +65,7 @@ editBackgroundImg();
       return;
     }
   
-
-  
+  renderGridCategory(productResponse);
   renderFeatured(productResponse);
   saveToSessionStorage(allProducts, productResponse);
 })();

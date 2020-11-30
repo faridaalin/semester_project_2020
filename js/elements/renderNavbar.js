@@ -11,7 +11,6 @@ import { showNavbarBgOnScroll } from "../ui/showNavbarBgOnScroll.js";
 
 
 export const renderNavbar = () => {
-  console.log(window.scrollY);
 showNavbarBgOnScroll();
 
   const innerNav = document.querySelector('.custom-nav');

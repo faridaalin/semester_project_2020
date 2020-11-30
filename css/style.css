@@ -11892,12 +11892,12 @@ a {
 }
 
 .product-bottom h5 {
-  font-size: 1.1rem;
+  font-size: calc(0.7rem + 0.3vw);
   font-weight: 700;
 }
 
 .product-bottom .fav {
-  font-size: 1.8rem;
+  font-size: calc(1.8rem - 0.1vw);
   cursor: pointer;
   color: #67EBB4;
 }
@@ -11920,13 +11920,6 @@ a {
   .product-bottom h3 {
     font-size: 1rem;
     padding-bottom: 0.8rem;
-  }
-  .product-bottom h5 {
-    font-size: 0.8rem;
-  }
-  .product-bottom .fav {
-    font-size: 1.2rem;
-    cursor: pointer;
   }
 }
 
@@ -12307,10 +12300,6 @@ a {
   }
 }
 
-.masonry-container {
-  background-color: lightgoldenrodyellow;
-}
-
 .masonry-container .masonry {
   display: -ms-grid;
   display: grid;
@@ -12323,11 +12312,46 @@ a {
 }
 
 .masonry-container .masonry .masonry__item {
-  border: 1px solid blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: black;
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   grid-row: span 2;
+}
+
+.masonry-container .masonry .masonry__item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.masonry-container .masonry .masonry__item > * {
+  z-index: 10;
+  position: relative;
+}
+
+.masonry-container .masonry .masonry__item span {
+  -webkit-backdrop-filter: blur(26px);
+          backdrop-filter: blur(26px);
+  padding: 1rem 2rem;
 }
 
 @media screen and (min-width: 540px) {

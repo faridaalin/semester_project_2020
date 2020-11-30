@@ -39,7 +39,6 @@ const displayFeaturedProducts = (featuredPropducts) => {
     });
   };
  
- console.log(featuredPropducts);
 
   container.innerHTML = `<div class="custom-carousel"">
   <button class="custom-carousel__button custom-carousel__button--left" aria-label="left button"><i class="fa fa-chevron-left"></i></button>
