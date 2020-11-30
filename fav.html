@@ -12,31 +12,28 @@
 
 <body>
   <div class="wrapper">
-    <div class="container-fluid">
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom pt-0 pt-4 px-4">
-
-        <a class="navbar-brand flex-grow-1" href="/"><img src="./dark-logo.png" alt="Arket shoes logo" ></a>
+    <div class="container-fluid container-fluid-navbar">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-custom px-4">
+        <a class="navbar-brand flex-grow-1 logo" href="./index.html">ARK<span class="logo-highlight">SHOES</span></a>
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="container-fluid custom-nav navbar-bg py-2 ">
-
+        <div class="container-fluid custom-nav custom-nav-home px-2 px-lg-0">
         </div>
+      </nav>
+  </div>
 
-    </nav>
-    </div>
 
 
-    <!-- Modal -->
     <!-- Modal LOGIN START/REGISTER-->
 
-    <div class="modal custom-form-container" id="login" tabindex="-1" role="login" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="login" tabindex="-1" role="login" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="message-container"></div>
-        <button type="button" class="close ml-auto py-2 pr-4" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close ml-auto pt-4 pr-4" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         <div class="accordion" id="accordionExample">
@@ -45,7 +42,7 @@
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-               Login
+                  <span><i class="fa fa-user"></i>Login</>
                 </button>
               </h5>
             </div>
@@ -53,33 +50,27 @@
               <div class="card-body">
                 <form action="" class="login-register-form">
                 
-                  <div class="form-group row flex-row flex-nowrap">
-                    <div class="d-flex flex-column col-3 pl-4">
-                      <label for="username" class="col-form-label">Username</label>
-                      <small>Min 2 char</small>
-                    </div>
-                    <div class="col-8">
-                      <input type="text" class="form-control" id="username" placeholder="Enter username">
+                  <div class="form-group row">
+                    <label for="username" class="col-form-label">Username</label>
+                    <div class="col-10">
+                      <input type="text" class="form-control py-4" id="username" placeholder="Enter username">
+                      <small>Min 2 letters</small>
                       <div class="feedback-username invalid-feedback">Wrong username</div>
                     </div>
                   </div>
-                  <div class="form-group row flex-row flex-nowrap">
-                    <div class="d-flex flex-column col-3 pl-4">
-                      <label for="password" class="col-form-label pb-0">Password</label>
+                  <div class="form-group row">
+                    <label for="password" class="col-form-label">Password</label>
+                    <div class="col-10">
+                      <input type="password" class="form-control py-4" id="password" placeholder="Enter password">
                       <small>Min 8 char</small>
-                    </div>
-
-                    <div class="col-8">
-                      <input type="password" class="form-control " id="password" placeholder="Enter password">
                       <div class="feedback-password invalid-feedback">Wrong Password</div>
                     </div>
                   </div>
-                  <div class="px-2">
+                  <div class="col-12">
                     <button type="button" class="loginBtn btn btn-secondary btn-block shadow-lg">Login</button>
 
                   </div>
                 </form>
-
               </div>
             </div>
           </div>
@@ -95,46 +86,29 @@
               <div class="card-body">
                 <form action="">
                   <div class="message-container"></div>
-       
-                    <div class="form-group row flex-row flex-nowrap">
-                      <div class="d-flex flex-column col-3 pl-4">
-                        <label for="registerUsername" class="col-form-label">Username</label>
-                        <small>Min 2 char</small>
-                      </div>
-                    
-                    <div class="col-8">
-                      <input type="text" class="form-control" id="registerUsername" placeholder="Enter username">
+                  <div class="form-group row">
+                    <label for="registerUsername" class="col-form-label">Username</label>
+                    <div class="col">
+                      <input type="text" class="form-control py-4" id="registerUsername" placeholder="Enter username">
+                      <small>Min 2 letters</small>
                     </div>
                   </div>
-
-                  <div class="form-group row flex-row flex-nowrap">
-                    <div class="d-flex flex-column col-3 pl-4">
-                      <label for="email" class="col-form-label">Email</label>
-                    </div>
-                 
-                    <div class="col-8">
-                      <input type="email" class="form-control " id="registerEmail" placeholder="Enter email">
+                  <div class="form-group row">
+                    <label for="email" class="col-form-label">Email</label>
+                    <div class="col">
+                      <input type="email" class="form-control py-4" id="registerEmail" placeholder="Enter email">
                       <div class="feedback-email invalid-feedback">Invalid email</div>
                     </div>
                   </div>
-
-
-           
-
-                    <div class="form-group row flex-row flex-nowrap">
-                      <div class="d-flex flex-column col-3 pl-4">
-                        <label for="password" class="col-form-label">Password</label>
-                        <small>Min 8 char</small>
-                      </div>
-
-                    <div class="col-8">
-                      <input type="password" class="form-control" id="registerPassword" placeholder="Enter password">
+                  <div class="form-group row">
+                    <label for="password" class="col-form-label">Password</label>
+                    <div class="col">
+                      <input type="password" class="form-control py-4" id="registerPassword" placeholder="Enter password">
+                      <small>Min 8 char</small>
                     </div>
-
                   </div>
                   <button type="button" class="registerBtn btn btn-secondary btn-block shadow-lg">Register</button>
                 </form>
-
               </div>
             </div>
           </div>
@@ -142,33 +116,32 @@
       </div>
     </div>
   </div>
-
         <!-- Modal LOGIN END-->
 
     <div class="container container pt-5 px-4">
-      <h1 class="header pt-5 mt-5 pb-2">Favourites</h1>
-
-      <nav aria-label="breadcrumb">
+      <nav aria-label="breadcrumb pb-2">
         <ol class="breadcrumb pl-0">
           <li class="breadcrumb-item"><a href="./">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Favourites</li>
         </ol>
       </nav>
+
+      <h1 class="header ">Your Favourites</h1>
+
+     
       <div class="row">
         <div class="msg-container" id="pdpMsg">
         </div>
       </div>
 
 
-        <div class="row align-items-center justify-content-center">
-          <div class="fav-container">
+          <div class="row fav-container">
 
           </div>
            <!-- Product cards -->
            <div class="checkout d-flex pt-2">
           </div>
 
-        </div>
 
 
 
@@ -181,9 +154,9 @@
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-sm-6 col-lg-3 mt-lg-0 mb-5 mb-lg-2">
+      <div class="custom-center col-sm-6 col-lg-3 mt-lg-0 mb-5 mb-lg-2">
         <!-- Content -->
-        <h5 class="text-uppercase">ARKET SHOP</h5>
+        <h5 class="text-uppercase">ARKSHOES</h5>
         <p class="grid-footer"><i class="fa fa-twitter"></i> <i class="fa fa-linkedin-square"></i> <i
             class="fa fa-facebook"></i> <i class="fa fa-youtube-play"></i></p>
         <p class="mb-0">Adresse somewhere</p>
@@ -191,7 +164,7 @@
         <p class="mb-0">CA, USA</p>
       </div>
 
-      <div class="col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
+      <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
 
         <!-- Links -->
         <h5 class="text-uppercase">Support</h5>
@@ -215,7 +188,7 @@
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
+      <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
 
         <!-- Links -->
         <h5 class="text-uppercase">Explore</h5>
@@ -239,7 +212,7 @@
       <!-- Grid column -->
 
 
-      <div class="col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
+      <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
 
         <!-- Links -->
         <h5 class="text-uppercase">Newsletter</h5>
@@ -260,7 +233,7 @@
     </div>
 
     <!-- Footer Links -->
-    <div class="footer-copyright container-fluid text-center py-4">© 2020 Copyright ARKET SHOP
+    <div class="footer-copyright container-fluid text-center py-4"><span class="font-weight-light">© 2020 Copyright</span> <span class="font-weight-bold">ARKSHOES</span>
     </div>
 </footer>
 

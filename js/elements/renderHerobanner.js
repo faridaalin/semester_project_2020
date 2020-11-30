@@ -49,7 +49,7 @@ const renderHeroBanner = (url) => {
 
     const edit =
         loggedInUser && loggedInUser.username === "admin"
-            ? ` <button type="button" class="btn btn-info btn-sm edit-btn edit-bg" data-toggle="modal" data-target="#herobannerBg">Edit background image</button>`
+            ? ` <button type="button" class="btn btn-info btn-sm edit-btn edit-bg" data-toggle="modal" data-target="#herobannerBg">Edit image</button>`
             : "";
 
     herobannerContent.innerHTML += edit;

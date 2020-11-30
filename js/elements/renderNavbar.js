@@ -28,14 +28,14 @@ showNavbarBgOnScroll();
   if (loggedInUser && loggedInUser.username === "admin") {
     authLink = `
         <li class="nav-item ${pathname === "add.html" ? "active" : ""}">
-        <a class="nav-link" href="add.html">Add product</a>
+        <a class="nav-link" href="add.html">Add</a>
       </li>
         <li class="nav-item">
-        <button class="nav-link logout btn py-2 px-2">Logout</button>
+        <a  class="nav-link logout" href="#"py-2 px-2">Logout</a>
         
       </li>
       <li class="nav-item">
-      <span class="py-0 px-2">Hi ${loggedInUser.username}</span>
+      <a  class="nav-link custom-greeting" href="#" py-2 px-2">Hi ${loggedInUser.username}</a>
     </li>
       `
 

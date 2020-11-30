@@ -15,7 +15,7 @@ export const productCard = (product) => {
   const loggedInUser = getFromLocal(user);
   const edit =
   loggedInUser && loggedInUser.username === "admin"
-      ? ` <button type="button" class="btn btn-info btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
+      ? ` <button type="button" class="btn btn-dark btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
 
       const image = product.image_url ?  product.image_url :`https://res.cloudinary.com/djey7uz4e/image/upload/v1606132924/noImage_plcdvu.jpg`;

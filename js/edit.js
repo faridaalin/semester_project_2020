@@ -90,7 +90,7 @@ if (loggedUser && loggedUser.username === "admin") {
    
   };
 
-  //deleteProduct(URL, token);
+  deleteProduct(URL, token);
 
   form.addEventListener("submit", handleFormEdit);
 

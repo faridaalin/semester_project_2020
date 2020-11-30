@@ -1,6 +1,8 @@
 $theme-colors: (
   "primary": #67EBB4,
   "secondary": #151315,
+  "success": #159e65,
+  "danger": #E93F33,
 );
 $border-width: 2px;
 
@@ -162,7 +164,7 @@ li {
     height: 100px;
     background-color: #edf6f9;
     position: fixed;
-    z-index: 3000;
+    z-index: 1000;
   }
 }
 
@@ -749,15 +751,34 @@ a {
   padding: 0 21px;
   font-size: 13px;
   font-family: 'Barlow', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn {
+  height: 35px;
+  line-height: 35px;
+  font-size: 0.7rem;
 }
 
 
 
 .content-btn {
-  font-size: 1rem;
+  font-size: 0.7rem;
   height: 50px;
   line-height: 50px;
   padding: 0 60px;
+
+
+  
+
+  @media all and (min-width: 768px) {
+    font-size: 0.7rem;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 35px;
+  }
 }
 
 
@@ -1259,11 +1280,13 @@ a {
 }
 
 .header-cart {
-  font-weight: getWeight(bold);
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
   text-transform: uppercase;
   font-weight: getWeight(medium);
   letter-spacing: 1px;
+  opacity: 0.7;
+  font-family: 'Barlow', sans-serif;
 }
 
 .light-text {
@@ -1370,7 +1393,10 @@ a {
   }
 }
 
-.navbar-light .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.icon {
+.navbar-light .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.custom-greeting, .navbar-light .navbar-nav .nav-link.custom-greeting {
+  pointer-events: none;
+  opacity: 0.9;
+
   &:hover {
     opacity: 1;
     &::after {
@@ -1403,6 +1429,9 @@ a {
     width: 100%;
 }
 
+.custom-greeting {
+
+}
 
 
 

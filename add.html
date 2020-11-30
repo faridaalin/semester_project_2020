@@ -12,20 +12,18 @@
 
 <body>
   <div class="wrapper">
-    <div class="container-fluid">
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom pt-0 pt-4 px-4">
-
-        <a class="navbar-brand flex-grow-1" href="/"><img src="./dark-logo.png" alt="Arket shoes logo" ></a>
+    <div class="container-fluid container-fluid-navbar">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-custom px-4">
+        <a class="navbar-brand flex-grow-1 logo" href="./index.html">ARK<span class="logo-highlight">SHOES</span></a>
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="container-fluid custom-nav navbar-bg py-2 ">
-   
+        <div class="container-fluid custom-nav custom-nav-home px-2 px-lg-0">
         </div>
-  
-    </nav>
-    </div>
+      </nav>
+  </div>
+
 
 
     <!-- Modal LOGIN START/REGISTER-->
@@ -39,11 +37,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
         <div class="accordion" id="accordionExample">
-          
+
           <div class="card">
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
                   <span><i class="fa fa-user"></i>Login</>
                 </button>
               </h5>
@@ -51,7 +50,7 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
                 <form action="" class="login-register-form">
-                
+
                   <div class="form-group row">
                     <label for="username" class="col-form-label">Username</label>
                     <div class="col-10">
@@ -79,7 +78,8 @@
           <div class="card">
             <div class="card-header" id="headingThree">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   <span>Register</>
                 </button>
               </h5>
@@ -105,7 +105,8 @@
                   <div class="form-group row">
                     <label for="password" class="col-form-label">Password</label>
                     <div class="col">
-                      <input type="password" class="form-control py-4" id="registerPassword" placeholder="Enter password">
+                      <input type="password" class="form-control py-4" id="registerPassword"
+                        placeholder="Enter password">
                       <small>Min 8 char</small>
                     </div>
                   </div>
@@ -118,11 +119,17 @@
       </div>
     </div>
   </div>
-
         <!-- Modal LOGIN END-->
 
-    <div class="container pt-5">
-      <h1 class="header pt-5">Add Product</h1>
+        <div class="container container-pdp pt-5 px-4">
+          <nav aria-label="breadcrumb pb-2">
+            <ol class="breadcrumb pl-0">
+              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item active"><a href="">Add</a></li>
+            </ol>
+          </nav>
+          <h1 class="header">Add Product</h1>
+      
       <div class="row pt-5 mt-2 add-container">
         
         <form class="col-md-6 add-form" id="addForm" name="addForm">
@@ -207,9 +214,9 @@
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-sm-6 col-lg-3 mt-lg-0 mb-5 mb-lg-2">
+        <div class="custom-center col-sm-6 col-lg-3 mt-lg-0 mb-5 mb-lg-2">
           <!-- Content -->
-          <h5 class="text-uppercase">ARKET SHOP</h5>
+          <h5 class="text-uppercase">ARKSHOES</h5>
           <p class="grid-footer"><i class="fa fa-twitter"></i> <i class="fa fa-linkedin-square"></i> <i
               class="fa fa-facebook"></i> <i class="fa fa-youtube-play"></i></p>
           <p class="mb-0">Adresse somewhere</p>
@@ -217,7 +224,7 @@
           <p class="mb-0">CA, USA</p>
         </div>
 
-        <div class="col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
+        <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
 
           <!-- Links -->
           <h5 class="text-uppercase">Support</h5>
@@ -241,7 +248,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
+        <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
 
           <!-- Links -->
           <h5 class="text-uppercase">Explore</h5>
@@ -265,7 +272,7 @@
         <!-- Grid column -->
 
 
-        <div class="col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
+        <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
 
           <!-- Links -->
           <h5 class="text-uppercase">Newsletter</h5>
@@ -286,7 +293,7 @@
       </div>
 
       <!-- Footer Links -->
-      <div class="footer-copyright container-fluid text-center py-4">© 2020 Copyright ARKET SHOP
+      <div class="footer-copyright container-fluid text-center py-4"><span class="font-weight-light">© 2020 Copyright</span> <span class="font-weight-bold">ARKSHOES</span>
       </div>
   </footer>
 </body>
