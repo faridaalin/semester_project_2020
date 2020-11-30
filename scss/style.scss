@@ -315,9 +315,13 @@ a {
 
 
   .nav-item {
-    margin-right: 2rem;
+    margin-right: 1.2rem;
     text-transform: uppercase;
   };
+
+  .nav-item:last-child {
+    margin-right: 0;
+  }
 
   @media (max-width: 992px) {
     .nav-item {
@@ -1151,6 +1155,8 @@ a {
 }
 .qty-container {
   color: #2e3338;
+  display: flex;
+  align-items: center;
 
   .fa {
     color: #2e3338;
@@ -1393,9 +1399,30 @@ a {
   }
 }
 
-.navbar-light .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.custom-greeting, .navbar-light .navbar-nav .nav-link.custom-greeting {
+.navbar-dark .navbar-nav .nav-link.custom-greeting, .navbar-light .navbar-nav .nav-link.custom-greeting {
+  font-size: 0.7rem;
   pointer-events: none;
   opacity: 0.9;
+
+
+  &:hover {
+    opacity: 1;
+    &::after {
+      background-color: transparent;
+      opacity: 1;
+    }
+}
+
+&:focus {
+  opacity: 1;
+  &::after {
+    background-color: transparent;
+    opacity: 1;
+  }
+}
+}
+
+.navbar-light .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.icon {
 
   &:hover {
     opacity: 1;

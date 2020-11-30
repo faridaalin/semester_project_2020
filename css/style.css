@@ -11094,8 +11094,12 @@ a {
 }
 
 .navbar .nav-item {
-  margin-right: 2rem;
+  margin-right: 1.2rem;
   text-transform: uppercase;
+}
+
+.navbar .nav-item:last-child {
+  margin-right: 0;
 }
 
 @media (max-width: 992px) {
@@ -11962,6 +11966,12 @@ a {
 
 .qty-container {
   color: #2e3338;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .qty-container .fa {
@@ -12205,25 +12215,44 @@ a {
   color: #151315;
 }
 
-.navbar-light .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.icon, .navbar-dark .navbar-nav .nav-link.custom-greeting, .navbar-light .navbar-nav .nav-link.custom-greeting {
+.navbar-dark .navbar-nav .nav-link.custom-greeting, .navbar-light .navbar-nav .nav-link.custom-greeting {
+  font-size: 0.7rem;
   pointer-events: none;
   opacity: 0.9;
 }
 
-.navbar-light .navbar-nav .nav-link.icon:hover, .navbar-dark .navbar-nav .nav-link.icon:hover, .navbar-dark .navbar-nav .nav-link.custom-greeting:hover, .navbar-light .navbar-nav .nav-link.custom-greeting:hover {
+.navbar-dark .navbar-nav .nav-link.custom-greeting:hover, .navbar-light .navbar-nav .nav-link.custom-greeting:hover {
   opacity: 1;
 }
 
-.navbar-light .navbar-nav .nav-link.icon:hover::after, .navbar-dark .navbar-nav .nav-link.icon:hover::after, .navbar-dark .navbar-nav .nav-link.custom-greeting:hover::after, .navbar-light .navbar-nav .nav-link.custom-greeting:hover::after {
+.navbar-dark .navbar-nav .nav-link.custom-greeting:hover::after, .navbar-light .navbar-nav .nav-link.custom-greeting:hover::after {
   background-color: transparent;
   opacity: 1;
 }
 
-.navbar-light .navbar-nav .nav-link.icon:focus, .navbar-dark .navbar-nav .nav-link.icon:focus, .navbar-dark .navbar-nav .nav-link.custom-greeting:focus, .navbar-light .navbar-nav .nav-link.custom-greeting:focus {
+.navbar-dark .navbar-nav .nav-link.custom-greeting:focus, .navbar-light .navbar-nav .nav-link.custom-greeting:focus {
   opacity: 1;
 }
 
-.navbar-light .navbar-nav .nav-link.icon:focus::after, .navbar-dark .navbar-nav .nav-link.icon:focus::after, .navbar-dark .navbar-nav .nav-link.custom-greeting:focus::after, .navbar-light .navbar-nav .nav-link.custom-greeting:focus::after {
+.navbar-dark .navbar-nav .nav-link.custom-greeting:focus::after, .navbar-light .navbar-nav .nav-link.custom-greeting:focus::after {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.navbar-light .navbar-nav .nav-link.icon:hover, .navbar-dark .navbar-nav .nav-link.icon:hover {
+  opacity: 1;
+}
+
+.navbar-light .navbar-nav .nav-link.icon:hover::after, .navbar-dark .navbar-nav .nav-link.icon:hover::after {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.navbar-light .navbar-nav .nav-link.icon:focus, .navbar-dark .navbar-nav .nav-link.icon:focus {
+  opacity: 1;
+}
+
+.navbar-light .navbar-nav .nav-link.icon:focus::after, .navbar-dark .navbar-nav .nav-link.icon:focus::after {
   background-color: transparent;
   opacity: 1;
 }
