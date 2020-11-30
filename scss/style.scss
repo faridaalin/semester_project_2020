@@ -88,31 +88,32 @@ $colors: (
   input::placeholder {
     font-size: 0.7rem;
   }
-
-  .card {
-    border: none;
-  }
-
-  .card-header {
-    border: none;
-    background-color: getColour(green-100);
+   
 
     .fa {
       font-size: 1.5rem;
     }
+   
 
     .btn-link {
       color: getColour(secondary);
+      background-color: getColour(green-500);
+    }
+    .btn-link.collapsed {
+     background-color: getColour(green-300);
     }
    
-  }
+
 
   small {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
 
   .col-form-label {
     font-size: 0.9rem;
+    font-weight: 600;
+    padding-bottom: 0;
+   
   }
 
   .was-validated .form-control:invalid,
@@ -122,6 +123,11 @@ $colors: (
 
   .modal-content {
     background-color: getColour(green-200);
+  }
+
+  .form-title {
+    background-color: getColour(green-300);
+  
   }
 }
 

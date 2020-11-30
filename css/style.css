@@ -10844,29 +10844,27 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 0.7rem;
 }
 
-.custom-form-container .card {
-  border: none;
-}
-
-.custom-form-container .card-header {
-  border: none;
-  background-color: #e9f9f6;
-}
-
-.custom-form-container .card-header .fa {
+.custom-form-container .fa {
   font-size: 1.5rem;
 }
 
-.custom-form-container .card-header .btn-link {
+.custom-form-container .btn-link {
   color: #151315;
+  background-color: #a5d4c4;
+}
+
+.custom-form-container .btn-link.collapsed {
+  background-color: #c2ded8;
 }
 
 .custom-form-container small {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 
 .custom-form-container .col-form-label {
   font-size: 0.9rem;
+  font-weight: 600;
+  padding-bottom: 0;
 }
 
 .custom-form-container .was-validated .form-control:invalid,
@@ -10876,6 +10874,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .custom-form-container .modal-content {
   background-color: #dde7ea;
+}
+
+.custom-form-container .form-title {
+  background-color: #c2ded8;
 }
 
 /*FORM*/
