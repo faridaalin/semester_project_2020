@@ -9,6 +9,10 @@ import {showMessage} from './helpers/showMessage.js';
 import {removeMessage} from './helpers/removeMessage.js';
 import { spinner } from "./elements/spinner.js";
 
+const observer = lozad();
+observer.observe();
+
+
 
 showNavbarBgOnScroll();
 renderNavbar();

@@ -27,13 +27,11 @@ const addNavbarBG = () => {
     } else {
 
         if (window.scrollY > 15) {
-            console.log('ADD..', window.scrollY > 15);
 
             navbarContainer.style.boxShadow = "rgba(198, 212, 219, 0.86) 2px 2px 13px 0px";
             navbarContainer.style.backgroundColor = "#edf6f9";
 
         } else {
-            console.log('REMOVE..', window.scrollY > 15);
             navbarContainer.style.boxShadow = "";
             navbarContainer.style.backgroundColor = "transparent";
         }

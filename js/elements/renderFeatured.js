@@ -48,7 +48,7 @@ const displayFeaturedProducts = (featuredPropducts) => {
 
       <div class="product-card">
         <div class="product-top">
-          <a href="/pdp.html?id=${product.id}"> <img class="card-img-top img-fluid" src="${product.image_url}" alt="${product.alt_text}">
+          <a href="/pdp.html?id=${product.id}"> <img class="lazy card-img-top img-fluid" data-src="lazy.jpg" src="${product.image_url}" alt="${product.alt_text}">
             <div class="overlay btn-container d-flex justify-content-center align-items-center">
               <button type="button" class="content-btn btn btn-outline-primary">View</button>
             </div>

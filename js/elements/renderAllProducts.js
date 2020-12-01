@@ -28,7 +28,6 @@ export const saveFavourites = () => {
 
         saveToFavsListStorage(favs, favsList);
 
-
       } else {
         const inFavsListAlready = favsList.find(item => item.id === id);
 
