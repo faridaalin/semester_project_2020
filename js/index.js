@@ -29,8 +29,9 @@ for (const property in modifiedArray) {
   const name = modifiedArray[property].item.category;
   const nameToUpperCase = name[0].toUpperCase() + name.slice(1).toLowerCase();
   const img = modifiedArray[property].item.image_url;
-  masonryGrid.innerHTML += `<div class="masonry__item" style="background-image: url(${img});"><span>${nameToUpperCase}</span></div>`
-}
+  masonryGrid.innerHTML += `<a href="category.html?category=${name}" class="masonry__item" data-name="${name}" ><div class="masonry__image" style="background-image: url(${img});"><span>${nameToUpperCase}</span></div></a>`
+};
+
 
 };
 
