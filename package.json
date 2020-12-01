@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "sass scss/style.scss css/styles.css --watch",
     "liveserver": "live-server",
-    "develop": "concurrently \"npm run watch:sass\" \"npm run liveserver\" ",
-    "start": "parcel index.html"
+    "develop": "concurrently \"npm run watch:sass\" \"npm run liveserver\" "
   },
   "repository": {
     "type": "git",
