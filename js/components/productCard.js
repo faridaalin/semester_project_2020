@@ -1,6 +1,10 @@
 import { user, favs} from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 
+
+
+
+
 export const productCard = (product) => {
 
   const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
@@ -25,7 +29,7 @@ export const productCard = (product) => {
     <div class="product-top">
       ${edit}
       <a href="/pdp.html?id=${product.id}">
-      <img class="lozad card-img-top img-fluid" data-src="${image}" alt="${product.alt_text}">
+      <img class="card-img-top img-fluid" data-src="${image}" alt="${product.alt_text}">
         <div class="overlay btn-container d-flex justify-content-center align-items-center">
           <button type="button" class="content-btn btn btn-outline-primary">View</button>
         </div>

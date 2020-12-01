@@ -1,10 +1,9 @@
 import renderAllProducts  from "../elements/renderAllProducts.js";
 import {featuredCard} from '../components/featuredCard.js';
-import {saveFavourites} from './renderAllProducts.js';
+import {saveFavourites} from '../helpers/saveFavourites.js';
 import { logout } from "../ui/logout.js";
 import { getFromLocal } from "../utils/storage.js";
 import { favs } from "../utils/settings.js";
-
 
 const slideFeaturedImages = () => {
   let slidesContainer = document.querySelector('.custom-carousel_slide-container');
@@ -48,7 +47,7 @@ const displayFeaturedProducts = (featuredPropducts) => {
 
       <div class="product-card">
         <div class="product-top">
-          <a href="/pdp.html?id=${product.id}"> <img class="lazy card-img-top img-fluid" data-src="lazy.jpg" src="${product.image_url}" alt="${product.alt_text}">
+          <a href="/pdp.html?id=${product.id}"> <img class="card-img-top img-fluid" data-src="${product.image_url}" alt="${product.alt_text}">
             <div class="overlay btn-container d-flex justify-content-center align-items-center">
               <button type="button" class="content-btn btn btn-outline-primary">View</button>
             </div>
@@ -75,7 +74,6 @@ const displayFeaturedProducts = (featuredPropducts) => {
 
 slideFeaturedImages();
 saveFavourites();
-
  
 };
 

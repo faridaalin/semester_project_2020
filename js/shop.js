@@ -9,9 +9,8 @@ import {showMessage} from './helpers/showMessage.js';
 import {removeMessage} from './helpers/removeMessage.js';
 import { spinner } from "./elements/spinner.js";
 
-const el = document.querySelector('img');
-const observer = lozad(el);
-observer.observe();
+
+
 
 
 
@@ -42,5 +41,7 @@ renderNavbar();
 
  
 })();
+
+
 
 
