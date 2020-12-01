@@ -21,6 +21,7 @@ renderNavbar();
 
   fectData(URL).then(result => {
     if (!result || typeof result === 'string') {
+      spinner('.pdp-detail-container .spinner-container', 'd-none');
       showMessage('danger', result, '.pdp-container .message-container');
       return;
 

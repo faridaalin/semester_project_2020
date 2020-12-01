@@ -10809,8 +10809,8 @@ a.text-dark:hover, a.text-dark:focus {
 /*  VARIABLES START */
 /*  VARIABLES END */
 /*FORM*/
-.custom-form-container .form-control {
-  background-color: transparent;
+.custom-form-container input.form-control {
+  background-color: transparent !important;
   border: none;
   border-bottom: 1px solid #ced4da;
   border-radius: 0;
@@ -10820,7 +10820,7 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 0 0 0.5rem 0;
 }
 
-.custom-form-container .form-control:focus {
+.custom-form-container input.form-control:focus {
   border-bottom: 1px solid rgba(95, 123, 139, 0.35);
   -webkit-transition: border-color 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out;

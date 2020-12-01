@@ -1,20 +1,22 @@
-import { BASE_URL, user, userToken } from "./utils/settings.js";
+import { BASE_URL, userToken } from "./utils/settings.js";
 import { getFromLocal } from "./utils/storage.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { removeMessage } from './helpers/removeMessage.js';
-import {addNewProduct} from './ui/addProduct.js'
-import {} from './ui/addProduct.js'
-import {validateFields, removeValidationStyle} from './helpers/validateFields.js';
+import { addNewProduct } from './ui/addProduct.js'
+import { } from './ui/addProduct.js'
+import { validateFields, removeValidationStyle } from './helpers/validateFields.js';
+import { getLoggedInUser } from './helpers/getLoggedInUser.js';
 
 
-renderNavbar()
+renderNavbar();
 
 const form = document.querySelector('#addForm');
 
-const loggedUser = getFromLocal(user);
-if (!loggedUser) location.href = "/";
+const user = getLoggedInUser();
 
-if (loggedUser && loggedUser.role.type === "authenticated") {
+if (!user) location.href = "/";
+
+if (user && user.username === "admin") {
     const URL = `${BASE_URL}/products`;
     const token = getFromLocal(userToken);
 
@@ -32,21 +34,18 @@ if (loggedUser && loggedUser.role.type === "authenticated") {
         removeMessage('#msg');
 
         const isValid = validateFields(".add-form .form-control");
-        if (isValid === false || isValid === undefined){
-          return;
-        }
-     
+        if (isValid === false || isValid === undefined) return;
 
-            const productObject = {
-                title: title.value,
-                brand: brand.value,
-                price: price.value,
-                description: description.value,
-                image_url: imgUrl.value,
-                alt_text: altText.value,
-                category: category.value,
-                featured: featured.checked,
-            }
+        const productObject = {
+            title: title.value,
+            brand: brand.value,
+            price: price.value,
+            description: description.value,
+            image_url: imgUrl.value,
+            alt_text: altText.value,
+            category: category.value,
+            featured: featured.checked,
+        }
 
         addNewProduct(URL, token, productObject);
         removeValidationStyle(".add-form .form-control")

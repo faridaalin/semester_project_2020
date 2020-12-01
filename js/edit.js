@@ -1,27 +1,24 @@
-import { BASE_URL, user, userToken } from "./utils/settings.js";
+import { BASE_URL, userToken } from "./utils/settings.js";
 import { getFromLocal } from "./utils/storage.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { showMessage } from "./helpers/showMessage.js";
-import { validateFields} from './helpers/validateFields.js';
+import { validateFields } from './helpers/validateFields.js';
 import { deleteProduct } from "./ui/deleteProduct.js";
 import { updateProduct } from "./ui/updateProduct.js";
 import { removeMessage } from "./helpers/removeMessage.js";
-import {fectData} from './helpers/fetcData.js';
-
+import { fectData } from './helpers/fetcData.js';
+import { getUrlParam } from './helpers/getUrlParam.js';
+import { getLoggedInUser } from './helpers/getLoggedInUser.js';
 
 renderNavbar();
 
-const loggedUser = getFromLocal(user);
-if (!loggedUser) location.href = "/";
 
-if (loggedUser && loggedUser.username === "admin") {
-  // Get the querystring
-  const queryString = window.location.search;
+const user = getLoggedInUser();
 
-  //Parse the querystring
-  const urlParam = new URLSearchParams(queryString);
-  const id = urlParam.get("id");
+if (!user) location.href = "/";
 
+if (user && user.username === "admin") {
+  const id = getUrlParam("id");
   const title = document.querySelector("#name");
   const brand = document.querySelector("#brand");
   const price = document.querySelector("#price");
@@ -35,25 +32,21 @@ if (loggedUser && loggedUser.username === "admin") {
   const URL = `${BASE_URL}/products/${id}`;
   const token = getFromLocal(userToken);
 
+  fectData(URL).then(product => {
+    if (!product || typeof product === 'string') {
+      return showMessage('danger', product, '.edit-form .message-container');
+    }
 
- 
-    fectData(URL).then(product => {
-      if(!product || typeof product === 'string') {
-        showMessage('danger', product, '.edit-form .message-container');
-        return;
-         }
-
-        
-     title.value = product.title;
-     brand.value = product.brand;
-     price.value = product.price;
-     description.value = product.description;
-     imgUrl.value = product.image_url;
-     altText.value = product.alt_text,
-     category.value = product.category,
-     productID.value = product.id;
-     featured.checked = product.featured;
-    });
+    title.value = product.title;
+    brand.value = product.brand;
+    price.value = product.price;
+    description.value = product.description;
+    imgUrl.value = product.image_url;
+    altText.value = product.alt_text,
+      category.value = product.category,
+      productID.value = product.id;
+    featured.checked = product.featured;
+  });
 
 
   const form = document.querySelector(".edit-form");
@@ -63,9 +56,8 @@ if (loggedUser && loggedUser.username === "admin") {
     removeMessage('.edit-form .message-container');
 
     const isValid = validateFields(".edit-form .form-control");
-    if (isValid === false || isValid === undefined){
-      return;
-    }
+    if (isValid === false || isValid === undefined) return;
+
 
     const productObj = {
       title: title.value,
@@ -80,7 +72,7 @@ if (loggedUser && loggedUser.username === "admin") {
     };
 
     updateProduct(productObj, URL, token);
-   
+
   };
 
   deleteProduct(URL, token);

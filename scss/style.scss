@@ -62,8 +62,8 @@ $colors: (
 
 /*FORM*/
 .custom-form-container {
-  .form-control {
-    background-color: transparent;
+  input.form-control {
+    background-color: transparent !important;
     border: none;
     border-bottom: 1px solid #ced4da;
     border-radius: 0;
@@ -1468,10 +1468,6 @@ a {
 .spinner-container {
   height: 30vh !important;
     width: 100%;
-}
-
-.custom-greeting {
-
 }
 
 

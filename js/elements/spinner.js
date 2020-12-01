@@ -2,6 +2,7 @@ export const spinner = (container, css) => {
     const element = document.querySelector(container);
     const cssClass = css ? css : "";
 
+
     return element.innerHTML = `
     <div class="spinner-container  main-container ${cssClass} ">
     <div class="d-flex align-items-center justify-content-center">

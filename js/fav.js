@@ -1,28 +1,6 @@
-import { getFromLocal } from "./utils/storage.js";
-import { favs } from "./utils/settings.js";
-import renderAllProducts from './elements/renderAllProducts.js';
+import { renderFavs } from "./elements/renderFavs.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
-import { spinner } from "./elements/spinner.js";
-
 
 renderNavbar();
-
-export const renderFavs = () => {
-    const savedFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
-    const container = document.querySelector('.fav-container');
-
-    const msg = (savedFavs.length === 0) && "You have no items in your favourites list.";
-
-    spinner('.fav-container');
-    
-    setTimeout(() => {
-        renderAllProducts(savedFavs, msg, '.fav-container');
-    }, 500);
-
-
-
-
-}
-
 renderFavs();
 
