@@ -2,7 +2,7 @@ const addNavbarBG = () => {
     const navbarHome = document.querySelector('.home');
     const navbarContainer = document.querySelector('.container-fluid-navbar');
 
-    if (location.pathname === "/" || location.pathname === "/home.html" || location.pathname === "/index.html") {
+    if (location.pathname === "/" || location.pathname === "/index.html") {
         if (window.scrollY > 15) {
             navbarHome.classList.add('custom-bg');
             navbarHome.style.boxShadow = "rgba(7, 7, 7, 0.8) 2px 2px 13px 0px";

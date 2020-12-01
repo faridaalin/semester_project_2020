@@ -1,21 +1,18 @@
-import { BASE_URL, user, userToken } from "../utils/settings.js";
+import { BASE_URL,userToken } from "../utils/settings.js";
 import { getFromLocal } from '../utils/storage.js';
 import { updateProduct } from "../ui/updateProduct.js";
-import { validateFields} from '../helpers/validateFields.js';
+import { validateFields } from '../helpers/validateFields.js';
+import { getLoggedInUser } from '../helpers/getLoggedInUser.js';
 
-const loggedInUser = getFromLocal(user);
+const user = getLoggedInUser();
 
 
 export const editBackgroundImg = (e) => {
-
     const token = getFromLocal(userToken);
     const URL = `${BASE_URL}/home`;
-  
-
     const formButton = document.querySelector("#edit-bg");
     const altText = document.querySelector(".altText");
     const imgUrl = document.querySelector(".img-url");
-   
 
     const handleBgChange = (e) => {
         e.preventDefault();
@@ -31,7 +28,7 @@ export const editBackgroundImg = (e) => {
         };
 
         updateProduct(productObj, URL, token);
-         location.reload();
+        location.reload();
 
     };
 
@@ -43,18 +40,14 @@ export const editBackgroundImg = (e) => {
 const renderHeroBanner = (url) => {
     const herobanner = document.querySelector('.herobanner');
     const herobannerContent = document.querySelector('.herobanner__content');
-
     herobanner.style.backgroundImage = `url(${url})`;
 
-
     const edit =
-        loggedInUser && loggedInUser.username === "admin"
+        user && user.username === "admin"
             ? ` <button type="button" class="btn btn-info btn-sm edit-btn edit-bg" data-toggle="modal" data-target="#herobannerBg">Edit image</button>`
             : "";
 
     herobannerContent.innerHTML += edit;
-
-
 
 }
 

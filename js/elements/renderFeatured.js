@@ -1,28 +1,25 @@
-import renderAllProducts  from "../elements/renderAllProducts.js";
-import {featuredCard} from '../components/featuredCard.js';
-import {saveFavourites} from '../helpers/saveFavourites.js';
-import { logout } from "../ui/logout.js";
+import renderAllProducts from "../elements/renderAllProducts.js";
+import { saveFavourites } from '../helpers/saveFavourites.js';
 import { getFromLocal } from "../utils/storage.js";
 import { favs } from "../utils/settings.js";
+import {getFavsItem} from '../helpers/getFavsItem.js'
 
 const slideFeaturedImages = () => {
-  let slidesContainer = document.querySelector('.custom-carousel_slide-container');
-const slides = [...slidesContainer.children];
-const leftButton = document.querySelector('.custom-carousel__button--left') ;
-const rightButton = document.querySelector('.custom-carousel__button--right');
-let slideSizeWidth = slides[0].getBoundingClientRect().width;
+  const slidesContainer = document.querySelector('.custom-carousel_slide-container');
+  const slides = [...slidesContainer.children];
+  const leftButton = document.querySelector('.custom-carousel__button--left');
+  const rightButton = document.querySelector('.custom-carousel__button--right');
+  const slideWidth = slides[0].getBoundingClientRect().width;
 
+  const moveOneSlideLeft = (e) => {
+    slidesContainer.scrollLeft -= slideWidth
+  }
+  const moveOneSlideRight = (e) => {
+    slidesContainer.scrollLeft += slideWidth
+  }
 
-const moveOneSlideLeft = (e) => {
-  slidesContainer.scrollLeft -= slideSizeWidth
-}
-const moveOneSlideRight = (e) => {
-  slidesContainer.scrollLeft += slideSizeWidth
-}
-
-leftButton.addEventListener('click', moveOneSlideLeft);
-rightButton.addEventListener('click', moveOneSlideRight);
-
+  leftButton.addEventListener('click', moveOneSlideLeft);
+  rightButton.addEventListener('click', moveOneSlideRight);
 
 }
 
@@ -32,18 +29,17 @@ const displayFeaturedProducts = (featuredPropducts) => {
   const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
 
 
-  const getFavsItem = (currentFavs, product) => {
-   currentFavs.find(fav => {
-      return parseInt(fav.id) === parseInt(product.id)
-    });
-  };
- 
-
   container.innerHTML = `<div class="custom-carousel"">
   <button class="custom-carousel__button custom-carousel__button--left" aria-label="left button"><i class="fa fa-chevron-left"></i></button>
   <ul class="custom-carousel_slide-container">
     ${featuredPropducts.map(product => {
-        return `<li class="custom-carousel__slide ">
+    const hasFavs = currentFavs.find(fav => {
+    return parseInt(fav.id) === parseInt(product.id)
+    });
+
+    const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
+
+    return `<li class="custom-carousel__slide ">
 
       <div class="product-card">
         <div class="product-top">
@@ -58,37 +54,33 @@ const displayFeaturedProducts = (featuredPropducts) => {
           <a href="/pdp.html?id=${product.id}"><h3 class="card-title mb-0">${product.title}</h3></a>
           <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
             <h5 class=" card-text  mb-0">${product.price} NOK</h5>
-            <i class="feature-icon fav fa ${getFavsItem(currentFavs, product) ? "fa-heart" : "fa-heart-o"}" data-id="${product.id}"></i>
+            <i class="feature-icon fav fa ${cssClass}" data-id="${product.id}"></i>
           </div>
         </div>
         </div>
     </li>`
-    }).join("")}
-
-
+  }).join("")}
   </ul>   
   <button class="custom-carousel__button custom-carousel__button--right" aria-label="right button"><i class="fa fa-chevron-right"></i></button>
 </div>`
 
+  slideFeaturedImages();
+  saveFavourites();
 
-
-slideFeaturedImages();
-saveFavourites();
- 
 };
 
 
 const renderFeatured = (products) => {
   const featuredPropducts = products.filter(product => product.featured);
 
-
-  if(featuredPropducts.length !== 0) {
+  if (featuredPropducts.length !== 0) {
     displayFeaturedProducts(featuredPropducts);
   } else {
     document.querySelector('.featured-title').textContent = "";
     document.querySelector('.carousel-featured').innerHTML = "";
+    
   }
- 
+
 };
 
 export default renderFeatured;

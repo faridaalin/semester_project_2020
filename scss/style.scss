@@ -319,16 +319,12 @@ a {
   max-width: 1140px; 
   margin: 0 auto;
 
-
-
-
   .nav-item {
     margin-right: 1.2rem;
     text-transform: uppercase;
   };
 
   .nav-item:first-child {
-    margin-right: 1.2rem;
     margin-left: 1.2rem;
   }
   .nav-item:last-child {
@@ -336,6 +332,10 @@ a {
   }
 
   @media (max-width: 992px) {
+    .nav-item:first-child {
+      margin-left: 0;
+    }
+
     .nav-item {
       margin-right: 0rem;
       display: flex;
@@ -852,13 +852,26 @@ a {
 }
 .filter-container {
   background-color: rgba(198, 212, 219, 0.5);
-  // background-color: rgba(237, 246, 249, .51);
 
+  .filter-price {
+    @media all and (max-width:576px) { 
+      small, .small {
+        font-size: 0.8rem;
+    letter-spacing: 0;
+      }
+    }
+  }
   .category {
     .btn {
       background-color: rgba(20, 62, 86, .23);
       color: #143e56;
       border: none;
+
+      @media all and (max-width:576px) { 
+       
+          font-size: 65%;
+        
+      }
 
     }
 
@@ -1414,9 +1427,11 @@ a {
 }
 
 .navbar-dark .navbar-nav .nav-link.custom-greeting, .navbar-light .navbar-nav .nav-link.custom-greeting {
-  font-size: 0.7rem;
+  font-size: calc(0.7rem + 0.5vw);
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.8;
+  color: getColour(black-300);
+  text-transform: capitalize;
 
 
   &:hover {
@@ -1499,7 +1514,7 @@ a {
   }
 
   .search-box  {
-    width: 100% !important;
+    width: 90% !important;
   }
 
 }

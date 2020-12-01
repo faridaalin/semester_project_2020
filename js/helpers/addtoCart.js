@@ -40,7 +40,6 @@ export function addToCart(product) {
       });
 
       if (!item) {
-
         alreadyInCart.qtySize = [...alreadyInCart.qtySize,
         {
           size: selectedSize,

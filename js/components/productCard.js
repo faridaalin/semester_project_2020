@@ -1,31 +1,28 @@
-import { user, favs} from '../utils/settings.js';
+import { favs } from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
-
-
+import { getLoggedInUser } from '../helpers/getLoggedInUser.js';
 
 
 
 export const productCard = (product) => {
 
   const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
-    
+
   const hasFavs = currentFavs.find(fav => {
-      return parseInt(fav.id) === parseInt(product.id)
-    });
+    return parseInt(fav.id) === parseInt(product.id)
+  });
 
-    const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
+  const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
 
-
-  const loggedInUser = getFromLocal(user);
+  const user  = getLoggedInUser();
   const edit =
-  loggedInUser && loggedInUser.username === "admin"
+  user && user.username === "admin"
       ? ` <button type="button" class="btn btn-dark btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
 
-      const image = product.image_url ?  product.image_url :`https://res.cloudinary.com/djey7uz4e/image/upload/v1606132924/noImage_plcdvu.jpg`;
+  const image = product.image_url ? product.image_url : `https://res.cloudinary.com/djey7uz4e/image/upload/v1606132924/noImage_plcdvu.jpg`;
 
-
-    return ` <div class="product-card col-sm-6 col-md-3 mb-5 pb-5 pt-3">
+  return ` <div class="product-card col-sm-6 col-md-3 mb-5 pb-5 pt-3">
     <div class="product-top">
       ${edit}
       <a href="/pdp.html?id=${product.id}">

@@ -12,7 +12,7 @@ export const renderFavs = () => {
     const msg = (savedFavs.length === 0) && "You have no items in your favourites list.";
 
     spinner('.fav-container');
-    
+
     setTimeout(() => {
         renderAllProducts(savedFavs, msg, '.fav-container');
     }, 500);
