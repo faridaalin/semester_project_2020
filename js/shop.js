@@ -22,7 +22,6 @@ renderNavbar();
       console.log(result);
       return; showMessage('danger', result, '.shop-container .message-container');
     };
-    console.log(result);
     saveToSessionStorage(allProducts, result);
     renderAllProducts(result, "Shop is currently empty", ".shop-container");
     renderFilterOptions(result);
