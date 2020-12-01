@@ -1,19 +1,10 @@
 import { cart } from "./utils/settings.js";
 import {
-  getFromLocal,
-  saveCartItemsToLocal,
-} from "./utils/storage.js";
-import {
-  getTotalPrice,
-  getTotalPricePerItem,
-} from "./helpers/getTotalPrice.js";
+  getFromLocal,saveCartItemsToLocal} from "./utils/storage.js";
+import { getTotalPrice, getTotalPricePerItem, } from "./helpers/getTotalPrice.js";
 import { deleteItem } from "./helpers/deleteItem.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
-import { showNavbarBgOnScroll } from "./ui/showNavbarBgOnScroll.js";
-import { spinner } from "./elements/spinner.js";
 
-
-showNavbarBgOnScroll();
 
 renderNavbar();
 
@@ -39,33 +30,35 @@ const showCartItems = () => {
   const cartItems = getFromLocal(cart);
 
   // const cartContainer = document.querySelector('.cart-container');
-  const cartTtemsContainer = document.querySelector('.cart-items-container');
+  const cartItemsContainer = document.querySelector('.cart-items-container');
   const cartTotalContainer = document.querySelector('.cart-total-container');
+  const checkoutContainer = document.querySelector('.cart-container');
 
-  cartTtemsContainer.innerHTML = "";
+  cartItemsContainer.innerHTML = "";
   cartTotalContainer.innerHTML = "";
 
 
-
+  console.log(!cartItems || cartItems.length === 0);
+console.log(checkoutContainer);
   if (!cartItems || cartItems.length === 0) {
-    itemContainer.innerHTML = `<div class="alert alert-info" role="alert">
+    return checkoutContainer.innerHTML = `<div class="alert alert-info" role="alert">
     Your cart is currently empty.
   </div>`;
-    checkoutContainer.style.display = "none";
-    return;
-  };
+  }else {
+    return checkoutContainer.style.display = "none";
+  }
 
- 
+
   cartItems.map((item) => {
-    cartTtemsContainer.innerHTML += `
+    cartItemsContainer.innerHTML += `
 
     <div class="">
     <div class="cart-detail mb-5 pb-5 mb-md-0">
     <div class="bag-container d-flex pb-4 mb-4">
    
     <a href="/pdp.html?id=${item.product.id
-     }"><div class="bag-img embed-responsive embed-responsive-4by3" style="background-image: url(${item.product.image_url
-     })"></div></a>
+      }"><div class="bag-img embed-responsive embed-responsive-4by3" style="background-image: url(${item.product.image_url
+      })"></div></a>
     <div class=" cart-content-container">
       <div class="grid--cart">
       <div class="d-flex flex-crow justify-content-between w-100">
@@ -82,20 +75,20 @@ const showCartItems = () => {
          <div class="qtySize-container d-flex flex-wrap flex-column w-100">
 
          ${item.qtySize
-       .map((itemSizes) => {
-         return ` 
+        .map((itemSizes) => {
+          return ` 
            <div  class="qtySize-container d-flex">
            <p class="light-text flex-grow-1 align-text-bottom pr-2">Size ${itemSizes.size}</p>
            <p class="light-text flex-grow-1 align-text-bottom text-right">Qty ${itemSizes.qty}</p>
            </div>`;
-       })
-       .join("")}
+        })
+        .join("")}
        
          </div>
                  <div class="d-flex flex-wrap  justify-content-between w-100">
                  <div>
                      <p class="large-text flex-grow-1 align-text-bottom mb-0">${item.product.price
-                       } NOK</p>
+      } NOK</p>
                  </div>
                  <div class="p-0 pl-lg-2">
                  <p class="large-text large-text--total flex-grow-1 align-text-bottom mb-0">Total: 
@@ -119,7 +112,7 @@ const showCartItems = () => {
      
      `;
   });
-  
+
   cartTotalContainer.innerHTML += `
   <div class="checkout-container">
   <div class="pt-4 pb-5 px-4">
@@ -130,9 +123,6 @@ const showCartItems = () => {
   <button type="button" class="btn btn-secondary btn-block">Checkout</button>
   </div>
   </div>`;
-
-
-
 
 
   removeFromCartItem(cartItems);

@@ -10,6 +10,7 @@ import { showNavbarBgOnScroll } from "../ui/showNavbarBgOnScroll.js";
 
 
 
+
 export const renderNavbar = () => {
 showNavbarBgOnScroll();
 
@@ -68,7 +69,7 @@ showNavbarBgOnScroll();
       showSearch()
     });
   }
-
+  showNavbarBgOnScroll();
 
 
   return innerNav.innerHTML = `

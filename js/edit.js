@@ -7,13 +7,6 @@ import { deleteProduct } from "./ui/deleteProduct.js";
 import { updateProduct } from "./ui/updateProduct.js";
 import { removeMessage } from "./helpers/removeMessage.js";
 import {fectData} from './helpers/fetcData.js';
-import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js';
-
-
-
-showNavbarBgOnScroll();
-
-
 
 
 renderNavbar();

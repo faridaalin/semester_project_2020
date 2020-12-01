@@ -10,7 +10,8 @@ $border-width: 2px;
   background-color: transparent;
 }
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+ @import "../node_modules/bootstrap/scss/bootstrap.scss"; 
+
 
 /*  VARIABLES START */
 
@@ -1129,7 +1130,7 @@ a {
 }
 
 .pdp-container {
-  min-width: 100vh;
+  min-height: 100vh;
 }
 
 .pdp-detail-container {
@@ -1215,6 +1216,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  font-size: 1.5rem;
 }
 
 .rating {

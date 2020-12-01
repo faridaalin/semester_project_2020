@@ -1,5 +1,5 @@
-import { BASE_URL, allProducts, home } from "./utils/settings.js";
-import { showNavbarBgOnScroll } from "./ui/showNavbarBgOnScroll.js";
+import { renderGridCategory } from './elements/renderGridCategory.js'
+import { BASE_URL, allProducts} from "./utils/settings.js";
 import renderHeroBanner from "./elements/renderHerobanner.js";
 import renderFeatured from "./elements/renderFeatured.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
@@ -11,42 +11,17 @@ import { showMessage } from "./helpers/showMessage.js";
 import { removeMessage } from "./helpers/removeMessage.js";
 import {lasyLoadImageas} from './helpers/lasyLoadImageas.js'
 
-showNavbarBgOnScroll();
 renderNavbar();
-editBackgroundImg();
-
-
-const renderGridCategory = (products) => {
-  const masonryGrid = document.querySelector('.masonry');
-  const getMapFromArray = data =>
-  data.reduce((acc, item) => {
-    acc[item.category] =  { item };
-    return acc;
-  }, {});
-
-const modifiedArray =  getMapFromArray(products);
-
-for (const property in modifiedArray) {
-  const name = modifiedArray[property].item.category;
-  const nameToUpperCase = name[0].toUpperCase() + name.slice(1).toLowerCase();
-  const img = modifiedArray[property].item.image_url;
-  masonryGrid.innerHTML += `<a href="category.html?category=${name}" class="masonry__item" data-name="${name}" ><div class="masonry__image" style="background-image: url(${img});"><span>${nameToUpperCase}</span></div></a>`
-};
-
-
-};
 
 (async () => {
   removeMessage(".herobanner .message-container");
   removeMessage(".featured-container .message-container");
   
-
   const homeUrl = `${BASE_URL}/home`;
   const productsUrl = `${BASE_URL}/products`;
 
   spinner('.featured-container');
  
-
   const [homeResponse, productResponse] = await Promise.all([
     fectData(homeUrl),
     fectData(productsUrl),
@@ -54,21 +29,19 @@ for (const property in modifiedArray) {
 
   if (!homeResponse || typeof homeResponse === "string") {
     const msg = "Failed to get background image, check for url misspelling.";
-    showMessage("danger", msg, ".herobanner .message-container");
-    return;
+    return showMessage("danger", msg, ".herobanner .message-container");
   }
 
   renderHeroBanner(homeResponse.hero_url);
-
-
     if (!productResponse || typeof productResponse === "string") {
       showMessage("danger", result, ".featured-container .message-container");
-      saveToSessionStorage(allProducts)
-      return;
+      return saveToSessionStorage(allProducts);
+
     }
   
   renderGridCategory(productResponse);
   renderFeatured(productResponse);
   lasyLoadImageas();
+  editBackgroundImg();
   saveToSessionStorage(allProducts, productResponse);
 })();

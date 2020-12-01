@@ -2,9 +2,8 @@ import { getFromSessionStorage } from './utils/storage.js';
 import { allProducts } from './utils/settings.js';
 import renderAllProducts from "./elements/renderAllProducts.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
-import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js';
 
-showNavbarBgOnScroll();
+
 renderNavbar();
 
 const queryString = window.location.search;

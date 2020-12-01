@@ -41,7 +41,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand flex-grow-1 logo" href="./index.html">ARK<span class="logo-highlight">SHOES</span></a>
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          data-target="#navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,9 +49,8 @@
       </nav>
     </div>
 
-    <!-- Modal LOGIN START/REGISTER-->
-
-    <div class="modal custom-form-container" id="login" tabindex="-1" role="login" aria-labelledby="exampleModalLabel"
+       <!-- Modal login/register start -->
+    <div class="modal custom-form-container" id="login" tabindex="-1"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -66,9 +65,8 @@
                 <span><i class="fa fa-user"></i>Login</span>
               </button>
             </h5>
-
-            <div id="collapseOne" class="collapse in show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <form action="" class="login-register-form d-flex flex-column p-4">
+            <div id="collapseOne" class="collapse in show" data-parent="#accordionExample">
+              <form class="login-register-form d-flex flex-column p-4">
                 <div class="form-group d-flex">
                   <div class="d-flex flex-column w-25">
                     <label for="username" class="col-form-label">Username</label>
@@ -81,7 +79,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="form-group d-flex">
                   <div class="d-flex flex-column w-25">
                     <label for="password" class="col-form-label">Password</label>
@@ -99,16 +96,14 @@
                 </button>
               </form>
             </div>
-
             <h5 class="form-title mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
                 aria-expanded="false" aria-controls="collapseThree">
                 <span>Register</span>
               </button>
             </h5>
-
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <form action="" class="login-register-form d-flex flex-column p-4">
+            <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+              <form class="login-register-form d-flex flex-column p-4">
                 <div class="message-container"></div>
 
                 <div class="form-group d-flex">
@@ -123,10 +118,9 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="form-group d-flex">
                   <div class="d-flex flex-column w-25">
-                    <label for="email" class="col-form-label">Email</label>
+                    <label for="registerEmail" class="col-form-label">Email</label>
                   </div>
                   <div class="w-75">
                     <input type="email" class="form-control" id="registerEmail" placeholder="Enter email" />
@@ -135,7 +129,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="form-group d-flex">
                   <div class="d-flex flex-column w-25">
                     <label for="password" class="col-form-label">Password</label>
@@ -157,18 +150,17 @@
         </div>
       </div>
     </div>
+    <!-- Modal login/register end -->
 
-    <!-- Modal LOGIN END-->
 
     <!-- Herobanner START -->
     <div
-      class="lazy herobanner jumbotron jumbotron-fluidembed-responsive embed-responsive-16by9 d-flex align-items-center"
-      data-bg-multi="url(lazy-head.jpg),linear-gradient(#fff, #ccc)" url(lazy-body.jpg>
+      class="herobanner jumbotron jumbotron-fluidembed-responsive embed-responsive-16by9 d-flex align-items-center">
       <div class="container">
         <div class="herobanner__content">
           <div class="message-container"></div>
           <span class="content-tag">Fall collection 2020</span>
-          <h1 class="content-header" class="lead">
+          <h1 class="content-header lead">
             New and comfortable <br />
             styles
           </h1>
@@ -182,12 +174,12 @@
     </div>
 
     <!-- Modal EDIT BG-->
-    <div class="modal fade edit-form" id="herobannerBg" tabindex="-1" role="herobannerBg"
-      aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade edit-form" id="herobannerBg" tabindex="-1"
+      aria-labelledby="editBackgroundImage" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title w-100" id="exampleModalLabel">
+            <h4 class="modal-title w-100" id="editBackgroundImage">
               Edit background image
             </h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -195,20 +187,19 @@
             </button>
           </div>
           <div class="modal-body mx-3">
-            <form action="" id="editBg-form">
+            <form id="editBg-form">
               <div class="message-container" id="msg"></div>
 
               <div class="form-group">
                 <label for="url" class="d-flex justify-content-between">Image url</label>
-                <input type="url" name="url" id="url" class="form-control img-url" aria-describedby="imageUrlHelp" />
+                <input type="url" name="url" id="url" class="form-control img-url" />
                 <div class="feedback-password invalid-feedback">
                   Invalid image url
                 </div>
               </div>
               <div class="form-group">
                 <label for="altText" class="d-flex justify-content-between">Alt text</label>
-                <input type="text" name="altText" id="altText" class="form-control altText"
-                  aria-describedby="altTextHelp" />
+                <input type="text" name="altText" id="altText" class="form-control altText" />
                 <div class="feedback-password invalid-feedback">
                   Please, provide alt text.
                 </div>
@@ -216,62 +207,52 @@
             </form>
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button type="click" class="btn btn-secondary btn-block shadow-lg" id="edit-bg">
+            <button type="button" class="btn btn-secondary btn-block shadow-lg" id="edit-bg">
               Edit
             </button>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Herobanner END -->
 
-    <!-- Featured products START -->
+      <!-- Featured products start -->
     <div class="container pt-5 px-4">
       <div class="featured-title-container">
         <h2 class="title mb-5 featured-title text-center">New arrivals</h2>
       </div>
-
-      <!-- Featured Carousel START -->
-
       <div class="container custom-container">
         <div class="container featured-container">
           <div class="message-container"></div>
-
-          <!-- Featured products START -->
+          <!-- Featured products cards -->
         </div>
       </div>
     </div>
+  <!-- Featured products end -->
+
 
     <div class="container masonry-container">
       <div class="masonry">
-        <!--  -->
+        <!-- Masonry Grid Cards -->
       </div>
     </div>
   </div>
+
+ 
   <footer class="footer d-flex justify-content-center flex-column pt-4 mt-4">
-    <!-- Footer Links -->
     <div class="container py-4">
-      <!-- Grid row -->
       <div class="row">
-        <!-- Grid column -->
         <div class="custom-center col-sm-6 col-lg-3 mt-lg-0 mb-5 mb-lg-2">
-          <!-- Content -->
           <h5 class="text-uppercase">ARKSHOES</h5>
-          <p class="grid-footer">
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-linkedin-square"></i>
-            <i class="fa fa-facebook"></i> <i class="fa fa-youtube-play"></i>
-          </p>
+          <p class="grid-footer"><i class="fa fa-twitter"></i> <i class="fa fa-linkedin-square"></i> <i
+              class="fa fa-facebook"></i> <i class="fa fa-youtube-play"></i></p>
           <p class="mb-0">Adresse somewhere</p>
           <p class="mb-0">34 Street, 1000</p>
           <p class="mb-0">CA, USA</p>
         </div>
 
         <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
-          <!-- Links -->
           <h5 class="text-uppercase">Support</h5>
-
           <ul class="list-unstyled">
             <li>
               <a href="#!">FAQ</a>
@@ -286,14 +267,10 @@
               <a href="#!">Link 4</a>
             </li>
           </ul>
+
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
         <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
-          <!-- Links -->
           <h5 class="text-uppercase">Explore</h5>
-
           <ul class="list-unstyled">
             <li>
               <a href="#!">Home</a>
@@ -309,38 +286,23 @@
             </li>
           </ul>
         </div>
-        <!-- Grid column -->
-
-        <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
-          <!-- Links -->
-          <h5 class="text-uppercase">Newsletter</h5>
-          <div class="input-group mb-3 w-100">
-            <div class="input-group-append">
-              <div class="input-group newsletter">
-                <input type="email" class="form-control" placeholder="Enter your email" required /><input type="submit"
-                  class="btn btn-primary" value="Subscribe" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Grid row -->
       </div>
-    </div>
 
-    <!-- Footer Links -->
-    <div class="footer-copyright container-fluid text-center py-4">
-      <span class="font-weight-light">© 2020 Copyright</span>
-      <span class="font-weight-bold">ARKSHOES</span>
+    </div>
+    <div class="footer-copyright container-fluid text-center py-4"><span class="font-weight-light">© 2020
+        Copyright</span> <span class="font-weight-bold">ARKSHOES</span>
     </div>
   </footer>
-</body>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="./js/index.js" type="module"></script>
+
+</body>
+
 
 </html>

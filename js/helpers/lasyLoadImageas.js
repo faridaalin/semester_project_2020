@@ -13,7 +13,6 @@ export const lasyLoadImageas = () => {
     }
   
     const imgOberver = new IntersectionObserver((entries, imgOberver) => {
-      console.log(entries);
       entries.forEach(entry => {
           if(!entry.isIntersecting) {
             return;

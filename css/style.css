@@ -11934,7 +11934,7 @@ a {
 }
 
 .pdp-container {
-  min-width: 100vh;
+  min-height: 100vh;
 }
 
 .pdp-detail-container {
@@ -12032,6 +12032,7 @@ a {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  font-size: 1.5rem;
 }
 
 .rating {

@@ -39,7 +39,7 @@ ${rating.map(star => star).join('')}
 
 </div>
 
-   <div class="checkout d-flex flex-column flex-lg-row pb-1">
+   <div class="checkout d-flex flex-column flex-lg-row pb-1 pb-lg-4">
      <div class="qty-container">
        Quantity
        <button type="button" class="btn minus" data-type="dec"><i class="fa fa-minus"></i></button>

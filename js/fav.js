@@ -2,10 +2,9 @@ import { getFromLocal } from "./utils/storage.js";
 import { favs } from "./utils/settings.js";
 import renderAllProducts from './elements/renderAllProducts.js';
 import { renderNavbar } from "./elements/renderNavbar.js";
-import {showNavbarBgOnScroll} from './ui/showNavbarBgOnScroll.js';
 import { spinner } from "./elements/spinner.js";
 
-showNavbarBgOnScroll();
+
 renderNavbar();
 
 export const renderFavs = () => {
