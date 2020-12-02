@@ -1,12 +1,13 @@
 import { favs } from '../utils/settings.js';
 import { getFromLocal } from '../utils/storage.js';
 import { getLoggedInUser } from '../helpers/getLoggedInUser.js';
-
+import {getRoundNumber} from '../helpers/getRoundNumber.js'
 
 
 export const productCard = (product) => {
 
   const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
+  const price = getRoundNumber(product.price);
 
   const hasFavs = currentFavs.find(fav => {
     return parseInt(fav.id) === parseInt(product.id)
@@ -22,6 +23,8 @@ export const productCard = (product) => {
 
   const image = product.image_url ? product.image_url : `https://res.cloudinary.com/djey7uz4e/image/upload/v1606132924/noImage_plcdvu.jpg`;
 
+
+
   return ` <div class="product-card col-sm-6 col-md-3 mb-5 pb-5 pt-3">
     <div class="product-top">
       ${edit}
@@ -36,7 +39,7 @@ export const productCard = (product) => {
     <div class="product-bottom  pt-3">
       <a href="/pdp.html?id=${product.id}"><h3 class="card-title mb-0">${product.title}</h3></a>
       <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
-        <h5 class=" card-text  mb-0">${product.price} NOK</h5>
+        <h5 class=" card-text  mb-0">${price} NOK</h5>
         <i class="feature-icon fav fa ${cssClass}" data-id="${product.id}"></i>
       </div>
     </div>

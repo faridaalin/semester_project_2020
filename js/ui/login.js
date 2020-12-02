@@ -19,12 +19,14 @@ export const login = (e) => {
 
     if (usernameValue.length < 2) {
       username.classList.add("is-invalid");
+      document.querySelector('.feedback-username').innerHTML = "Username is too short"
     } else {
       username.classList.remove("is-invalid");
       username.classList.add("is-valid");
     }
     if (passwordValue.length < 8) {
       password.classList.add("is-invalid");
+      document.querySelector('.feedback-password').innerHTML = "Password is too short"
     } else {
       password.classList.remove("is-invalid");
       password.classList.add("is-valid");
@@ -39,7 +41,6 @@ export const login = (e) => {
         const usernameValue = username.value.trim();
         const passwordValue = password.value.trim();
 
-
         const data = {
           identifier: usernameValue,
           password: passwordValue,
@@ -52,16 +53,15 @@ export const login = (e) => {
           body: JSON.stringify(data),
         };
 
-
-
-        setTimeout(async () => {
-
           fectData(URL, options).then(userData => {
             if(!userData || typeof userData === 'string') {
                 const msg = "Invalid username or password";
                 showMessage("danger", msg, '.message-container');
                 username.classList.add("is-invalid");
                 password.classList.add("is-invalid");
+                document.querySelector('.feedback-password').innerHTML = "Password is too short"
+                document.querySelector('.feedback-username').innerHTML = "Username is too short"
+
               return;
             
                }
@@ -74,10 +74,6 @@ export const login = (e) => {
               location.reload();
               renderNavbar()
           });
-
-      
-        }, 1000);
-
       };
 
       authUser(username, password);

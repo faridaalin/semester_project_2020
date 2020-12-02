@@ -756,8 +756,8 @@ a {
   color: getColour(white-200);
 
   .edit-bg {
-    top: -100px;
-    left: 0;
+    top: 0;
+    right: 0;
   }
 
   .content-tag {
@@ -1446,7 +1446,7 @@ a {
   font-size: calc(0.7rem + 0.5vw);
   pointer-events: none;
   opacity: 0.8;
-  color: getColour(black-300);
+  // color: getColour(black-300);
   text-transform: capitalize;
   font-size: 0.9rem;
 
