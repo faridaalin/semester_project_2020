@@ -98,11 +98,25 @@
   background: transparent;
 }
 .deleteProduct {
+
+  .modal-header {
+    background-color: rgba(46, 51, 56, .05);
+    h5 {
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  .modal-body {
+    padding-top: 2rem;
+  }
   .modal-content {
     background: getColour(white-200);
   }
+
   .fa {
     font-size: 2rem;
     color: getColour(red-300);
   }
+
 }
