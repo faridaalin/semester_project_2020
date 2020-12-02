@@ -129,7 +129,7 @@
     border-radius: 50%;
   }
 
-  &:hover {
+  &:hover{
     opacity: 1;
     &::after {
       background-color: getColour(primary);
@@ -209,6 +209,17 @@
   font-weight: getWeight(bold);
   opacity: 1;
 }
+
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active .nav-item {
+  &::after {
+    background-color: getColour(primary);
+    opacity: 1;
+  }
+}
+
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
@@ -217,6 +228,17 @@
   font-weight: getWeight(bold);
   opacity: 1;
 }
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active .nav-item {
+  &::after {
+    background-color: getColour(black-300);
+    opacity: 1;
+  }
+}
+
 
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 0;

@@ -11402,12 +11402,28 @@ a {
   opacity: 1;
 }
 
+.navbar-dark .navbar-nav .show > .nav-link::after,
+.navbar-dark .navbar-nav .active > .nav-link::after,
+.navbar-dark .navbar-nav .nav-link.show::after,
+.navbar-dark .navbar-nav .nav-link.active .nav-item::after {
+  background-color: #67EBB4;
+  opacity: 1;
+}
+
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
   color: #2e3338;
   font-weight: 700;
+  opacity: 1;
+}
+
+.navbar-light .navbar-nav .show > .nav-link::after,
+.navbar-light .navbar-nav .active > .nav-link::after,
+.navbar-dark .navbar-nav .nav-link.show::after,
+.navbar-dark .navbar-nav .nav-link.active .nav-item::after {
+  background-color: #090a0b;
   opacity: 1;
 }
 
@@ -12024,115 +12040,98 @@ a {
   padding: 1rem;
 }
 
-.checkout-container {
-  background: rgba(117, 235, 180, 0.31);
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  width: 100%;
+.product-top {
+  position: relative;
+  overflow: hidden;
 }
 
-.checkout-container h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1c1f22;
+.product-top .card-img,
+.product-top .card-img-top {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-.checkout-container .total {
-  font-weight: 700;
-  font-size: 1.2rem;
-  font-family: "Barlow", sans-serif;
+.edit-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 200;
+  font-size: 0.875rem;
 }
 
-.checkout-container .total :last-child {
-  font-weight: 700;
+.edit-btn a {
+  color: #ffffff;
 }
 
-.checkout-container .delivery {
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.product-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-top:hover .overlay {
+  opacity: 1;
+}
+
+.product-top:hover .card-img,
+.product-top:hover .card-img-top {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.product-bottom h3 {
   font-size: 1rem;
-  color: #2e3338;
-}
-
-.bag-container {
-  border-bottom: 2px solid rgba(20, 62, 86, 0.4);
-}
-
-.header-cart {
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 1px;
-  opacity: 0.7;
-  font-family: "Barlow", sans-serif;
-}
-
-.light-text {
+  font-weight: 300;
+  padding-bottom: 0.8rem;
   color: #2e3338;
   font-weight: 400;
-  font-size: calc(0.6rem + 0.3vw);
-  opacity: 0.8;
 }
 
-.cart-brand {
-  opacity: 0.7;
-}
-
-.cart-title {
-  font-family: "Barlow", sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.medium-text {
-  font-weight: 500;
-}
-
-.large-text {
-  font-weight: 600;
-  white-space: nowrap;
+.product-bottom h5 {
   font-size: calc(0.7rem + 0.3vw);
-  font-family: "Barlow", sans-serif;
-  opacity: 0.9;
-}
-
-.large-text :last-child {
-  padding-right: 1rem;
-}
-
-.large-text--total {
   font-weight: 700;
-  font-family: "Barlow", sans-serif;
-  font-size: calc(0.8rem + 0.3vw);
 }
 
-.bag-img {
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  min-height: 140px;
-  max-height: 140px;
-  min-width: 100px;
-  max-width: 100px;
+.product-bottom .fav {
+  font-size: calc(1.8rem - 0.1vw);
   cursor: pointer;
+  color: #67EBB4;
 }
 
-.cart-content-container {
-  min-height: 100%;
-  width: 100%;
+.product-bottom a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.grid--cart {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: auto 2fr;
-      grid-template-rows: auto 2fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 16px;
-  min-height: 100%;
-  padding: 0 0 0 1rem;
+.product-bottom a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-bottom a:hover h3 {
+  text-decoration: underline;
+}
+
+@media all and (min-width: 768px) {
+  .product-bottom h3 {
+    font-size: 1rem;
+    padding-bottom: 0.8rem;
+  }
 }
 
 .container-pdp {
