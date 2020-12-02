@@ -10824,8 +10824,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom: 1px solid rgba(95, 123, 139, 0.35);
   -webkit-transition: border-color 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out;
-  -webkit-box-shadow: 0 1px 0 0 rgba(95, 123, 139, 0.35);
-          box-shadow: 0 1px 0 0 rgba(95, 123, 139, 0.35);
+  -webkit-box-shadow: 0 1px 0 0 rgba(29, 38, 43, 0.75);
+          box-shadow: 0 1px 0 0 rgba(29, 38, 43, 0.75);
 }
 
 .custom-form-container input::-webkit-input-placeholder {
@@ -10878,6 +10878,19 @@ a.text-dark:hover, a.text-dark:focus {
 
 .custom-form-container .form-title {
   background-color: #c2ded8;
+}
+
+.editDelete-container textarea.form-control, .add-container textarea.form-control {
+  min-height: 120px;
+}
+
+.editDelete-container .custom-form-container .col-form-label, .add-container .custom-form-container .col-form-label {
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.editDelete-container .custom-form-container input.form-control, .add-container .custom-form-container input.form-control {
+  color: #090a0b;
 }
 
 /*FORM*/
@@ -11030,6 +11043,9 @@ li {
 .footer .newsletter .btn {
   font-size: 0.7rem;
   line-height: 40px;
+  padding: 0 0.5rem;
+  height: 40px;
+  letter-spacing: 0;
 }
 
 .footer .newsletter input {
@@ -11648,7 +11664,7 @@ a {
 }
 
 .filter-container {
-  background-color: rgba(198, 212, 219, 0.5);
+  background-color: rgba(198, 212, 219, 0.18);
 }
 
 @media all and (max-width: 576px) {
@@ -12411,5 +12427,14 @@ a {
     grid-column: span 2 / auto;
     grid-row: span 2;
   }
+}
+
+.deleteProduct .modal-content {
+  background: #f5f5f5;
+}
+
+.deleteProduct .fa {
+  font-size: 2rem;
+  color: #E93F33;
 }
 /*# sourceMappingURL=style.css.map */

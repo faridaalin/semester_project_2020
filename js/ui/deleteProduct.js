@@ -7,7 +7,7 @@ import {fectData} from '../helpers/fetcData.js'
 export const deleteProduct = (url, token) => {
 
     const container = document.querySelector('.buttons');
-    container.innerHTML += `<button type="button" name="action" value="delete" class="btn btn-danger btn-block product-delete" data-toggle="modal" data-target="#deleteProduct">
+    container.innerHTML += `<button type="button" name="action" value="delete" class="btn btn-outline-danger btn-block product-delete" data-toggle="modal" data-target="#deleteProduct">
     Delete
   </button>`;
 

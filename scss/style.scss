@@ -52,6 +52,7 @@ $colors: (
   black-100: #2e3338,
   black-200: #1c1f22,
   black-300: #090a0b,
+  red-300: #E93F33,
 );
 
 @function getColour($color) {
@@ -75,7 +76,7 @@ $colors: (
     &:focus {
       border-bottom: 1px solid rgba(95, 123, 139, 0.35);
       transition: border-color 0.15s ease-in-out;
-      box-shadow: 0 1px 0 0 rgba(95, 123, 139, 0.35);
+      box-shadow: 0 1px 0 0 rgba(29, 38, 43, .75);
     }
 
     ::placeholder,
@@ -129,6 +130,22 @@ $colors: (
   .form-title {
     background-color: getColour(green-300);
   
+  }
+}
+
+.editDelete-container, .add-container{ 
+  textarea.form-control {
+    min-height: 120px;
+}
+  .custom-form-container  {
+    .col-form-label {
+      opacity: 0.5;
+      font-weight: 400;
+    }
+  }
+
+  .custom-form-container input.form-control {
+    color: getColour(black-300);
   }
 }
 
@@ -272,6 +289,9 @@ li {
     .btn {
       font-size: 0.7rem;
       line-height: 40px;
+      padding: 0 0.5rem;
+      height: 40px;
+      letter-spacing: 0;
 
     }
 
@@ -851,7 +871,7 @@ a {
   }
 }
 .filter-container {
-  background-color: rgba(198, 212, 219, 0.5);
+  background-color: rgba(198, 212, 219, .18);
 
   .filter-price {
     @media all and (max-width:576px) { 
@@ -1625,5 +1645,15 @@ a {
   }
 }
 
+
+.deleteProduct {
+  .modal-content {
+    background: getColour(white-200);
+  }
+  .fa {
+    font-size: 2rem;
+    color: getColour(red-300);
+  }
+}
 
 

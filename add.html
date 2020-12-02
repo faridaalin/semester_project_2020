@@ -137,70 +137,71 @@
             </ol>
           </nav>
           <h1 class="header">Add Product</h1>
-      
-      <div class="row pt-5 mt-2 add-container">
-        
-        <form class="col-md-6 add-form" id="addForm" name="addForm">
-          <div class="message-container" id="msg">
-  
-          </div>
-   
-          <div class="form-group">
-            <label for="name" class="d-flex justify-content-between">Title
-            </label>
-            <input type="text" class="form-control" id="name">
-            <div class="invalid-feedback">
-              Title is required.
+          
+        <div class="row pt-5 mt-2 add-container">
+        <form class="col-md-12 add-form custom-form-container" id="addForm" name="addForm">
+          <div class="message-container" id="msg"></div>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <label for="name" class="d-flex justify-content-between col-form-label">Title
+                </label>
+                <input type="text" class="form-control" id="name">
+                <div class="invalid-feedback">
+                  Title is required.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="brand" class="d-flex justify-content-between col-form-label">Brand</label>
+                <input type="text" name="brand"  class="form-control" id="brand">
+                <div class="invalid-feedback">
+                  Brand is required.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="price" class="d-flex justify-content-between col-form-label">Price</label>
+                <input type="text" name="price" class="form-control" id="price" >
+                <div class="invalid-feedback price-feedback">
+                  Price is required.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description" class="d-flex justify-content-between col-form-label">Description</label>
+                <textarea class="form-control" name ="description" id="description" rows="3"></textarea>
+                <div class="invalid-feedback">
+                  Description is required.
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <label for="url" class="d-flex justify-content-between col-form-label">Image url</label>
+                <input type="url" name="url" id="url" class="form-control">
+                <div class="invalid-feedback img-feedback">
+                  Image url is required.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="altText" class="d-flex justify-content-between col-form-label">Alt text</label>
+                <input type="text" name="altText" id="altText" class="form-control altText" >
+                <div class="feedback-password invalid-feedback">Please, provide alt text.</div>
+              </div>
+              <div class="form-group">
+                <label for="category" class="d-flex justify-content-between col-form-label">Category</label>
+                <input type="text" name="category" id="category" class="form-control category">
+                <div class="feedback-password invalid-feedback">Please, provide category.</div>
+              </div>
+              <div class="form-check pb-4">
+                <input class="form-check-input" name="featured" type="checkbox" value="checked" id="featured">
+                <label class="form-check-label" for="featured col-form-label pt-0">
+                  Featured
+                </label>
+              </div>
+              <div class="buttons">
+                <button type="submit"  name="action" value="edit" class="btn btn-success btn-block product-edit">Add</button>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="brand" class="d-flex justify-content-between">Brand</label>
-            <input type="text" name="brand"  class="form-control" id="brand">
-            <div class="invalid-feedback">
-              Brand is required.
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="price" class="d-flex justify-content-between">Price</label>
-            <input type="text" name="price" class="form-control" id="price" >
-            <div class="invalid-feedback price-feedback">
-              Price is required.
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="description" class="d-flex justify-content-between">Description</label>
-            <textarea class="form-control" name ="description" id="description" rows="3"></textarea>
-            <div class="invalid-feedback">
-              Description is required.
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="url" class="d-flex justify-content-between">Image url</label>
-            <input type="url" name="url" id="url" class="form-control">
-            <div class="invalid-feedback img-feedback">
-              Image url is required.
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="altText" class="d-flex justify-content-between">Alt text</label>
-            <input type="text" name="altText" id="altText" class="form-control altText" >
-            <div class="feedback-password invalid-feedback">Please, provide alt text.</div>
-          </div>
-          <div class="form-group">
-            <label for="category" class="d-flex justify-content-between">Category</label>
-            <input type="text" name="category" id="category" class="form-control category">
-            <div class="feedback-password invalid-feedback">Please, provide category.</div>
-          </div>
-          <div class="form-check pb-4">
-            <input class="form-check-input" name="featured" type="checkbox" value="checked" id="featured">
-            <label class="form-check-label" for="featured">
-              Featured
-            </label>
-          </div>
-          <div class="buttons">
-            <button type="submit"  name="action" value="edit" class="btn btn-success btn-block product-edit">Add</button>
-          </div>
-
         </form>
 
 
@@ -225,7 +226,7 @@
 
         <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
           <h5 class="text-uppercase">Support</h5>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center text-sm-left">
             <li>
               <a href="#!">FAQ</a>
             </li>
@@ -239,11 +240,11 @@
               <a href="#!">Link 4</a>
             </li>
           </ul>
-
         </div>
+
         <div class="custom-center col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
           <h5 class="text-uppercase">Explore</h5>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center text-sm-left">
             <li>
               <a href="#!">Home</a>
             </li>
@@ -255,6 +256,20 @@
             </li>
             <li>
               <a href="#!">Women</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="custom-center newsletter col-sm-6 col-lg-3 mb-lg-0 mb-5 mb-lg-2">
+          <h5 class="text-uppercase">Newsletter</h5>
+          <ul class="list-unstyled">
+            <li>
+              <div class="input-group newsletter">
+                <input type="email" class="form-control" placeholder="Enter your email">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                </span>
+              </div>
             </li>
           </ul>
         </div>
