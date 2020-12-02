@@ -22,8 +22,9 @@ export const renderNavbar = () => {
     </li>
     `
   
-    if (user && user.username === "admin") {
-      authLink = `
+    if (user) {
+      if(user.username === "admin") {
+        authLink = `
         <li class="nav-item ${pathname === "add.html" ? "active" : ""}">
           <a class="nav-link" href="add.html">Add</a>
         </li>
@@ -34,12 +35,20 @@ export const renderNavbar = () => {
         <a  class="nav-link custom-greeting" href="#" py-2 px-2">Hi ${user.username}</a>
         </li>
         `
-     
+      } else {
+        authLink = `
+        <li class="nav-item">
+          <a  class="nav-link logout" href="#"py-2 px-2">Logout</a>        
+        </li>
+        <li class="nav-item">
+        <a  class="nav-link custom-greeting" href="#" py-2 px-2">Hi ${user.username}</a>
+        </li>
+        `
+      }
       window.addEventListener('DOMContentLoaded', (event) => {
         logout();
       });
-  
-    }
+    } 
   
     window.addEventListener('DOMContentLoaded', (event) => {
       register();

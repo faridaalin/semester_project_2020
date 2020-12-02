@@ -1,7 +1,5 @@
-import { spinner } from '../elements/spinner.js';
-import {showMessage} from '../helpers/showMessage.js';
-import {removeMessage} from '../helpers/removeMessage.js';
-import {fectData} from '../helpers/fetcData.js'
+import { showMessage } from '../helpers/showMessage.js';
+import { fectData } from '../helpers/fetcData.js'
 
 
 export const deleteProduct = (url, token) => {
@@ -13,8 +11,6 @@ export const deleteProduct = (url, token) => {
 
     const deleteButton = document.querySelector('.btn-delete');
 
- 
-
     const handleDeleteProduct = async () => {
         const options = {
             method: "DELETE",
@@ -22,26 +18,19 @@ export const deleteProduct = (url, token) => {
                 Authorization: `Bearer ${token}`,
             }
         }
- 
-        fectData(url, options).then(result => {
-            if(!result || typeof result === 'string') {
-              showMessage('danger', result, '#msg');
-              return;
-            
-               }
-               console.log(result);
 
-               
-               if(result.created_at) {
-                const msg = `${result.title} has been deleted`;
+        fectData(url, options).then(result => {
+            if (!result || typeof result === 'string') {
+                return showMessage('danger', result, '#msg');
+            }
+
+            if (result.created_at) {
+                const msg = `${result.title} is deleted`;
                 showMessage('success', msg, '#msg')
             }
-         
-                location.href = "/";
-        
-          });
-       
 
+            location.href = "/";
+        });
 
     };
 

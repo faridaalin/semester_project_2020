@@ -10878,6 +10878,19 @@ a.text-dark:hover, a.text-dark:focus {
 
 .custom-form-container .form-title {
   background-color: #c2ded8;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.custom-form-container .form-title:first-child {
+  border-bottom: 2px solid rgba(46, 51, 56, 0.65);
 }
 
 .editDelete-container textarea.form-control, .add-container textarea.form-control {

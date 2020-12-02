@@ -4,7 +4,6 @@ import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
 import { renderNavbar } from '../elements/renderNavbar.js'
 import { fectData } from '../helpers/fetcData.js';
-import { spinner } from "../elements/spinner.js";
 
 export const login = (e) => {
   const loginBtn = document.querySelector(".loginBtn");
@@ -19,14 +18,12 @@ export const login = (e) => {
 
     if (usernameValue.length < 2) {
       username.classList.add("is-invalid");
-      document.querySelector('.feedback-username').innerHTML = "Username is too short"
     } else {
       username.classList.remove("is-invalid");
       username.classList.add("is-valid");
     }
     if (passwordValue.length < 8) {
       password.classList.add("is-invalid");
-      document.querySelector('.feedback-password').innerHTML = "Password is too short"
     } else {
       password.classList.remove("is-invalid");
       password.classList.add("is-valid");

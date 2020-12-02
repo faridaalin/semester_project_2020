@@ -129,7 +129,15 @@ $colors: (
 
   .form-title {
     background-color: getColour(green-300);
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: end;
   
+  }
+  .form-title:first-child {
+    border-bottom: 2px solid rgba(46, 51, 56, .65);
+
   }
 }
 

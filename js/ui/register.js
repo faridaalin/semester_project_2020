@@ -37,17 +37,12 @@ export const register = (e) => {
     } else {
       password.classList.remove("is-invalid");
       password.classList.add("is-valid");
-    }
+    };
 
-    if (usernameValue.length > 2 && passwordValue.length > 7 || validateEmail(email)) {
-
-      const username = document.querySelector("#registerUsername");
-      const password = document.querySelector("#registerPassword");
-      const email = document.querySelector("#registerEmail");
+    if(usernameValue.length < 2 || passwordValue.length < 8 || !validateEmail(emailValue)) return;
 
       const registerNewUser = (userInfo) => {
 
-        console.log(userInfo);
         removeMessage(".message-container");
         const URL = `${BASE_URL}/auth/local/register`;
 
@@ -65,7 +60,6 @@ export const register = (e) => {
         };
 
         fectData(URL, options).then(userData => {
-
           if (!userData || typeof userData === 'string') {
             const msg = "username or email already exist";
             showMessage("danger", msg, '.message-container');
@@ -77,23 +71,21 @@ export const register = (e) => {
           saveToLocal(user, userData.user);
           saveToLocal(userToken, userData.jwt);
           const modal = document.querySelector(".modal");
-          modal.classList.remove("show");
-          modal.classList.add("hide");
+          const msg = `You have now created an account with the username: "${userData.user.username}" and can login.`
+          showMessage("success", msg, '.message-container');
 
-          location.reload();
-          renderNavbar()
 
         });
       };
 
-      const userInfo = {
+      const newUserRegisterInfo = {
         usernameValue,
         emailValue,
         passwordValue
       };
 
-      registerNewUser(userInfo);
-    }
+      registerNewUser(newUserRegisterInfo);
+
   };
 
   registerBtn.addEventListener("click", handleLogin);
