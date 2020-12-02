@@ -11368,7 +11368,7 @@ a {
   visibility: visible;
   width: 100%;
   background: rgba(20, 62, 86, 0.2);
-  color: inherit;
+  color: #1c1f22;
   padding: 8px 48px;
   cursor: text;
   border-radius: 100px;
@@ -11402,6 +11402,7 @@ a {
           transform: translateY(-50%);
   color: #151315;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 .search .search-icon:last-child {

@@ -1,9 +1,9 @@
 import { BASE_URL, user, userToken } from "../utils/settings.js";
-import {  saveToLocal } from "../utils/storage.js";
+import { saveToLocal } from "../utils/storage.js";
 import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
-import {renderNavbar} from '../elements/renderNavbar.js'
-import {fectData} from '../helpers/fetcData.js';
+import { renderNavbar } from '../elements/renderNavbar.js'
+import { fectData } from '../helpers/fetcData.js';
 import { spinner } from "../elements/spinner.js";
 
 export const login = (e) => {
@@ -11,7 +11,7 @@ export const login = (e) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-  
+
     const username = document.querySelector("#username");
     const password = document.querySelector("#password");
     const usernameValue = username.value.trim();
@@ -34,7 +34,7 @@ export const login = (e) => {
 
     if (usernameValue.length > 2 && passwordValue.length > 7) {
 
-      const authUser =  (username, password) => {
+      const authUser = (username, password) => {
         removeMessage(".message-container");
         const URL = `${BASE_URL}/auth/local`;
 
@@ -53,27 +53,26 @@ export const login = (e) => {
           body: JSON.stringify(data),
         };
 
-          fectData(URL, options).then(userData => {
-            if(!userData || typeof userData === 'string') {
-                const msg = "Invalid username or password";
-                showMessage("danger", msg, '.message-container');
-                username.classList.add("is-invalid");
-                password.classList.add("is-invalid");
-                document.querySelector('.feedback-password').innerHTML = "Password is too short"
-                document.querySelector('.feedback-username').innerHTML = "Username is too short"
+        fectData(URL, options).then(userData => {
+          if (!userData || typeof userData === 'string') {
+            const msg = "Invalid username or password";
+            showMessage("danger", msg, '.message-container');
+            username.classList.add("is-invalid");
+            password.classList.add("is-invalid");
+            document.querySelector('.feedback-password').innerHTML = "";
+            document.querySelector('.feedback-username').innerHTML = "";
+            return;
 
-              return;
-            
-               }
-               saveToLocal(user, userData.user);
-               saveToLocal(userToken, userData.jwt);
-              const modal = document.querySelector(".modal");
-              modal.classList.remove("show");
-              modal.classList.add("hide");
-    
-              location.reload();
-              renderNavbar()
-          });
+          }
+          saveToLocal(user, userData.user);
+          saveToLocal(userToken, userData.jwt);
+          const modal = document.querySelector(".modal");
+          modal.classList.remove("show");
+          modal.classList.add("hide");
+
+          location.reload();
+          renderNavbar();
+        });
       };
 
       authUser(username, password);

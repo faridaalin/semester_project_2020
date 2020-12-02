@@ -1,7 +1,6 @@
-import { user, cart, favs } from '../utils/settings.js';
-import { getFromLocal } from '../utils/storage.js';
+import { cart, favs } from '../utils/settings.js';
 import { logout } from '../ui/logout.js';
-import { showSearch } from '../ui/showSearch.js'
+import { renderSearch } from '../ui/renderSearch.js'
 import { loadCurrentItems } from '../helpers/loadCurrentItems.js';
 import { login } from '../ui/login.js';
 import { register } from '../ui/register.js';
@@ -64,7 +63,7 @@ export const renderNavbar = () => {
       </li>`
   
       document.addEventListener("DOMContentLoaded", () => {
-        showSearch();
+        renderSearch();
       });
     }
     showNavbarBgOnScroll();

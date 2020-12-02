@@ -3,7 +3,6 @@ import { fectData } from '../helpers/fetcData.js';
 
 
 export const updateProduct = async (obj, url, token) => {
-
   const options = {
     method: "PUT",
     headers: {
@@ -15,19 +14,17 @@ export const updateProduct = async (obj, url, token) => {
 
   fectData(url, options).then(product => {
     if (!product || typeof product === 'string') {
-      showMessage('danger', product, '.edit-form .message-container');
-      return;
-
+      return showMessage('danger', product, '.edit-form .message-container');
     }
 
     if (product.updated_at) {
       const msg = "Product has been updated.";
-      showMessage("success", msg, '.edit-form .message-container');
+      return showMessage("success", msg, '.edit-form .message-container');
     };
 
     if (product.error) {
       const msg = product.error;
-      showMessage("danger", msg, '.edit-form .message-container');
+      return showMessage("danger", msg, '.edit-form .message-container');
     };
   });
 
