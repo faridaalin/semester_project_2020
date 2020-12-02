@@ -873,12 +873,18 @@ a {
 }
 .filter-container {
   background-color: rgba(198, 212, 219, .18);
+  .filter-price {
+    small, .small {
+      font-size: calc(0.4rem + 1vw);
+      letter-spacing: 0;
+    }
+  }
 
   .filter-price {
-    @media all and (max-width:576px) { 
+    @media all and (min-width: 768px) {
       small, .small {
-        font-size: 0.8rem;
-    letter-spacing: 0;
+        font-size: 0.9rem;
+        letter-spacing: 0;
       }
     }
   }
@@ -1418,16 +1424,12 @@ a {
 .cart-icon {
   font-size: 2rem;
   position: relative;
-  // color: getColour(white-200);
   display: flex;
   align-self: flex-end;
 
-  // a {
-  //   color: getColour(white-200);
-  // }
   .counter {
     position: absolute;
-    top: 20px;
+    top: 0;
     right: -13px;
     height: 20px;
     width: 20px;

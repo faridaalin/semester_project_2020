@@ -11668,9 +11668,14 @@ a {
   background-color: rgba(198, 212, 219, 0.18);
 }
 
-@media all and (max-width: 576px) {
+.filter-container .filter-price small, .filter-container .filter-price .small {
+  font-size: calc(0.4rem + 1vw);
+  letter-spacing: 0;
+}
+
+@media all and (min-width: 768px) {
   .filter-container .filter-price small, .filter-container .filter-price .small {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 0;
   }
 }
@@ -12245,7 +12250,7 @@ a {
 .favs-icon .counter,
 .cart-icon .counter {
   position: absolute;
-  top: 20px;
+  top: 0;
   right: -13px;
   height: 20px;
   width: 20px;
