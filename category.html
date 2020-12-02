@@ -35,12 +35,11 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <div class="accordion" id="accordionExample">
-            <h5 class="form-title mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                <span><i class="fa fa-user"></i>Login</span>
-              </button>
-            </h5>
+          <button class="btn btn-link form-title mb-0 collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="false" aria-controls="collapseOne">
+            <span><i class="fa fa-user"></i>Login</span>
+          </button>
+
             <div id="collapseOne" class="collapse in show" data-parent="#accordionExample">
               <form class="login-register-form d-flex flex-column p-4">
                 <div class="form-group d-flex">
@@ -51,7 +50,7 @@
                   <div class="w-75">
                     <input type="text" class="form-control" id="username" placeholder="Enter username" />
                     <div class="feedback-username invalid-feedback">
-                      Invalid field
+                      Username is too short.
                     </div>
                   </div>
                 </div>
@@ -63,7 +62,7 @@
                   <div class="w-75">
                     <input type="password" class="form-control" id="password" placeholder="Enter password" />
                     <div class="feedback-password invalid-feedback">
-                      Invalid field
+                       Password is too short.
                     </div>
                   </div>
                 </div>
@@ -72,12 +71,11 @@
                 </button>
               </form>
             </div>
-            <h5 class="form-title mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+            
+              <button class="btn btn-link form-title mb-0 collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
                 aria-expanded="false" aria-controls="collapseThree">
                 <span>Register</span>
               </button>
-            </h5>
             <div id="collapseThree" class="collapse" data-parent="#accordionExample">
               <form class="login-register-form d-flex flex-column p-4">
                 <div class="message-container"></div>
@@ -90,7 +88,7 @@
                   <div class="w-75">
                     <input type="text" class="form-control" id="registerUsername" placeholder="Enter username" />
                     <div class="feedback-username invalid-feedback">
-                      Invalid field
+                      Username is too short.
                     </div>
                   </div>
                 </div>
