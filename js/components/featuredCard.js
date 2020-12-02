@@ -9,6 +9,7 @@ export const featuredCard = (product) => {
 
   const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
   const user  = getLoggedInUser();
+  console.log(user);
 
   const edit =
   user && user.username === "admin"
@@ -29,8 +30,7 @@ export const featuredCard = (product) => {
     
     <div class="product-bottom  pt-3">
       <a href="/pdp.html?id=${product.id}"><h3 class="card-title mb-0">${product.title}</h3></a>
-      <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
-     
+      <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">    
         <h5 class=" card-text  mb-0">${product.price} NOK</h5>
         <i class="fav fa ${cssClass}" data-id="${product.id}"></i>
       </div>

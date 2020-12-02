@@ -2,7 +2,7 @@ import renderAllProducts from "../elements/renderAllProducts.js";
 import { saveFavourites } from '../helpers/saveFavourites.js';
 import { getFromLocal } from "../utils/storage.js";
 import { favs } from "../utils/settings.js";
-import {getFavsItem} from '../helpers/getFavsItem.js'
+import {card} from '../components/card.js'
 
 const slideFeaturedImages = () => {
   const slidesContainer = document.querySelector('.custom-carousel_slide-container');
@@ -40,29 +40,13 @@ const displayFeaturedProducts = (featuredPropducts) => {
     const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
 
     return `<li class="custom-carousel__slide ">
-
-      <div class="product-card">
-        <div class="product-top">
-          <a href="/pdp.html?id=${product.id}"> <img class="card-img-top img-fluid" data-src="${product.image_url}" alt="${product.alt_text}">
-            <div class="overlay btn-container d-flex justify-content-center align-items-center">
-              <button type="button" class="content-btn btn btn-outline-primary">View</button>
-            </div>
-          </a>
-        </div>
-        
-        <div class="product-bottom  pt-3">
-          <a href="/pdp.html?id=${product.id}"><h3 class="card-title mb-0">${product.title}</h3></a>
-          <div class="feature-info__price d-flex flex-row align-items-center justify-content-between">
-            <h5 class=" card-text  mb-0">${product.price} NOK</h5>
-            <i class="feature-icon fav fa ${cssClass}" data-id="${product.id}"></i>
-          </div>
-        </div>
-        </div>
+    ${card(product)}
+      
     </li>`
   }).join("")}
   </ul>   
-  <button class="custom-carousel__button custom-carousel__button--right" aria-label="right button"><i class="fa fa-chevron-right"></i></button>
-</div>`
+    <button class="custom-carousel__button custom-carousel__button--right" aria-label="right button"><i class="fa fa-chevron-right"></i></button>
+  </div>`
 
   slideFeaturedImages();
   saveFavourites();
