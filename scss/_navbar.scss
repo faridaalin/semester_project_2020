@@ -7,7 +7,7 @@
   .nav-item {
     margin-right: 1.2rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .nav-item:first-child {
@@ -131,6 +131,7 @@
 
   &:hover{
     opacity: 1;
+    color: getColour(white-100);
     &::after {
       background-color: getColour(primary);
       opacity: 1;
@@ -139,6 +140,7 @@
 
   &:focus {
     text-decoration: line-through;
+    color: getColour(white-100);
     -webkit-text-decoration-color: getColour(tertiary);
     text-decoration-color: getColour(tertiary);
     &::after {
@@ -205,7 +207,7 @@
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: getColour(white-200);
+  color: getColour(white-100);
   font-weight: getWeight(bold);
   opacity: 1;
 }
@@ -395,6 +397,7 @@
 
   &:hover {
     opacity: 1;
+    //color: getColour(white-100);
     &::after {
       background-color: transparent;
       opacity: 1;

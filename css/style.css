@@ -11188,7 +11188,7 @@ a {
 .navbar .nav-item {
   margin-right: 1.2rem;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .navbar .nav-item:first-child {
@@ -11322,6 +11322,7 @@ a {
 
 .navbar-dark .navbar-nav .nav-link:hover {
   opacity: 1;
+  color: #ffffff;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover::after {
@@ -11331,6 +11332,7 @@ a {
 
 .navbar-dark .navbar-nav .nav-link:focus {
   text-decoration: line-through;
+  color: #ffffff;
   -webkit-text-decoration-color: #67EBB4;
   text-decoration-color: #67EBB4;
 }
@@ -11397,7 +11399,7 @@ a {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #f5f5f5;
+  color: #ffffff;
   font-weight: 700;
   opacity: 1;
 }
