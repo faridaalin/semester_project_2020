@@ -71,11 +71,11 @@ export const showCartItems = () => {
                     .join("")}
 
                   </div>
-                  <div class="d-flex flex-wrap  justify-content-between w-100">
-                    <div>
+                  <div class="d-flex flex-wrap justify-content-between align-items-center w-100">
+                    <div class="pr-2 pr-sm-0">
                       <p class="large-text flex-grow-1 align-text-bottom mb-0">${item.product.price} NOK</p>
                     </div>
-                    <div class="p-0 pl-lg-2">
+                    <div class="pl-lg-2">
                       <p class="large-text large-text--total flex-grow-1 align-text-bottom mb-0">Total:
                         ${getTotalPricePerItem(item)} NOK
                       </p>

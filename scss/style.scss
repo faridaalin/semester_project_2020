@@ -342,6 +342,7 @@ a {
   .nav-item {
     margin-right: 1.2rem;
     text-transform: uppercase;
+    font-size: 0.9rem;
   };
 
   .nav-item:first-child {
@@ -380,14 +381,14 @@ a {
     font-family: 'Barlow', sans-serif;
     letter-spacing: 1px;
     text-transform: lowercase;
-    font-size: 2rem;
+    font-size: calc(1.2rem + 1vw);
     padding-bottom: 0.8rem;
     outline: none;
   }
 
   .logo-highlight {
     color: getColour(tertiary);
-    font-size: 1.5rem;
+    font-size: calc(1rem + 1vw);
     margin-left: 0.1rem;
     letter-spacing: -1px;
     font-size: 2rem;
@@ -429,8 +430,8 @@ a {
 }
 
 .navbar-toggler-icon {
-  width: 2em;
-  height: 2em;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
   .custom-toggler {
@@ -1295,13 +1296,6 @@ a {
   align-self: flex-start;
   width: 100%;
 
-
-  @media all and (min-width: 768px) {
-    // width: 37%;
-    // margin-left: auto;
-  }
-
-
   h3 {
     font-size: 1.2rem;
     font-weight: getWeight(bold);
@@ -1310,7 +1304,7 @@ a {
 
   .total {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: 'Barlow', sans-serif;
 
     :last-child {
@@ -1365,9 +1359,9 @@ a {
 .large-text {
   font-weight: 600;
   white-space: nowrap;
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: calc(0.7rem + 0.3vw);
   font-family: 'Barlow', sans-serif;
-  font-size: 1rem;
+  opacity: 0.9;
   :last-child {
     padding-right: 1rem;
   }
@@ -1376,7 +1370,7 @@ a {
 .large-text--total {
   font-weight: getWeight(bold);
   font-family: 'Barlow', sans-serif;
-  font-size: 1.1rem;
+  font-size: calc(0.8rem + 0.3vw);
 }
 
 .bag-img {
@@ -1452,6 +1446,7 @@ a {
   opacity: 0.8;
   color: getColour(black-300);
   text-transform: capitalize;
+  font-size: 0.9rem;
 
 
   &:hover {
@@ -1512,7 +1507,7 @@ a {
 
   .navbar .container, .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
     position: absolute;
-    right: -25px;
+    right: -12px;
     top: 0;
     background-color: #edf6f9;
     width: 50vw;
