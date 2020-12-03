@@ -12407,6 +12407,10 @@ a {
   padding: 0 0 0 1rem;
 }
 
+.delete-icon {
+  cursor: pointer;
+}
+
 .masonry-container .masonry {
   display: -ms-grid;
   display: grid;

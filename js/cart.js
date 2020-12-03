@@ -1,5 +1,5 @@
 import { renderNavbar } from "./elements/renderNavbar.js";
-import { showCartItems } from "./elements/showCartItems.js";
+import { renderCartItems } from "./elements/renderCartItems.js";
 
 renderNavbar();
-showCartItems();
+renderCartItems();

@@ -9,7 +9,6 @@ export const getTotalPricePerItem = (product) => {
 export const getTotalPrice = () => {
 
   const currentCart = getFromLocal(cart);
-  console.log(currentCart);
   let total = 0;
 
   if (!currentCart) {

@@ -20,7 +20,6 @@ export const addNewProduct = (url, token, obj) => {
     fectData(url, options).then(result => {
         if (!result || typeof result === 'string') {
             return showMessage('danger', result, '#msg');
-            
 
         }
         console.log(result);

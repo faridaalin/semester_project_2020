@@ -12,13 +12,13 @@ const removeItemFromCart = (cartItems) => {
         const id = parseInt(e.target.dataset.id);
         const updatedCartITems = deleteItem(cartItems, id);
         saveCartItemsToLocal(cart, updatedCartITems);
-        showCartItems();
+        renderCartItems();
       };
       itemToDelete.addEventListener("click", handleItemToDelete);
   });
 };
 
-export const showCartItems = () => {
+export const renderCartItems = () => {
   const cartItems = getFromLocal(cart);
 
   const cartItemsContainer = document.querySelector('.cart-items-container');

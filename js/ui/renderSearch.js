@@ -14,7 +14,6 @@ const getSearchTerm = (products, searchTerm) => {
   } else {
     const msg = `Sorry, we currently don't have ${searchTerm}`;
     renderAllProducts([], msg, ".shop-container");
-
   };
 }
 
