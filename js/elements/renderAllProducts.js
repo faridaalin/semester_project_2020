@@ -9,15 +9,9 @@ const renderAllProducts = (products, msg, container) => {
 
   if(products.length === 0) {
    if(msg) {
-    return element.innerHTML =`<div class="alert alert-info" role="alert">
-    ${msg}
-  </div>`;
+    return element.innerHTML =`<div class="alert alert-info" role="alert">${msg}</div>`;
    }
-    const customMsg = `<div class="alert alert-info" role="alert">
-    No items available, plese try again later.
-  </div>`;
-    return element.innerHTML = customMsg;
-    
+   return element.innerHTML  = `<div class="alert alert-info" role="alert">No items available, please try again later.</div>`;
   }
 
   displayProductCard(products, element)

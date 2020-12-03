@@ -1,4 +1,3 @@
-import renderAllProducts from "../elements/renderAllProducts.js";
 import { saveFavourites } from '../helpers/saveFavourites.js';
 import { getFromLocal } from "../utils/storage.js";
 import { favs } from "../utils/settings.js";
@@ -28,21 +27,12 @@ const displayFeaturedProducts = (featuredPropducts) => {
   const container = document.querySelector('.featured-container');
   const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
 
-
   container.innerHTML = `<div class="custom-carousel"">
   <button class="custom-carousel__button custom-carousel__button--left" aria-label="left button"><i class="fa fa-chevron-left"></i></button>
   <ul class="custom-carousel_slide-container">
     ${featuredPropducts.map(product => {
-    const hasFavs = currentFavs.find(fav => {
-    return parseInt(fav.id) === parseInt(product.id)
-    });
+    return `<li class="custom-carousel__slide ">${card(product)}</li>`
 
-    const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
-
-    return `<li class="custom-carousel__slide ">
-    ${card(product)}
-      
-    </li>`
   }).join("")}
   </ul>   
     <button class="custom-carousel__button custom-carousel__button--right" aria-label="right button"><i class="fa fa-chevron-right"></i></button>

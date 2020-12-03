@@ -1,17 +1,13 @@
-import { favs } from '../utils/settings.js';
-import { getFromLocal } from '../utils/storage.js';
 import { getLoggedInUser } from '../helpers/getLoggedInUser.js';
-import {getRoundNumber} from '../helpers/getRoundNumber.js'
+import {getRoundNumber} from '../helpers/getRoundNumber.js';
+import {getFavsIcon} from '../helpers/getFavsIcon.js';
+
 
 export const card = (product) => {
-  const currentFavs = getFromLocal(favs) ? getFromLocal(favs) : [];
+
   const price = getRoundNumber(product.price);
 
-  const hasFavs = currentFavs.find(fav => {
-    return parseInt(fav.id) === parseInt(product.id)
-  });
-
-  const cssClass = hasFavs ? "fa-heart" : "fa-heart-o";
+  const cssClass = getFavsIcon(product);
 
   const user  = getLoggedInUser();
   const edit =
