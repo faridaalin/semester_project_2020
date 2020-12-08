@@ -52,7 +52,7 @@
 }
 
 .logo-highlight {
-  color: getColour(tertiary);
+  color: getColour(primary);
   font-size: calc(1rem + 1vw);
   margin-left: 0.1rem;
   letter-spacing: -1px;
@@ -141,10 +141,10 @@
   &:focus {
     text-decoration: line-through;
     color: getColour(white-100);
-    -webkit-text-decoration-color: getColour(tertiary);
-    text-decoration-color: getColour(tertiary);
+    -webkit-text-decoration-color: getColour(primary);
+    text-decoration-color: getColour(primary);
     &::after {
-      background-color: getColour(tertiary);
+      background-color: getColour(primary);
     }
   }
 
@@ -379,7 +379,7 @@
     height: 20px;
     width: 20px;
     border-radius: 20%;
-    background-color: getColour(tertiary);
+    background-color: getColour(primary);
     font-size: 0.8rem;
     text-align: center;
     font-family: "Montserrat", sans-serif;

@@ -26,7 +26,7 @@
     height: 2px;
     width: 30px;
     top: 50%;
-    background-color: getColour(tertiary);
+    background-color: getColour(primary);
   }
   &::after {
     right: calc(101% + 1vw);
@@ -102,11 +102,11 @@
     }
 
     &:focus {
-      box-shadow: 0 0 4px getColour(tertiary);
+      box-shadow: 0 0 4px getColour(primary);
     }
 
     .fa {
-      color: getColour(tertiary);
+      color: getColour(primary);
       font-size: 1rem;
     }
   }

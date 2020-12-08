@@ -5,18 +5,18 @@ import { loadCurrentItems } from '../helpers/loadCurrentItems.js';
 import { login } from '../ui/login.js';
 import { register } from '../ui/register.js';
 import { showNavbarBgOnScroll } from "../ui/showNavbarBgOnScroll.js";
-import {getLoggedInUser} from '../helpers/getLoggedInUser.js'
+import { getLoggedInUser } from '../helpers/getLoggedInUser.js'
 
 
 
-export const renderNavbar = () => {  
-    showNavbarBgOnScroll();
+export const renderNavbar = () => {
+  showNavbarBgOnScroll();
 
-    const innerNav = document.querySelector('.custom-nav');
-    const user = getLoggedInUser();
-    const { pathname } = location;
-  
-    let authLink = `
+  const innerNav = document.querySelector('.custom-nav');
+  const user = getLoggedInUser();
+  const { pathname } = location;
+
+  let authLink = `
     <li class="nav-item">
      <a class="nav-link" href="#" data-toggle="modal" data-target="#login">
       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -25,11 +25,11 @@ export const renderNavbar = () => {
      </a>
     </li>
     `
-  
-    if (user) {
-      if(user.username === "admin") {
-        authLink = `
-        <li class="nav-item ${pathname === "add.html" ? "active" : ""}">
+
+  if (user) {
+    if (user.username === "admin") {
+      authLink = `
+        <li class="nav-item ${pathname === "/add.html" ? "active" : ""}">
           <a class="nav-link" href="add.html">Add</a>
         </li>
         <li class="nav-item">
@@ -39,8 +39,8 @@ export const renderNavbar = () => {
         <a  class="nav-link custom-greeting" href="#" py-2 px-2">Hi ${user.username}</a>
         </li>
         `
-      } else {
-        authLink = `
+    } else {
+      authLink = `
         <li class="nav-item">
           <a  class="nav-link logout" href="#"py-2 px-2">Logout</a>        
         </li>
@@ -48,23 +48,23 @@ export const renderNavbar = () => {
         <a  class="nav-link custom-greeting" href="#" py-2 px-2">Hi ${user.username}</a>
         </li>
         `
-      }
-      window.addEventListener('DOMContentLoaded', (event) => {
-        logout();
-      });
-    } 
-  
+    }
     window.addEventListener('DOMContentLoaded', (event) => {
-      register();
-      login();
-      loadCurrentItems(cart, '.cart-icon span');
-      loadCurrentItems(favs, '.favs-icon span');
+      logout();
     });
-  
-  
-    let searchbar = "";
-    if (pathname === "/shop.html") {
-      searchbar = `
+  }
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    register();
+    login();
+    loadCurrentItems(cart, '.cart-icon span');
+    loadCurrentItems(favs, '.favs-icon span');
+  });
+
+
+  let searchbar = "";
+  if (pathname === "/shop.html") {
+    searchbar = `
       <li class="nav-item search-box mx-0 pb-4 pb-lg-0 w-75">
         <div class="search ">
           <input class="form-control mr-sm-2" type="search"  id="search" placeholder="Search" aria-label="Search">
@@ -74,15 +74,15 @@ export const renderNavbar = () => {
             </svg>
         </div>
       </li>`
-  
-      document.addEventListener("DOMContentLoaded", () => {
-        renderSearch();
-      });
-    }
-    showNavbarBgOnScroll();
-  
-  
-    return innerNav.innerHTML = `
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderSearch();
+    });
+  }
+  showNavbarBgOnScroll();
+
+
+  return innerNav.innerHTML = `
       <div class="collapse navbar-collapse inner-navbar flex-grow-1 justify-content-md-between pt-5 pt-lg-0" id="navbarSupportedContent">
       <ul class="navbar-nav nav-center justify-content-center mr-auto align-items-baseline">
         <li class="nav-item ${pathname === "/" || pathname === "/index.html" ? "active" : ""}">

@@ -11064,7 +11064,7 @@ a {
   }
 }
 
-.custom-form-container input.form-control {
+.custom-form-container .form-control {
   background-color: transparent !important;
   border: none;
   border-bottom: 1px solid #ced4da;
@@ -11073,9 +11073,10 @@ a {
   height: auto;
   padding: 0.6rem 0 0.4rem 0;
   margin: 0 0 0.5rem 0;
+  color: #090a0b;
 }
 
-.custom-form-container input.form-control:focus {
+.custom-form-container .form-control:focus {
   border-bottom: 1px solid rgba(95, 123, 139, 0.35);
   -webkit-transition: border-color 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out;
@@ -11084,19 +11085,19 @@ a {
   background-color: transparent !important;
 }
 
-.custom-form-container input.form-control ::-webkit-input-placeholder,
-.custom-form-container input.form-control ::-webkit-input-placeholder,
-.custom-form-container input.form-control ::-moz-placeholder,
-.custom-form-container input.form-control :-ms-input-placeholder,
-.custom-form-container input.form-control :-moz-placeholder {
+.custom-form-container .form-control ::-webkit-input-placeholder,
+.custom-form-container .form-control ::-webkit-input-placeholder,
+.custom-form-container .form-control ::-moz-placeholder,
+.custom-form-container .form-control :-ms-input-placeholder,
+.custom-form-container .form-control :-moz-placeholder {
   font-size: 0.3rem;
 }
 
-.custom-form-container input.form-control ::placeholder,
-.custom-form-container input.form-control ::-webkit-input-placeholder,
-.custom-form-container input.form-control ::-moz-placeholder,
-.custom-form-container input.form-control :-ms-input-placeholder,
-.custom-form-container input.form-control :-moz-placeholder {
+.custom-form-container .form-control ::placeholder,
+.custom-form-container .form-control ::-webkit-input-placeholder,
+.custom-form-container .form-control ::-moz-placeholder,
+.custom-form-container .form-control :-ms-input-placeholder,
+.custom-form-container .form-control :-moz-placeholder {
   font-size: 0.3rem;
 }
 
@@ -11180,8 +11181,8 @@ a {
   font-weight: 400;
 }
 
-.editDelete-container .custom-form-container input.form-control,
-.add-container .custom-form-container input.form-control {
+.editDelete-container .custom-form-container form-control,
+.add-container .custom-form-container form-control {
   color: #090a0b;
 }
 

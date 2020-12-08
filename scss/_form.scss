@@ -1,5 +1,5 @@
 .custom-form-container {
-  input.form-control {
+  .form-control {
     background-color: transparent !important;
     border: none;
     border-bottom: 1px solid #ced4da;
@@ -8,6 +8,7 @@
     height: auto;
     padding: 0.6rem 0 0.4rem 0;
     margin: 0 0 0.5rem 0;
+    color: getColour(black-300);
 
     &:focus {
       border-bottom: 1px solid rgba(95, 123, 139, 0.35);
@@ -23,6 +24,7 @@
     :-moz-placeholder {
       font-size: 0.3rem;
     }
+    
   }
 
   .form-control:active  {
@@ -91,7 +93,7 @@
     }
   }
 
-  .custom-form-container input.form-control {
+  .custom-form-container form-control {
     color: getColour(black-300);
   }
 }
