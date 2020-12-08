@@ -2,6 +2,10 @@
   background-color: transparent;
 }
 
+.form-control {
+  background-color: transparent;
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -11078,6 +11082,27 @@ a {
   transition: border-color 0.15s ease-in-out;
   -webkit-box-shadow: 0 1px 0 0 rgba(29, 38, 43, 0.75);
           box-shadow: 0 1px 0 0 rgba(29, 38, 43, 0.75);
+  background-color: transparent !important;
+}
+
+.custom-form-container input.form-control ::-webkit-input-placeholder,
+.custom-form-container input.form-control ::-webkit-input-placeholder,
+.custom-form-container input.form-control ::-moz-placeholder,
+.custom-form-container input.form-control :-ms-input-placeholder,
+.custom-form-container input.form-control :-moz-placeholder {
+  font-size: 0.3rem;
+}
+
+.custom-form-container input.form-control ::placeholder,
+.custom-form-container input.form-control ::-webkit-input-placeholder,
+.custom-form-container input.form-control ::-moz-placeholder,
+.custom-form-container input.form-control :-ms-input-placeholder,
+.custom-form-container input.form-control :-moz-placeholder {
+  font-size: 0.3rem;
+}
+
+.custom-form-container .form-control:active {
+  background: transparent;
 }
 
 .custom-form-container input::-webkit-input-placeholder {
@@ -11273,7 +11298,7 @@ a {
 }
 
 .navbar .nav-item:first-child {
-  margin-left: 1.2rem;
+  margin-left: 3.2rem;
 }
 
 .navbar .nav-item:last-child {
@@ -11337,8 +11362,8 @@ a {
 }
 
 .navbar svg {
-  height: 25px;
-  width: 25px;
+  height: 22px;
+  width: 22px;
 }
 
 .navbar-brand {
