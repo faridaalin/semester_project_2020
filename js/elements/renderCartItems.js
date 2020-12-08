@@ -2,6 +2,7 @@ import { cart } from "../utils/settings.js";
 import { getFromLocal, saveCartItemsToLocal } from "../utils/storage.js";
 import { getTotalPrice, getTotalPricePerItem, } from "../helpers/getTotalPrice.js";
 import { deleteItem } from "../helpers/deleteItem.js";
+import { getRoundNumber } from '../helpers/getRoundNumber.js';
 
 
 const removeItemFromCart = (cartItems) => {
@@ -9,12 +10,12 @@ const removeItemFromCart = (cartItems) => {
 
   deleteItems.forEach(itemToDelete => {
     const handleItemToDelete = (e) => {
-        const id = parseInt(e.target.dataset.id);
-        const updatedCartITems = deleteItem(cartItems, id);
-        saveCartItemsToLocal(cart, updatedCartITems);
-        renderCartItems();
-      };
-      itemToDelete.addEventListener("click", handleItemToDelete);
+      const id = parseInt(e.target.dataset.id);
+      const updatedCartITems = deleteItem(cartItems, id);
+      saveCartItemsToLocal(cart, updatedCartITems);
+      renderCartItems();
+    };
+    itemToDelete.addEventListener("click", handleItemToDelete);
   });
 };
 
@@ -35,15 +36,18 @@ export const renderCartItems = () => {
   }
 
   cartItems.map((item) => {
+    const price = getRoundNumber(item.product.price);
+    console.log(price);
+
     cartItemsContainer.innerHTML += `
     <div>
       <div class="cart-detail mb-5 pb-5 mb-md-0">
         <div class="bag-container d-flex pb-4 mb-4">
 
           <a href="/pdp.html?id=${item.product.id
-        }">
+      }">
             <div class="bag-img embed-responsive embed-responsive-4by3" style="background-image: url(${item.product.image_url
-        })"></div>
+      })"></div>
           </a>
           <div class=" cart-content-container">
             <div class="grid--cart">
@@ -61,19 +65,19 @@ export const renderCartItems = () => {
                   <div class="qtySize-container d-flex flex-wrap flex-column w-100">
 
                     ${item.qtySize
-                    .map((itemSizes) => {
-                    return `
+        .map((itemSizes) => {
+          return `
                     <div class="qtySize-container d-flex">
                       <p class="light-text flex-grow-1 align-text-bottom pr-2">Size ${itemSizes.size}</p>
                       <p class="light-text flex-grow-1 align-text-bottom text-right">Qty ${itemSizes.qty}</p>
                     </div>`;
-                    })
-                    .join("")}
+        })
+        .join("")}
 
                   </div>
                   <div class="d-flex flex-wrap justify-content-between align-items-center w-100">
                     <div class="pr-2 pr-sm-0">
-                      <p class="large-text flex-grow-1 align-text-bottom mb-0">${item.product.price} NOK</p>
+                      <p class="large-text flex-grow-1 align-text-bottom mb-0">${price} NOK</p>
                     </div>
                     <div class="pl-lg-2">
                       <p class="large-text large-text--total flex-grow-1 align-text-bottom mb-0">Total:

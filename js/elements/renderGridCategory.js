@@ -5,7 +5,6 @@ export const renderGridCategory = (products) => {
     const modifiedCategores = getCategoriesObject(products);
 
     for (const property in modifiedCategores) {
-        console.log(modifiedCategores);
         const name = modifiedCategores[property].item.category;
         const nameToUpperCase = name[0].toUpperCase() + name.slice(1).toLowerCase();
         const img = modifiedCategores[property].item.image_url ? modifiedCategores[property].item.image_url

@@ -1,9 +1,11 @@
-import { createRatingArray } from '../helpers/createRatingArray.js'
+import { createRatingArray } from '../helpers/createRatingArray.js';
+import { getRoundNumber } from '../helpers/getRoundNumber.js';
 
 export const productDetail = (product) => {
   const container = document.querySelector('.pdp-detail-container');
 
   const rating = createRatingArray(product);
+  const price = getRoundNumber(product.price);
 
   container.innerHTML = `
   <div class="img-container col-12 col-md-6 d-flex flex-column ">
@@ -30,7 +32,7 @@ export const productDetail = (product) => {
           Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus
           ligula. Mauris consequat ornare feugiat.
         </p>
-        <h5 class="price-title">${product.price} NOK</h5>
+        <h5 class="price-title">${price} NOK</h5>
       </div>
     </div>
     <div class="checkout d-flex flex-column flex-lg-row pb-1 pb-lg-4">

@@ -1,9 +1,10 @@
 import { cart } from '../utils/settings.js'
-import { getFromLocal } from '../utils/storage.js'
+import { getFromLocal } from '../utils/storage.js';
+import { getRoundNumber } from '../helpers/getRoundNumber.js';
 
 export const getTotalPricePerItem = (product) => {
   const qty = product.qtySize.reduce((acc, totalQty) => { return acc + totalQty.qty }, 0);
-  return qty * product.product.price;
+  return getRoundNumber(qty * product.product.price);
 };
 
 export const getTotalPrice = () => {
@@ -23,7 +24,7 @@ export const getTotalPrice = () => {
     return acc;
   }, 0);
 
-  return total;
+  return total = getRoundNumber(total);
 
 }
 

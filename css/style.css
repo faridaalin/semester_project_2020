@@ -11058,7 +11058,6 @@ a {
 
 @media all and (min-width: 768px) {
   .content-btn {
-    font-size: 0.7rem;
     height: 35px;
     line-height: 35px;
     padding: 0 35px;
@@ -11898,7 +11897,6 @@ a {
   font-size: calc(2rem + 2vw);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.48);
   padding-bottom: 2rem;
-  white-space: wrap;
   line-height: 0.9;
   margin-left: -0.19rem;
 }
@@ -12187,11 +12185,6 @@ a {
   transition: opacity 0.3s;
 }
 
-.product-top {
-  position: relative;
-  overflow: hidden;
-}
-
 .product-top:hover .overlay {
   opacity: 1;
 }
@@ -12237,7 +12230,6 @@ a {
 
 @media all and (min-width: 768px) {
   .product-bottom h3 {
-    font-size: 1rem;
     padding-bottom: 0.8rem;
   }
 }
