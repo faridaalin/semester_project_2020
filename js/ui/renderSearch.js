@@ -29,15 +29,15 @@ export const renderSearch = () => {
     clearTimeout(timeout);
 
     timeout = setTimeout(() => {
-      getSearchTerm(products,searchTerm);
-      
+      getSearchTerm(products, searchTerm);
+
     }, 1000);
 
     const handleSearch = () => {
       setTimeout(() => {
-        getSearchTerm(products,searchTerm);        
+        getSearchTerm(products, searchTerm);
       }, 1000);
-    
+
     }
     searchIcon.addEventListener('click', handleSearch)
 

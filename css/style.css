@@ -12191,6 +12191,17 @@ a {
   }
 }
 
+.my-element {
+  display: inline-block;
+  margin: 0 0.5rem;
+  -webkit-animation: bounce;
+          animation: bounce;
+  /* referring directly to the animation's @keyframe declaration */
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  /* don't forget to set a duration! */
+}
+
 .container-pdp {
   padding-bottom: 8rem;
 }

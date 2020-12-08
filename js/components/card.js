@@ -1,6 +1,6 @@
 import { getLoggedInUser } from '../helpers/getLoggedInUser.js';
-import {getRoundNumber} from '../helpers/getRoundNumber.js';
-import {getFavsIcon} from '../helpers/getFavsIcon.js';
+import { getRoundNumber } from '../helpers/getRoundNumber.js';
+import { getFavsIcon } from '../helpers/getFavsIcon.js';
 
 
 export const card = (product) => {
@@ -9,9 +9,9 @@ export const card = (product) => {
 
   const cssClass = getFavsIcon(product);
 
-  const user  = getLoggedInUser();
+  const user = getLoggedInUser();
   const edit =
-  user && user.username === "admin"
+    user && user.username === "admin"
       ? ` <button type="button" class="btn btn-dark btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
   const image = product.image_url ? product.image_url : `https://res.cloudinary.com/djey7uz4e/image/upload/v1606132924/noImage_plcdvu.jpg`;
@@ -19,7 +19,7 @@ export const card = (product) => {
   return ` <div class="product-top">
   ${edit}
   <a href="/pdp.html?id=${product.id}">
-  <img class="card-img-top img-fluid" data-src="${image}" alt="${product.alt_text}">
+  <img class="card-img-top alert-dangerimg-fluid" data-src="${image}" alt="${product.alt_text}">
     <div class="overlay btn-container d-flex justify-content-center align-items-center">
       <button type="button" class="content-btn btn btn-outline-primary">View</button>
     </div>

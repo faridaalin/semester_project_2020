@@ -1,4 +1,4 @@
-import {card} from './card.js'
+import { card } from './card.js'
 
 
 export const productCard = (product) => {

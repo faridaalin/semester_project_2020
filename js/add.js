@@ -3,9 +3,11 @@ import { getFromLocal } from "./utils/storage.js";
 import { renderNavbar } from "./elements/renderNavbar.js";
 import { removeMessage } from './helpers/removeMessage.js';
 import { addNewProduct } from './ui/addProduct.js'
+import { uploadFile } from './ui/uploadFile.js'
 import { } from './ui/addProduct.js'
 import { validateFields, removeValidationStyle } from './helpers/validateFields.js';
 import { getLoggedInUser } from './helpers/getLoggedInUser.js';
+import { fectData } from './helpers/fetcData.js';
 
 
 renderNavbar();
@@ -36,7 +38,7 @@ if (user && user.username === "admin") {
     const previewContainer = document.querySelector('.preview');
     const previewImage = previewContainer.querySelector('.preview__image');
     const previewText = previewContainer.querySelector('.preview__text');
-    let data;
+    let formData;
 
     image_file.addEventListener('change', () => {
         const currentFile = image_file.files[0];
@@ -53,11 +55,12 @@ if (user && user.username === "admin") {
             previewText.style.display = "none";
             previewImage.style.display = "block";
             previewContainer.classList.remove('error');
-            console.dir(image_file);
+            console.dir(currentFile);
 
-            data = new FormData();
-            data.append('files', currentFile)
-            console.log(data);
+            formData = new FormData();
+            formData.append('files', image_file.files[0], image_file.files[0].name);
+            console.log('formData', formData.getAll('files'));
+
             reader.readAsDataURL(currentFile)
 
             reader.addEventListener('load', () => {
@@ -82,7 +85,6 @@ if (user && user.username === "admin") {
         e.preventDefault();
         removeMessage('#msg');
 
-        console.log(data);
 
         const isValid = validateFields(".add-form .form-control");
         if (isValid === false || isValid === undefined) return;
@@ -97,13 +99,17 @@ if (user && user.username === "admin") {
             category: category.value,
             featured: featured.checked,
         }
-        const productObjectFile = {
-            image_file: image_file.value,
 
-        }
 
+        const upload_file_url = `${BASE_URL}/upload`;
         //addNewProduct(URL, token, productObject);
-        //addNewProduct(URL, token, productObject);
+        uploadFile(upload_file_url, token, formData);
+
+
+        console.log('formData 107', formData.getAll('files'));
+
+
+
         //removeValidationStyle(".add-form .form-control")
         //form.reset();
 
