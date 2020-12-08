@@ -11232,6 +11232,32 @@ a {
   color: red;
 }
 
+.productAddedToCart .modal-body {
+  padding-top: 2rem;
+}
+
+.productAddedToCart .modal-content {
+  background: rgba(253, 253, 253, 0.98);
+}
+
+.productAddedToCart .modal-header {
+  background: rgba(103, 235, 180, 0.1);
+}
+
+.productAddedToCart p {
+  font-weight: 400;
+}
+
+.productAddedToCart svg {
+  height: 4rem;
+  width: 4rem;
+  color: #67EBB4;
+}
+
+.productAddedToCart a:hover {
+  text-decoration: none;
+}
+
 .navbar {
   background-color: transparent;
   -webkit-transition: background-color 0.2s;
@@ -12211,17 +12237,30 @@ a {
 }
 
 .pdp-detail-container {
-  min-height: 700px;
+  min-height: 100vh;
 }
 
 .img-container {
-  height: 100%;
+  height: 50%;
 }
 
 .pdp-img {
-  max-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .pdp-img {
+    background-color: red;
+    height: 63vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media all and (min-width: 576px) {
+  .pdp-thumbnail-container {
+    height: 100px;
+  }
 }
 
 .pdp-thumbnail {
@@ -12230,8 +12269,8 @@ a {
 
 @media all and (min-width: 576px) {
   .pdp-thumbnail {
-    width: calc(60% + 1vw);
-    height: 85px;
+    width: calc(15% + 1vw);
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }

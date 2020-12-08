@@ -7,23 +7,34 @@
 }
 
 .pdp-detail-container {
-  min-height: 700px;
+  min-height: 100vh;
 }
 
 .img-container {
-  height: 100%;
+  height: 50%;
+
 }
 
 .pdp-img {
-  max-height: 100%;
-  object-fit: cover;
+    width: 100%;
+    @media (min-width: 576px) { 
+      background-color: red;
+      height: 63vh;
+      object-fit: cover; 
+    }
+
+}
+.pdp-thumbnail-container {
+  @media all and (min-width: 576px) {
+    height: 100px;
+  }
 }
 
 .pdp-thumbnail {
   width: 20%;
   @media all and (min-width: 576px) {
-    width: calc(60% + 1vw);
-    height: 85px;
+    width: calc(15% + 1vw);
+    height: 100%;
     object-fit: cover;
   }
 }

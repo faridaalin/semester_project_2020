@@ -155,3 +155,28 @@ height: 100%;
   border: 2px solid red;
   color: red;
 }
+
+.productAddedToCart {
+
+  .modal-body {
+    padding-top: 2rem;
+  }
+  .modal-content {
+    background: rgba(253, 253, 253, .98)
+  }
+.modal-header {
+  background: rgba(103, 235, 180, .10)
+}
+p {
+  font-weight: 400;
+}
+  svg {
+    height: 4rem;
+    width: 4rem;
+    color: getColour(primary);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}

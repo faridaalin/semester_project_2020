@@ -1,19 +1,19 @@
-import {createRatingArray} from '../helpers/createRatingArray.js'
+import { createRatingArray } from '../helpers/createRatingArray.js'
 
 export const productDetail = (product) => {
-   const container = document.querySelector('.pdp-detail-container');
+  const container = document.querySelector('.pdp-detail-container');
 
-  const rating = createRatingArray(product)
-  
-   container.innerHTML = `
-  <div class="img-container col-12 col-md-6 d-flex flex-column flex-sm-row-reverse">
-  <div class="col col-sm-2 d-flex justify-content-between flex-sm-column order-2 px-0">
+  const rating = createRatingArray(product);
+
+  container.innerHTML = `
+  <div class="img-container col-12 col-md-6 d-flex flex-column ">
+  <div class="pdp-thumbnail-container d-flex justify-content-between order-2 px-0 mt-sm-4">
    <img class="pdp-thumbnail" src="${product.image_url}" alt="" srcset="" />
    <img class="pdp-thumbnail" src="${product.image_url}" alt="" srcset="" />
    <img class="pdp-thumbnail" src="${product.image_url}" alt="" srcset="" />
    <img class="pdp-thumbnail" src="${product.image_url}" alt="" srcset="" />
    </div>
-   <img class="pdp-img col col-sm-10 px-0 pb-4 pb-sm-0" src="${product.image_url}" alt="" srcset="" />
+   <img class="pdp-img px-0 pb-4 pb-sm-0" src="${product.image_url}" alt="" srcset="" />
   </div>
 
   <div class="col-12 col-md-6 pt-5 mt-5 pt-md-0 mt-md-0 align-self-baseline">

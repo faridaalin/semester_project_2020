@@ -4,7 +4,7 @@ export const loadCurrentItems = (tag, container) => {
    const currentItems = getFromLocal(tag);
    const counterContainer = document.querySelector(container);
    let total = 0;
-   
+
    if (!currentItems) {
       return counterContainer.textContent = total;
    }
@@ -18,11 +18,11 @@ export const loadCurrentItems = (tag, container) => {
 
       });
       total = sum;
-      return counterContainer.textContent = total > 9 || total === 9 ? "9+" : total;
+      return counterContainer.textContent = total > 9 ? "9+" : total;
    }
 
    if (tag === "favs") {
-      const favsTotal = currentItems.length > 9 || currentItems.length === 9 ? "9+" : currentItems.length;
+      const favsTotal = currentItems.length > 9 ? "9+" : currentItems.length;
       return counterContainer.textContent = favsTotal
    }
 
