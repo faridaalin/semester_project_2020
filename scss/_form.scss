@@ -188,3 +188,20 @@ p {
     text-decoration: none;
   }
 }
+
+.form-group-spinner {
+  height: 0;
+  overflow: hidden;
+}
+
+.form-group-spinner.hide-spinner {
+height: 30vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.hide-form {
+  max-height: 0;
+  overflow: hidden;
+}

@@ -11284,6 +11284,29 @@ a {
   text-decoration: none;
 }
 
+.form-group-spinner {
+  height: 0;
+  overflow: hidden;
+}
+
+.form-group-spinner.hide-spinner {
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hide-form {
+  max-height: 0;
+  overflow: hidden;
+}
+
 .navbar {
   background-color: transparent;
   -webkit-transition: background-color 0.2s;
@@ -11850,7 +11873,7 @@ a {
   }
   .inner-navbar {
     padding-top: 8rem !important;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
   }
   .inner-navbar:last-child {
     padding-top: 0 !important;

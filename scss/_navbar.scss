@@ -350,11 +350,6 @@
   }
 }
 
-// .search {
-//   .form-control:focus, .form-control:active {
-//     background-color: rgba(120, 161, 185, 0.2);
-//   }
-// }
 
 .grid {
   display: grid;
@@ -442,7 +437,6 @@
 
   &:hover {
     opacity: 1;
-    //color: getColour(white-100);
     &::after {
       background-color: transparent;
       opacity: 1;
@@ -519,14 +513,11 @@
 
   .inner-navbar {
     padding-top: 8rem !important;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
   }
 
   .inner-navbar:last-child {
     padding-top: 0 !important;
   }
 
-  // .search-box {
-  //   width: 90% !important;
-  // }
 }

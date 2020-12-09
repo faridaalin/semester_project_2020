@@ -4,6 +4,8 @@ import { showMessage } from "../helpers/showMessage.js";
 import { removeMessage } from "../helpers/removeMessage.js";
 import { renderNavbar } from '../elements/renderNavbar.js'
 import { fectData } from '../helpers/fetcData.js';
+import { spinner } from '../elements/spinner.JS'
+
 
 export const login = (e) => {
   const loginBtn = document.querySelector(".loginBtn");
@@ -50,10 +52,17 @@ export const login = (e) => {
           body: JSON.stringify(data),
         };
 
+        const formSpinner = document.querySelector('.form-group-spinner');
+        const formGroupGontainer = document.querySelector('.form-group-container');
+        formSpinner.classList.add('hide-spinner');
+        formGroupGontainer.classList.add('hide-form')
+
         fectData(URL, options).then(userData => {
           if (!userData || typeof userData === 'string') {
             const msg = "Invalid username or password";
             showMessage("danger", msg, '.message-container');
+            formSpinner.classList.remove('hide-spinner');
+            formGroupGontainer.classList.remove('hide-form')
             username.classList.add("is-invalid");
             password.classList.add("is-invalid");
             document.querySelector('.feedback-password').innerHTML = "";
