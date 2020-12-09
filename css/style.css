@@ -11349,7 +11349,7 @@ a {
   font-size: calc(1rem + 1vw);
   margin-left: 0.1rem;
   letter-spacing: -1px;
-  font-size: 2rem;
+  font-size: calc(1.2rem + 1vw);
 }
 
 .custom-bg {
