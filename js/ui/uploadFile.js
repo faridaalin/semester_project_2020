@@ -6,15 +6,12 @@ import { fectData } from '../helpers/fetcData.js';
 
 export const uploadFile = (url, token, formData) => {
     removeMessage('#msg')
-    console.log('formData:', formData);
 
 
     const options = {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data',
-            //"Content-Type": "application/json"
         },
         body: formData
     }
@@ -29,7 +26,7 @@ export const uploadFile = (url, token, formData) => {
                     statusText: response.statusText
                 })
             }
-            return await response.json();
+            return await response.text();
 
         } catch (error) {
             console.error(error.statusText);

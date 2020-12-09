@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:sass": "sass scss/style.scss css/styles.css --watch",
     "liveserver": "live-server",
-    "develop": "concurrently \"npm run watch:sass\" \"npm run liveserver\" "
+    "develop": "concurrently \"npm run watch:sass\" \"npm run liveserver\" ",
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/Noroff-Fagskole/oslo-semester-2-project-faridaalin#readme",
   "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/polyfill": "^7.12.1",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.1.0",
     "install": "^0.13.0",
