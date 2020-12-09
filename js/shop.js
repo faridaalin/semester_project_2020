@@ -19,7 +19,6 @@ renderNavbar();
   spinner('.shop-container');
   fectData(URL).then(result => {
     if (!result || typeof result === 'string') {
-      console.log(result);
       return; showMessage('danger', result, '.shop-container .message-container');
     };
     saveToSessionStorage(allProducts, result);

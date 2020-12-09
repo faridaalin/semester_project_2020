@@ -37,7 +37,6 @@ export const renderCartItems = () => {
 
   cartItems.map((item) => {
     const price = getRoundNumber(item.product.price);
-    console.log(price);
 
     cartItemsContainer.innerHTML += `
     <div>
