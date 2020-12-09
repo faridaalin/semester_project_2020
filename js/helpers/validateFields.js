@@ -31,21 +31,6 @@ export const validateFields = (tag) => {
   }
 
 
-
-  // else if (inputsArr[i].type === "url" && inputsArr[i].value.length > 0 && isImageUrlValid(inputsArr[i].value) || inputsArr[i].type === "file" && inputsArr[i].value.length > 0) {
-  //   console.log('Choose either');
-  //   console.log('inputsArr[i].type === "url"', inputsArr[i].type === "url");
-  //   console.log('inputsArr[i].type === "file"', inputsArr[i].type === "file");
-  //   inputsArr[i].type === "url" && inputsArr[i].classList.add("is-invalid");
-  //   inputsArr[i].type === "file" && inputsArr[i].classList.add("is-invalid");
-  //   const msg = "Choose either image file upload or image url";
-  //   showMessage("danger", msg, "#msg");
-  //   isValid = false;
-  //   return;
-  // }
-
-
-
   if (isValid === false) {
     const msg = "Check for missing values or incorrect values";
     showMessage("danger", msg, "#msg");

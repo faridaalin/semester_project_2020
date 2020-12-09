@@ -12,7 +12,6 @@ import { getLoggedInUser } from './helpers/getLoggedInUser.js';
 
 renderNavbar();
 
-
 const user = getLoggedInUser();
 
 if (!user) location.href = "/";
@@ -42,9 +41,9 @@ if (user && user.username === "admin") {
     price.value = product.price;
     description.value = product.description;
     imgUrl.value = product.image_url;
-    altText.value = product.alt_text,
-      category.value = product.category,
-      productID.value = product.id;
+    altText.value = product.alt_text;
+    category.value = product.category;
+    productID.value = product.id;
     featured.checked = product.featured;
   });
 

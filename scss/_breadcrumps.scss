@@ -1,6 +1,7 @@
 .breadcrumb {
   background: transparent;
   padding-top: 8rem;
+  
 }
 
 .breadcrumb-item {
@@ -8,11 +9,9 @@
   a {
     color: #294c61 !important;
     font-weight: getWeight(regular);
+    font-family: "Montserrat", sans-serif;
   }
 
-  .actice {
-    color: red;
-  }
 }
 
 .breadcrumb-item.active {

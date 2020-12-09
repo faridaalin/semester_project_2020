@@ -10930,11 +10930,13 @@ li {
 .footer i {
   font-size: 2rem;
   cursor: pointer;
+  -webkit-transition: opacity 0.3 ease-in-out;
+  transition: opacity 0.3 ease-in-out;
 }
 
 .footer i:hover {
-  -webkit-filter: brightness(50%);
-          filter: brightness(50%);
+  color: #090a0b;
+  opacity: .89;
 }
 
 @media all and (min-width: 768px) {
@@ -11067,7 +11069,7 @@ a {
 .custom-form-container .form-control {
   background-color: transparent !important;
   border: none;
-  border-bottom: 1px solid #ced4da;
+  border-bottom: 1px solid #989898;
   border-radius: 0;
   outline: none;
   height: auto;
@@ -11892,10 +11894,7 @@ a {
 .breadcrumb-item a {
   color: #294c61 !important;
   font-weight: 400;
-}
-
-.breadcrumb-item .actice {
-  color: red;
+  font-family: "Montserrat", sans-serif;
 }
 
 .breadcrumb-item.active {

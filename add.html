@@ -149,7 +149,7 @@
         <form class="col-md-12 add-form custom-form-container" id="addForm" name="addForm" autocomplete="off">
           <div class="message-container" id="msg"></div>
           <div class="row">
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 col-lg-4">
               <div class="form-group">
                 <label for="name" class="d-flex justify-content-between col-form-label">Title
                 </label>
@@ -174,20 +174,7 @@
                 <div class="invalid-feedback">Description is required.</div>
               </div>
             </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-                <label for="image_upload" class="d-flex justify-content-between col-form-label">Choose image to upload
-                  (PNG, JPEG, JPG)</label>
-                <div class="file-container">
-                  <input type="file" name="files" id="image_upload" accept=".png, .jpeg, .jpg"
-                    class="form-control" /><span class="clear" id="clear">X</span>
-                </div>
-                <div class="preview">
-                  <img src="" alt="Image preview" class="preview__image" />
-                  <span class="preview__text">No files currently selected for upload</span>
-                </div>
-              </div>
-
+            <div class="col-12 col-sm-6 col-lg-4">
               <div class="form-group">
                 <label for="url" class="d-flex justify-content-between col-form-label">Image url</label>
                 <input type="url" name="url" id="url" class="form-control" />

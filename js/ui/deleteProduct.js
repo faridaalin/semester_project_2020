@@ -29,7 +29,7 @@ export const deleteProduct = (url, token) => {
                 showMessage('success', msg, '#msg')
             }
 
-            location.href = "/";
+            history.back();
         });
 
     };

@@ -108,9 +108,11 @@ li {
   i {
     font-size: 2rem;
     cursor: pointer;
+    transition: opacity 0.3 ease-in-out;
 
     &:hover {
-      filter: brightness(50%);
+      color: getColour(black-300);
+      opacity: .89;
     }
 
     @media all and (min-width: 768px) {

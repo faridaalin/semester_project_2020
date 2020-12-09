@@ -11,7 +11,7 @@ export const card = (product) => {
 
   const user = getLoggedInUser();
   const edit =
-    user && user.username === "admin"
+    user && user.username === "admin" && location.pathname !== "/fav.html"
       ? ` <button type="button" class="btn btn-dark btn-sm edit-btn"><a href="/edit.html?id=${product.id}">Edit</a></button>`
       : "";
   const image = product.image_url ? product.image_url

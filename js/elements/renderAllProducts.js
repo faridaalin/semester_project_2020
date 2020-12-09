@@ -11,7 +11,14 @@ const renderAllProducts = (products, msg, container) => {
     if (msg) {
       return element.innerHTML = `<div class="alert alert-info" role="alert">${msg}</div>`;
     }
-    return element.innerHTML = `<div class="alert alert-info" role="alert">No items available, please try again later.</div>`;
+    if (location.pathname === "/fav.html") {
+      const msg = 'Your favourite list is currently empty.';
+      element.innerHTML = `<div class="alert alert-info" role="alert">${msg}</div>`;
+
+    } else {
+      return element.innerHTML = `<div class="alert alert-info" role="alert">No items available, please try again later.</div>`;
+    }
+
   }
 
   displayProductCard(products, element)

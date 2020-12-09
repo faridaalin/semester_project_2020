@@ -9,17 +9,17 @@
     content=" Discover the latest trends in popular shoes at ARK SHOES. Be inspired by the latest trends. Free delivery." />
   <meta name="image" content="https://res.cloudinary.com/djey7uz4e/image/upload/v1606823787/logo_qig2do.png" />
   <!-- Schema.org for Google -->
-  <meta itemprop="name" content="SHOP |  Mens Shoes " />
+  <meta itemprop="name" content="SHOP | Shoes" />
   <meta itemprop="description"
     content=" Discover the latest trends in popular shoes at ARK SHOES. Be inspired by the latest trends. Free delivery." />
   <meta itemprop="image" content="https://res.cloudinary.com/djey7uz4e/image/upload/v1606823787/logo_qig2do.png" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="SHOP | Mens Shoes" />
+  <meta name="twitter:title" content="SHOP | Shoes" />
   <meta name="twitter:description"
     content=" Discover the latest trends in popular shoes at ARK SHOES. Be inspired by the latest trends. Free delivery." />
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta name="og:title" content="SHOP | Mens Shoes" />
+  <meta name="og:title" content="SHOP | Shoes" />
   <meta name="og:description"
     content=" Discover the latest trends in popular shoes at ARK SHOES. Be inspired by the latest trends. Free delivery." />
   <meta name="og:image" content="https://res.cloudinary.com/djey7uz4e/image/upload/v1606823787/logo_qig2do.png" />
@@ -35,7 +35,7 @@
     href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;600;700;800;900&family=Montserrat:wght@300;400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css" />
-  <title>SHOP | Mens Shoes</title>
+  <title>SHOP | Shoes</title>
 </head>
 
 <body>
@@ -55,7 +55,7 @@
     <div class="modal custom-form-container" id="login" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="message-container"></div>
+          <!-- <div class="message-container"></div> -->
           <button type="button" class="close ml-auto pt-4 pr-4" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -65,7 +65,8 @@
               <span><i class="fa fa-user"></i>Login</span>
             </button>
             <div id="collapseOne" class="collapse in show" data-parent="#accordionExample">
-              <form class="login-register-form d-flex flex-column p-4" autocomplete="off">
+              <form class="login-register-form login-form d-flex flex-column p-4" autocomplete="off">
+                <div class="message-container"></div>
                 <div class="form-group-spinner">
                   <div class="spinner-border" role="status">
                     <span class="sr-only">Loading...</span>
@@ -109,47 +110,54 @@
               <span>Register</span>
             </button>
             <div id="collapseThree" class="collapse" data-parent="#accordionExample">
-              <form class="login-register-form d-flex flex-column p-4" autocomplete="off">
+              <form class="login-register-form register-form d-flex flex-column p-4" autocomplete="off">
                 <div class="message-container"></div>
 
-                <div class="form-group d-flex">
-                  <div class="d-flex flex-column w-25">
-                    <label for="registerUsername" class="col-form-label">Username</label>
-                    <small>Min 2 letters</small>
-                  </div>
-                  <div class="w-75">
-                    <input type="text" class="form-control" id="registerUsername" placeholder="Enter username" />
-                    <div class="feedback-username invalid-feedback">
-                      Username is too short.
-                    </div>
+                <div class="form-group-spinner">
+                  <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
                   </div>
                 </div>
-                <div class="form-group d-flex">
-                  <div class="d-flex flex-column w-25">
-                    <label for="registerEmail" class="col-form-label">Email</label>
-                  </div>
-                  <div class="w-75">
-                    <input type="email" class="form-control" id="registerEmail" placeholder="Enter email" />
-                    <div class="feedback-email invalid-feedback">
-                      Invalid email
+                <div class="form-group form-group-container">
+                  <div class="form-group d-flex">
+                    <div class="d-flex flex-column w-25">
+                      <label for="registerUsername" class="col-form-label">Username</label>
+                      <small>Min 2 letters</small>
+                    </div>
+                    <div class="w-75">
+                      <input type="text" class="form-control" id="registerUsername" placeholder="Enter username" />
+                      <div class="feedback-username invalid-feedback">
+                        Username is too short.
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="form-group d-flex">
-                  <div class="d-flex flex-column w-25">
-                    <label for="password" class="col-form-label">Password</label>
-                    <small>Min 8 char</small>
-                  </div>
-                  <div class="w-75">
-                    <input type="password" class="form-control" id="registerPassword" placeholder="Enter password" />
-                    <div class="feedback-email invalid-feedback">
-                      Password is too short
+                  <div class="form-group d-flex">
+                    <div class="d-flex flex-column w-25">
+                      <label for="registerEmail" class="col-form-label">Email</label>
+                    </div>
+                    <div class="w-75">
+                      <input type="email" class="form-control" id="registerEmail" placeholder="Enter email" />
+                      <div class="feedback-email invalid-feedback">
+                        Invalid email
+                      </div>
                     </div>
                   </div>
+                  <div class="form-group d-flex">
+                    <div class="d-flex flex-column w-25">
+                      <label for="password" class="col-form-label">Password</label>
+                      <small>Min 8 char</small>
+                    </div>
+                    <div class="w-75">
+                      <input type="password" class="form-control" id="registerPassword" placeholder="Enter password" />
+                      <div class="feedback-password invalid-feedback">
+                        Password is too short
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="registerBtn btn btn-secondary btn-block shadow-lg">
+                    Register
+                  </button>
                 </div>
-                <button type="button" class="registerBtn btn btn-secondary btn-block shadow-lg">
-                  Register
-                </button>
               </form>
             </div>
           </div>
