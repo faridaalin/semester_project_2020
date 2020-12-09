@@ -11223,6 +11223,7 @@ a {
   position: absolute;
   top: 33%;
   right: 0;
+  cursor: pointer;
 }
 
 .preview {
@@ -11298,7 +11299,7 @@ a {
 }
 
 .navbar .nav-item:first-child {
-  margin-left: 3.2rem;
+  margin-left: 1.2rem;
 }
 
 .navbar .nav-item:last-child {
@@ -11505,7 +11506,6 @@ a {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #ffffff;
   font-weight: 700;
   opacity: 1;
 }
@@ -11612,7 +11612,7 @@ a {
   margin-right: 0;
 }
 
-.search .form-control:focus {
+.search .form-control:focus, .search .form-control:active {
   background-color: rgba(120, 161, 185, 0.2);
 }
 

@@ -11,7 +11,7 @@
   }
 
   .nav-item:first-child {
-    margin-left: 3.2rem;
+    margin-left:  1.2rem;
   }
   .nav-item:last-child {
     margin-right: 0;
@@ -207,7 +207,7 @@
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: getColour(white-100);
+  //color: getColour(white-100);
   font-weight: getWeight(bold);
   opacity: 1;
 }
@@ -306,7 +306,7 @@
 }
 
 .search {
-  .form-control:focus {
+  .form-control:focus, .form-control:active, {
     background-color: rgba(120, 161, 185, 0.2);
   }
 }

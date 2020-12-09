@@ -1,6 +1,6 @@
 import { loadCurrentItems } from '../helpers/loadCurrentItems.js';
 import renderAllProducts from '../elements/renderAllProducts.js';
-import {spinner} from '../elements/spinner.js'
+import { spinner } from '../elements/spinner.js'
 
 export const saveToLocal = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value))
@@ -39,10 +39,10 @@ export const saveToFavsListStorage = (tag, list) => {
     saveToLocal(tag, list);
     loadCurrentItems(tag, '.favs-icon span');
 
-    if(location.pathname === "/fav.html") {
+    if (location.pathname === "/fav.html") {
         spinner('.fav-container');
         setTimeout(() => {
-            renderAllProducts(list, "some message", '.fav-container');
+            renderAllProducts(list, "", '.fav-container');
         }, 500);
 
     }
