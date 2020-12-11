@@ -62,10 +62,9 @@ const renderFilterCategories = (products) => {
     const name = categories[property].item.category;
     const nameToUpperCase = name[0].toUpperCase() + name.slice(1).toLowerCase();
 
-    custom_select.innerHTML += `<div class="form-check dropdown-item">
-    <input class="form-check-input" type="checkbox" value="${nameToUpperCase}" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-    ${nameToUpperCase}
+    custom_select.innerHTML += `<div class="form-check form-check--filter dropdown-item">
+    <label class="form-check-label d-flex w-100" for="${nameToUpperCase}">${nameToUpperCase}
+    <input class="form-check-input" type="checkbox" value="${nameToUpperCase}" id="${nameToUpperCase}">
     </label>
   </div>`};
 

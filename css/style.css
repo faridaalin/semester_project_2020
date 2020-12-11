@@ -11309,6 +11309,10 @@ a {
   overflow: hidden;
 }
 
+.form-check--filter .form-check-label, .form-check--filter .form-check-input {
+  cursor: pointer;
+}
+
 .navbar {
   background-color: transparent;
   -webkit-transition: background-color 0.2s;

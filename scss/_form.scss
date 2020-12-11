@@ -205,3 +205,10 @@ justify-content: center;
   max-height: 0;
   overflow: hidden;
 }
+
+.form-check--filter {
+  .form-check-label, .form-check-input {
+    cursor: pointer;
+  }
+}
+
