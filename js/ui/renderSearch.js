@@ -30,13 +30,11 @@ export const renderSearch = () => {
 
     timeout = setTimeout(() => {
       getSearchTerm(products, searchTerm);
-      searchInput.value = "";
     }, 1000);
 
     const handleSearch = () => {
       setTimeout(() => {
         getSearchTerm(products, searchTerm);
-        searchInput.value = "";
       }, 1000);
 
     }

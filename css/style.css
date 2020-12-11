@@ -11579,8 +11579,8 @@ a {
   position: relative;
   display: block;
   width: 100%;
-  max-width: 3rem;
-  height: 3rem;
+  max-width: 2.5rem;
+  height: 2.5rem;
   -webkit-transition: 0.4s linear;
   transition: 0.4s linear;
   overflow: hidden;
@@ -11642,7 +11642,7 @@ a {
 .search .search-icon {
   position: absolute;
   top: 50%;
-  right: calc(3rem / 2);
+  right: calc(2.5rem / 2);
   font-size: 1rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
