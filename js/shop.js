@@ -19,7 +19,7 @@ renderNavbar();
   spinner('.shop-container');
   fectData(URL).then(result => {
     if (!result || typeof result === 'string') {
-      return; showMessage('danger', result, '.shop-container .message-container');
+      return showMessage('danger', result, '.shop-container .message-container');
     };
     saveToSessionStorage(allProducts, result);
     renderAllProducts(result, "Shop is currently empty", ".shop-container");

@@ -1,6 +1,6 @@
 import { displayProductCard } from "../helpers/displayProductCard.js";
-import { lasyLoadImageas } from '../helpers/lasyLoadImageas.js';
 import { saveFavourites } from '../helpers/saveFavourites.js';
+import { lasyLoadImages } from '../helpers/lasyLoadImages.js'
 
 
 const renderAllProducts = (products, msg, container) => {
@@ -23,19 +23,7 @@ const renderAllProducts = (products, msg, container) => {
 
   displayProductCard(products, element)
   saveFavourites();
-  //lasyLoadImageas();
-
-  if ('loading' in HTMLImageElement.prototype) {
-    // Native lazy loading
-
-    const images = document.querySelectorAll('img[loading=lazy]');
-    console.log('images:', images);
-    images.forEach(img => {
-      console.log('img.src:', img.src);
-      console.log('img.dataset.src:', img.dataset.src);
-      img.src = img.dataset.src;
-    })
-  }
+  lasyLoadImages()
 
 };
 
