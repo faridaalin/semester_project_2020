@@ -11950,6 +11950,10 @@ a {
 .herobanner__content {
   position: relative;
   color: #f5f5f5;
+  margin-left: -62px;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s ease  0.5s forwards;
+          animation: fadeIn 1s ease  0.5s forwards;
 }
 
 .herobanner__content .edit-bg {
@@ -11971,6 +11975,28 @@ a {
   padding-bottom: 2rem;
   line-height: 0.9;
   margin-left: -0.19rem;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    margin-left: -62px;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    margin-left: -62px;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 1;
+  }
 }
 
 .featured-container {
