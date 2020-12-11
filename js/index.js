@@ -9,7 +9,8 @@ import { spinner } from "./elements/spinner.js";
 import { fectData } from "./helpers/fetcData.js";
 import { showMessage } from "./helpers/showMessage.js";
 import { removeMessage } from "./helpers/removeMessage.js";
-import { lasyLoadImageas } from './helpers/lasyLoadImageas.js'
+import { lasyLoadImageas } from './helpers/lasyLoadImageas.js';
+
 
 renderNavbar();
 
