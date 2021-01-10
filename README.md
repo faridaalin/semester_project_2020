@@ -1,35 +1,5 @@
 <img src="./.readme/noroff-light.png" width="160" align="right">
 
-# Project Planning. 
-
-KanBan board in Notion: [Link](https://www.notion.so/986067d3a271491ab10e004878712ca4?v=566090c9f3bc4c97abc8a99a6d3b3953)
-
-XD Wireframe: [Link](https://xd.adobe.com/view/50096d59-9324-473c-8bed-51a90638000e-055a/)  <br /> 
-XD Prototype: [Link](https://xd.adobe.com/view/97593ad3-40d2-4133-ab02-b9991d87d139-c20a/)
-
-
-## Report 
-
-1. how the project went? <br /> 
-The project went well. I am happy with the end result.  <br /> <br /> 
-
-2. what was difficult?  <br /> 
-I managed upolading image files to theStrapi endpoint "/upload", however, I found it difficult to connect it to a product added at the same time. <br /> <br />
-Another thing that was a bit difficult was to find a structure on my javascript files. Finding put when a functions was a helper function, component or element.
-
-
-3. what was easy? <br /> 
-I think the semester project was too similar to classroom exercises / module assigments. That made some parts too easy for me as previous assignments was still fresh in my head still.  <br />  <br /> 
-
-
-4. what I enjoyed the most? <br /> 
-I enjoyed using JavaScript and challenge myself on using methods such as find, filter, map and reduce. <br />  <br /> 
-
-5. what I still think I need to learn or focus on more? <br /> 
-I want to learn how write more dynamic functions / code. <br /> <br />
-Also, how to write functions that does only one thing and not make them too complicated, as I get lost in my on code sometimes.  <br /> <br />
-I'm not confident with bootstrap either. I spent too much time on bootstrap, but I guess with practise it will get easier. <br /> <br />
-
 ## Frontend / root directory
 
 ```bash
